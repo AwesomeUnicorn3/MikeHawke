@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="EquipmentContainer" type="HBoxContainer"]
+margin_right = 190.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equipment_Button" type="Button" parent="."]
+margin_right = 131.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "%s Item Name %s"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 13.0
+margin_right = 190.0
+margin_bottom = 27.0
+text = "#of item"
+__meta__ = {
+"_edit_use_anchors_": false
+}

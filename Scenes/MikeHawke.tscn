@@ -1,0 +1,116 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scripts/MikeHawke.gd" type="Script" id=1]
+[ext_resource path="res://Animations/Characters/Mike/IdleDown.tres" type="Animation" id=2]
+[ext_resource path="res://Characters/MainCharactersprite.png" type="Texture" id=3]
+[ext_resource path="res://Animations/Characters/Mike/WalkDown.tres" type="Animation" id=4]
+[ext_resource path="res://Animations/Characters/Mike/IdleLeft.tres" type="Animation" id=5]
+[ext_resource path="res://Animations/Characters/Mike/WalkLeft.tres" type="Animation" id=6]
+[ext_resource path="res://Animations/Characters/Mike/MikeHawke.tres" type="Animation" id=7]
+[ext_resource path="res://Animations/Characters/Mike/IdleUp.tres" type="Animation" id=8]
+[ext_resource path="res://Animations/Characters/Mike/WalkRight.tres" type="Animation" id=9]
+[ext_resource path="res://Animations/Characters/Mike/WalkUpLeft.tres" type="Animation" id=10]
+[ext_resource path="res://Animations/Characters/Mike/WalkDownLeft.tres" type="Animation" id=11]
+[ext_resource path="res://Animations/Characters/Mike/WalkUpRight.tres" type="Animation" id=12]
+[ext_resource path="res://Animations/Characters/Mike/IdleDownLeft.tres" type="Animation" id=13]
+[ext_resource path="res://Animations/Characters/Mike/IdleDownRight.tres" type="Animation" id=14]
+[ext_resource path="res://Animations/Characters/Mike/IdleUpLeft.tres" type="Animation" id=15]
+[ext_resource path="res://Animations/Characters/Mike/WalkDownRight.tres" type="Animation" id=16]
+[ext_resource path="res://Animations/Characters/Mike/IdleUpRight.tres" type="Animation" id=17]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.7666
+height = 2.31013
+
+[sub_resource type="Animation" id=2]
+resource_name = "WalkLeft"
+length = 0.4
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 13, 13, 14 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 42.8317, 16.8049 )
+
+[node name="Mike Hawke" type="KinematicBody2D" groups=[
+"player",
+]]
+position = Vector2( -0.109064, -3.92631 )
+z_index = 5
+z_as_relative = false
+collision_mask = 44
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.175605, -14.7675 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.59574, -23.2244 )
+texture = ExtResource( 3 )
+vframes = 8
+hframes = 12
+frame = 1
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/IdleDown = ExtResource( 2 )
+anims/IdleDownLeft = ExtResource( 13 )
+anims/IdleDownRight = ExtResource( 14 )
+anims/IdleLeft = ExtResource( 5 )
+anims/IdleRight = ExtResource( 7 )
+anims/IdleUp = ExtResource( 8 )
+anims/IdleUpLeft = ExtResource( 15 )
+anims/IdleUpRight = ExtResource( 17 )
+anims/WalkDown = ExtResource( 4 )
+anims/WalkDownLeft = ExtResource( 11 )
+anims/WalkDownRight = ExtResource( 16 )
+anims/WalkLeft = SubResource( 2 )
+anims/WalkRight = ExtResource( 9 )
+anims/WalkUp = ExtResource( 6 )
+anims/WalkUpLeft = ExtResource( 10 )
+anims/WalkUpRight = ExtResource( 12 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 2, 0 )
+rotating = true
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
+
+[node name="hitbox" type="Area2D" parent="."]
+scale = Vector2( 0.36, 1.03999 )
+collision_mask = 160
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 0.407509, -18.2114 )
+shape = SubResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, -23.194 )
+enabled = true
+cast_to = Vector2( 0, 25 )
+collision_mask = 44
+
+[node name="InvicibleTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="KnockBackTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="ModulateTimer" type="Timer" parent="."]
+wait_time = 0.1
+[connection signal="interact" from="." to="." method="_on_MikeHawke_interact"]
+[connection signal="timeout" from="InvicibleTimer" to="." method="_on_InvicibleTimer_timeout"]
+[connection signal="timeout" from="KnockBackTimer" to="." method="_on_KnockBackTimer_timeout"]

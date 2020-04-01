@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Buttons/Item_Button.gd" type="Script" id=1]
+
+[node name="ItemContainer" type="HBoxContainer"]
+margin_right = 190.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item_Button" type="Button" parent="."]
+margin_right = 131.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "%s Item Name %s"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 13.0
+margin_right = 190.0
+margin_bottom = 27.0
+text = "#of item"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="Item_Button" to="." method="_on_Item_Button_button_up"]

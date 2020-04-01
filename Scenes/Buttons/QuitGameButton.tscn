@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Buttons/QuitGameButton.gd" type="Script" id=1]
+[ext_resource path="res://Background_Images/Button_Up_Texture.png" type="Texture" id=2]
+[ext_resource path="res://Background_Images/Button_Pressed_Texture.png" type="Texture" id=3]
+
+
+[node name="QuitGame" type="ColorRect"]
+margin_right = 84.0
+margin_bottom = 20.0
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Quit Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="TextureButton" to="." method="_on_TextureButton_button_up"]
