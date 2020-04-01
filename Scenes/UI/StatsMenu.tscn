@@ -1,0 +1,595 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/UI/StatsMenu.gd" type="Script" id=1]
+[ext_resource path="res://Themes/45Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Background_Images/Button_Up_Texture.png" type="Texture" id=5]
+[ext_resource path="res://Background_Images/Button_Pressed_Texture.png" type="Texture" id=6]
+[ext_resource path="res://Themes/50Theme.tres" type="Theme" id=7]
+[ext_resource path="res://Themes/30Theme.tres" type="Theme" id=8]
+[ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=9]
+[ext_resource path="res://Themes/35Theme.tres" type="Theme" id=11]
+
+
+[node name="StatsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 11 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullMenu" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="HBoxContainer" parent="FullMenu"]
+margin_right = 1280.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftMargin2" type="Label" parent="FullMenu/Header"]
+margin_right = 20.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="CharName" type="Label" parent="FullMenu/Header"]
+margin_left = 24.0
+margin_right = 365.0
+margin_bottom = 82.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+text = "Character name"
+valign = 1
+uppercase = true
+
+[node name="MenuName" type="Label" parent="FullMenu/Header"]
+margin_left = 369.0
+margin_right = 957.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 7 )
+text = "Character Stats"
+align = 1
+valign = 1
+
+[node name="Exit" type="ColorRect" parent="FullMenu/Header"]
+margin_left = 961.0
+margin_right = 1255.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ExitButton" type="TextureButton" parent="FullMenu/Header/Exit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitLabel" type="Label" parent="FullMenu/Header/Exit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 1
+text = "Exit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightMargin2" type="Label" parent="FullMenu/Header"]
+margin_left = 1259.0
+margin_right = 1279.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="TabsContainer" type="HBoxContainer" parent="FullMenu"]
+margin_top = 86.0
+margin_right = 1280.0
+margin_bottom = 663.0
+size_flags_vertical = 3
+
+[node name="LeftMargin" type="Label" parent="FullMenu/TabsContainer"]
+margin_right = 20.0
+margin_bottom = 577.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="CharacterPanel" type="VBoxContainer" parent="FullMenu/TabsContainer"]
+margin_left = 24.0
+margin_right = 224.0
+margin_bottom = 577.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 3
+
+[node name="Char1" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+margin_right = 200.0
+margin_bottom = 141.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Char1Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.25354
+margin_right = 3.25354
+text = "Mike Hawke"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char2" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+margin_top = 145.0
+margin_right = 200.0
+margin_bottom = 286.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Char2Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+disabled = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.42474
+margin_right = 3.42474
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char3" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+margin_top = 290.0
+margin_right = 200.0
+margin_bottom = 431.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Char3Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+disabled = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char4" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+margin_top = 435.0
+margin_right = 200.0
+margin_bottom = 577.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Char4Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+disabled = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatSlots" type="HBoxContainer" parent="FullMenu/TabsContainer"]
+margin_left = 228.0
+margin_right = 1256.0
+margin_bottom = 577.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeftVBox" type="VBoxContainer" parent="FullMenu/TabsContainer/StatSlots"]
+margin_right = 254.0
+margin_bottom = 577.0
+size_flags_vertical = 3
+
+[node name="StatName" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_right = 254.0
+margin_bottom = 73.0
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Stat Name"
+align = 1
+valign = 1
+
+[node name="HealthLabel" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 77.0
+margin_right = 254.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+text = "Health"
+align = 1
+valign = 1
+
+[node name="AttackLabel" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 140.0
+margin_right = 254.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+text = "Attack"
+align = 1
+valign = 1
+
+[node name="DefenseLabel" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 203.0
+margin_right = 254.0
+margin_bottom = 262.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+text = "Defense"
+align = 1
+valign = 1
+
+[node name="SpeedLabel" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 266.0
+margin_right = 254.0
+margin_bottom = 325.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+text = "Speed"
+align = 1
+valign = 1
+
+[node name="LevelLabel" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 329.0
+margin_right = 254.0
+margin_bottom = 388.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+text = "Level"
+align = 1
+valign = 1
+
+[node name="ExpLabel" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 392.0
+margin_right = 254.0
+margin_bottom = 451.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+text = "Experience"
+align = 1
+valign = 1
+
+[node name="Space7" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 455.0
+margin_right = 254.0
+margin_bottom = 514.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+align = 1
+valign = 1
+
+[node name="Space8" type="Label" parent="FullMenu/TabsContainer/StatSlots/LeftVBox"]
+margin_top = 518.0
+margin_right = 254.0
+margin_bottom = 577.0
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+align = 1
+valign = 1
+
+[node name="SpaceBuffer3" type="VBoxContainer" parent="FullMenu/TabsContainer/StatSlots"]
+margin_left = 258.0
+margin_right = 351.0
+margin_bottom = 577.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MiddleVBox" type="VBoxContainer" parent="FullMenu/TabsContainer/StatSlots"]
+margin_left = 355.0
+margin_right = 697.0
+margin_bottom = 577.0
+size_flags_vertical = 3
+
+[node name="CurrentValueLabel" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_right = 342.0
+margin_bottom = 73.0
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Current Value"
+align = 1
+valign = 1
+
+[node name="CurrHealth" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 77.0
+margin_right = 342.0
+margin_bottom = 134.0
+size_flags_vertical = 3
+text = "50"
+align = 1
+valign = 1
+
+[node name="CurrAttack" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 138.0
+margin_right = 342.0
+margin_bottom = 195.0
+size_flags_vertical = 3
+text = "5"
+align = 1
+valign = 1
+
+[node name="CurrDefense" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 199.0
+margin_right = 342.0
+margin_bottom = 256.0
+size_flags_vertical = 3
+text = "5"
+align = 1
+valign = 1
+
+[node name="CurrSpeed" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 260.0
+margin_right = 342.0
+margin_bottom = 317.0
+size_flags_vertical = 3
+text = "5"
+align = 1
+valign = 1
+
+[node name="CurrLevel" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 321.0
+margin_right = 342.0
+margin_bottom = 378.0
+size_flags_vertical = 3
+text = "1"
+align = 1
+valign = 1
+
+[node name="TotalExp" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 382.0
+margin_right = 342.0
+margin_bottom = 439.0
+size_flags_vertical = 3
+text = "0"
+align = 1
+valign = 1
+
+[node name="Label9" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 443.0
+margin_right = 342.0
+margin_bottom = 500.0
+size_flags_vertical = 3
+align = 1
+valign = 1
+
+[node name="Label7" type="Label" parent="FullMenu/TabsContainer/StatSlots/MiddleVBox"]
+margin_top = 504.0
+margin_right = 342.0
+margin_bottom = 577.0
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="SpaceBuffer" type="VBoxContainer" parent="FullMenu/TabsContainer/StatSlots"]
+margin_left = 701.0
+margin_right = 794.0
+margin_bottom = 577.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightVBox" type="VBoxContainer" parent="FullMenu/TabsContainer/StatSlots"]
+margin_left = 798.0
+margin_right = 1028.0
+margin_bottom = 577.0
+size_flags_vertical = 3
+
+[node name="MaxValue" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_right = 230.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Base Stat"
+align = 1
+valign = 1
+
+[node name="MaxHealth" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 77.0
+margin_right = 230.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100"
+align = 1
+valign = 1
+
+[node name="MaxAttack" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 140.0
+margin_right = 230.0
+margin_bottom = 199.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+align = 1
+valign = 1
+
+[node name="MaxDefense" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 203.0
+margin_right = 230.0
+margin_bottom = 262.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+align = 1
+valign = 1
+
+[node name="MaxSpeed" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 266.0
+margin_right = 230.0
+margin_bottom = 325.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+align = 1
+valign = 1
+
+[node name="Label6" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 329.0
+margin_right = 230.0
+margin_bottom = 388.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+
+[node name="NextLevel" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 392.0
+margin_right = 230.0
+margin_bottom = 451.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Next Level"
+align = 1
+valign = 1
+
+[node name="ExpToNextLevel" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 455.0
+margin_right = 230.0
+margin_bottom = 514.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100"
+align = 1
+valign = 1
+
+[node name="Label7" type="Label" parent="FullMenu/TabsContainer/StatSlots/RightVBox"]
+margin_top = 518.0
+margin_right = 230.0
+margin_bottom = 577.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+
+[node name="SpaceBuffer2" type="VBoxContainer" parent="FullMenu/TabsContainer/StatSlots"]
+visible = false
+margin_left = 977.0
+margin_right = 1022.0
+margin_bottom = 615.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightMargin" type="Label" parent="FullMenu/TabsContainer"]
+margin_left = 1260.0
+margin_right = 1280.0
+margin_bottom = 577.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="BottomMargin" type="Label" parent="FullMenu"]
+margin_top = 667.0
+margin_right = 1280.0
+margin_bottom = 724.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 11 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="focus_entered" from="." to="." method="_on_EquipMenu_focus_entered"]
+[connection signal="button_up" from="FullMenu/Header/Exit/ExitButton" to="." method="_on_ExitButton_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char1/Char1Button" to="." method="_on_Char1_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char2/Char2Button" to="." method="_on_Char2_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char3/Char3Button" to="." method="_on_Char3_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char4/Char4Button" to="." method="_on_Char4_button_up"]

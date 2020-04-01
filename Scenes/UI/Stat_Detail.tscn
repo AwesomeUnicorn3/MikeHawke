@@ -1,0 +1,35 @@
+[gd_scene format=2]
+
+[node name="Stat_Detail" type="HBoxContainer"]
+margin_right = 226.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatName" type="Label" parent="."]
+margin_top = 14.0
+margin_right = 72.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_horizontal = 3
+text = "ATK"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 76.0
+margin_top = 14.0
+margin_right = 148.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatValue" type="Label" parent="."]
+margin_left = 152.0
+margin_top = 14.0
+margin_right = 226.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+text = "500"

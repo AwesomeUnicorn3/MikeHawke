@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Themes/20Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Icons/ItemIconBackground.png" type="Texture" id=2]
+
+[node name="ItemBackground" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemButton" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ItemButton"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -35.0
+margin_right = 65.0
+rect_min_size = Vector2( 65, 35 )
+theme = ExtResource( 1 )
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

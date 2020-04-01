@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Icons/QuestNotComplete.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/UI/QuestNameHbox.gd" type="Script" id=2]
+[ext_resource path="res://Icons/ItemIconBackground.png" type="Texture" id=3]
+
+[node name="QuestNameHbox" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1065.0
+margin_bottom = -617.0
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="TextureRect" parent="."]
+margin_top = 6.0
+margin_right = 90.0
+margin_bottom = 96.0
+size_flags_vertical = 4
+texture = ExtResource( 1 )
+stretch_mode = 1
+
+[node name="QuestName2" type="TextureButton" parent="."]
+margin_left = 94.0
+margin_right = 215.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+texture_pressed = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestName" type="Label" parent="QuestName2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Quest Name"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="QuestName2" to="." method="_on_QuestName2_button_up"]

@@ -1,0 +1,727 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Fonts/drawersketch30.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Themes/20Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Themes/35Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Scripts/UI/ShopProcessing.gd" type="Script" id=4]
+[ext_resource path="res://Background_Images/Button_Up_Texture.png" type="Texture" id=5]
+[ext_resource path="res://Background_Images/Button_Pressed_Texture.png" type="Texture" id=6]
+[ext_resource path="res://Themes/50Theme.tres" type="Theme" id=7]
+[ext_resource path="res://Themes/30Theme.tres" type="Theme" id=8]
+[ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=9]
+[ext_resource path="res://Icons/Chode.png" type="Texture" id=10]
+
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[node name="ShopProcessing" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullMenu" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopMargin" type="Label" parent="FullMenu"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_vertical = 1
+
+[node name="Header" type="HBoxContainer" parent="FullMenu"]
+margin_right = 1280.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+
+[node name="LeftMargin2" type="Label" parent="FullMenu/Header"]
+margin_right = 20.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="MenuName" type="Label" parent="FullMenu/Header"]
+margin_left = 24.0
+margin_right = 474.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 7 )
+text = "%Shop Name%"
+align = 1
+valign = 1
+
+[node name="Space" type="Label" parent="FullMenu/Header"]
+margin_left = 478.0
+margin_right = 784.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 1 )
+
+[node name="Sell" type="ColorRect" parent="FullMenu/Header"]
+margin_left = 788.0
+margin_right = 941.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="SellButton" type="TextureButton" parent="FullMenu/Header/Sell"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SellLabel" type="Label" parent="FullMenu/Header/Sell"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Sell"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy" type="ColorRect" parent="FullMenu/Header"]
+margin_left = 945.0
+margin_right = 1098.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="BuyButton" type="TextureButton" parent="FullMenu/Header/Buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyLabel" type="Label" parent="FullMenu/Header/Buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Buy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="ColorRect" parent="FullMenu/Header"]
+margin_left = 1102.0
+margin_right = 1255.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ExitButton" type="TextureButton" parent="FullMenu/Header/Exit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitLabel" type="Label" parent="FullMenu/Header/Exit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Exit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightMargin2" type="Label" parent="FullMenu/Header"]
+margin_left = 1259.0
+margin_right = 1279.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="TabsContainer" type="HBoxContainer" parent="FullMenu"]
+margin_top = 86.0
+margin_right = 1280.0
+margin_bottom = 696.0
+size_flags_vertical = 3
+
+[node name="LeftMargin" type="Label" parent="FullMenu/TabsContainer"]
+margin_right = 20.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="CategoryPanel" type="VBoxContainer" parent="FullMenu/TabsContainer"]
+margin_left = 24.0
+margin_right = 199.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 175, 192 )
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Weapons" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+margin_right = 175.0
+margin_bottom = 98.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Weapons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeaponLabel" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Weapons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Weapon"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armor" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+margin_top = 102.0
+margin_right = 175.0
+margin_bottom = 200.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Armor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArmorLabel" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Armor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Armor"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crafting" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+margin_top = 204.0
+margin_right = 175.0
+margin_bottom = 302.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Crafting"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CraftingLabel" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Crafting"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Crafting"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Consumable" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+margin_top = 306.0
+margin_right = 175.0
+margin_bottom = 404.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Consumable"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConsumableLabel" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Consumable"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Consumable"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quest_Items" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+margin_top = 408.0
+margin_right = 175.0
+margin_bottom = 506.0
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Quest_Items"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyItemsLabel" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Quest_Items"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Quest Items"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currency" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+margin_top = 510.0
+margin_right = 175.0
+margin_bottom = 610.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Currency" type="HBoxContainer" parent="FullMenu/TabsContainer/CategoryPanel/Currency"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencyIcon" type="TextureRect" parent="FullMenu/TabsContainer/CategoryPanel/Currency/Currency"]
+margin_right = 39.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencyDisplay" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Currency/Currency"]
+margin_left = 43.0
+margin_right = 175.0
+margin_bottom = 100.0
+size_flags_vertical = 3
+text = "%Chode% "
+align = 1
+valign = 1
+
+[node name="Weapons" type="ScrollContainer" parent="FullMenu/TabsContainer"]
+margin_left = 203.0
+margin_right = 738.0
+margin_bottom = 610.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Weapons"]
+margin_right = 500.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_vertical = 3
+
+[node name="Armor" type="ScrollContainer" parent="FullMenu/TabsContainer"]
+visible = false
+margin_left = 263.0
+margin_right = 417.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Armor"]
+margin_right = 154.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Crafting" type="ScrollContainer" parent="FullMenu/TabsContainer"]
+visible = false
+margin_left = 315.0
+margin_right = 504.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Crafting"]
+margin_right = 189.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Consumable" type="ScrollContainer" parent="FullMenu/TabsContainer"]
+visible = false
+margin_left = 501.0
+margin_right = 862.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Consumable"]
+margin_right = 361.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Quest_Items" type="ScrollContainer" parent="FullMenu/TabsContainer"]
+visible = false
+margin_left = 548.0
+margin_right = 892.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Quest_Items"]
+margin_right = 344.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="FullMenu/TabsContainer"]
+margin_left = 742.0
+margin_right = 752.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 10, 0 )
+size_flags_vertical = 3
+
+[node name="ItemInspector" type="VBoxContainer" parent="FullMenu/TabsContainer"]
+margin_left = 756.0
+margin_right = 1256.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item_Inspector_Container" type="VBoxContainer" parent="FullMenu/TabsContainer/ItemInspector"]
+margin_right = 500.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemName" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
+margin_right = 500.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 8 )
+align = 1
+valign = 1
+
+[node name="ItemDescription" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
+margin_top = 45.0
+margin_right = 500.0
+margin_bottom = 79.0
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+autowrap = true
+
+[node name="SpaceBuffer" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
+margin_left = 250.0
+margin_top = 83.0
+margin_right = 250.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 0, 24 )
+size_flags_horizontal = 4
+theme = ExtResource( 2 )
+
+[node name="ItemStats" type="HBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
+margin_top = 121.0
+margin_right = 500.0
+margin_bottom = 568.0
+size_flags_vertical = 3
+
+[node name="StatsContainer" type="ScrollContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats"]
+margin_right = 500.0
+margin_bottom = 447.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Stats" type="VBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats/StatsContainer"]
+margin_right = 500.0
+margin_bottom = 447.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="ItemIcon" type="TextureRect" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats"]
+visible = false
+margin_left = 230.0
+margin_right = 300.0
+margin_bottom = 479.0
+rect_min_size = Vector2( 70, 70 )
+expand = true
+
+[node name="LabelBuffer" type="Label" parent="FullMenu/TabsContainer/ItemInspector"]
+margin_top = 572.0
+margin_right = 500.0
+margin_bottom = 586.0
+
+[node name="ItemInspector2" type="VBoxContainer" parent="FullMenu/TabsContainer/ItemInspector"]
+visible = false
+margin_top = 307.0
+margin_right = 375.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2"]
+margin_right = 375.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 3 )
+text = "Item Inspector2"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2"]
+margin_top = 46.0
+margin_right = 375.0
+margin_bottom = 285.0
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2/HBoxContainer"]
+margin_right = 301.0
+margin_bottom = 239.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Stats" type="VBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2/HBoxContainer/ScrollContainer"]
+margin_right = 301.0
+margin_bottom = 239.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Attack" type="HBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2/HBoxContainer/ScrollContainer/Stats"]
+margin_right = 301.0
+margin_bottom = 14.0
+
+[node name="StatName" type="Label" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2/HBoxContainer/ScrollContainer/Stats/Attack"]
+margin_right = 148.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "ATK"
+
+[node name="StatValue" type="Label" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2/HBoxContainer/ScrollContainer/Stats/Attack"]
+margin_left = 152.0
+margin_right = 301.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "500"
+
+[node name="ItemIcon" type="TextureRect" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2/HBoxContainer"]
+margin_left = 305.0
+margin_right = 375.0
+margin_bottom = 239.0
+rect_min_size = Vector2( 70, 70 )
+expand = true
+
+[node name="Label" type="Label" parent="FullMenu/TabsContainer/ItemInspector"]
+margin_top = 590.0
+margin_right = 500.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Buttons" type="HBoxContainer" parent="FullMenu/TabsContainer/ItemInspector"]
+visible = false
+margin_top = 512.0
+margin_right = 345.0
+margin_bottom = 617.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource( 3 )
+alignment = 1
+
+[node name="Compare" type="ColorRect" parent="FullMenu/TabsContainer/ItemInspector/Buttons"]
+visible = false
+margin_right = 170.0
+margin_bottom = 105.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="CompareButton" type="TextureButton" parent="FullMenu/TabsContainer/ItemInspector/Buttons/Compare"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CompareLabel" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Buttons/Compare"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.58667
+margin_bottom = 1.58667
+text = "Compare"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Delete" type="ColorRect" parent="FullMenu/TabsContainer/ItemInspector/Buttons"]
+margin_right = 345.0
+margin_bottom = 105.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="DeleteButton" type="TextureButton" parent="FullMenu/TabsContainer/ItemInspector/Buttons/Delete"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeleteLabel" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Buttons/Delete"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Delete"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightMargin" type="Label" parent="FullMenu/TabsContainer"]
+margin_left = 1260.0
+margin_right = 1280.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_vertical = 3
+
+[node name="BottomMargin" type="Label" parent="FullMenu"]
+margin_top = 700.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_vertical = 1
+[connection signal="button_up" from="FullMenu/Header/Sell/SellButton" to="." method="_on_Sell_button_up"]
+[connection signal="button_up" from="FullMenu/Header/Buy/BuyButton" to="." method="_on_Buy_button_up"]
+[connection signal="button_up" from="FullMenu/Header/Exit/ExitButton" to="." method="_on_ExitButton_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Weapons/TextureButton" to="." method="_on_Weapons_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Armor/TextureButton" to="." method="_on_Armor_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Crafting/TextureButton" to="." method="_on_Crafting_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Consumable/TextureButton" to="." method="_on_ConsumableButton_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Quest_Items/TextureButton" to="." method="_on_Quest_Items_button_up"]
