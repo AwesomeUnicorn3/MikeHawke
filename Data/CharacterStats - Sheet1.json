@@ -1,0 +1,32 @@
+{
+  "Mike Hawke": {
+    "MaxHealth": 100,
+    "MaxDefense": 10,
+    "MaxAttack": 15,
+    "MaxSpeed": 175,
+    "CurrentHealth": 100,
+    "CurrentDefense": 10,
+    "CurrentAttack": 15,
+    "CurrentSpeed": 175,
+    "Exp": 0,
+    "Level": 1,
+    "WeaponsEquipped": "Fist",
+    "ArmorEquipped": null,
+    "ShoesEquipped": null
+  },
+  "Anna Lee": {
+    "MaxHealth": 100,
+    "MaxDefense": 10,
+    "MaxAttack": 15,
+    "MaxSpeed": 175,
+    "CurrentHealth": 100,
+    "CurrentDefense": 10,
+    "CurrentAttack": 15,
+    "CurrentSpeed": 175,
+    "Exp": 0,
+    "Level": 1,
+    "WeaponsEquipped": "Fist",
+    "ArmorEquipped": null,
+    "ShoesEquipped": null
+  }
+}

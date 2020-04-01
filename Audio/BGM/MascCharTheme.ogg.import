@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MascCharTheme.ogg-a1d4ecede15f83a2f1d9a7d78bf443ac.oggstr"
+
+[deps]
+
+source_file="res://Audio/BGM/MascCharTheme.ogg"
+dest_files=[ "res://.import/MascCharTheme.ogg-a1d4ecede15f83a2f1d9a7d78bf443ac.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

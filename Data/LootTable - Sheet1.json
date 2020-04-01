@@ -1,0 +1,42 @@
+{
+  "Fruitville": {
+    "ItemCountMin": 1,
+    "ItemCountMax": 6,
+    "Item1Name": "Moonshine",
+    "Item1Chance": 25,
+    "Item1MinQ": 1,
+    "Item1MaxQ": 2,
+    "Item2Name": "Moonbeam Brownie",
+    "Item2Chance": 25,
+    "Item2MinQ": 1,
+    "Item2MaxQ": 2,
+    "Item3Name": "Chode",
+    "Item3Chance": 90,
+    "Item3MinQ": 1,
+    "Item3MaxQ": 50,
+    "Item4Name": "Sticky Aluminum",
+    "Item4Chance": 95,
+    "Item4MinQ": 1,
+    "Item4MaxQ": 5
+  },
+  "Mike's House": {
+    "ItemCountMin": 1,
+    "ItemCountMax": 3,
+    "Item1Name": "Sandals",
+    "Item1Chance": 75,
+    "Item1MinQ": 5,
+    "Item1MaxQ": 8,
+    "Item2Name": "T-Shirt",
+    "Item2Chance": 75,
+    "Item2MinQ": 10,
+    "Item2MaxQ": 15,
+    "Item3Name": "Fist",
+    "Item3Chance": 75,
+    "Item3MinQ": 1,
+    "Item3MaxQ": 5,
+    "Item4Name": "Crappy Sword",
+    "Item4Chance": 85,
+    "Item4MinQ": 1,
+    "Item4MaxQ": 5
+  }
+}

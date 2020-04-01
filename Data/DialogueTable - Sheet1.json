@@ -1,0 +1,338 @@
+{
+  "0001": {
+    "FileName": "Sequence1",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Ugh...Not even noon yet.  Too early to be awake.   I'm sure some Shizzo will put some fire in my ass.",
+    "DEU": null
+  },
+  "0002": {
+    "FileName": "Sequence1",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Shizzo...Where is the Shizzo?",
+    "DEU": null
+  },
+  "0003": {
+    "FileName": "Sequence1",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "There must be a few drops left in one of these cans!!!|| Arrrgh!!!",
+    "DEU": null
+  },
+  "0004": {
+    "FileName": "Sequence1",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "I'm freaking out man!! MUST HAVE SHIZZO!!!!",
+    "DEU": null
+  },
+  "0005": {
+    "FileName": "Sequence1",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "How did I drink 80 cans in ONE DAY!?",
+    "DEU": null
+  },
+  "0006": {
+    "FileName": "Sequence1",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Ok, don't panic...I can get more.  I'm sure someone around Fruitville can give me 50 @MSG.var(\"currencyName\") to buy another case.",
+    "DEU": null
+  },
+  "0007": {
+    "FileName": "TrashEmpty",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "You searched this one already",
+    "DEU": null
+  },
+  "0008": {
+    "FileName": "Toilet1",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "Is it...Is it supposed to be that color?",
+    "DEU": null
+  },
+  "0009": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "You found @MSG.var(\"cans\")  piece of sticky aluminum.",
+    "DEU": null
+  },
+  "0010": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "You found @MSG.var(\"cans\")  pieces of sticky aluminum.",
+    "DEU": null
+  },
+  "0011": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "So this is what your life has come to?",
+    "DEU": null
+  },
+  "0012": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "Maybe you should re-evaluate your life choices.",
+    "DEU": null
+  },
+  "0013": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "Slow Clap...",
+    "DEU": null
+  },
+  "0014": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "It is sticky.  I don't like things that are sticky.",
+    "DEU": null
+  },
+  "0015": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "Temptations don't appear nearly as harmful as the roads they lead you down.",
+    "DEU": null
+  },
+  "0016": {
+    "FileName": "ShizzoCan",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "You know, it is never too late to change your life.",
+    "DEU": null
+  },
+  "0017": {
+    "FileName": "Queef",
+    "Speaker": "Queef",
+    "SpeakerType": "Character",
+    "ENG": "Meooow. *Fart*",
+    "DEU": null
+  },
+  "0018": {
+    "FileName": "Queef",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Awww! Thats nasty.",
+    "DEU": null
+  },
+  "0019": {
+    "FileName": "Queef",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "It is you!!!  Hilda is going to be so happy!",
+    "DEU": null
+  },
+  "0020": {
+    "FileName": "Queef",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Queef! Is that you?",
+    "DEU": null
+  },
+  "0021": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "Oh my! I am so happy my Queef has returned.  The house just didn't smell the same while he was gone.",
+    "DEU": null
+  },
+  "0022": {
+    "FileName": "Hilda",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "*Sniff*  Ewww.  You got that right!",
+    "DEU": null
+  },
+  "0023": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "Oh Hi Mike!  Are you ok? You look a bit pale.",
+    "DEU": null
+  },
+  "0024": {
+    "FileName": "Hilda",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Hilda, I'm struggling.  I ran out of Shizzo and am getting the sh-sh-shakes.  Do you have any Shizzo?",
+    "DEU": null
+  },
+  "0025": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "No, I'm sorry, I don't.  I personally think it tastes like saggy ballsack.",
+    "DEU": null
+  },
+  "0026": {
+    "FileName": "Hilda",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Do you have any Chode I could borrow?",
+    "DEU": null
+  },
+  "0027": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "I won't give you any Chode, however, my Queef has run out the door again.  If you can find him and bring him home,  I will give you a reward of 15 Chode.",
+    "DEU": null
+  },
+  "0028": {
+    "FileName": "Hilda",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Well...",
+    "DEU": null
+  },
+  "0029": {
+    "FileName": "Hilda",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Yes! I'll find your Pussy!",
+    "DEU": null
+  },
+  "0030": {
+    "FileName": "Hilda",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "No...I'm not THAT desperate.",
+    "DEU": null
+  },
+  "0031": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "Ok then. Goodbye.",
+    "DEU": null
+  },
+  "0032": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "Wonderful!  Here is his CAT CARRIER.  He loves to sleep in it, so once you find him he will jump in it.",
+    "DEU": null
+  },
+  "0033": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "Oh, and Mike, you will know it is my Queef by the smell.  My pussy farts constantly.",
+    "DEU": null
+  },
+  "0034": {
+    "FileName": "Hilda",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "Thats...gross.  But don't worry Hilda, I will find him!",
+    "DEU": null
+  },
+  "0035": {
+    "FileName": "Hilda",
+    "Speaker": "Hilda",
+    "SpeakerType": "Character",
+    "ENG": "QUEEEF!!! You have him!  I can tell by the smell!",
+    "DEU": null
+  },
+  "0036": {
+    "FileName": "FrankSign",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "\"Frank's Sundries\"",
+    "DEU": "\"Frank's Verschiedene Artikel\""
+  },
+  "0037": {
+    "FileName": "Frank",
+    "Speaker": "Frank",
+    "SpeakerType": "Character",
+    "ENG": "What do you want?",
+    "DEU": null
+  },
+  "0038": {
+    "FileName": "CumNGoDoor",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "The Cum and Go is currently closed, but you see an employee restocking the shelves.  He looks over at you, shakes his head, gives you the finger and heads in to the back room.",
+    "DEU": null
+  },
+  "0039": {
+    "FileName": "CumNGoDoor",
+    "Speaker": "Mike Hawke",
+    "SpeakerType": "Character",
+    "ENG": "What a Douche!!",
+    "DEU": null
+  },
+  "0040": {
+    "FileName": "CumNGoDoor",
+    "Speaker": "Narrator",
+    "SpeakerType": "Character",
+    "ENG": "I'll bet it will be miraculously open once you acquire 85 Chode.",
+    "DEU": null
+  },
+  "0041": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  },
+  "0042": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  },
+  "0043": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  },
+  "0044": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  },
+  "0045": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  },
+  "0046": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  },
+  "0047": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  },
+  "0048": {
+    "FileName": null,
+    "Speaker": null,
+    "SpeakerType": "Character",
+    "ENG": null,
+    "DEU": null
+  }
+}

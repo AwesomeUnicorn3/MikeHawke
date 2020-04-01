@@ -1,0 +1,34 @@
+{
+  "Play Background Music": {
+    "Category": "Audio",
+    "Boolean": true,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\""
+  },
+  "Play Sound Effects": {
+    "Category": "Audio",
+    "Boolean": true,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\""
+  },
+  "Background Music Volume": {
+    "Category": "Audio",
+    "Boolean": false,
+    "IntegerValue": 50,
+    "IntegerMax": 100,
+    "IntegerMin": 0,
+    "Text": "\"\""
+  },
+  "Dialogue Language": {
+    "Category": "Language",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "ENG"
+  }
+}

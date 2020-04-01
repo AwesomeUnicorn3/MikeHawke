@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PullUpAChair.ogg-dcca2e5c088d4fbf03d0a68a411c74d7.oggstr"
+
+[deps]
+
+source_file="res://Audio/BGM/PullUpAChair.ogg"
+dest_files=[ "res://.import/PullUpAChair.ogg-dcca2e5c088d4fbf03d0a68a411c74d7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
