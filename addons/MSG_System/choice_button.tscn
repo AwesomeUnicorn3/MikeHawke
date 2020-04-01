@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Themes/20Theme.tres" type="Theme" id=1]
+[ext_resource path="res://addons/MSG_System/scripts/choice_button.gd" type="Script" id=2]
+[ext_resource path="res://addons/MSG_System/sfx/click_02.wav" type="AudioStream" id=3]
+[ext_resource path="res://addons/MSG_System/sfx/click_03.wav" type="AudioStream" id=4]
+
+[node name="choice_b" type="Button"]
+margin_right = 109.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 20 )
+theme = ExtResource( 1 )
+text = "text"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx_focus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+pitch_scale = 2.0
+
+[node name="sfx_select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+[connection signal="button_down" from="." to="." method="_on_choice_b_button_down"]
+[connection signal="focus_entered" from="." to="." method="_on_choice_b_focus_entered"]
