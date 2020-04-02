@@ -5,6 +5,7 @@ extends Control
 onready var shop_menu: PackedScene = load("res://Scenes/UI/ShopProcessing.tscn")
 onready var player = get_node("../../main/Mike Hawke")
 var show_hide_gui = false setget hide_gui
+onready var currency = $BottomLeftGui/chodeCount
 
 # warning-ignore:unused_argument
 #func _process(delta):
@@ -14,6 +15,12 @@ func _ready():
 	$TopRightGui/VBoxContainer/HealthBar.set_max(ImportData.character_stats[Global.PlayerName]["MaxHealth"])
 	$TopRightGui/VBoxContainer/HealthBar.set_value(ImportData.character_stats[Global.PlayerName]["CurrentHealth"])
 	player.connect("Health_Change", self, "_on_health_change")
+
+func _physics_process(delta):
+	if ImportData.inven_data.has(Global.currency):
+		currency.set_text(String(ImportData.inven_data[Global.currency][1]))
+	else:
+		currency.set_text(String(0))
 	
 func hide_gui(value: bool) -> void:
 	show_hide_gui = value
