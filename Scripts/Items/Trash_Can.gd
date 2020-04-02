@@ -8,8 +8,8 @@ export (float, 0.1, 1.9) var voice_pitch # HOW HIGH / LOW THE VOICE IS
 export (String, FILE) var interaction_script # A JSON DIALOGUE FILE
 
 var dict = Global.Dict_trash_cans   #set this to the dict of the item
-var item = "Sticky Aluminum" #Change if there is an item drop
-var dialogue_variable = "cans" #change this to variable from dialogue script
+export var item = "Sticky Aluminum" #Change if there is an item drop
+export var dialogue_variable = "cans" #change this to variable from dialogue script
 
 
 var me

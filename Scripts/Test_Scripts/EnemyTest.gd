@@ -9,7 +9,6 @@ export (String, FILE) var interaction_script # A JSON DIALOGUE FILE
 var dict = ImportData.enemy_stats as Dictionary
 var dict_initial = ImportData.enemy_data as Dictionary
 
-
 var selected = false
 var talking = false
 var interacting = false
@@ -67,10 +66,16 @@ func on_death():
 	if CurrentHealth <= 0:
 		Global.ExpDrop = Global.ExpDrop + ExpDrop
 	#add exp to player maybe by emitting a signal
+		var hide_scene = load("res://Scenes/Items/squirrel_pelt.tscn")
+		var hide_ = hide_scene.instance()
+		hide_.position = get_position()
+		get_parent().add_child(hide_)
 		call_deferred("death_deferred")
 
 func death_deferred():
 	queue_free()
+	
+	
 
 func _on_Timer_timeout():
 	movedir = choose(array_direction)

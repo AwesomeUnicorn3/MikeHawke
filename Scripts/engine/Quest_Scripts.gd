@@ -2,7 +2,6 @@ extends Node
 
 
 
-
 func update_quest_0():
 	var dict_quest = ImportData.quest_stats as Dictionary
 	var dict_inventory = ImportData.inven_data as Dictionary

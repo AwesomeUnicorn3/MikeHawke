@@ -1,47 +1,47 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Characters/squirell.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Test_Scripts/EnemyTest.gd" type="Script" id=2]
-[ext_resource path="res://Animations/Characters/BrownSquirrel/IdleLeft.tres" type="Animation" id=3]
-[ext_resource path="res://Animations/Characters/BrownSquirrel/IdleDown.tres" type="Animation" id=4]
+[ext_resource path="res://Scripts/Test_Scripts/EnemyTest.gd" type="Script" id=1]
+[ext_resource path="res://Characters/squirell.png" type="Texture" id=2]
+[ext_resource path="res://Animations/Characters/BrownSquirrel/IdleDown.tres" type="Animation" id=3]
+[ext_resource path="res://Animations/Characters/BrownSquirrel/IdleLeft.tres" type="Animation" id=4]
 [ext_resource path="res://Animations/Characters/BrownSquirrel/IdleRight.tres" type="Animation" id=5]
 [ext_resource path="res://Animations/Characters/BrownSquirrel/IdleUp.tres" type="Animation" id=6]
-[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkUp.tres" type="Animation" id=7]
-[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkDown.tres" type="Animation" id=8]
-[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkLeft.tres" type="Animation" id=9]
-[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkRight.tres" type="Animation" id=10]
+[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkDown.tres" type="Animation" id=7]
+[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkLeft.tres" type="Animation" id=8]
+[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkRight.tres" type="Animation" id=9]
+[ext_resource path="res://Animations/Characters/BrownSquirrel/WalkUp.tres" type="Animation" id=10]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 11.7709
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 10.8942
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.36042
+height = 8.09921
 
 [node name="Squirrel" type="KinematicBody2D"]
 position = Vector2( 0.475647, -7.61039 )
 scale = Vector2( 1.89264, 1.6 )
 collision_layer = 128
 collision_mask = 235
-script = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0.23484, 3.61112 )
+shape = SubResource( 1 )
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2( 6.81001, -7.77778 )
+collision_layer = 128
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( -6.57517, 11.3889 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3.38089, -9.98482 )
 z_index = 4
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 vframes = 8
 hframes = 12
 frame = 38
-
-[node name="hitbox" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 65
-
-[node name="HitboxShape" type="CollisionShape2D" parent="hitbox"]
-shape = SubResource( 1 )
-
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
-z_index = 4
-shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
@@ -55,12 +55,13 @@ wait_time = 0.5
 one_shot = true
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/IdleDown = ExtResource( 4 )
-anims/IdleLeft = ExtResource( 3 )
+anims/IdleDown = ExtResource( 3 )
+anims/IdleLeft = ExtResource( 4 )
 anims/IdleRight = ExtResource( 5 )
 anims/IdleUp = ExtResource( 6 )
-anims/WalkDown = ExtResource( 8 )
-anims/WalkLeft = ExtResource( 9 )
-anims/WalkRight = ExtResource( 10 )
-anims/WalkUp = ExtResource( 7 )
+anims/WalkDown = ExtResource( 7 )
+anims/WalkLeft = ExtResource( 8 )
+anims/WalkRight = ExtResource( 9 )
+anims/WalkUp = ExtResource( 10 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

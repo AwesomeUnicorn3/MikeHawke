@@ -1,24 +1,23 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Fonts/drawersketch30.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Themes/20Theme.tres" type="Theme" id=2]
-[ext_resource path="res://Themes/35Theme.tres" type="Theme" id=3]
-[ext_resource path="res://Background_Images/Button_Up_Texture.png" type="Texture" id=5]
-[ext_resource path="res://Background_Images/Button_Pressed_Texture.png" type="Texture" id=6]
-[ext_resource path="res://Themes/50Theme.tres" type="Theme" id=7]
-[ext_resource path="res://Themes/30Theme.tres" type="Theme" id=8]
-[ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=9]
-[ext_resource path="res://Icons/Chode.png" type="Texture" id=10]
-[ext_resource path="res://Scripts/UI/InventoryMenu.gd" type="Script" id=11]
-
+[ext_resource path="res://Scripts/UI/InventoryMenu.gd" type="Script" id=1]
+[ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=2]
+[ext_resource path="res://Themes/50Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Fonts/drawersketch30.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Themes/30Theme.tres" type="Theme" id=5]
+[ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
+[ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=7]
+[ext_resource path="res://Icons/Chode.png" type="Texture" id=8]
+[ext_resource path="res://Themes/35Theme.tres" type="Theme" id=9]
+[ext_resource path="res://Themes/20Theme.tres" type="Theme" id=10]
 
 [sub_resource type="Theme" id=1]
-default_font = ExtResource( 1 )
+default_font = ExtResource( 4 )
 
 [node name="InventoryMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 11 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -26,7 +25,7 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 9 )
+texture = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -63,7 +62,7 @@ margin_right = 513.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 3 )
 text = "INVENTORY"
 align = 1
 valign = 1
@@ -82,7 +81,7 @@ margin_right = 1254.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="ExitButton" type="TextureButton" parent="FullMenu/Header/Exit"]
@@ -94,9 +93,9 @@ margin_right = -10.0
 margin_bottom = -10.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -144,7 +143,7 @@ size_flags_stretch_ratio = 0.3
 margin_right = 192.0
 margin_bottom = 83.0
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Weapons"]
@@ -154,9 +153,9 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,7 +176,7 @@ margin_top = 87.0
 margin_right = 192.0
 margin_bottom = 170.0
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Armor"]
@@ -187,9 +186,9 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -210,7 +209,7 @@ margin_top = 174.0
 margin_right = 192.0
 margin_bottom = 257.0
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Shoes"]
@@ -220,9 +219,9 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -243,7 +242,7 @@ margin_top = 261.0
 margin_right = 192.0
 margin_bottom = 344.0
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Crafting"]
@@ -253,9 +252,9 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -276,7 +275,7 @@ margin_top = 348.0
 margin_right = 192.0
 margin_bottom = 431.0
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Consumable"]
@@ -286,9 +285,9 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -309,7 +308,7 @@ margin_top = 435.0
 margin_right = 192.0
 margin_bottom = 518.0
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Quest_Items"]
@@ -319,9 +318,9 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -343,7 +342,7 @@ margin_right = 192.0
 margin_bottom = 610.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="Currency" type="HBoxContainer" parent="FullMenu/TabsContainer/CategoryPanel/Currency"]
@@ -359,7 +358,7 @@ __meta__ = {
 [node name="CurrencyIcon" type="TextureRect" parent="FullMenu/TabsContainer/CategoryPanel/Currency/Currency"]
 margin_bottom = 88.0
 size_flags_horizontal = 3
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -372,7 +371,7 @@ margin_right = 193.0
 margin_bottom = 88.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 3 )
+theme = ExtResource( 9 )
 text = "%Chode% "
 align = 1
 valign = 1
@@ -498,7 +497,7 @@ margin_top = 18.0
 margin_right = 375.0
 margin_bottom = 52.0
 size_flags_vertical = 1
-theme = ExtResource( 2 )
+theme = ExtResource( 10 )
 autowrap = true
 
 [node name="SpaceBuffer" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
@@ -508,7 +507,7 @@ margin_right = 187.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 0, 24 )
 size_flags_horizontal = 4
-theme = ExtResource( 2 )
+theme = ExtResource( 10 )
 
 [node name="ItemStats" type="HBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
 margin_top = 94.0
@@ -527,7 +526,7 @@ margin_right = 375.0
 margin_bottom = 474.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 8 )
+theme = ExtResource( 5 )
 
 [node name="ItemIcon" type="TextureRect" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats"]
 visible = false
@@ -555,7 +554,7 @@ margin_right = 375.0
 margin_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme = ExtResource( 3 )
+theme = ExtResource( 9 )
 text = "Item Inspector2"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/ItemInspector2"]
@@ -614,7 +613,7 @@ margin_bottom = 617.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
-theme = ExtResource( 3 )
+theme = ExtResource( 9 )
 alignment = 1
 
 [node name="Compare" type="ColorRect" parent="FullMenu/TabsContainer/ItemInspector/Buttons"]
@@ -632,8 +631,8 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -665,8 +664,8 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -695,6 +694,7 @@ margin_right = 1280.0
 margin_bottom = 720.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_vertical = 1
+
 [connection signal="button_up" from="FullMenu/Header/Exit/ExitButton" to="." method="_on_ExitButton_button_up"]
 [connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Weapons/TextureButton" to="." method="_on_Weapons_button_up"]
 [connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Armor/TextureButton" to="." method="_on_Armor_button_up"]

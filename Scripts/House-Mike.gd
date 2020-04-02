@@ -39,7 +39,7 @@ func sequence1Aa():
 	var t = Timer.new()
 	t.set_one_shot(true)
 	self.add_child(t)
-	t.set_wait_time(3)
+	t.set_wait_time(2)
 	t.start()
 	yield(t, "timeout")
 	$MikeEyesOpen.visible = true

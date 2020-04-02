@@ -8,10 +8,10 @@ export var set_player_position = Vector2()
 
 # warning-ignore:unused_argument
 func _on_Area2D_body_entered(body):
+	Global.setScene(Goto_scene)
 	Global.PlayerXTransfer = set_player_position.x
 	Global.PlayerYTransfer = set_player_position.y
 	Global.load_scene = Goto_scene
-	Global.setScene(Goto_scene)
 
 
 func _get_configuration_warning() -> String:
