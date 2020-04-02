@@ -38,6 +38,7 @@
     "Description": "An empty can of Shizzo.  You can sell this at most shops",
     "CanSell": "Yes"
   },
+
   "Moonshine": {
     "Type": "Consumable",
     "Attack": 0,
@@ -180,5 +181,18 @@
     "CanUse": "No",
     "Description": "It is your fist.  A modified version of your hand.",
     "CanSell": "No"
+  },
+  "Squirrel Pelt": {
+    "Type": "Crafting",
+    "Attack": 0,
+    "Defense": 0,
+    "Speed": 0,
+    "Health Recovery": 0,
+    "Durability": 0,
+    "Sell Value": 2,
+    "Cost": 4,
+    "CanUse": "No",
+    "Description": "The remains of a dead squirrel. Can be used to craft basic armor.",
+    "CanSell": "Yes"
   }
 }
