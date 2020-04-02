@@ -1,62 +1,60 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scripts/UI/GUI.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Buttons/PauseButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/UI/MainMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Themes/50Theme.tres" type="Theme" id=4]
-[ext_resource path="res://Themes/30Theme.tres" type="Theme" id=5]
-[ext_resource path="res://Scripts/Labels/ChodeCount.gd" type="Script" id=6]
-[ext_resource path="res://Icons/HealthMeterBlue.png" type="Texture" id=7]
-[ext_resource path="res://Icons/HealthMeterRed.png" type="Texture" id=8]
+[ext_resource path="res://Themes/50Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/UI/GUI.gd" type="Script" id=2]
+[ext_resource path="res://Themes/30Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Icons/HealthMeterRed.png" type="Texture" id=4]
+[ext_resource path="res://Icons/HealthMeterBlue.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Buttons/PauseButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Icons/Chode.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/UI/MainMenu.tscn" type="PackedScene" id=8]
 
 [node name="GUI" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.736877
+margin_top = 5.05322
+margin_right = 0.736816
+margin_bottom = 5.05322
 rect_clip_content = true
-theme = ExtResource( 4 )
-script = ExtResource( 1 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TopRightGui" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -598.0
-margin_right = 7.0
-margin_bottom = 215.0
-alignment = 2
+margin_left = 685.0
+margin_top = 16.0
+margin_right = 1280.0
+margin_bottom = 57.0
 
 [node name="VBoxContainer" type="HBoxContainer" parent="TopRightGui"]
-margin_right = 605.0
+margin_right = 595.0
 margin_bottom = 41.0
+alignment = 1
 
 [node name="Label" type="Label" parent="TopRightGui/VBoxContainer"]
-margin_right = 79.0
+margin_left = 28.0
+margin_right = 107.0
 margin_bottom = 41.0
 size_flags_vertical = 1
-theme = ExtResource( 5 )
+theme = ExtResource( 3 )
 text = "Health"
 align = 1
 valign = 1
 
 [node name="HealthBar" type="TextureProgress" parent="TopRightGui/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0.694118 )
-margin_left = 83.0
-margin_right = 539.0
+margin_left = 111.0
+margin_right = 567.0
 margin_bottom = 33.0
 size_flags_vertical = 2
 value = 75.0
 rounded = true
-texture_under = ExtResource( 8 )
-texture_progress = ExtResource( 7 )
-
-[node name="Label" type="Label" parent="TopRightGui"]
-margin_top = 45.0
-margin_right = 605.0
-margin_bottom = 215.0
-size_flags_vertical = 3
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
 
 [node name="TopLeftGui" type="HBoxContainer" parent="."]
 margin_right = 194.0
@@ -65,40 +63,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseButton" parent="TopLeftGui" instance=ExtResource( 2 )]
+[node name="PauseButton" parent="TopLeftGui" instance=ExtResource( 6 )]
 margin_right = 194.0
 margin_bottom = 93.0
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 32.7277, 625.869 )
+scale = Vector2( 1.2435, 1.2435 )
+texture = ExtResource( 7 )
+
 [node name="BottomLeftGui" type="HBoxContainer" parent="."]
-visible = false
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -102.0
-margin_right = 595.0
+margin_left = 60.0
+margin_top = 546.0
+margin_right = 437.0
+margin_bottom = 713.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomLeftGui"]
-margin_right = 346.0
-margin_bottom = 102.0
+[node name="chodeCount" type="Label" parent="BottomLeftGui"]
+margin_top = 42.0
+margin_right = 28.0
+margin_bottom = 124.0
+text = "0"
 
-[node name="Chode" type="Label" parent="BottomLeftGui/HBoxContainer"]
-margin_top = 10.0
-margin_right = 234.0
-margin_bottom = 92.0
-text = "Chode:"
-uppercase = true
-
-[node name="ChodeCount" type="Label" parent="BottomLeftGui/HBoxContainer"]
-margin_left = 238.0
-margin_top = 10.0
-margin_right = 346.0
-margin_bottom = 92.0
-text = "250"
-script = ExtResource( 6 )
-
-[node name="MainMenu" parent="." instance=ExtResource( 3 )]
+[node name="MainMenu" parent="." instance=ExtResource( 8 )]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -108,3 +97,4 @@ margin_left = -640.0
 margin_top = -360.0
 margin_right = 640.0
 margin_bottom = 360.0
+

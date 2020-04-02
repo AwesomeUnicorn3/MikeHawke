@@ -3,10 +3,9 @@
 [ext_resource path="res://Themes/35Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scripts/UI/DropConfirm.gd" type="Script" id=3]
-[ext_resource path="res://Background_Images/Button_Pressed_Texture.png" type="Texture" id=4]
+[ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=4]
 [ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=5]
-[ext_resource path="res://Background_Images/Button_Up_Texture.png" type="Texture" id=6]
-
+[ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
 
 [node name="DropPanel" type="Control"]
 anchor_left = 0.5

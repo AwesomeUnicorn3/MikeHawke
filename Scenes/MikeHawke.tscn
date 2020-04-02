@@ -1,22 +1,22 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/MikeHawke.gd" type="Script" id=1]
-[ext_resource path="res://Animations/Characters/Mike/IdleDown.tres" type="Animation" id=2]
-[ext_resource path="res://Characters/MainCharactersprite.png" type="Texture" id=3]
-[ext_resource path="res://Animations/Characters/Mike/WalkDown.tres" type="Animation" id=4]
-[ext_resource path="res://Animations/Characters/Mike/IdleLeft.tres" type="Animation" id=5]
-[ext_resource path="res://Animations/Characters/Mike/WalkLeft.tres" type="Animation" id=6]
+[ext_resource path="res://Characters/MainCharactersprite.png" type="Texture" id=2]
+[ext_resource path="res://Animations/Characters/Mike/IdleDown.tres" type="Animation" id=3]
+[ext_resource path="res://Animations/Characters/Mike/IdleDownLeft.tres" type="Animation" id=4]
+[ext_resource path="res://Animations/Characters/Mike/IdleDownRight.tres" type="Animation" id=5]
+[ext_resource path="res://Animations/Characters/Mike/IdleLeft.tres" type="Animation" id=6]
 [ext_resource path="res://Animations/Characters/Mike/MikeHawke.tres" type="Animation" id=7]
 [ext_resource path="res://Animations/Characters/Mike/IdleUp.tres" type="Animation" id=8]
-[ext_resource path="res://Animations/Characters/Mike/WalkRight.tres" type="Animation" id=9]
-[ext_resource path="res://Animations/Characters/Mike/WalkUpLeft.tres" type="Animation" id=10]
-[ext_resource path="res://Animations/Characters/Mike/WalkDownLeft.tres" type="Animation" id=11]
-[ext_resource path="res://Animations/Characters/Mike/WalkUpRight.tres" type="Animation" id=12]
-[ext_resource path="res://Animations/Characters/Mike/IdleDownLeft.tres" type="Animation" id=13]
-[ext_resource path="res://Animations/Characters/Mike/IdleDownRight.tres" type="Animation" id=14]
-[ext_resource path="res://Animations/Characters/Mike/IdleUpLeft.tres" type="Animation" id=15]
-[ext_resource path="res://Animations/Characters/Mike/WalkDownRight.tres" type="Animation" id=16]
-[ext_resource path="res://Animations/Characters/Mike/IdleUpRight.tres" type="Animation" id=17]
+[ext_resource path="res://Animations/Characters/Mike/IdleUpLeft.tres" type="Animation" id=9]
+[ext_resource path="res://Animations/Characters/Mike/IdleUpRight.tres" type="Animation" id=10]
+[ext_resource path="res://Animations/Characters/Mike/WalkDown.tres" type="Animation" id=11]
+[ext_resource path="res://Animations/Characters/Mike/WalkDownLeft.tres" type="Animation" id=12]
+[ext_resource path="res://Animations/Characters/Mike/WalkDownRight.tres" type="Animation" id=13]
+[ext_resource path="res://Animations/Characters/Mike/WalkRight.tres" type="Animation" id=14]
+[ext_resource path="res://Animations/Characters/Mike/WalkLeft.tres" type="Animation" id=15]
+[ext_resource path="res://Animations/Characters/Mike/WalkUpLeft.tres" type="Animation" id=16]
+[ext_resource path="res://Animations/Characters/Mike/WalkUpRight.tres" type="Animation" id=17]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 12.7666
@@ -58,28 +58,28 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1.59574, -23.2244 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 vframes = 8
 hframes = 12
 frame = 1
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/IdleDown = ExtResource( 2 )
-anims/IdleDownLeft = ExtResource( 13 )
-anims/IdleDownRight = ExtResource( 14 )
-anims/IdleLeft = ExtResource( 5 )
+anims/IdleDown = ExtResource( 3 )
+anims/IdleDownLeft = ExtResource( 4 )
+anims/IdleDownRight = ExtResource( 5 )
+anims/IdleLeft = ExtResource( 6 )
 anims/IdleRight = ExtResource( 7 )
 anims/IdleUp = ExtResource( 8 )
-anims/IdleUpLeft = ExtResource( 15 )
-anims/IdleUpRight = ExtResource( 17 )
-anims/WalkDown = ExtResource( 4 )
-anims/WalkDownLeft = ExtResource( 11 )
-anims/WalkDownRight = ExtResource( 16 )
+anims/IdleUpLeft = ExtResource( 9 )
+anims/IdleUpRight = ExtResource( 10 )
+anims/WalkDown = ExtResource( 11 )
+anims/WalkDownLeft = ExtResource( 12 )
+anims/WalkDownRight = ExtResource( 13 )
 anims/WalkLeft = SubResource( 2 )
-anims/WalkRight = ExtResource( 9 )
-anims/WalkUp = ExtResource( 6 )
-anims/WalkUpLeft = ExtResource( 10 )
-anims/WalkUpRight = ExtResource( 12 )
+anims/WalkRight = ExtResource( 14 )
+anims/WalkUp = ExtResource( 15 )
+anims/WalkUpLeft = ExtResource( 16 )
+anims/WalkUpRight = ExtResource( 17 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2, 0 )
@@ -111,6 +111,7 @@ one_shot = true
 
 [node name="ModulateTimer" type="Timer" parent="."]
 wait_time = 0.1
+
 [connection signal="interact" from="." to="." method="_on_MikeHawke_interact"]
 [connection signal="timeout" from="InvicibleTimer" to="." method="_on_InvicibleTimer_timeout"]
 [connection signal="timeout" from="KnockBackTimer" to="." method="_on_KnockBackTimer_timeout"]
