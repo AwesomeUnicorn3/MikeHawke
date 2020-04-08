@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/MSG_System/scripts/MSG_Box.gd" type="Script" id=1]
 [ext_resource path="res://addons/MSG_System/img/window.png" type="Texture" id=2]
@@ -8,10 +8,12 @@
 [ext_resource path="res://addons/MSG_System/fonts/font_bold.tres" type="DynamicFont" id=6]
 [ext_resource path="res://addons/MSG_System/fonts/font_normal.tres" type="DynamicFont" id=7]
 [ext_resource path="res://addons/MSG_System/sfx/dialogue_sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://Icons/Mouse_Right_Click.png" type="Texture" id=9]
+[ext_resource path="res://Icons/Mouse_Right_Click_Highlight.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "def"
-length = 0.6
+length = 0.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible_characters")
@@ -24,6 +26,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 0.0745098, 0.00392157, 1 ), Color( 1, 0.537255, 0.501961, 0 ) ]
 }
 
 [sub_resource type="GDScript" id=2]
@@ -116,6 +130,9 @@ custom_fonts/normal_font = ExtResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[i]This[/i] is... | a [color=yellow]test[/color]."
 text = "This is... | a test."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="name" type="Label" parent="main"]
 modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
@@ -148,6 +165,7 @@ margin_bottom = 3.0
 custom_fonts/font = ExtResource( 6 )
 text = "...
 "
+percent_visible = 0.666667
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -156,6 +174,17 @@ __meta__ = {
 autoplay = "def"
 playback_speed = 0.4
 anims/def = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="main/_continue"]
+position = Vector2( 16.7647, 28.1406 )
+scale = Vector2( 2.9595, 2.5168 )
+texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="main/_continue"]
+modulate = Color( 1, 0.205095, 0.144467, 0.717802 )
+position = Vector2( 24.6318, 20.6232 )
+scale = Vector2( 2.9595, 2.5168 )
+texture = ExtResource( 10 )
 
 [node name="characters_timer" type="Timer" parent="."]
 wait_time = 0.04
