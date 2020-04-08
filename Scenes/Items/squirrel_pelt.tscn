@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Items/ShizzoCan.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Items/Squirrel_Pelt.gd" type="Script" id=1]
 [ext_resource path="res://Characters/squirell.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -14,7 +14,6 @@ collision_layer = 32
 collision_mask = 5
 script = ExtResource( 1 )
 interaction_script = "res://dialogues/SquirrelPelt.json"
-item = "Squirrel Pelt"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -0.673023, 1.71712 )
@@ -27,4 +26,3 @@ texture = ExtResource( 2 )
 vframes = 8
 hframes = 12
 frame = 7
-

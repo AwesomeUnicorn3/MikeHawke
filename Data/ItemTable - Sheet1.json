@@ -179,7 +179,7 @@
     "Sell Value": 0,
     "Cost": 0,
     "CanUse": "No",
-    "Description": "It is your fist.  A modified version of your hand.",
+    "Description": "It is your fist.  A modified version of your hand",
     "CanSell": "No"
   },
   "Squirrel Pelt": {
@@ -192,7 +192,7 @@
     "Sell Value": 2,
     "Cost": 4,
     "CanUse": "No",
-    "Description": "The remains of a dead squirrel. Can be used to craft basic armor.",
+    "Description": "The remains of a dead squirrel. Can be used to craft basic armor",
     "CanSell": "Yes"
   }
 }

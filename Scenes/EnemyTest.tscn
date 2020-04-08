@@ -21,6 +21,7 @@ scale = Vector2( 1.89264, 1.6 )
 collision_layer = 128
 collision_mask = 235
 script = ExtResource( 1 )
+interaction_script = "res://dialogues/SquirrelPelt.json"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 0.23484, 3.61112 )
@@ -63,5 +64,4 @@ anims/WalkDown = ExtResource( 7 )
 anims/WalkLeft = ExtResource( 8 )
 anims/WalkRight = ExtResource( 9 )
 anims/WalkUp = ExtResource( 10 )
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

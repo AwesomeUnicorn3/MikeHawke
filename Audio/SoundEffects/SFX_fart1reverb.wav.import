@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_fart1reverb.wav-bd9e5123cd968c30e165d6d4b24bba8a.sample"
+
+[deps]
+
+source_file="res://Audio/SoundEffects/SFX_fart1reverb.wav"
+dest_files=[ "res://.import/SFX_fart1reverb.wav-bd9e5123cd968c30e165d6d4b24bba8a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

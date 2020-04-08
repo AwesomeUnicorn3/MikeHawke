@@ -17,7 +17,7 @@ var paused =  false setget set_paused
 #func _process(delta):
 #	pass
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") or event.is_action_pressed("ui_menu"):
 		self.paused = not paused
 		scene_tree.set_input_as_handled()
 

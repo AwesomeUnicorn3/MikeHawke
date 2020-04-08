@@ -14,18 +14,22 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.5941, 34.7327 )
 
-[node name="Crappy Sword" type="Node2D"]
-position = Vector2( 10.725, -11.1 )
-rotation = 8.92717
+[node name="Fist" type="Node2D"]
+visible = false
+position = Vector2( 9.67092, -14.2622 )
+rotation = 13.296
 scale = Vector2( 0.5, 0.5 )
+z_index = -1
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.397217, -28.9967 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
+method_call_mode = 1
 anims/SwingDown = ExtResource( 5 )
 anims/SwingDownLeft = ExtResource( 4 )
 anims/SwingDownRight = ExtResource( 1 )
@@ -39,6 +43,7 @@ anims/SwingUpRight = ExtResource( 2 )
 wait_time = 0.4
 
 [node name="area" type="Area2D" parent="."]
+scale = Vector2( 1, 1.08 )
 collision_layer = 64
 collision_mask = 128
 

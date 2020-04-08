@@ -30,9 +30,10 @@ var knockdir = Vector2(0,0)
 var invincible = false
 
 enum {
-	IDLE,
+	MOVE,
 	ATTACK,
 	DEFAULT
+	IDLE,
 }
 
 func movement_loop():
@@ -123,10 +124,10 @@ func choose(array):
 func use_item(item):
 	var newitem = item.instance()
 	newitem.add_to_group(str(newitem.get_name(), self))
-	add_child(newitem)
 	if get_tree().get_nodes_in_group(str(newitem.get_name(), self)).size() > newitem.maxamount:
 		newitem.queue_free()
-
+	else:
+		add_child(newitem)
 	
 
 func player_blink():

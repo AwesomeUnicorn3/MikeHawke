@@ -27,6 +27,8 @@ var gui = false
 var body
 var shop_name
 var buysell = ""
+
+
 #Options
 var dict_options_stats = {}
 
@@ -55,7 +57,7 @@ var Dict_locations = {
 "res://Scenes/IndoorMaps/CumNGo.tscn" : "CumNGo",
 "res://Scenes/IndoorMaps/FranksSundries.tscn": "Frank's Sundries"
 }
-
+var Dict_objects_fruitville = {}
 var Dict_shizzo_cans = {}
 var Dict_trash_cans = {}
 var Dict_loot = {}
@@ -108,6 +110,7 @@ func save_game():
 	CanInteract = CanInteract,
 	PlayerDir = PlayerDir,
 	load_scene = load_scene,
+	Dict_objects_fruitville = Dict_objects_fruitville,
 	Dict_trash_cans = Dict_trash_cans,
 	Dict_shizzo_cans = Dict_shizzo_cans,
 	Dict_toilet = Dict_toilet,

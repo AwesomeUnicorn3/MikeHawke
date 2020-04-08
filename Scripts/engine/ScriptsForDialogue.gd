@@ -9,6 +9,8 @@ func show_hide_gui(value):
 	var gui = get_node(scenepath + "/CanvasLayer/GUI")
 	gui.hide_gui(value)
 
+
+
 func sell_menu():
 	var scenepath = String(Global.current_scene.get_path())
 	var gui = get_node(scenepath + "/CanvasLayer/GUI")
@@ -28,25 +30,35 @@ func cant_walk():
 	Global.PlayerCanMove = false
 
 func walkright():
-	MSG.level_root().get_node("main/Mike Hawke/anim").play("WalkRight")
-	
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Run/blend_position", dir.RIGHT)
+	animationState.travel("Run")
+#	pass
+
 func walkleft():
-	MSG.level_root().get_node("main/Mike Hawke/anim").play("WalkLeft")
+	pass
+#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("WalkLeft")
 	
 func walkup():
-	MSG.level_root().get_node("main/Mike Hawke/anim").play("WalkUp")
+	pass
+#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("WalkUp")
 
 func walkdown():
-	MSG.level_root().get_node("main/Mike Hawke/anim").play("WalkDown")
+	pass
+#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("WalkDown")
 	
 func idledown():
-	MSG.level_root().get_node("main/Mike Hawke/anim").play("IdleDown")
+	pass
+#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("IdleDown")
 
 func idleright():
-	MSG.level_root().get_node("main/Mike Hawke/anim").play("IdleRight")
+	pass
+#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("IdleRight")
 
 func idleup():
-	MSG.level_root().get_node("main/Mike Hawke/anim").play("IdleUp")
+	pass
+#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("IdleUp")
 
 
 func fridge():
@@ -91,7 +103,7 @@ func end_sequence1():
 	Dialogue.can_walk()
 	Global.CanTalk = true
 	Global.CanInteract = true
-
+	
 
 func dialogue(ID):
 	var dia = ImportData.dialogue_data
@@ -99,6 +111,5 @@ func dialogue(ID):
 	var text = ""
 	var lang = opt["Dialogue Language"]["Text"]  #change to options language
 	text = dia[ID][lang]
-	print(text)
 	MSG.set_var("text", text)
 

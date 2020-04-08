@@ -3,25 +3,25 @@
 [ext_resource path="res://Scripts/House-Mike.gd" type="Script" id=1]
 [ext_resource path="res://TilesSets/IndoorTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://TilesSets/IndoorAssets1.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/Narrator.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Items/ShizzoCan.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/MikeHawke.tscn" type="PackedScene" id=6]
-[ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=7]
-[ext_resource path="res://Animations/Seq1Pt1.tres" type="Animation" id=8]
-[ext_resource path="res://Animations/Seq1Pt2.tres" type="Animation" id=9]
-[ext_resource path="res://Animations/Seq1Pt3.tres" type="Animation" id=10]
-[ext_resource path="res://Animations/Seq1Pt4.tres" type="Animation" id=11]
-[ext_resource path="res://Animations/Seq1Pt5.tres" type="Animation" id=12]
-[ext_resource path="res://Animations/Seq1Pt6.tres" type="Animation" id=13]
-[ext_resource path="res://Animations/Seq1Pt7.tres" type="Animation" id=14]
-[ext_resource path="res://Scenes/Items/Trash_Can.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Items/Trash_Can.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Narrator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Items/ShizzoCan.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/MikeHawke.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt1.tres" type="Animation" id=8]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt2.tres" type="Animation" id=9]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt3.tres" type="Animation" id=10]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt4.tres" type="Animation" id=11]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt5.tres" type="Animation" id=12]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt6.tres" type="Animation" id=13]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt7.tres" type="Animation" id=14]
+[ext_resource path="res://EnvTilesetPNG/Dhood Custom Indoor Assets.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Items/Toilet.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Items/Loot_Generator.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Items/TreasureChest.tscn" type="PackedScene" id=18]
-[ext_resource path="res://EnvTilesetPNG/Dhood Custom Indoor Assets.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Audio/BGM/AWhiteElephants.ogg" type="AudioStream" id=21]
-[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Audio/BGM/AWhiteElephants.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Items/Loot_Generator.tscn" type="PackedScene" id=20]
+[ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/Items/TreasureChest.tscn" type="PackedScene" id=22]
 
 [node name="House-Mike" type="Node2D" groups=[
 "level_root",
@@ -35,6 +35,8 @@ Mikey = -290
 [node name="FloorandWalls" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 47, 47 )
+compatibility_mode = true
+centered_textures = true
 collision_layer = 2
 format = 1
 tile_data = PoolIntArray( -589830, 0, 0, -589829, 1, 0, -589828, 1, 0, -589827, 1, 0, -589826, 1, 0, -589825, 1, 0, -655360, 1, 0, -655359, 1, 0, -655358, 1, 0, -655357, 1, 0, -655356, 1, 0, -655355, 1, 0, -655354, 1, 0, -655353, 2, 0, -524294, 3, 0, -524293, 9, 0, -524292, 9, 0, -524291, 9, 0, -524290, 9, 0, -524289, 9, 0, -589824, 9, 0, -589823, 9, 0, -589822, 9, 0, -589821, 9, 0, -589820, 9, 0, -589819, 9, 0, -589818, 9, 0, -589817, 5, 0, -458758, 3, 0, -458757, 10, 0, -458756, 10, 0, -458755, 10, 0, -458754, 10, 0, -458753, 10, 0, -524288, 10, 0, -524287, 10, 0, -524286, 10, 0, -524285, 10, 0, -524284, 10, 0, -524283, 10, 0, -524282, 10, 0, -524281, 5, 0, -393222, 3, 0, -393221, 11, 0, -393220, 11, 0, -393219, 11, 0, -393218, 11, 0, -393217, 11, 0, -458752, 11, 0, -458751, 11, 0, -458750, 11, 0, -458749, 11, 0, -458748, 11, 0, -458747, 11, 0, -458746, 11, 0, -458745, 5, 0, -327686, 3, 0, -327685, 11, 0, -327684, 11, 0, -327683, 11, 0, -327682, 11, 0, -327681, 11, 0, -393216, 11, 0, -393215, 11, 0, -393214, 11, 0, -393213, 11, 0, -393212, 11, 0, -393211, 11, 0, -393210, 11, 0, -393209, 5, 0, -262150, 3, 0, -262149, 11, 0, -262148, 11, 0, -262147, 11, 0, -262146, 11, 0, -262145, 11, 0, -327680, 11, 0, -327679, 11, 0, -327678, 11, 0, -327677, 11, 0, -327676, 11, 0, -327675, 11, 0, -327674, 11, 0, -327673, 5, 0, -196614, 3, 0, -196613, 11, 0, -196612, 11, 0, -196611, 11, 0, -196610, 11, 0, -196609, 11, 0, -262144, 11, 0, -262143, 11, 0, -262142, 11, 0, -262141, 11, 0, -262140, 11, 0, -262139, 11, 0, -262138, 11, 0, -262137, 5, 0, -131078, 3, 0, -131077, 11, 0, -131076, 11, 0, -131075, 11, 0, -131074, 11, 0, -131073, 11, 0, -196608, 11, 0, -196607, 11, 0, -196606, 11, 0, -196605, 11, 0, -196604, 11, 0, -196603, 11, 0, -196602, 11, 0, -196601, 5, 0, -65542, 3, 0, -65541, 11, 0, -65540, 11, 0, -65539, 11, 0, -65538, 11, 0, -65537, 11, 0, -131072, 11, 0, -131071, 11, 0, -131070, 11, 0, -131069, 11, 0, -131068, 11, 0, -131067, 11, 0, -131066, 11, 0, -131065, 5, 0, -6, 6, 0, -5, 7, 0, -4, 7, 0, -3, 7, 0, -2, 7, 0, -1, 11, 0, -65536, 11, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, -65532, 7, 0, -65531, 7, 0, -65530, 7, 0, -65529, 8, 0 )
@@ -42,52 +44,54 @@ tile_data = PoolIntArray( -589830, 0, 0, -589829, 1, 0, -589828, 1, 0, -589827, 
 [node name="Objects" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 48, 48 )
+compatibility_mode = true
+centered_textures = true
 collision_layer = 2
 format = 1
 tile_data = PoolIntArray( -524286, 0, 0, -327684, 8, 0, -327680, 6, 0 )
 
 [node name="main" type="Node2D" parent="."]
 
-[node name="Narrator" parent="main" instance=ExtResource( 4 )]
+[node name="Narrator" parent="main" instance=ExtResource( 5 )]
 visible = false
 position = Vector2( -353.374, -149.437 )
 
-[node name="House-Mike-ShizzoCan" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 244.539, -255.326 )
 
-[node name="House-Mike-ShizzoCan2" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan2" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 197.581, -224.295 )
 
-[node name="House-Mike-ShizzoCan3" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan3" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 314.24, -142.09 )
 
-[node name="House-Mike-ShizzoCan4" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan4" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 312.429, -280.532 )
 
-[node name="House-Mike-ShizzoCan5" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan5" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 258.032, -200.169 )
 
-[node name="House-Mike-ShizzoCan6" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan6" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 261.032, -149.169 )
 
-[node name="House-Mike-ShizzoCan7" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan7" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 204.747, -169.549 )
 
-[node name="House-Mike-ShizzoCan8" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan8" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 247.032, -99.1693 )
 
-[node name="House-Mike-ShizzoCan9" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan9" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 311.904, -84.7106 )
 
-[node name="House-Mike-ShizzoCan10" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan10" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 194.032, -110.169 )
 
-[node name="House-Mike-ShizzoCan11" parent="main" instance=ExtResource( 5 )]
+[node name="House-Mike-ShizzoCan11" parent="main" instance=ExtResource( 6 )]
 position = Vector2( 257.06, -310.847 )
 
-[node name="Mike Hawke" parent="main" instance=ExtResource( 6 )]
-position = Vector2( 168, -160 )
-face = ExtResource( 7 )
+[node name="Mike Hawke" parent="main" instance=ExtResource( 7 )]
+position = Vector2( -133, -253 )
+face = ExtResource( 21 )
 color = Color( 0.964706, 0, 0, 1 )
 voice_pitch = 0.9
 
@@ -100,23 +104,23 @@ anims/Seq1Pt5 = ExtResource( 12 )
 anims/Seq1Pt6 = ExtResource( 13 )
 anims/Seq1Pt7 = ExtResource( 14 )
 
-[node name="House-Mike-Trash_Can" parent="main" instance=ExtResource( 15 )]
+[node name="House-Mike-Trash_Can" parent="main" instance=ExtResource( 4 )]
 position = Vector2( 306.392, -214.501 )
 
 [node name="Toilet" parent="main" instance=ExtResource( 16 )]
 position = Vector2( -206.484, -147.739 )
 
-[node name="House-Mike-LootGenerator" parent="main" instance=ExtResource( 17 )]
+[node name="House-Mike-LootGenerator" parent="main" instance=ExtResource( 20 )]
 position = Vector2( 33.0281, -219.75 )
 
-[node name="TreasureChest" parent="main" instance=ExtResource( 18 )]
+[node name="TreasureChest" parent="main" instance=ExtResource( 22 )]
 position = Vector2( -167.699, -267.148 )
 item3 = ""
 
 [node name="MikeSleeping" type="Sprite" parent="."]
 visible = false
 position = Vector2( -176, -276 )
-texture = ExtResource( 19 )
+texture = ExtResource( 15 )
 vframes = 8
 hframes = 12
 frame = 40
@@ -124,7 +128,7 @@ frame = 40
 [node name="MikeEyesOpen" type="Sprite" parent="."]
 visible = false
 position = Vector2( -176, -276 )
-texture = ExtResource( 19 )
+texture = ExtResource( 15 )
 vframes = 8
 hframes = 12
 frame = 39
@@ -132,19 +136,19 @@ frame = 39
 [node name="FridgeOpen" type="Sprite" parent="."]
 visible = false
 position = Vector2( 120.221, -383.82 )
-texture = ExtResource( 19 )
+texture = ExtResource( 15 )
 vframes = 8
 hframes = 12
 frame = 26
 
 [node name="Sprite2" type="Sprite" parent="FridgeOpen"]
 position = Vector2( -0.230881, 47.9645 )
-texture = ExtResource( 19 )
+texture = ExtResource( 15 )
 vframes = 8
 hframes = 12
 frame = 38
 
-[node name="DoorWay" parent="." instance=ExtResource( 20 )]
+[node name="DoorWay" parent="." instance=ExtResource( 17 )]
 position = Vector2( -0.055359, -25.1229 )
 rotation = 3.14159
 scale = Vector2( 2, 1.08 )
@@ -155,10 +159,9 @@ set_player_position = Vector2( 480, 536 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
-stream = ExtResource( 21 )
+stream = ExtResource( 18 )
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="CanvasLayer" instance=ExtResource( 22 )]
-
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 19 )]

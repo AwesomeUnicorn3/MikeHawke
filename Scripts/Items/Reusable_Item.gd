@@ -7,10 +7,12 @@ export (Color) var color # COLOR OF THE TEXT
 export (float, 0.1, 1.9) var voice_pitch # HOW HIGH / LOW THE VOICE IS
 export (String, FILE) var interaction_script # A JSON DIALOGUE FILE
 
-var dict = Global.Dict_trash_cans   #set this to the dict of the item
+
+var location = "fruitville"  #Set to the name of the map **must be all lower case
+var dict = Global.Dict_objects_ + location   #set this to the dict of the item
 var item = "Sticky Aluminum" #Change if there is an item drop
 var dialogue_variable = "cans" #change this to variable from dialogue script
-
+var num_items_dropped = 1
 
 var me
 var id
@@ -28,18 +30,27 @@ func item_script():
 		item_drops()
 		dict[id] = false
 
+func item_drops():
+	if not ImportData.inven_data.has(item):
+		ImportData.inven_data[item] = [item, 0]
+#	ImportData.inven_data[item][1] += MSG.var(dialogue_variable) 
+
+
+#us if assigning the number of dropped items in the script 
+	ImportData.inven_data[item][1] += num_items_dropped
 
 
 func sound_effect():
-	SoundEffects.can_rattle() #change sound effect
+	pass
+#	SoundEffects.can_rattle() #change sound effect
 
 
 func on_not_interacted_item_load(): #on load if item has *NOT* been interacted with by player
 	pass
 
 func on_interacted_item_load(): #on load if item has been interacted with by player
-	self.interaction_script = "res://dialogues/TrashEmpty.json"
-	$Sprite.set_frame(0)
+	self.queue_free()
+
 	
 
 #END FUNCTIONS TO CHANGE FOR EACH ITEM TYPE
@@ -76,6 +87,7 @@ func talk():
 		Global.body = null
 		Global.CanTalk = true
 		self.talking = false
+		Global.PlayerCanMove = true
 		on_interacted_item_load()
 
 func _input(event):
@@ -86,8 +98,7 @@ func _input(event):
 		self.selected = false
 
 
-func item_drops():
-	Global.dict_items[item] += MSG.var(dialogue_variable) 
+
 
 
 func _on_Area2D_body_exited(body):

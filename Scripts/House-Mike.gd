@@ -19,7 +19,7 @@ func _ready():
 	if Global.new_game == true:
 		begin_sequence1()
 	else:
-		set_scene()
+		mike.set_scene()
 
 	
 func begin_sequence1():
@@ -92,17 +92,5 @@ func sequence1Aa():
 	MSG.start_dialogue(interaction_script, self)
 	
 #	gui.hide_gui(true)
-
-func set_scene():
-	if Global.load_game == true:
-		Global.load_scene = self.filename
-		mike.get_node("anim").play(Global.PlayerAnim)
-		mike.set_global_position(Vector2(Global.PlayerX, Global.PlayerY))
-		Global.load_game = false
-	else:
-		Global.load_scene = self.filename
-		mike.get_node("anim").play(Global.PlayerAnim)
-		mike.set_global_position(Vector2(Global.PlayerXTransfer, Global.PlayerYTransfer))
-
 
 
