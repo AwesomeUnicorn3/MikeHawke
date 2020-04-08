@@ -20,5 +20,5 @@ func set_show_menu(value: bool) -> void:
 
 
 func _on_TextureButton_button_up():
-	SoundEffects.select()
+	SoundEffects.play_sfx(SoundEffects.Select , 1)
 	set_show_menu(not show)

@@ -35,8 +35,7 @@ func item_script():
 
 
 func sound_effect():
-	pass
-#	SoundEffects.can_rattle() #change sound effect
+	SoundEffects.play_sfx(SoundEffects.Squish, 1) #change sound effect
 
 
 func on_not_interacted_item_load(): #on load if item has *NOT* been interacted with by player

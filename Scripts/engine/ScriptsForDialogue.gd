@@ -37,29 +37,46 @@ func walkright():
 #	pass
 
 func walkleft():
-	pass
-#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("WalkLeft")
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Run/blend_position", dir.LEFT)
+	animationState.travel("Run")
 	
 func walkup():
-	pass
-#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("WalkUp")
-
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Run/blend_position", dir.UP)
+	animationState.travel("Run")
+	
 func walkdown():
-	pass
-#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("WalkDown")
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Run/blend_position", dir.DOWN)
+	animationState.travel("Run")
 	
 func idledown():
-	pass
-#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("IdleDown")
-
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Idle/blend_position", dir.DOWN)
+	animationState.travel("Idle")
+	
 func idleright():
-	pass
-#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("IdleRight")
-
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Idle/blend_position", dir.RIGHT)
+	animationState.travel("Idle")
+	
 func idleup():
-	pass
-#	MSG.level_root().get_node("main/Mike Hawke/AnimationPlayer").play("IdleUp")
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Idle/blend_position", dir.UP)
+	animationState.travel("Idle")
 
+func idleleft():
+	var mikeanim = MSG.level_root().get_node("main/Mike Hawke/AnimationTree")
+	var animationState = mikeanim.get("parameters/playback")
+	mikeanim.set("parameters/Idle/blend_position", dir.LEFT)
+	animationState.travel("Idle")
 
 func fridge():
 	if MSG.level_root().get_node("FridgeOpen").visible == true:

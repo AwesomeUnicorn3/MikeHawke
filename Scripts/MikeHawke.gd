@@ -71,12 +71,6 @@ func startup():
 	MaxAttack = dict_char_stats[id]["MaxAttack"]
 
 	Exp = dict_char_stats[id]["Exp"]
-
-#______Initializes weapon_______________
-#	var weapon_tex = load(weapon_file)
-#	$Sprite/sprite.texture = weapon_tex
-#	$Sprite/sprite.visible = false
-	
 	equip_stats()
 	
 	
@@ -179,19 +173,18 @@ func raydir_loop():
 
 		#Diagonal Movement when you get diagonal sprite, change Degrees
 		dir.LEFT_UP:
-			look.rotation_degrees = 180
+			look.rotation_degrees = 125
 		dir.RIGHT_UP:
-			look.rotation_degrees = 180
+			look.rotation_degrees = -125
 		dir.LEFT_DOWN:
-			look.rotation_degrees = 0
+			look.rotation_degrees = 45
 		dir.RIGHT_DOWN:
-			look.rotation_degrees = 0
+			look.rotation_degrees = -45
 
 
 func _on_MikeHawke_interact():
 	if look.is_colliding() == true:
 		var collision = look.get_collider()
-#		print(collision)
 		if collision != null:
 			if collision.get("me"):
 				Global.body = collision
@@ -259,18 +252,19 @@ func move_state(): #Character movement and animation
 	else: #if player is standing still
 		animationState.travel("Idle")
 		velocity = Vector2.ZERO #stopr
-	if knockback == 0:
-		pass
-	else:
-		velocity = knockdir.normalized() * 225
 
 	
 #___________________ATTACK!!! ('A' key)_______________________
 	if Input.is_action_just_pressed("ui_attack"):
 		state = ATTACK
 		
-	if state == MOVE:
-		velocity = .move_and_slide(velocity) #starts player movement
+	if knockback == 0:
+		pass
+	else:
+		velocity = knockdir.normalized() * 225
+		state = MOVE
+		
+	velocity = .move_and_slide(velocity) #starts player movement
 
 func attack_state():
 #	animationState.travel("Attack")

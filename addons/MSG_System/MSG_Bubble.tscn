@@ -7,6 +7,8 @@
 [ext_resource path="res://addons/MSG_System/sfx/dialogue_sound.wav" type="AudioStream" id=5]
 [ext_resource path="res://addons/MSG_System/fonts/font_bold.tres" type="DynamicFont" id=6]
 
+
+
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [sub_resource type="CanvasItemMaterial" id=2]

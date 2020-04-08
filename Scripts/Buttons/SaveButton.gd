@@ -4,7 +4,7 @@ extends CanvasItem
 
 func _on_TextureButton_button_up():
 	$TextureButton.disabled = true
-	SoundEffects.select()
+	SoundEffects.play_sfx(SoundEffects.Select, 1)
 	Save_Game.save_game()
 	var text1 = $Label.get_text()
 	var id = String(Global.save_id)

@@ -34,4 +34,5 @@ func set_paused(value: bool) -> void:
 
 
 func _on_TextureButton_button_up():
+	SoundEffects.play_sfx(SoundEffects.Select , 1)
 	set_paused(true)

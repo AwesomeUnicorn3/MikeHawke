@@ -32,7 +32,7 @@ func item_script():
 
 
 func sound_effect():
-	SoundEffects.flush() #change sound effect
+	SoundEffects.play_sfx(SoundEffects.Flush, 1) #change sound effect
 
 
 func on_not_interacted_item_load(): #on load if item has *NOT* been interacted with by player

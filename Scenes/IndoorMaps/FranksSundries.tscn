@@ -1,25 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TilesSets/IndoorAssets1.tres" type="TileSet" id=1]
 [ext_resource path="res://TilesSets/IndoorTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/MikeHawke.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/NPC/Frank.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=5]
-[ext_resource path="res://Animations/Seq1Pt5.tres" type="Animation" id=6]
-[ext_resource path="res://Animations/Seq1Pt7.tres" type="Animation" id=7]
 [ext_resource path="res://Audio/BGM/1-03 Buy! Buy! Buy!.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Scripts/FranksSundries.gd" type="Script" id=9]
-[ext_resource path="res://Animations/Seq1Pt6.tres" type="Animation" id=10]
-[ext_resource path="res://Animations/Seq1Pt2.tres" type="Animation" id=11]
-[ext_resource path="res://Animations/Seq1Pt3.tres" type="Animation" id=12]
-[ext_resource path="res://Animations/Seq1Pt1.tres" type="Animation" id=14]
-[ext_resource path="res://Animations/Seq1Pt4.tres" type="Animation" id=15]
 [ext_resource path="res://Scenes/Items/Trash_Can.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Narrator.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=20]
-
-
 
 [node name="Frank\'sSundries" type="Node2D" groups=[
 "level_root",
@@ -54,15 +45,6 @@ position = Vector2( -25.4457, -90.3596 )
 face = ExtResource( 5 )
 color = Color( 0.964706, 0, 0, 1 )
 voice_pitch = 1.1
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="main/Mike Hawke"]
-anims/Seq1Pt1 = ExtResource( 14 )
-anims/Seq1Pt2 = ExtResource( 11 )
-anims/Seq1Pt3 = ExtResource( 12 )
-anims/Seq1Pt4 = ExtResource( 15 )
-anims/Seq1Pt5 = ExtResource( 6 )
-anims/Seq1Pt6 = ExtResource( 10 )
-anims/Seq1Pt7 = ExtResource( 7 )
 
 [node name="Frank-Trash_Can" parent="main" instance=ExtResource( 16 )]
 position = Vector2( -203.768, -232.438 )

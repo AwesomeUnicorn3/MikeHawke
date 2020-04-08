@@ -22,14 +22,12 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$anim.connect("animation_finished", self, "destroy")
 	$anim.play(str("Swing", get_parent().spritedir))
+	SoundEffects.play_sfx(SoundEffects.Punch, -15.0)
 
-	get_parent().weaponamt += 1
-	
 
 
 # warning-ignore:unused_argument
 func destroy(animation):
-	get_parent().weaponamt -= 1
 	get_parent().attack_anim_finished()
 	queue_free()
 

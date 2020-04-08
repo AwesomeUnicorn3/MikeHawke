@@ -40,7 +40,7 @@ func item_drops():
 	
 
 func sound_effect():
-	SoundEffects.can_rattle() #change sound effect
+	SoundEffects.play_sfx(SoundEffects.CanRattle, 1) #change sound effect
 
 
 func on_not_interacted_item_load(): #on load if item has *NOT* been interacted with by player
