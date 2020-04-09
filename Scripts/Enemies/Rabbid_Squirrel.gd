@@ -4,8 +4,9 @@ export (Texture) var face
 export (Color) var color # COLOR OF THE TEXT
 export (float, 0.1, 1.9) var voice_pitch # HOW HIGH / LOW THE VOICE IS
 export (String, FILE) var interaction_script # A JSON DIALOGUE FILE
-#onready var player = get_node("../main/MikeHawke")
 onready var hide_scene = preload("res://Scenes/Items/squirrel_pelt.tscn")
+
+
 var dict = ImportData.enemy_stats as Dictionary
 var dict_initial = ImportData.enemy_data as Dictionary
 var pos = Vector2()

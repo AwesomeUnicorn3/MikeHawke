@@ -12,7 +12,7 @@
 [ext_resource path="res://Icons/Fist.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.5941, 34.7327 )
+extents = Vector2( 20.0975, 39.0413 )
 
 [node name="Fist" type="Node2D"]
 visible = false

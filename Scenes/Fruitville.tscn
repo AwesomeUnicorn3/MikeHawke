@@ -45,11 +45,20 @@ tile_data = PoolIntArray( -262154, 1, 0, -262153, 1, 1, -262152, 1, 1, -262151, 
 
 [node name="Houses" type="TileMap" parent="."]
 z_index = 1
+z_as_relative = false
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 48, 48 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 65542, 1, 0, 196641, 11, 0, 262174, 2, 0, 458784, 10, 0, 524294, 0, 0, 524321, 18, 0, 720929, 19, 0, 983072, 8, 0, 983080, 9, 0, 1245188, 13, 0, 1310752, 6, 0, 1310760, 7, 0, 1572868, 12, 0, 2162718, 15, 0, 2490398, 14, 0, 2555909, 17, 0, 2883589, 16, 0 )
+tile_data = PoolIntArray( 65542, 1, 0, 196641, 11, 0, 262174, 2, 0, 458784, 10, 0, 983072, 8, 0, 983080, 9, 0, 1245188, 13, 0, 2162718, 15, 0, 2555909, 17, 0 )
+
+[node name="Houses2" type="TileMap" parent="."]
+z_index = -2
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 48, 48 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 262174, 2, 0, 458784, 10, 0, 524294, 0, 0, 524321, 18, 0, 720929, 19, 0, 1310752, 6, 0, 1310760, 7, 0, 1572868, 12, 0, 2490398, 14, 0, 2883589, 16, 0 )
 
 [node name="GroundMask" type="TileMap" parent="."]
 z_index = 1
@@ -158,7 +167,7 @@ position = Vector2( 1546.01, 1132 )
 position = Vector2( 445.528, 1259.39 )
 
 [node name="Mike Hawke" parent="main" instance=ExtResource( 10 )]
-position = Vector2( 480, 536 )
+position = Vector2( 252.082, 1389.23 )
 face = ExtResource( 11 )
 voice_pitch = 0.5
 
@@ -167,6 +176,24 @@ position = Vector2( 1853.94, 1125.55 )
 
 [node name="Queef" parent="main" instance=ExtResource( 13 )]
 position = Vector2( 1702.1, 1342.5 )
+
+[node name="Squirrel" parent="main" instance=ExtResource( 18 )]
+position = Vector2( 472.449, 668.26 )
+
+[node name="Squirrel2" parent="main" instance=ExtResource( 18 )]
+position = Vector2( 637.87, 692.815 )
+
+[node name="Squirrel3" parent="main" instance=ExtResource( 18 )]
+position = Vector2( 173.915, 780.695 )
+
+[node name="Squirrel4" parent="main" instance=ExtResource( 18 )]
+position = Vector2( 950.62, 796.203 )
+
+[node name="Squirrel5" parent="main" instance=ExtResource( 18 )]
+position = Vector2( 817.507, 1696.97 )
+
+[node name="Squirrel6" parent="main" instance=ExtResource( 18 )]
+position = Vector2( 471.156, 800.08 )
 
 [node name="buttons" type="Node2D" parent="."]
 visible = false
@@ -200,21 +227,3 @@ margin_left = 1.73688
 margin_top = 6.05322
 margin_right = 1.73682
 margin_bottom = 1.0
-
-[node name="Squirrel" parent="." instance=ExtResource( 18 )]
-position = Vector2( 477.449, 664.26 )
-
-[node name="Squirrel2" parent="." instance=ExtResource( 18 )]
-position = Vector2( 642.87, 688.815 )
-
-[node name="Squirrel3" parent="." instance=ExtResource( 18 )]
-position = Vector2( 178.915, 776.695 )
-
-[node name="Squirrel4" parent="." instance=ExtResource( 18 )]
-position = Vector2( 955.62, 792.203 )
-
-[node name="Squirrel5" parent="." instance=ExtResource( 18 )]
-position = Vector2( 701.026, 802.542 )
-
-[node name="Squirrel6" parent="." instance=ExtResource( 18 )]
-position = Vector2( 476.156, 796.08 )

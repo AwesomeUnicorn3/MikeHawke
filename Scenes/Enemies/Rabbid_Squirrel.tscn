@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Rabbid_Squirrel.gd" type="Script" id=1]
 [ext_resource path="res://Characters/squirell.png" type="Texture" id=2]
@@ -12,28 +12,34 @@
 [ext_resource path="res://Animations/Characters/BrownSquirrel/WalkUp.tres" type="Animation" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
+radius = 6.43476
+height = 3.097
+
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 5.36042
-height = 8.09921
+height = 8.5317
 
 [node name="Squirrel" type="KinematicBody2D"]
 position = Vector2( 0.475647, -7.61039 )
-scale = Vector2( 1.89264, 1.6 )
 collision_layer = 128
-collision_mask = 235
+collision_mask = 234
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0.23484, 3.61112 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.297396, 9.57084 )
+scale = Vector2( 0.957731, 1 )
 shape = SubResource( 1 )
 
 [node name="hitbox" type="Area2D" parent="."]
-position = Vector2( 6.81001, -7.77778 )
+position = Vector2( 0.305647, 4.1024 )
+rotation = 1.5708
+scale = Vector2( 0.936597, 0.524999 )
 collision_layer = 128
 collision_mask = 65
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2( -6.57517, 11.3889 )
-shape = SubResource( 1 )
+position = Vector2( 0.0826116, 0.320645 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3.38089, -9.98482 )

@@ -50,6 +50,8 @@ func _ready():
 	
 #	$AnimationPlayer.play(Global.PlayerAnim)
 	close_menu.connect("menu_closed", self, "equip_stats")
+# warning-ignore:return_value_discarded
+	self.connect("on_death", self, "on_death")
 	startup()
 
 
@@ -161,25 +163,30 @@ func raydir_loop():
 	match movedir:
 		dir.LEFT:
 			look.rotation_degrees = 90
-
+			look.cast_to.y = 25
 		dir.RIGHT:
 			look.rotation_degrees = -90
-
+			look.cast_to.y = 25
 		dir.UP:
 			look.rotation_degrees = 180
-
+			look.cast_to.y = 30
 		dir.DOWN:
 			look.rotation_degrees = 0
+			look.cast_to.y = 30
 
 		#Diagonal Movement when you get diagonal sprite, change Degrees
 		dir.LEFT_UP:
 			look.rotation_degrees = 125
+			look.cast_to.y = 25
 		dir.RIGHT_UP:
 			look.rotation_degrees = -125
+			look.cast_to.y = 25
 		dir.LEFT_DOWN:
 			look.rotation_degrees = 45
+			look.cast_to.y = 25
 		dir.RIGHT_DOWN:
 			look.rotation_degrees = -45
+			look.cast_to.y = 25
 
 
 func _on_MikeHawke_interact():
@@ -229,8 +236,15 @@ func equip_stats():
 #func _on_characterBackTimer_timeout():
 #	Global.Can_walk()
 
-func death():
-	print("You Died")
+func on_death():
+	var health = ImportData.character_stats[id]["CurrentHealth"]
+	if health <= 0:
+		print("You Died")
+		call_deferred("death_deferred")
+
+func death_deferred():
+	Global.setScene("res://Scenes/TitleScreen.tscn")
+	#Change scene to "You died" then navigate to main menu
 
 
 func move_state(): #Character movement and animation
@@ -275,7 +289,7 @@ func attack_state():
 		if weapon != null:
 			use_item(load(weapon_scene))
 			wait = true
-			$ModulateTimer.start()
+			$AttackTimer.start()
 
 
 
@@ -306,4 +320,8 @@ func set_scene():
 
 
 func _on_ModulateTimer_timeout():
+	pass
+
+
+func _on_AttackTimer_timeout():
 	wait = false
