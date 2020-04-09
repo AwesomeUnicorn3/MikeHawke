@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cat CarrierPressed.png-ae22e2622634035a4800975d4e70623c.stex"
+path="res://.import/ItemIconBackgroundPressed.png-50edf2d6d23df06ea30864e80898e612.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/Cat CarrierPressed.png"
-dest_files=[ "res://.import/Cat CarrierPressed.png-ae22e2622634035a4800975d4e70623c.stex" ]
+source_file="res://Icons/ItemIconBackgroundPressed.png"
+dest_files=[ "res://.import/ItemIconBackgroundPressed.png-50edf2d6d23df06ea30864e80898e612.stex" ]
 
 [params]
 

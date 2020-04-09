@@ -18,17 +18,13 @@ __meta__ = {
 }
 
 [node name="ItemBackground" type="TextureRect" parent="."]
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 100.0
+margin_bottom = 100.0
 texture = ExtResource( 2 )
 
 [node name="ItemButton" type="TextureButton" parent="ItemBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 3.0
-margin_right = -4.0
-margin_bottom = -5.0
 theme = ExtResource( 3 )
 expand = true
 __meta__ = {
@@ -60,9 +56,9 @@ size_flags_vertical = 0
 theme = ExtResource( 3 )
 
 [node name="ItemName" type="Label" parent="."]
-margin_left = 74.0
+margin_left = 104.0
 margin_right = 162.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 4 )
@@ -71,7 +67,7 @@ valign = 1
 [node name="Drop" type="ColorRect" parent="."]
 margin_left = 166.0
 margin_right = 266.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 theme = ExtResource( 3 )
 color = Color( 0, 0, 0, 1 )
@@ -178,8 +174,7 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
+[connection signal="button_down" from="ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down"]
 [connection signal="button_up" from="ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up"]
 [connection signal="button_up" from="Drop/DropButton" to="." method="_on_DropButton_button_up"]
 [connection signal="button_up" from="Equip/EquipButton" to="." method="_on_EquipButton_button_up"]
-[connection signal="button_up" from="UseItem/UseItemButton" to="." method="_on_UseItem_button_up"]

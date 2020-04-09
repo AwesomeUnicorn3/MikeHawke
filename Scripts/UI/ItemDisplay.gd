@@ -1,9 +1,5 @@
 extends HBoxContainer
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 signal get_item_info(name)
 signal drop_selected(count, itemdrop, item_price, cost, shopcount)
 signal equip_item(itemdrop)
@@ -17,7 +13,7 @@ var item_price
 var cost : int
 var type
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	itemdrop = $ItemName.get_text()
 	count = $ItemBackground/ItemButton/Label.get_text()
@@ -25,14 +21,13 @@ func _ready():
 	item_price = dict_item[itemdrop]["Sell Value"]
 	cost = dict_item[itemdrop]["Cost"]
 	type = dict_item[itemdrop]["Type"]
-	
+
 	match type:
 		"Weapons":
 			$UseItem.visible = false
 			$Equip.visible = true
 			$Drop.visible = true
 
-		
 		"Consumable":
 			var canuse = dict_item[itemdrop]["CanUse"]
 			if canuse == "Yes" and Global.buysell == "":
@@ -65,18 +60,15 @@ func _on_DropButton_button_up():
 	emit_signal("drop_selected", count, itemdrop, item_price, cost, shopcount)
 
 
-
-
 func _on_ItemButton_button_up():
 	var name = self.name
 	emit_signal("get_item_info", name)
-
+	$ItemBackground.set_texture(load("res://Icons/ItemIconBackground.png"))
 
 func _on_EquipButton_button_up():
 	itemdrop = $ItemName.get_text()
-
 	emit_signal("equip_item", itemdrop)
 
 
-func _on_UseItem_button_up():
-	pass # Replace with function body.
+func _on_ItemButton_button_down():
+	$ItemBackground.set_texture(load("res://Icons/ItemIconBackgroundPressed.png"))

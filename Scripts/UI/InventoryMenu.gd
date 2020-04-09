@@ -1,9 +1,8 @@
 extends Control
 signal menu_closed
 signal nav_to_equip
-#signal drop_menu
-onready var char_select : PackedScene = load("res://Scenes/UI/CharacterSelect.tscn")
 
+onready var char_select : PackedScene = load("res://Scenes/UI/CharacterSelect.tscn")
 onready var item  : PackedScene = load("res://Scenes/UI/ItemDisplay.tscn")
 onready var itemdetail  : PackedScene = load("res://Scenes/UI/Stat_Detail.tscn")
 onready var dropconfirm : PackedScene = load("res://Scenes/UI/DropConfirm.tscn")
@@ -91,7 +90,6 @@ func get_inventory_type():
 		var item_type = dict_item_values[item_name]["Type"]
 		var scene_instance = item.instance()
 		var icon = "res://Icons/" + str(item_name) + ".png"
-		var iconpressed = "res://Icons/" + str(item_name) + "Pressed" + ".png"
 		scene_instance.set_name(item_name)
 		if item_count != 0: 
 			if item_type != get_item_type:
@@ -105,7 +103,6 @@ func get_inventory_type():
 				scene_instance.get_node("ItemName").set_text(item_name)
 				scene_instance.get_node("ItemBackground/ItemButton/Label").set_text(String(item_count))
 				scene_instance.get_node("ItemBackground/ItemButton").set_normal_texture(load(icon))
-				scene_instance.get_node("ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
 				container.add_child(scene_instance)
 		i += 1
 
@@ -176,10 +173,9 @@ func _on_ItemDisplay_get_item_info(name):
 	clear_item_detail()
 	stats = item_detail_container
 	var dict_item_values = ImportData.item_data
-	print(name)
 	var test_array = dict_item_values[name]
 
-#	print(test_array)
+
 	item_name_container.set_text(name)
 	item_Description_container.set_text(test_array["Description"])
 	for i in range(test_array.size()):
@@ -208,8 +204,6 @@ func _on_DropButton_button_up(count, itemdrops, _item_price, _cost, _shopcount):
 	scene_instance.get_node("ItemName").set_text(itemdrops)
 	scene_instance.connect("refresh_inventory", self, "_on_drop_refresh")
 
-	
-
 func _on_drop_refresh():
 	match get_item_type:
 		"Weapons":
@@ -225,11 +219,6 @@ func _on_drop_refresh():
 		"Quest_Items":
 			_on_Quest_Items_button_up()
 
-
-
-
-
-
 func clear_item_detail():
 	item_name_container.set_text("")
 	item_Description_container.set_text("")
@@ -237,7 +226,6 @@ func clear_item_detail():
 	if parent != null:
 		for n in parent.get_children():
 			parent.remove_child(n)
-
 
 func equip_selected_item(itemdrops):
 	itemdrop = itemdrops
@@ -250,7 +238,6 @@ func equip_selected_item(itemdrops):
 	yield(t,"exit")
 	$FullMenu/Header/Exit/ExitButton.disabled = false
 
-
 func _on_char_selected(char_name):
 	#this is where you unequip item, add to inventory, equip item, remove from inventory
 	var curr_equipped_item = dict_char[char_name][equiptype + "Equipped"]
@@ -260,6 +247,3 @@ func _on_char_selected(char_name):
 	if curr_equipped_item != null and curr_equipped_item != "Fist":
 		dict_inven[curr_equipped_item][1] += 1
 	_on_drop_refresh()
-	
-
-

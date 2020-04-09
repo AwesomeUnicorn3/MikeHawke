@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sticky AluminumPressed.png-66e52305c82eba1196829bc7860b6195.stex"
+path="res://.import/Squirrel Pelt.png-3dab47e2f1f0a40fd98cf8843b25f6d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/Sticky AluminumPressed.png"
-dest_files=[ "res://.import/Sticky AluminumPressed.png-66e52305c82eba1196829bc7860b6195.stex" ]
+source_file="res://Icons/Squirrel Pelt.png"
+dest_files=[ "res://.import/Squirrel Pelt.png-3dab47e2f1f0a40fd98cf8843b25f6d8.stex" ]
 
 [params]
 
