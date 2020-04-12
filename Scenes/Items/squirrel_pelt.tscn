@@ -4,8 +4,8 @@
 [ext_resource path="res://Characters/squirell.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 15.6745
-height = 20.8495
+radius = 8.52974
+height = 12.1457
 
 [node name="squirrel_pelt" type="StaticBody2D" groups=[
 "Shizzo",
@@ -15,14 +15,13 @@ collision_mask = 5
 script = ExtResource( 1 )
 interaction_script = "res://dialogues/SquirrelPelt.json"
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -0.673023, 1.71712 )
-shape = SubResource( 1 )
-
-[node name="ShizzoCan" type="Sprite" parent="."]
-position = Vector2( 1.67248, -9.89549 )
-z_index = 3
+[node name="SquirrelPelt" type="Sprite" parent="."]
+position = Vector2( 2.0599, -17.2589 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 12
 frame = 7
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0.101822, -6.41875 )
+shape = SubResource( 1 )

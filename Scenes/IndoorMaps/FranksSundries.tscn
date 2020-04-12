@@ -2,7 +2,7 @@
 
 [ext_resource path="res://TilesSets/IndoorAssets1.tres" type="TileSet" id=1]
 [ext_resource path="res://TilesSets/IndoorTiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Scenes/MikeHawke.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PlayableCharacters/MikeHawke.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/NPC/Frank.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=5]
 [ext_resource path="res://Audio/BGM/1-03 Buy! Buy! Buy!.ogg" type="AudioStream" id=8]
@@ -57,7 +57,7 @@ position = Vector2( -23.3241, -58.3639 )
 rotation = 3.14159
 scale = Vector2( 0.984301, 1.08 )
 Goto_scene = "res://Scenes/Fruitville.tscn"
-set_player_position = Vector2( 296, 1304 )
+set_player_position = Vector2( 87, 1265 )
 
 [node name="Timer" type="Timer" parent="."]
 

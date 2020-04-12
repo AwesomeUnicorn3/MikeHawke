@@ -131,13 +131,20 @@ func use_item(item):
 	
 
 func player_blink():
+	var Player
 	while invincible == true:
 		var modwhite = Color(1,1,1)
 		var modred = Color(255,0,0,255)
-		$Sprite.set_self_modulate(modred)
+
+		if get_node_or_null("Sprite/Body") == null:
+			Player = $Sprite
+		else:
+			Player = $Sprite/Body
+			
+		Player.set_self_modulate(modred)
 		$ModulateTimer.start()
 		yield($ModulateTimer, "timeout")
-		$Sprite.set_self_modulate(modwhite)
+		Player.set_self_modulate(modwhite)
 		$ModulateTimer.start()
 		yield($ModulateTimer, "timeout")
 

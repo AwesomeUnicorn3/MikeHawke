@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/PlayableCharacters/Spritesheets/MikeChangableSpriteBody.png" type="Texture" id=1]
+[ext_resource path="res://Animations/Characters/Mike/RunUp.tres" type="Animation" id=2]
+[ext_resource path="res://Scenes/PlayableCharacters/MainWindow.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/PlayableCharacters/Spritesheets/MikeChangableSpriteShirt.png" type="Texture" id=4]
+[ext_resource path="res://Animations/Characters/Mike/RunDown.tres" type="Animation" id=5]
+[ext_resource path="res://Animations/Characters/Mike/RunDownRight.tres" type="Animation" id=6]
+[ext_resource path="res://Animations/Characters/Mike/RunDownLeft.tres" type="Animation" id=7]
+[ext_resource path="res://Animations/Characters/Mike/RunRight.tres" type="Animation" id=8]
+[ext_resource path="res://Animations/Characters/Mike/RunLeft.tres" type="Animation" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "RunUpLeft"
+length = 0.3
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 38, 37 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shirt:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 38, 37 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "RunUpRight"
+length = 0.3
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 38, 37 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shirt:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 38, 37 ]
+}
+
+[node name="Sprite" type="Sprite"]
+script = ExtResource( 3 )
+body_path = ExtResource( 1 )
+shirt_path = ExtResource( 4 )
+
+[node name="Body" type="Sprite" parent="."]
+vframes = 8
+hframes = 12
+frame = 26
+
+[node name="Shirt" type="Sprite" parent="."]
+vframes = 8
+hframes = 12
+frame = 26
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
+anims/RunDown = ExtResource( 5 )
+anims/RunDownLeft = ExtResource( 7 )
+anims/RunDownRight = ExtResource( 6 )
+anims/RunLeft = ExtResource( 9 )
+anims/RunRight = ExtResource( 8 )
+anims/RunUp = ExtResource( 2 )
+anims/RunUpLeft = SubResource( 1 )
+anims/RunUpRight = SubResource( 2 )
+
+[node name="SpriteTest" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 12

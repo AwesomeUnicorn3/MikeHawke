@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Environment/PearHouse.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Environment/PearHouse_Shadow.png" type="Texture" id=3]
+
+[node name="PearHouse" type="StaticBody2D"]
+scale = Vector2( 0.75, 0.75 )
+collision_layer = 2
+collision_mask = 229
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -6.49712, 38.8599 )
+z_index = 1
+build_mode = 1
+polygon = PoolVector2Array( -199.56, -47.8353, 205.861, -45.268, 182.471, 18.9154, 125.297, 86.9498, 30, 115, 29.1391, 21.4827, -47.527, 22.7664, -47.527, 112.623, -127.27, 81.0882, -183.531, 19.2343 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -6.10352e-05, 38.9274 )
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="YSort"]
+position = Vector2( 17.2435, -138.231 )
+scale = Vector2( 1.88654, 1.92742 )
+texture = ExtResource( 1 )
+offset = Vector2( -10.1365, -48.956 )
+
+[node name="Sprite2" type="Sprite" parent="YSort"]
+position = Vector2( -6.87274, -154.54 )
+rotation = 0.523468
+scale = Vector2( 1.55217, 3.1661 )
+texture = ExtResource( 3 )
+offset = Vector2( 47.9665, -24.7292 )
+
+[node name="DoorWay" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -18.9396, 85.5986 )
+scale = Vector2( 1.75557, 1.93578 )
+z_index = -1
+offset = Vector2( 1.42618, -10.145 )
+Goto_scene = "res://Scenes/IndoorMaps/House-Mike.tscn"
+set_player_position = Vector2( 0, -64 )

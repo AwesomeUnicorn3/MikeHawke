@@ -21,6 +21,7 @@ height = 8.5317
 
 [node name="Squirrel" type="KinematicBody2D"]
 position = Vector2( 0.475647, -7.61039 )
+z_index = -4
 collision_layer = 128
 collision_mask = 234
 script = ExtResource( 1 )

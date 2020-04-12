@@ -134,14 +134,14 @@ size_flags_vertical = 3
 margin_left = 24.0
 margin_right = 216.0
 margin_bottom = 610.0
-rect_min_size = Vector2( 0, 192 )
+rect_min_size = Vector2( 192, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
 [node name="Weapons" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
 margin_right = 192.0
-margin_bottom = 83.0
+margin_bottom = 98.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
@@ -172,9 +172,9 @@ __meta__ = {
 }
 
 [node name="Armor" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 87.0
+margin_top = 102.0
 margin_right = 192.0
-margin_bottom = 170.0
+margin_bottom = 200.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
@@ -205,9 +205,9 @@ __meta__ = {
 }
 
 [node name="Shoes" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 174.0
+margin_top = 204.0
 margin_right = 192.0
-margin_bottom = 257.0
+margin_bottom = 302.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
@@ -238,6 +238,7 @@ __meta__ = {
 }
 
 [node name="Crafting" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+visible = false
 margin_top = 261.0
 margin_right = 192.0
 margin_bottom = 344.0
@@ -271,9 +272,9 @@ __meta__ = {
 }
 
 [node name="Consumable" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 348.0
+margin_top = 306.0
 margin_right = 192.0
-margin_bottom = 431.0
+margin_bottom = 404.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
@@ -304,9 +305,9 @@ __meta__ = {
 }
 
 [node name="Quest_Items" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 435.0
+margin_top = 408.0
 margin_right = 192.0
-margin_bottom = 518.0
+margin_bottom = 506.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
@@ -337,7 +338,7 @@ __meta__ = {
 }
 
 [node name="Currency" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 522.0
+margin_top = 510.0
 margin_right = 192.0
 margin_bottom = 610.0
 size_flags_horizontal = 3
@@ -356,7 +357,7 @@ __meta__ = {
 }
 
 [node name="CurrencyIcon" type="TextureRect" parent="FullMenu/TabsContainer/CategoryPanel/Currency/Currency"]
-margin_bottom = 88.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 texture = ExtResource( 8 )
 expand = true
@@ -368,7 +369,7 @@ __meta__ = {
 [node name="CurrencyDisplay" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Currency/Currency"]
 margin_left = 4.0
 margin_right = 193.0
-margin_bottom = 88.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 9 )
@@ -380,6 +381,7 @@ valign = 1
 margin_left = 220.0
 margin_right = 862.0
 margin_bottom = 610.0
+rect_min_size = Vector2( 505, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -391,14 +393,15 @@ size_flags_vertical = 3
 
 [node name="Shoes" type="ScrollContainer" parent="FullMenu/TabsContainer"]
 visible = false
-margin_left = 501.0
+margin_left = 543.0
 margin_right = 862.0
 margin_bottom = 610.0
+rect_min_size = Vector2( 505, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Shoes"]
-margin_right = 361.0
+margin_right = 505.0
 margin_bottom = 610.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -408,11 +411,12 @@ visible = false
 margin_left = 263.0
 margin_right = 417.0
 margin_bottom = 617.0
+rect_min_size = Vector2( 505, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Armor"]
-margin_right = 154.0
+margin_right = 505.0
 margin_bottom = 617.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -422,26 +426,28 @@ visible = false
 margin_left = 315.0
 margin_right = 504.0
 margin_bottom = 617.0
+rect_min_size = Vector2( 505, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Crafting"]
-margin_right = 189.0
+margin_right = 505.0
 margin_bottom = 617.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Consumable" type="ScrollContainer" parent="FullMenu/TabsContainer"]
 visible = false
-margin_left = 501.0
+margin_left = 543.0
 margin_right = 862.0
-margin_bottom = 617.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 505, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Consumable"]
-margin_right = 361.0
-margin_bottom = 617.0
+margin_right = 505.0
+margin_bottom = 610.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -450,11 +456,12 @@ visible = false
 margin_left = 548.0
 margin_right = 892.0
 margin_bottom = 617.0
+rect_min_size = Vector2( 505, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FullMenu/TabsContainer/Quest_Items"]
-margin_right = 344.0
+margin_right = 505.0
 margin_bottom = 617.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -491,6 +498,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 valign = 1
+autowrap = true
 
 [node name="ItemDescription" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
 margin_top = 18.0
@@ -520,6 +528,7 @@ margin_right = 375.0
 margin_bottom = 474.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+scroll_horizontal_enabled = false
 
 [node name="Stats" type="VBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats/StatsContainer"]
 margin_right = 375.0

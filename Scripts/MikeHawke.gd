@@ -74,49 +74,7 @@ func startup():
 
 	Exp = dict_char_stats[id]["Exp"]
 	equip_stats()
-	
-	
 
-	
-
-	
-#func _physics_process(_delta):
-#	equip_stats()
-	
-
-#	elif state == ATTACK:
-#		_state_attack()
-
-
-		
-#		controls_loop()
-#		state_machine()
-#		raydir_loop()
-	
-#		Global.PlayerDir = spritedir
-#		if movedir != dir.CENTER:
-#			state = DEFAULT
-#		else:
-#			state = IDLE
-		
-#		Global.PlayerAnim = $AnimationPlayer.get_current_animation()
-		
-#		if Input.is_action_just_pressed("A"):
-#			var weapon = dict_char_stats[entity_name]["WeaponsEquipped"]
-#			var weapon_scene = "res://Scenes/Weapons/" + weapon + ".tscn"
-#			if weapon != null:
-#				use_item(load(weapon_scene))
-
-
-#func _set_state(value):
-#	state = value
-	
-#func _state_attack():
-#	anim_switch("Idle")
-#	state_machine()
-#	damage_loop()
-	
-	
 # warning-ignore:unused_argument
 func _process(delta):
 	if Global.PlayerCanMove == false:

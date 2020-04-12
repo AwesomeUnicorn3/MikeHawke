@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Environment/PumpkinHouse.png" type="Texture" id=1]
+[ext_resource path="res://assets/Environment/PumpkinHouse_Shadow.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=3]
+
+[node name="PumpkinHouse" type="StaticBody2D"]
+scale = Vector2( 1.16, 1.17424 )
+collision_layer = 2
+collision_mask = 229
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -6.10352e-05, 37.5762 )
+scale = Vector2( 1, 1 )
+z_index = 1
+build_mode = 1
+polygon = PoolVector2Array( -195.328, -47.1017, 199.671, -47.5274, 180.17, 20.0861, 122.412, 83.957, 30, 115, 30, 75, -30, 75, -30, 115, -127.27, 81.0882, -183.531, 19.2343 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -6.10352e-05, 38.9274 )
+
+[node name="Sprite" type="Sprite" parent="YSort"]
+position = Vector2( 1.0429, -69.3235 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 1 )
+offset = Vector2( -10.1365, -48.956 )
+
+[node name="Sprite2" type="Sprite" parent="YSort"]
+position = Vector2( 0.303781, -76.625 )
+scale = Vector2( 2, 1.5 )
+texture = ExtResource( 2 )
+offset = Vector2( 25.047, 19.8492 )
+
+[node name="DoorWay" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -0.893012, 84.3985 )
+scale = Vector2( 1.16, 1.08 )
+z_index = 0
+offset = Vector2( 1.16355, 1.9447 )
+Goto_scene = "res://Scenes/IndoorMaps/House-Mike.tscn"
+set_player_position = Vector2( 0, -64 )

@@ -1,13 +1,13 @@
 [gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Scripts/MikeHawke.gd" type="Script" id=1]
-[ext_resource path="res://Characters/MainCharactersprite.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/PlayableCharacters/SpriteSheetSelection.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/characters/MainCharactersprite.png" type="Texture" id=18]
 [ext_resource path="res://assets/weapons/Fist.png" type="Texture" id=19]
 
-[sub_resource type="CapsuleShape2D" id=61]
-radius = 8.68649
-height = 4.59533
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.21721
+height = 1.43472
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -185,7 +185,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -197,7 +197,7 @@ tracks/1/keys = {
 "values": [ Vector2( 88, 34 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -209,7 +209,7 @@ tracks/2/keys = {
 "values": [ 180.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -238,7 +238,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -250,7 +250,7 @@ tracks/1/keys = {
 "values": [ Vector2( 68, 28 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -262,7 +262,7 @@ tracks/2/keys = {
 "values": [ 225.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -291,7 +291,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -303,7 +303,7 @@ tracks/1/keys = {
 "values": [ Vector2( 106, 28 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -315,7 +315,7 @@ tracks/2/keys = {
 "values": [ 135.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -344,7 +344,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -356,7 +356,7 @@ tracks/1/keys = {
 "values": [ Vector2( 58, 10 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -368,7 +368,7 @@ tracks/2/keys = {
 "values": [ 270.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -397,7 +397,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -409,7 +409,7 @@ tracks/1/keys = {
 "values": [ Vector2( 116, 10 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -421,7 +421,7 @@ tracks/2/keys = {
 "values": [ 90.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -450,7 +450,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -462,7 +462,7 @@ tracks/1/keys = {
 "values": [ Vector2( 88, -40 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -474,7 +474,7 @@ tracks/2/keys = {
 "values": [ 360.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -503,7 +503,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -515,7 +515,7 @@ tracks/1/keys = {
 "values": [ Vector2( 64, -6 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -527,7 +527,7 @@ tracks/2/keys = {
 "values": [ 315.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -556,7 +556,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite/sprite:position")
+tracks/1/path = NodePath("Sprite2/sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -568,7 +568,7 @@ tracks/1/keys = {
 "values": [ Vector2( 114, -4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/sprite:rotation_degrees")
+tracks/2/path = NodePath("Sprite2/sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -580,7 +580,7 @@ tracks/2/keys = {
 "values": [ 45.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/sprite:visible")
+tracks/3/path = NodePath("Sprite2/sprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -596,7 +596,7 @@ tracks/3/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -612,7 +612,7 @@ tracks/0/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -628,7 +628,7 @@ tracks/0/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -644,7 +644,7 @@ tracks/0/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -660,7 +660,7 @@ tracks/0/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -676,7 +676,7 @@ tracks/0/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -692,7 +692,7 @@ tracks/0/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -708,7 +708,7 @@ tracks/0/keys = {
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -724,7 +724,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -740,7 +740,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -756,7 +756,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -772,7 +772,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -788,7 +788,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -804,7 +804,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -820,7 +820,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -836,7 +836,7 @@ tracks/0/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -852,22 +852,12 @@ tracks/0/keys = {
 "player",
 ]]
 position = Vector2( -0.109064, -3.92631 )
-z_index = 5
-z_as_relative = false
 collision_mask = 44
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.571964, 5.05009 )
-shape = SubResource( 61 )
-
-[node name="Sprite2" type="Sprite" parent="."]
-visible = false
-position = Vector2( 1.59574, -23.2244 )
-texture = ExtResource( 2 )
-vframes = 8
-hframes = 12
-frame = 1
+position = Vector2( -0.729736, 2.21006 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2, 0 )
@@ -906,15 +896,16 @@ wait_time = 0.1
 wait_time = 0.7
 one_shot = true
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -88, -16 )
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -88.1578, -16.4733 )
 texture = ExtResource( 18 )
 offset = Vector2( 88, 0 )
 vframes = 8
 hframes = 12
-frame = 37
+frame = 13
 
-[node name="sprite" type="Sprite" parent="Sprite"]
+[node name="sprite" type="Sprite" parent="Sprite2"]
 visible = false
 position = Vector2( 68, 28 )
 rotation = 3.92699
@@ -923,11 +914,11 @@ texture = ExtResource( 19 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 35 )
-anim_player = NodePath("../AnimationPlayer")
+anim_player = NodePath("../Sprite/AnimationPlayer")
 process_mode = 0
 parameters/playback = SubResource( 36 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
-parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( -0.504065, 0.50289 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -955,8 +946,13 @@ anims/RunRight = SubResource( 57 )
 anims/RunUp = SubResource( 58 )
 anims/RunUpLeft = SubResource( 59 )
 anims/RunUpRight = SubResource( 60 )
+
+[node name="Sprite" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.386604, -15.878 )
 [connection signal="interact" from="." to="." method="_on_MikeHawke_interact"]
 [connection signal="timeout" from="InvicibleTimer" to="." method="_on_InvicibleTimer_timeout"]
 [connection signal="timeout" from="KnockBackTimer" to="." method="_on_KnockBackTimer_timeout"]
 [connection signal="timeout" from="ModulateTimer" to="." method="_on_ModulateTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
+[editable path="Sprite"]

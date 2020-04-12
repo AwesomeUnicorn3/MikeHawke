@@ -8,8 +8,6 @@
 [ext_resource path="res://Themes/35Theme.tres" type="Theme" id=9]
 [ext_resource path="res://Icons/ItemIconBackground.png" type="Texture" id=10]
 
-
-
 [node name="LootPanel" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -68,7 +66,7 @@ size_flags_vertical = 3
 
 [node name="ItemsContainer" type="VBoxContainer" parent="LootPanelConainer/MainNodes/Items"]
 margin_right = 572.0
-margin_bottom = 440.0
+margin_bottom = 620.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -76,14 +74,14 @@ size_flags_vertical = 3
 "LootPanelSlots",
 ]]
 margin_right = 572.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 theme = ExtResource( 9 )
 
 [node name="ItemBackground" type="TextureRect" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot1"]
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 100.0
+margin_bottom = 100.0
 texture = ExtResource( 10 )
 
 [node name="ItemButton" type="TextureButton" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot1/ItemBackground"]
@@ -116,9 +114,9 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot1"]
-margin_left = 74.0
+margin_left = 104.0
 margin_right = 572.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 valign = 1
@@ -126,16 +124,16 @@ valign = 1
 [node name="Loot2" type="HBoxContainer" parent="LootPanelConainer/MainNodes/Items/ItemsContainer" groups=[
 "LootPanelSlots",
 ]]
-margin_top = 74.0
+margin_top = 104.0
 margin_right = 572.0
-margin_bottom = 144.0
+margin_bottom = 204.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 theme = ExtResource( 9 )
 
 [node name="ItemBackground" type="TextureRect" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot2"]
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 100.0
+margin_bottom = 100.0
 texture = ExtResource( 10 )
 
 [node name="ItemButton" type="TextureButton" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot2/ItemBackground"]
@@ -166,9 +164,9 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot2"]
-margin_left = 74.0
+margin_left = 104.0
 margin_right = 572.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 valign = 1
@@ -176,16 +174,16 @@ valign = 1
 [node name="Loot3" type="HBoxContainer" parent="LootPanelConainer/MainNodes/Items/ItemsContainer" groups=[
 "LootPanelSlots",
 ]]
-margin_top = 148.0
+margin_top = 208.0
 margin_right = 572.0
-margin_bottom = 218.0
+margin_bottom = 308.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 theme = ExtResource( 9 )
 
 [node name="ItemBackground" type="TextureRect" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot3"]
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 100.0
+margin_bottom = 100.0
 texture = ExtResource( 10 )
 
 [node name="ItemButton" type="TextureButton" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot3/ItemBackground"]
@@ -216,9 +214,9 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot3"]
-margin_left = 74.0
+margin_left = 104.0
 margin_right = 572.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 valign = 1
@@ -226,16 +224,16 @@ valign = 1
 [node name="Loot4" type="HBoxContainer" parent="LootPanelConainer/MainNodes/Items/ItemsContainer" groups=[
 "LootPanelSlots",
 ]]
-margin_top = 222.0
+margin_top = 312.0
 margin_right = 572.0
-margin_bottom = 292.0
+margin_bottom = 412.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 theme = ExtResource( 9 )
 
 [node name="ItemBackground" type="TextureRect" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot4"]
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 100.0
+margin_bottom = 100.0
 texture = ExtResource( 10 )
 
 [node name="ItemButton" type="TextureButton" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot4/ItemBackground"]
@@ -266,9 +264,9 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot4"]
-margin_left = 74.0
+margin_left = 104.0
 margin_right = 572.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 valign = 1
@@ -276,16 +274,16 @@ valign = 1
 [node name="Loot5" type="HBoxContainer" parent="LootPanelConainer/MainNodes/Items/ItemsContainer" groups=[
 "LootPanelSlots",
 ]]
-margin_top = 296.0
+margin_top = 416.0
 margin_right = 572.0
-margin_bottom = 366.0
+margin_bottom = 516.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 theme = ExtResource( 9 )
 
 [node name="ItemBackground" type="TextureRect" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot5"]
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 100.0
+margin_bottom = 100.0
 texture = ExtResource( 10 )
 
 [node name="ItemButton" type="TextureButton" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot5/ItemBackground"]
@@ -316,9 +314,9 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot5"]
-margin_left = 74.0
+margin_left = 104.0
 margin_right = 572.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 valign = 1
@@ -326,16 +324,16 @@ valign = 1
 [node name="Loot6" type="HBoxContainer" parent="LootPanelConainer/MainNodes/Items/ItemsContainer" groups=[
 "LootPanelSlots",
 ]]
-margin_top = 370.0
+margin_top = 520.0
 margin_right = 572.0
-margin_bottom = 440.0
+margin_bottom = 620.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 theme = ExtResource( 9 )
 
 [node name="ItemBackground" type="TextureRect" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot6"]
-margin_right = 70.0
-margin_bottom = 70.0
+margin_right = 100.0
+margin_bottom = 100.0
 texture = ExtResource( 10 )
 
 [node name="ItemButton" type="TextureButton" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot6/ItemBackground"]
@@ -366,9 +364,9 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot6"]
-margin_left = 74.0
+margin_left = 104.0
 margin_right = 572.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 valign = 1
@@ -459,11 +457,17 @@ margin_right = 612.0
 margin_bottom = 399.0
 rect_min_size = Vector2( 10, 0 )
 size_flags_vertical = 3
+[connection signal="button_down" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot1/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down" binds= [ 1 ]]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot1/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up" binds= [ 1 ]]
+[connection signal="button_down" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot2/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down" binds= [ 2 ]]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot2/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up" binds= [ 2 ]]
+[connection signal="button_down" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot3/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down" binds= [ 3 ]]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot3/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up" binds= [ 3 ]]
+[connection signal="button_down" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot4/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down" binds= [ 4 ]]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot4/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up" binds= [ 4 ]]
+[connection signal="button_down" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot5/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down" binds= [ 5 ]]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot5/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up" binds= [ 5 ]]
+[connection signal="button_down" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot6/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down" binds= [ 6 ]]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Items/ItemsContainer/Loot6/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up" binds= [ 6 ]]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Buttons/LootAll/LootAllButton" to="." method="_on_LootAllButton_button_up"]
 [connection signal="button_up" from="LootPanelConainer/MainNodes/Buttons/Close/CloseButton" to="." method="_on_CloseButton_button_up"]

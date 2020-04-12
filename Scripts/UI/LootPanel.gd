@@ -61,9 +61,9 @@ func PopulatePanel():
 				
 			get_node(str(i.get_path()) + "/ItemName").set_text(loot_dict[counter][0])
 			var icon = "res://Icons/" + str(loot_dict[counter][0]) + ".png"
-			var iconpressed = "res://Icons/" + str(loot_dict[counter][0]) + "Pressed" + ".png"
+#			var iconpressed = "res://Icons/" + str(loot_dict[counter][0]) + "Pressed" + ".png"
 			get_node(str(i.get_path()) + "/ItemBackground/ItemButton").set_normal_texture(load(icon))
-			get_node(str(i.get_path()) + "/ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
+#			get_node(str(i.get_path()) + "/ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
 			if loot_dict[counter][1] > 1:
 				get_node(str(i.get_path()) + "/ItemBackground/ItemButton/Label").set_text(str(loot_dict[counter][1]))
 			counter += 1
@@ -76,9 +76,9 @@ func PopulatePanel_text():
 		if counter < loot_dict.size() + 1:
 			get_node(str(i.get_path()) + "/ItemName").set_text(loot_dict[counterstring][0])
 			var icon = "res://Icons/" + str(loot_dict[counterstring][0]) + ".png"
-			var iconpressed = "res://Icons/" + str(loot_dict[counterstring][0]) + "Pressed" + ".png"
+#			var iconpressed = "res://Icons/" + str(loot_dict[counterstring][0]) + "Pressed" + ".png"
 			get_node(str(i.get_path()) + "/ItemBackground/ItemButton").set_normal_texture(load(icon))
-			get_node(str(i.get_path()) + "/ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
+#			get_node(str(i.get_path()) + "/ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
 			if loot_dict[counterstring][1] > 1:
 				get_node(str(i.get_path()) + "/ItemBackground/ItemButton/Label").set_text(str(loot_dict[counterstring][1]))
 			counter += 1
@@ -93,8 +93,8 @@ func _on_ItemButton_button_up(lootpanelslot):
 	var text = ImportData.importtext
 	var Currency = Global.currency
 	var lpstext = str(lootpanelslot)
-	
-	
+	var loot_slot_node = get_node("LootPanelConainer/MainNodes/Items/ItemsContainer/Loot" + lpstext + "/ItemBackground")
+	loot_slot_node.set_texture(load("res://Icons/ItemIconBackground.png"))
 	if text == true:
 		
 		if loot_dict.has(lpstext):
@@ -109,7 +109,7 @@ func _on_ItemButton_button_up(lootpanelslot):
 			loot_dict.erase(lpstext)
 			var loot_slot_root = "LootPanelConainer/MainNodes/Items/ItemsContainer/Loot" + lpstext
 			get_node(loot_slot_root + "/ItemBackground/ItemButton").set_normal_texture(null)
-			get_node(loot_slot_root + "/ItemBackground/ItemButton").set_pressed_texture(null)
+#			get_node(loot_slot_root + "/ItemBackground/ItemButton").set_pressed_texture(null)
 			get_node(loot_slot_root + "/ItemBackground/ItemButton/Label").set_text("")
 			get_node(loot_slot_root + "/ItemName").set_text("")
 		#erase - follow tutorial for this part
@@ -131,7 +131,7 @@ func _on_ItemButton_button_up(lootpanelslot):
 			loot_dict.erase(lootpanelslot)
 			var loot_slot_root = "LootPanelConainer/MainNodes/Items/ItemsContainer/Loot" + lpstext
 			get_node(loot_slot_root + "/ItemBackground/ItemButton").set_normal_texture(null)
-			get_node(loot_slot_root + "/ItemBackground/ItemButton").set_pressed_texture(null)
+#			get_node(loot_slot_root + "/ItemBackground/ItemButton").set_pressed_texture(null)
 			get_node(loot_slot_root + "/ItemBackground/ItemButton/Label").set_text("")
 			get_node(loot_slot_root + "/ItemName").set_text("")
 #	print(ImportData.inven_data)
@@ -140,3 +140,15 @@ func _on_LootAllButton_button_up():
 	for lootpanelslot in range(1,7):
 		_on_ItemButton_button_up(lootpanelslot)
 	_on_CloseButton_button_up()
+
+
+#func _on_ItemButton_pressed(lootpanelslot):
+#	var lpstext = str(lootpanelslot)
+#	var loot_slot_node = get_node("LootPanelConainer/MainNodes/Items/ItemsContainer/Loot" + lpstext + "/ItemBackground")
+#	loot_slot_node.set_texture(load("res://Icons/ItemIconBackgroundPressed.png"))
+
+
+func _on_ItemButton_button_down(lootpanelslot):
+	var lpstext = str(lootpanelslot)
+	var loot_slot_node = get_node("LootPanelConainer/MainNodes/Items/ItemsContainer/Loot" + lpstext + "/ItemBackground")
+	loot_slot_node.set_texture(load("res://Icons/ItemIconBackgroundPressed.png"))

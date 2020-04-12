@@ -3,10 +3,11 @@
 [ext_resource path="res://Scripts/CumNGo.gd" type="Script" id=1]
 [ext_resource path="res://TilesSets/IndoorTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Scripts/DoorWay.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/MikeHawke.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PlayableCharacters/MikeHawke.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Icons/InsideDoorway.png" type="Texture" id=6]
 [ext_resource path="res://TilesSets/CumNGoFloor.tres" type="TileSet" id=7]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.4368, 5.04202 )
