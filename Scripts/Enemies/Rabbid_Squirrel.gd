@@ -94,5 +94,5 @@ func spawn_drop():
 
 
 func spawn_obj_deferred():
-	$"..".add_child(hide_)
+	$"../..".add_child(hide_)
 	hide_.global_position = pos

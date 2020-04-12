@@ -21,7 +21,7 @@ var input_vector = Vector2.ZERO
 #________________________________
 
 #_____Variables for animation__________________________________________
-onready var animationPlayer = $AnimationPlayer
+#onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 #________________________________________________________________________
@@ -93,6 +93,10 @@ func _process(delta):
 	#______set machine state____
 
 		match state:
+			IDLE:
+				animationState.travel("Idle")
+				velocity = Vector2.ZERO 
+			
 			MOVE:
 				move_state()
 				Global.PlayerDir = spritedir
@@ -153,9 +157,12 @@ func _on_MikeHawke_interact():
 		if collision != null:
 			if collision.get("me"):
 				Global.body = collision
+				if Input.is_action_pressed("ui_select"):
+					state = IDLE
 	else:
 		Global.body = null
-
+		if state == IDLE:
+			state = MOVE
 
 func equip_stats():
 	CurrentDefense = dict_char_stats[entity_name]["CurrentDefense"]
@@ -191,8 +198,6 @@ func equip_stats():
 		CurrentAttack += weapon_attack
 		CurrentDefense += weapon_def
 
-#func _on_characterBackTimer_timeout():
-#	Global.Can_walk()
 
 func on_death():
 	var health = ImportData.character_stats[id]["CurrentHealth"]

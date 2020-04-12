@@ -88,10 +88,8 @@ func _input(event):
 	if me == Global.body:
 		if Input.is_action_pressed("ui_select"):
 			self.selected = true
+
+
 	if Input.is_action_just_released("ui_select"):
 		self.selected = false
-
-#func damage(hit):
-#	pass
-
 
