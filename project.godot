@@ -18,12 +18,11 @@ _global_script_class_icons={
 config/name="The Rise of Mike Hawke"
 run/main_scene="res://Scenes/TitleScreen.tscn"
 boot_splash/image="res://Background_Images/MadeWithMv.png"
-boot_splash/use_filter=false
 
 [autoload]
 
 ImportData="*res://Scripts/engine/ImportData.gd"
-MSG_Options="*res://addons/MSG_System/MSG_Options.tscn"
+MSG_Options="res://addons/MSG_System/MSG_Options.tscn"
 MSG_Bubble="*res://addons/MSG_System/MSG_Bubble.tscn"
 MSG_Box="*res://addons/MSG_System/MSG_Box.tscn"
 MSG="*res://addons/MSG_System/MSG_Parser.tscn"
@@ -59,6 +58,22 @@ ui_select={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+ui_page_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_page_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_home={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_end={
+"deadzone": 0.5,
+"events": [  ]
+}
 move_down={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
@@ -89,19 +104,14 @@ pause={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":77,"unicode":0,"echo":false,"script":null)
  ]
 }
-A={
+ui_use_slot_weapon={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
  ]
 }
-B={
+ui_use_slot_defense={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":66,"unicode":0,"echo":false,"script":null)
- ]
-}
-ui_attack={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
  ]
 }
 ui_menu={
@@ -109,10 +119,22 @@ ui_menu={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":77,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
+"ui_use_slot 1"={
+"deadzone": 0.5,
+"events": [  ]
+}
+"ui_use_slot 2"={
+"deadzone": 0.5,
+"events": [  ]
+}
+"ui_use_slot 3"={
+"deadzone": 0.5,
+"events": [  ]
+}
+"ui_use_slot 4"={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [layer_names]
 
@@ -132,5 +154,8 @@ use_pixel_snap=true
 
 [rendering]
 
+quality/driver/fallback_to_gles2=true
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 environment/default_clear_color=Color( 0.513726, 0.513726, 0.513726, 0.666667 )
 environment/default_environment="res://default_env.tres"

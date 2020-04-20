@@ -1,6 +1,6 @@
 {
   "T-Shirt": {
-    "Type": "Armor",
+    "Type": "defense",
     "Attack": 0,
     "Defense": 10,
     "Speed": 0,
@@ -13,7 +13,7 @@
     "CanSell": "Yes"
   },
   "Wool Sweater": {
-    "Type": "Armor",
+    "Type": "defense",
     "Attack": 0,
     "Defense": 15,
     "Speed": 0,
@@ -143,7 +143,7 @@
     "CanSell": "Yes"
   },
   "Crappy Sword": {
-    "Type": "Weapons",
+    "Type": "weapon",
     "Attack": 10,
     "Defense": 0,
     "Speed": 0,
@@ -156,7 +156,7 @@
     "CanSell": "Yes"
   },
   "Potato Sword": {
-    "Type": "Weapons",
+    "Type": "weapon",
     "Attack": 15,
     "Defense": 0,
     "Speed": 0,
@@ -169,7 +169,7 @@
     "CanSell": "Yes"
   },
   "Fist": {
-    "Type": "Weapons",
+    "Type": "weapon",
     "Attack": 5,
     "Defense": 2,
     "Speed": 0,
@@ -192,6 +192,19 @@
     "Cost": 4,
     "CanUse": "No",
     "Description": "Remains of a dead squirrel. Can be used to craft basic armor.",
+    "CanSell": "Yes"
+  },
+  "Hockey Drop": {
+    "Type": "skill",
+    "Attack": 0,
+    "Defense": 0,
+    "Speed": 0,
+    "Health Recovery": 0,
+    "Durability": 0,
+    "Sell Value": 2,
+    "Cost": 4,
+    "CanUse": "No",
+    "Description": "Test Skill Inventory Item",
     "CanSell": "Yes"
   }
 }

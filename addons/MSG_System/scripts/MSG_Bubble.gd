@@ -98,7 +98,9 @@ func message_is_done(): # Message is now fully shown.
 	$characters_timer.stop()
 	MSG.message_done = true
 	if choices:
-		MSG_Options.activate()
+		var i = $main/Control/MSG_Options
+		i.visible = true
+		i.activate()
 	else:
 		$_continue.show()
 

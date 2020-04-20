@@ -180,11 +180,12 @@ position = Vector2( -0.729736, 2.21006 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 2, 0 )
 rotating = true
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="hitbox" type="Area2D" parent="."]
 position = Vector2( -1.35191, 7.65545 )

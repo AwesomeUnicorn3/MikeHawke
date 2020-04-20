@@ -28,7 +28,7 @@ func _on_button_pressed():
 	ImportData.character_stats = Global.dict_character_stats
 	ImportData.formation_data = Global.dict_formation_stats
 	ImportData.quest_stats = Global.dict_quest_stats
-
+	ImportData.options_stats = Global.dict_options_stats
 
 
 func _on_Delete_File_pressed():

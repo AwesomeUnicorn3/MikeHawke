@@ -7,8 +7,8 @@ func _on_choice_b_button_down():
 	if can_be_pressed:
 		$sfx_select.play()
 		MSG.choice_made(get_index())
-
-		MSG_Options.deactivate()
+		var msg_options = get_node("../../..")
+		msg_options.deactivate()
 
 
 

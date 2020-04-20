@@ -308,9 +308,9 @@ func _create_button(x):
 	else:
 		b.set_text(x.text[language])
 	if is_box:
-		MSG_Options.get_node("box_choices/choices").add_child(b)
+		MSG_Box.get_node("Control/MSG_Options/box_choices/choices").add_child(b)
 	else:
-		MSG_Options.get_node("bubble_choices/choices").add_child(b)
+		MSG_Bubble.get_node("Control/MSG_Options/bubble_choices/choices").add_child(b)
 	return b
 
 func add_choice_buttons(choices_array):
@@ -338,15 +338,15 @@ func add_choice_buttons(choices_array):
 				_create_button(x)
 
 	yield(time(0.1), "timeout")
-	MSG_Options.all_options_added()
+#	MSG_Options.all_options_added()
 
 
 func choice_made(idx):
 	if is_box:
-		for x in MSG_Options.get_node("box_choices/choices").get_children():
+		for x in MSG_Box.get_node("Control/MSG_Options/box_choices/choices").get_children():
 			x.queue_free()
 	else:
-		for x in MSG_Options.get_node("bubble_choices/choices").get_children():
+		for x in MSG_Bubble.get_node("Control/MSG_Options/bubble_choices/choices").get_children():
 			x.queue_free()
 	var id
 	if is_legacy():

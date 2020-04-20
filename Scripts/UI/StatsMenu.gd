@@ -21,6 +21,7 @@ var dict_formation = ImportData.formation_stats
 var dict_char_stats = ImportData.character_stats
 var dict_level = ImportData.level_data
 var dict_items = ImportData.item_data
+var dict_options = ImportData.options_stats
 var curr_health
 var curr_defense
 var curr_attack
@@ -50,18 +51,22 @@ func _ready():
 				if char_in_party == "Yes":
 					$FullMenu/TabsContainer/CharacterPanel/Char1/Char1Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char1/Label.set_text(char_name)
+					$FullMenu/TabsContainer/CharacterPanel/Char1.visible = true
 			2:
 				if char_in_party == "Yes":
 					$FullMenu/TabsContainer/CharacterPanel/Char2/Char2Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char2/Label.set_text(char_name)
-			3:
+					$FullMenu/TabsContainer/CharacterPanel/Char2.visible = true
+			3:	
 				if char_in_party == "Yes":
 					$FullMenu/TabsContainer/CharacterPanel/Char3/Char3Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char3/Label.set_text(char_name)
+					$FullMenu/TabsContainer/CharacterPanel/Char3.visible = true
 			4:
 				if char_in_party == "Yes":
 					$FullMenu/TabsContainer/CharacterPanel/Char4/Char4Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char4/Label.set_text(char_name)
+					$FullMenu/TabsContainer/CharacterPanel/Char4.visible = true
 	_on_Char1_button_up()
 
 func _on_ExitButton_button_up():
@@ -139,19 +144,19 @@ func equip_adjustment():
 	CurrentSpeed = 0
 	CurrentAttack = 0
 	
-	var shoes = dict_char_stats[char_name]["ShoesEquipped"]
-	var armor = dict_char_stats[char_name]["ArmorEquipped"]
-	var weapon = dict_char_stats[char_name]["WeaponsEquipped"]
+#	var shoes = dict_char_stats[char_name]["ShoesEquipped"]
+	var armor = dict_options[char_name + " defense"]["equipped_item"]
+	var weapon = dict_options[char_name + " weapon"]["equipped_item"]
 	
-	if shoes != null:
-		var shoe_speed = dict_items[shoes]["Speed"]
-		var shoe_attack = dict_items[shoes]["Attack"]
-		var shoe_def = dict_items[shoes]["Defense"]
-		CurrentSpeed += shoe_speed
-		CurrentAttack += shoe_attack
-		CurrentDefense += shoe_def
+#	if shoes != null:
+#		var shoe_speed = dict_items[shoes]["Speed"]
+#		var shoe_attack = dict_items[shoes]["Attack"]
+#		var shoe_def = dict_items[shoes]["Defense"]
+#		CurrentSpeed += shoe_speed
+#		CurrentAttack += shoe_attack
+#		CurrentDefense += shoe_def
 	
-	if armor != null:
+	if armor != null and armor != "Empty":
 		var armor_speed = dict_items[armor]["Speed"]
 		var armor_attack = dict_items[armor]["Attack"]
 		var armor_def = dict_items[armor]["Defense"]
@@ -159,7 +164,7 @@ func equip_adjustment():
 		CurrentAttack += armor_attack
 		CurrentDefense += armor_def
 
-	if weapon != null:
+	if weapon != null and weapon != "Empty":
 		var weapon_speed = dict_items[weapon]["Speed"]
 		var weapon_attack = dict_items[weapon]["Attack"]
 		var weapon_def = dict_items[weapon]["Defense"]

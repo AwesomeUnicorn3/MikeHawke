@@ -115,7 +115,7 @@ position = Vector2( 33.0281, -219.75 )
 
 [node name="TreasureChest" parent="main" instance=ExtResource( 22 )]
 position = Vector2( -167.699, -267.148 )
-item3 = ""
+item3 = "Hockey Drop"
 
 [node name="MikeSleeping" type="Sprite" parent="."]
 visible = false

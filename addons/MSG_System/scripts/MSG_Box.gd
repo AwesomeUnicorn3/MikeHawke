@@ -85,7 +85,9 @@ func message_is_done(): # Message is now fully shown.
 
 	MSG.message_done = true
 	if choices:
-		MSG_Options.activate()
+		var i = $Control/MSG_Options
+		i.visible = true
+		i.activate()
 	else:
 		$main/_continue.show()
 

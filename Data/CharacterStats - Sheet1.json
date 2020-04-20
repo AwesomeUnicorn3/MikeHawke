@@ -9,10 +9,7 @@
     "CurrentAttack": 15,
     "CurrentSpeed": 175,
     "Exp": 0,
-    "Level": 1,
-    "WeaponsEquipped": "Fist",
-    "ArmorEquipped": null,
-    "ShoesEquipped": null
+    "Level": 1
   },
   "Anna Lee": {
     "MaxHealth": 100,
@@ -24,9 +21,6 @@
     "CurrentAttack": 15,
     "CurrentSpeed": 175,
     "Exp": 0,
-    "Level": 1,
-    "WeaponsEquipped": "Fist",
-    "ArmorEquipped": null,
-    "ShoesEquipped": null
+    "Level": 1
   }
 }

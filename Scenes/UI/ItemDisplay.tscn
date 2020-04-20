@@ -8,8 +8,8 @@
 [ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=6]
 
 [node name="ItemDisplay" type="HBoxContainer"]
-margin_right = 266.0
-margin_bottom = 70.0
+margin_right = 440.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 script = ExtResource( 1 )
@@ -48,16 +48,16 @@ __meta__ = {
 
 [node name="ItemNumber" type="Label" parent="."]
 visible = false
-margin_left = 74.0
-margin_right = 74.0
-margin_bottom = 24.0
+margin_left = 104.0
+margin_right = 104.0
+margin_bottom = 34.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
 
 [node name="ItemName" type="Label" parent="."]
 margin_left = 104.0
-margin_right = 162.0
+margin_right = 128.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -65,8 +65,8 @@ theme = ExtResource( 4 )
 valign = 1
 
 [node name="Drop" type="ColorRect" parent="."]
-margin_left = 166.0
-margin_right = 266.0
+margin_left = 132.0
+margin_right = 232.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 theme = ExtResource( 3 )
@@ -101,10 +101,9 @@ __meta__ = {
 }
 
 [node name="Equip" type="ColorRect" parent="."]
-visible = false
-margin_left = 182.0
-margin_right = 282.0
-margin_bottom = 70.0
+margin_left = 236.0
+margin_right = 336.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 theme = ExtResource( 3 )
 color = Color( 0, 0, 0, 1 )
@@ -138,10 +137,9 @@ __meta__ = {
 }
 
 [node name="UseItem" type="ColorRect" parent="."]
-visible = false
-margin_left = 182.0
-margin_right = 282.0
-margin_bottom = 70.0
+margin_left = 340.0
+margin_right = 440.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 theme = ExtResource( 3 )
 color = Color( 0, 0, 0, 1 )

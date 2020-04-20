@@ -3,6 +3,7 @@ signal menu_closed
 signal nav_to_equip
 
 onready var char_select : PackedScene = load("res://Scenes/UI/CharacterSelect.tscn")
+onready var slot_select : PackedScene = load("res://Scenes/UI/SlotSelect.tscn")
 onready var item  : PackedScene = load("res://Scenes/UI/ItemDisplay.tscn")
 onready var itemdetail  : PackedScene = load("res://Scenes/UI/Stat_Detail.tscn")
 onready var dropconfirm : PackedScene = load("res://Scenes/UI/DropConfirm.tscn")
@@ -46,6 +47,8 @@ var dict_formation = ImportData.formation_stats
 var dict_char = ImportData.character_stats
 var dict_inven = ImportData.inven_data
 var dict_item = ImportData.item_data
+var dict_options = ImportData.options_stats
+var selected_char
 
 func _ready():
 	
@@ -107,6 +110,7 @@ func get_inventory_type():
 		i += 1
 
 func _on_ExitButton_button_up():
+
 	clear_item_detail()
 	emit_signal("menu_closed")
 	emit_signal("nav_to_equip")
@@ -117,7 +121,7 @@ func _on_Weapons_button_up():
 	close_all_tabs()
 	weapons.visible = true
 	weapons_button.disabled = true
-	get_item_type = "Weapons"
+	get_item_type = "weapon"
 	container = weapons_container
 	get_inventory_type()
 	clear_item_detail()
@@ -126,7 +130,7 @@ func _on_Armor_button_up():
 	close_all_tabs()
 	armor.visible = true
 	armor_button.disabled = true
-	get_item_type = "Armor"
+	get_item_type = "defense"
 	container = armor_container
 	get_inventory_type()
 	clear_item_detail()
@@ -146,7 +150,7 @@ func _on_Crafting_button_up():
 	close_all_tabs()
 	crafting.visible = true
 	crafting_button.disabled = true
-	get_item_type = "Crafting"
+	get_item_type = "skill"
 	container = crafting_container
 	get_inventory_type()
 	clear_item_detail()
@@ -206,13 +210,13 @@ func _on_DropButton_button_up(count, itemdrops, _item_price, _cost, _shopcount):
 
 func _on_drop_refresh():
 	match get_item_type:
-		"Weapons":
+		"weapon":
 			_on_Weapons_button_up()
-		"Armor":
+		"defense":
 			_on_Armor_button_up()
 		"Shoes":
 			_on_Shoes_button_up()
-		"Crafting":
+		"skill":
 			_on_Crafting_button_up()
 		"Consumable":
 			_on_ConsumableButton_button_up()
@@ -236,14 +240,32 @@ func equip_selected_item(itemdrops):
 	menuroot.add_child(t)
 	t.connect("selected", self, "_on_char_selected")
 	yield(t,"exit")
+	if equiptype != "weapon" and equiptype != "defense":
+		var y = slot_select.instance()
+		menuroot.add_child(y)
+		y.connect("selected", self, "_on_slot_selected")
+		yield(y,"exit")
 	$FullMenu/Header/Exit/ExitButton.disabled = false
 
 func _on_char_selected(char_name):
+	if equiptype != "weapon" and equiptype != "defense":
+		selected_char = char_name
+	else:
+		
+		name = char_name + " " + equiptype
 	#this is where you unequip item, add to inventory, equip item, remove from inventory
-	var curr_equipped_item = dict_char[char_name][equiptype + "Equipped"]
-	dict_char[char_name][equiptype + "Equipped"] = null
-	dict_char[char_name][equiptype + "Equipped"] = itemdrop
+		var curr_equipped_item = dict_options[name]["equipped_item"]
+		curr_equipped_item = itemdrop
+		if curr_equipped_item != null and curr_equipped_item != "Fist":
+			dict_inven[itemdrop][1] -= 1
+			dict_options[name]["equipped_item"] = curr_equipped_item
+		_on_drop_refresh()
+
+
+func _on_slot_selected(slot_name):
+	var selected = selected_char + " " + slot_name
+	print(selected)
 	dict_inven[itemdrop][1] -= 1
-	if curr_equipped_item != null and curr_equipped_item != "Fist":
-		dict_inven[curr_equipped_item][1] += 1
+	dict_options[selected]["equipped_item"] = itemdrop
+	#equip item to selected slot for selected character
 	_on_drop_refresh()

@@ -1,4 +1,6 @@
 extends Node
+
+signal Refresh_GUI
 var save_id = 0
 var save_path = ""
 var load_path = ""
@@ -19,7 +21,6 @@ var PlayerYTransfer = 0
 var PlayerAnim = "IdleDown"
 var PlayerDir = "Down"
 var PlayerSpriteDir = "Down"
-#var ForcePlayerDir = "WalkDown"
 var PlayerCanMove = false
 var CanTalk = true
 var CanInteract = false
@@ -27,7 +28,7 @@ var gui = false
 var body
 var shop_name
 var buysell = ""
-
+var equip_menu_type = "GUI"
 
 #Options
 var dict_options_stats = {}
@@ -152,3 +153,7 @@ func reload_Dict():
 	ImportData.character_stats = Global.dict_character_stats
 	Global.dict_options_stats = ImportData.options_stats
 
+
+
+func refresh_gui():
+	emit_signal("Refresh_GUI")

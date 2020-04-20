@@ -165,24 +165,25 @@ func _on_MikeHawke_interact():
 			state = MOVE
 
 func equip_stats():
+	var dict_options = ImportData.options_stats
 	CurrentDefense = dict_char_stats[entity_name]["CurrentDefense"]
 	CurrentSpeed = dict_char_stats[entity_name]["CurrentSpeed"]
 	CurrentAttack = dict_char_stats[entity_name]["CurrentAttack"]
 	
-	var shoes = dict_char_stats[entity_name]["ShoesEquipped"]
-	var armor = dict_char_stats[entity_name]["ArmorEquipped"]
-	weapon = dict_char_stats[entity_name]["WeaponsEquipped"]
+#	var shoes = null
+	var armor = dict_options[entity_name + " defense"]["equipped_item"]
+	weapon = dict_options[entity_name + " weapon"]["equipped_item"]
 	
 	
-	if shoes != null:
-		var shoe_speed = dict_items[shoes]["Speed"]
-		var shoe_attack = dict_items[shoes]["Attack"]
-		var shoe_def = dict_items[shoes]["Defense"]
-		CurrentSpeed += shoe_speed
-		CurrentAttack += shoe_attack
-		CurrentDefense += shoe_def
+#	if shoes != "Empty":
+#		var shoe_speed = dict_items[shoes]["Speed"]
+#		var shoe_attack = dict_items[shoes]["Attack"]
+#		var shoe_def = dict_items[shoes]["Defense"]
+#		CurrentSpeed += shoe_speed
+#		CurrentAttack += shoe_attack
+#		CurrentDefense += shoe_def
 	
-	if armor != null:
+	if armor != "Empty":
 		var armor_speed = dict_items[armor]["Speed"]
 		var armor_attack = dict_items[armor]["Attack"]
 		var armor_def = dict_items[armor]["Defense"]
@@ -190,7 +191,7 @@ func equip_stats():
 		CurrentAttack += armor_attack
 		CurrentDefense += armor_def
 
-	if weapon != null:
+	if weapon != "Empty":
 		var weapon_speed = dict_items[weapon]["Speed"]
 		var weapon_attack = dict_items[weapon]["Attack"]
 		var weapon_def = dict_items[weapon]["Defense"]
@@ -232,7 +233,7 @@ func move_state(): #Character movement and animation
 
 	
 #___________________ATTACK!!! ('A' key)_______________________
-	if Input.is_action_just_pressed("ui_attack"):
+	if Input.is_action_just_pressed("ui_use_slot_weapon"):
 		state = ATTACK
 		
 	if knockback == 0:
@@ -247,7 +248,7 @@ func attack_state():
 #	animationState.travel("Attack")
 	if wait == false:
 #______Initializes weapon_______________
-		weapon = dict_char_stats[entity_name]["WeaponsEquipped"]
+		weapon = ImportData.options_stats["Mike Hawke weapon"]["equipped_item"]
 		var weapon_scene = "res://Scenes/Weapons/" + weapon + ".tscn"
 		if weapon != null:
 			use_item(load(weapon_scene))

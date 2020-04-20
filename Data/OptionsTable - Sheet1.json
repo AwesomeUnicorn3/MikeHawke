@@ -5,7 +5,9 @@
     "IntegerValue": 0,
     "IntegerMax": 0,
     "IntegerMin": 0,
-    "Text": "\"\""
+    "Text": "\"\"",
+    "Input_action": "\"\"",
+    "equipped_item": "\"\""
   },
   "Play Sound Effects": {
     "Category": "Audio",
@@ -13,7 +15,9 @@
     "IntegerValue": 0,
     "IntegerMax": 0,
     "IntegerMin": 0,
-    "Text": "\"\""
+    "Text": "\"\"",
+    "Input_action": "\"\"",
+    "equipped_item": "\"\""
   },
   "Background Music Volume": {
     "Category": "Audio",
@@ -21,7 +25,9 @@
     "IntegerValue": 50,
     "IntegerMax": 100,
     "IntegerMin": 0,
-    "Text": "\"\""
+    "Text": "\"\"",
+    "Input_action": "\"\"",
+    "equipped_item": "\"\""
   },
   "Dialogue Language": {
     "Category": "Language",
@@ -29,6 +35,128 @@
     "IntegerValue": 0,
     "IntegerMax": 0,
     "IntegerMin": 0,
-    "Text": "ENG"
+    "Text": "ENG",
+    "Input_action": "\"\"",
+    "equipped_item": "\"\""
+  },
+  "Mike Hawke weapon": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "A",
+    "Input_action": "ui_use_slot_weapon",
+    "equipped_item": "Fist"
+  },
+  "Mike Hawke defense": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "B",
+    "Input_action": "ui_use_slot_defense",
+    "equipped_item": "Empty"
+  },
+  "Mike Hawke slot 1": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 1,
+    "Input_action": "ui_use_slot 1",
+    "equipped_item": "Empty"
+  },
+  "Mike Hawke slot 2": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 2,
+    "Input_action": "ui_use_slot 2",
+    "equipped_item": "Empty"
+  },
+  "Mike Hawke slot 3": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 3,
+    "Input_action": "ui_use_slot 3",
+    "equipped_item": "Empty"
+  },
+  "Mike Hawke slot 4": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 4,
+    "Input_action": "ui_use_slot 4",
+    "equipped_item": "Empty"
+  },
+  "Anna Lee weapon": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "A",
+    "Input_action": "ui_use_slot_weapon",
+    "equipped_item": "Fist"
+  },
+  "Anna Lee defense": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "B",
+    "Input_action": "ui_use_slot_defense",
+    "equipped_item": "Empty"
+  },
+  "Anna Lee slot 1": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 1,
+    "Input_action": "ui_use_slot 1",
+    "equipped_item": "Empty"
+  },
+  "Anna Lee slot 2": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 2,
+    "Input_action": "ui_use_slot 2",
+    "equipped_item": "Empty"
+  },
+  "Anna Lee slot 3": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 3,
+    "Input_action": "ui_use_slot 3",
+    "equipped_item": "Empty"
+  },
+  "Anna Lee slot 4": {
+    "Category": "Key Binding",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": 4,
+    "Input_action": "ui_use_slot 4",
+    "equipped_item": "Empty"
   }
 }

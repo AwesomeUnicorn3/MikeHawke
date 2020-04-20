@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Themes/50Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/UI/GUI.gd" type="Script" id=2]
@@ -8,21 +8,52 @@
 [ext_resource path="res://Scenes/Buttons/PauseButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Icons/Chode.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/UI/MainMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/Key_Binding_Container.tscn" type="PackedScene" id=9]
 
 [node name="GUI" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.736877
-margin_top = 5.05322
-margin_right = 0.736816
-margin_bottom = 5.05322
-rect_clip_content = true
-theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BottomLeftGui" type="HBoxContainer" parent="."]
+margin_left = 60.0
+margin_top = 546.0
+margin_right = 343.0
+margin_bottom = 675.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chodeCount" type="Label" parent="BottomLeftGui"]
+margin_top = 23.0
+margin_right = 28.0
+margin_bottom = 105.0
+theme = ExtResource( 1 )
+text = "0"
+
+[node name="Sprite" type="Sprite" parent="BottomLeftGui"]
+position = Vector2( -28.7369, 53 )
+scale = Vector2( 1.2435, 1.2435 )
+texture = ExtResource( 7 )
+
+[node name="Quick_Access_Buttons" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -264.0
+margin_top = -200.0
+margin_right = 298.0
+margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" parent="Quick_Access_Buttons" instance=ExtResource( 9 )]
 
 [node name="TopRightGui" type="VBoxContainer" parent="."]
 margin_left = 685.0
@@ -66,26 +97,6 @@ __meta__ = {
 [node name="PauseButton" parent="TopLeftGui" instance=ExtResource( 6 )]
 margin_right = 194.0
 margin_bottom = 93.0
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 32.7277, 625.869 )
-scale = Vector2( 1.2435, 1.2435 )
-texture = ExtResource( 7 )
-
-[node name="BottomLeftGui" type="HBoxContainer" parent="."]
-margin_left = 60.0
-margin_top = 546.0
-margin_right = 437.0
-margin_bottom = 713.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="chodeCount" type="Label" parent="BottomLeftGui"]
-margin_top = 42.0
-margin_right = 28.0
-margin_bottom = 124.0
-text = "0"
 
 [node name="MainMenu" parent="." instance=ExtResource( 8 )]
 visible = false

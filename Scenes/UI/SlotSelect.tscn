@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Themes/35Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Themes/30Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Scripts/UI/SlotSelect.gd" type="Script" id=3]
+[ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=4]
+[ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=5]
+[ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
+
+[node name="DropPanel" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -234.0
+margin_top = -176.0
+margin_right = 235.0
+margin_bottom = 264.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemName" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="DropPanelContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftMargin" type="Label" parent="DropPanelContainer"]
+margin_right = 10.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 10, 0 )
+size_flags_vertical = 3
+
+[node name="MainNodes" type="VBoxContainer" parent="DropPanelContainer"]
+margin_left = 14.0
+margin_right = 455.0
+margin_bottom = 440.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopMargin" type="Label" parent="DropPanelContainer/MainNodes"]
+visible = false
+margin_right = 548.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 5 )
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="DropPanelContainer/MainNodes"]
+margin_right = 441.0
+margin_bottom = 117.0
+theme = ExtResource( 1 )
+text = "Equip Item to which Character?"
+align = 1
+autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DropPanelContainer/MainNodes"]
+margin_top = 121.0
+margin_right = 441.0
+margin_bottom = 318.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="DropPanelContainer/MainNodes"]
+margin_top = 322.0
+margin_right = 441.0
+margin_bottom = 422.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+
+[node name="Close" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+margin_right = 441.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="CloseButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/Close"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/Close"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.7207
+margin_right = 2.7207
+size_flags_vertical = 1
+text = "Close"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomMargin" type="Label" parent="DropPanelContainer/MainNodes"]
+margin_top = 426.0
+margin_right = 441.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 1
+
+[node name="RightMargin" type="Label" parent="DropPanelContainer"]
+margin_left = 459.0
+margin_right = 469.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 10, 0 )
+size_flags_vertical = 3
+[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/Close/CloseButton" to="." method="_on_CloseButton_button_up"]

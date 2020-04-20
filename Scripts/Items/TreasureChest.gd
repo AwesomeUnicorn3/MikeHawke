@@ -27,10 +27,10 @@ var id
 var selected = false
 var talking = false
 var interacting = false
-export var item1 = "T-Shirt"
-export var item2 = "Sandals"
-export var item3 = ""
-export var item4 = ""
+export var item1 = "Crappy Sword"
+export var item2 = "T-Shirt"
+export var item3 = "Hockey Drop"
+export var item4 = "Moonshine"
 export var item1count = 1
 export var item2count = 1
 export var item3count = 1

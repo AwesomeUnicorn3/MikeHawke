@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 onready var mike = get_node("main/Mike Hawke")
 

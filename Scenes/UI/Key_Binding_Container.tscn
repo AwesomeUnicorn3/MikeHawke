@@ -1,0 +1,149 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/UI/Key_Binding_slot_template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Themes/20Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Scripts/UI/Key_Binding_Container_main.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Key_Binding_slot_template" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 90.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+
+[node name="Key" parent="HBoxContainer/Key_Binding_slot_template/Key_Binding_VBox" index="0"]
+margin_left = 37.0
+margin_right = 52.0
+
+[node name="Icon" parent="HBoxContainer/Key_Binding_slot_template/Key_Binding_VBox" index="1"]
+margin_right = 90.0
+
+[node name="slot_name" parent="HBoxContainer/Key_Binding_slot_template/Key_Binding_VBox" index="2"]
+margin_right = 90.0
+text = "weapon"
+
+[node name="Key_Binding_slot_template2" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_right = 190.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+
+[node name="Key" parent="HBoxContainer/Key_Binding_slot_template2/Key_Binding_VBox" index="0"]
+margin_left = 40.0
+margin_right = 53.0
+text = "b"
+
+[node name="Icon" parent="HBoxContainer/Key_Binding_slot_template2/Key_Binding_VBox" index="1"]
+margin_right = 94.0
+
+[node name="slot_name" parent="HBoxContainer/Key_Binding_slot_template2/Key_Binding_VBox" index="2"]
+margin_right = 94.0
+text = "defense"
+
+[node name="Key_Binding_slot_template3" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_right = 290.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+
+[node name="Key" parent="HBoxContainer/Key_Binding_slot_template3/Key_Binding_VBox" index="0"]
+margin_left = 41.0
+margin_right = 48.0
+text = "1"
+
+[node name="Icon" parent="HBoxContainer/Key_Binding_slot_template3/Key_Binding_VBox" index="1"]
+margin_right = 90.0
+
+[node name="slot_name" parent="HBoxContainer/Key_Binding_slot_template3/Key_Binding_VBox" index="2"]
+margin_right = 90.0
+text = "slot 1"
+
+[node name="Key_Binding_slot_template4" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_right = 390.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+
+[node name="Key" parent="HBoxContainer/Key_Binding_slot_template4/Key_Binding_VBox" index="0"]
+margin_left = 37.0
+margin_right = 52.0
+
+[node name="Icon" parent="HBoxContainer/Key_Binding_slot_template4/Key_Binding_VBox" index="1"]
+margin_right = 90.0
+
+[node name="slot_name" parent="HBoxContainer/Key_Binding_slot_template4/Key_Binding_VBox" index="2"]
+margin_right = 90.0
+text = "slot 2"
+
+[node name="Key_Binding_slot_template5" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_right = 490.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+
+[node name="Key" parent="HBoxContainer/Key_Binding_slot_template5/Key_Binding_VBox" index="0"]
+margin_left = 37.0
+margin_right = 52.0
+
+[node name="Icon" parent="HBoxContainer/Key_Binding_slot_template5/Key_Binding_VBox" index="1"]
+margin_right = 90.0
+
+[node name="slot_name" parent="HBoxContainer/Key_Binding_slot_template5/Key_Binding_VBox" index="2"]
+margin_right = 90.0
+text = "slot 3"
+
+[node name="Key_Binding_slot_template6" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 500.0
+margin_right = 590.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+
+[node name="Key" parent="HBoxContainer/Key_Binding_slot_template6/Key_Binding_VBox" index="0"]
+margin_left = 37.0
+margin_right = 52.0
+
+[node name="Icon" parent="HBoxContainer/Key_Binding_slot_template6/Key_Binding_VBox" index="1"]
+margin_right = 90.0
+
+[node name="slot_name" parent="HBoxContainer/Key_Binding_slot_template6/Key_Binding_VBox" index="2"]
+margin_right = 90.0
+text = "slot 4"
+
+[editable path="HBoxContainer/Key_Binding_slot_template"]
+
+[editable path="HBoxContainer/Key_Binding_slot_template2"]
+
+[editable path="HBoxContainer/Key_Binding_slot_template3"]
+
+[editable path="HBoxContainer/Key_Binding_slot_template4"]
+
+[editable path="HBoxContainer/Key_Binding_slot_template5"]
+
+[editable path="HBoxContainer/Key_Binding_slot_template6"]

@@ -205,9 +205,10 @@ __meta__ = {
 }
 
 [node name="Shoes" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 204.0
+visible = false
+margin_top = 174.0
 margin_right = 192.0
-margin_bottom = 302.0
+margin_bottom = 257.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
@@ -238,10 +239,9 @@ __meta__ = {
 }
 
 [node name="Crafting" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-visible = false
-margin_top = 261.0
+margin_top = 204.0
 margin_right = 192.0
-margin_bottom = 344.0
+margin_bottom = 302.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 color = Color( 0, 0, 0, 1 )
@@ -264,7 +264,7 @@ __meta__ = {
 [node name="CraftingLabel" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Crafting"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Crafting"
+text = "Skills"
 align = 1
 valign = 1
 __meta__ = {
@@ -493,46 +493,47 @@ size_flags_vertical = 3
 
 [node name="ItemName" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
 margin_right = 375.0
-margin_bottom = 14.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource( 9 )
 align = 1
 valign = 1
 autowrap = true
 
 [node name="ItemDescription" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
-margin_top = 18.0
+margin_top = 61.0
 margin_right = 375.0
-margin_bottom = 52.0
+margin_bottom = 95.0
 size_flags_vertical = 1
 theme = ExtResource( 10 )
 autowrap = true
 
 [node name="SpaceBuffer" type="Label" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
 margin_left = 187.0
-margin_top = 56.0
+margin_top = 99.0
 margin_right = 187.0
-margin_bottom = 90.0
+margin_bottom = 133.0
 rect_min_size = Vector2( 0, 24 )
 size_flags_horizontal = 4
 theme = ExtResource( 10 )
 
 [node name="ItemStats" type="HBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container"]
-margin_top = 94.0
+margin_top = 137.0
 margin_right = 375.0
 margin_bottom = 568.0
 size_flags_vertical = 3
 
 [node name="StatsContainer" type="ScrollContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats"]
 margin_right = 375.0
-margin_bottom = 474.0
+margin_bottom = 431.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="Stats" type="VBoxContainer" parent="FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats/StatsContainer"]
 margin_right = 375.0
-margin_bottom = 474.0
+margin_bottom = 431.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 5 )

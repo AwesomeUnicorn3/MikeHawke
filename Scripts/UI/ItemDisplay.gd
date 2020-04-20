@@ -23,7 +23,7 @@ func _ready():
 	type = dict_item[itemdrop]["Type"]
 
 	match type:
-		"Weapons":
+		"weapon":
 			$UseItem.visible = false
 			$Equip.visible = true
 			$Drop.visible = true
@@ -32,14 +32,20 @@ func _ready():
 			var canuse = dict_item[itemdrop]["CanUse"]
 			if canuse == "Yes" and Global.buysell == "":
 				$UseItem.visible = true
-				$Equip.visible = false
+				$Equip.visible = true
 				$Drop.visible = true
 
 			else:
 				$Equip.visible = false
 				$Drop.visible = true
 
-		"Armor":
+		"skill":
+			$UseItem.visible = false
+			$Equip.visible = true
+			$Drop.visible = true
+
+
+		"defense":
 			$UseItem.visible = false
 			$Equip.visible = true
 			$Drop.visible = true
