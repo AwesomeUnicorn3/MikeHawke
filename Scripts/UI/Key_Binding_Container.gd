@@ -17,21 +17,28 @@ var inputaction
 var character_name
 var category
 var options_name
+var new = true
 func _ready():
-
+# warning-ignore:return_value_discarded
+	if new == true:
+		Global.connect("Refresh_GUI", self, "refresh")
+		new = false
 
 #get current quick access options from ImportData.options_stats dictionary
  #does not change
 
 	dict_form = ImportData.formation_stats
 	parent_name = Global.equip_menu_type
-
+	for n in range(dict_form.size()):
+		lead_character = dict_form.keys()[n]
+		var lead_char_letter = int(dict_form[lead_character]["FormationNumber"]) #formation number
+		if lead_char_letter == 1:
+			break
 	match parent_name:
 		"EquipMenu":
-			lead_character = parent.char_name
 			slot_name = parent.slot_name
 			options_name = lead_character + " " + slot_name
-			slot_key = String(dict_op[options_name]["Text"]) 
+			slot_key = String(dict_op[options_name]["Key1"]) 
 			slot_key_label.set_text(slot_key)
 			icon_name = dict_op[options_name]["equipped_item"]
 			icon_path = "res://Icons/" + icon_name + ".png"
@@ -39,14 +46,12 @@ func _ready():
 
 		"GUI":
 			slot_name = slot_name_label.get_text()
-			lead_character = String(dict_form.keys()[0])
 			options_name = lead_character + " " + slot_name
 			icon_name = dict_op[options_name]["equipped_item"]
 			icon_path = "res://Icons/" + icon_name + ".png"
 			icon.set_texture(load(icon_path))
 			inputaction =  String(dict_op[options_name]["Input_action"])
-			icon_name = dict_op[options_name]["equipped_item"]
-			slot_key = String(dict_op[options_name]["Text"]) 
+			slot_key = String(dict_op[options_name]["Key1"]) 
 			slot_key_label.set_text(slot_key)
 
 

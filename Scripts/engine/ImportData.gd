@@ -96,3 +96,80 @@ func _ready():
 	optionsdata_file.close()
 	options_data = optionsdata_json.result
 	options_stats = options_data
+
+func update_key_bindings():
+	var lead_char_name
+	var lead_char_letter
+	#set all of the action key bindings from the options#
+	# first remove all previous keys bound to each action
+		#loop through all actions in the action list
+	for h in InputMap.get_actions():
+	#	#for each action, loop through key binds
+		for j in InputMap.get_action_list(h):
+#			#remove each key bind
+			InputMap.action_erase_event(h, j)
+
+	#find the lead character
+	for n in range(formation_stats.size()):
+		lead_char_name = formation_stats.keys()[n]
+		lead_char_letter = int(formation_stats[lead_char_name]["FormationNumber"]) #formation number
+		if lead_char_letter == 1:
+			break
+	#loop through all of the actions in the action list again
+	for h in InputMap.get_actions():
+	#for each action, if keyscancode from options table == null
+	#add each key from the options table
+
+		if (options_stats.keys()).has(h):
+			var cat = options_stats[h]["Category"]
+			match cat: 
+				"PlaceHolder":
+					var input_action = options_stats[h]["Input_action"]
+					var char_action_string = lead_char_name + " " + input_action
+					var key1 = options_stats[char_action_string]["Key1Scancode"]
+					var key1object = InputEventKey.new()
+					key1object.set_scancode(key1)
+					InputMap.action_add_event(h, key1object)
+				
+				"Controls":
+					var key1 = options_stats[h]["Key1Scancode"]
+					var key2 = options_stats[h]["Key2Scancode"]
+					var key1object = InputEventKey.new()
+					key1object.set_scancode(key1)
+					InputMap.action_add_event(h, key1object)
+					if key2 != null:
+						var key2object = InputEventKey.new()
+						key2object.set_scancode(key2)
+						InputMap.action_add_event(h, key2object)
+#
+#	else:
+#		var h = dict_options[key_select_action_string]["Key2Scancode"]
+#		if h == null:
+#			InputMap.action_add_event(key_select_action_string, key_object)
+#			dict_options[key_select_action_string]["Key1"] = key
+#			dict_options[key_select_action_string]["key1Scancode"] = key_scancode
+#		else:
+#			dict_options[key_select_action_string]["Key" + key_number] = key
+#			dict_options[key_select_action_string]["Key" + key_number + "Scancode"] = key_scancode
+#			var id1 = " " + String(dict_options[key_select_action_string]["Key1Scancode"])
+#			var id2 = " " + String(dict_options[key_select_action_string]["Key2Scancode"])
+#			id1 = int(id1)
+#			id2 = int(id2)
+#
+#			#send update to options table with current key value
+#			#if action_event is weapons, defense, slot1, slot2, slot3, or slo4
+#			#update options table lead character plus slot name for key1 or key2
+#			#otherwise update options table with event_action for key1 or key2
+#			var key1 = InputEventKey.new()
+#			var k1_KEY = OS.get_scancode_string(id1)
+#			key1.set_scancode(id1)
+#			InputMap.action_add_event(key_select_action_string, key1)
+#			dict_options[key_select_action_string]["Key1"] = k1_KEY
+#			dict_options[key_select_action_string]["key1Scancode"] = id1
+#
+#			var key2 = InputEventKey.new()
+#			var k2_KEY = OS.get_scancode_string(id2)
+#			key2.set_scancode(id2)
+#			InputMap.action_add_event(key_select_action_string, key2)
+#			dict_options[key_select_action_string]["Key2"] = k2_KEY
+#			dict_options[key_select_action_string]["key2Scancode"] = id2

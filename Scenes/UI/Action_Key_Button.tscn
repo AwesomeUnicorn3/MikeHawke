@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/UI/Action_Names.gd" type="Script" id=1]
+[ext_resource path="res://Icons/Action_Rect.png" type="Texture" id=2]
+
+[node name="TextureButton1" type="TextureButton"]
+show_behind_parent = true
+margin_left = 333.0
+margin_top = -1.0
+margin_right = 720.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 250, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture_normal = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input_Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Enter"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

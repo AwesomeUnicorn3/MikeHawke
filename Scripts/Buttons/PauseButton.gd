@@ -16,10 +16,12 @@ var paused =  false setget set_paused
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_key_input(event):
+
 	if event.is_action_pressed("pause") or event.is_action_pressed("ui_menu"):
-		self.paused = not paused
+		paused = true
 		scene_tree.set_input_as_handled()
+		set_paused(paused)
 
 func set_paused(value: bool) -> void:
 	paused = value
@@ -34,5 +36,6 @@ func set_paused(value: bool) -> void:
 
 
 func _on_TextureButton_button_up():
+	paused = true
 	SoundEffects.play_sfx(SoundEffects.Select , 1)
-	set_paused(true)
+	set_paused(paused)

@@ -6,21 +6,13 @@ onready var item  : PackedScene = load("res://Scenes/UI/ItemDisplay.tscn")
 onready var itemdetail  : PackedScene = load("res://Scenes/UI/Stat_Detail.tscn")
 onready var inventory : PackedScene = load("res://Scenes/UI/InventoryMenu.tscn")
 onready var quick_access : PackedScene = load("res://Scenes/UI/Equip_Detail.tscn")
-#onready var menuroot = get_node(".")
-#
-#onready var rhweaponhbox = $FullMenu/TabsContainer/EquipSlots/RightVBox/RHWeaponHBox
-#onready var armorhbox = $FullMenu/TabsContainer/EquipSlots/LeftVBox/ArmorHBox
-#onready var shoeshbox = $FullMenu/TabsContainer/EquipSlots/LeftVBox/ShoesHBox
-#onready var rhweapon_item_button = $FullMenu/TabsContainer/EquipSlots/RightVBox/RHWeaponHBox/ItemBackground/ItemButton
-#onready var armor_item_button = $FullMenu/TabsContainer/EquipSlots/LeftVBox/ArmorHBox/ItemBackground/ItemButton
-#onready var shoes_item_button = $FullMenu/TabsContainer/EquipSlots/LeftVBox/ShoesHBox/ItemBackground/ItemButton
+
 
 onready var equip_detail = $FullMenu/TabsContainer/EquipSlots/LeftVBox/Equip_Detail
 onready var equip_detail2 = $FullMenu/TabsContainer/EquipSlots/LeftVBox2/Equip_Detail
 onready var equipped_item_name = $FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/ItemName
 onready var equipped_item_description = $FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/ScrollContainer/ItemDescription
 onready var equipped_item_stats = $FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/ItemStats/StatsContainer/Stats
-
 onready var charname = $FullMenu/Header/CharName
 
 var get_item_type 
@@ -43,9 +35,9 @@ var char_selected
 var char_name
 var slot_name
 var options_name
+
+
 func _ready():
-
-
 	Global.equip_menu_type = "EquipMenu"
 	for n in range(dict_formation.size()):
 		char_name = dict_formation.keys()[n]
@@ -124,9 +116,8 @@ func _on_ItemDisplay_get_item_info(name):
 			i -= 1
 	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton.visible = true
 	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton.visible = true
-#
 
-#
+
 func clear_item_detail():
 	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/ItemType.set_text("")
 	equipped_item_name.set_text("")
@@ -185,39 +176,13 @@ func _on_unequpButton_button_up():
 		dict_inven[eq_item][1] += 1
 		dict_op[options_name]["equipped_item"]  = "Empty"
 
-		
+
 		if item_type == "weapon":
 			dict_op[options_name]["equipped_item"] = "Fist"
 		clear_item_detail()
 		clear_slot_detail()
-		
 
 
-
-#func _on_WeaponButton_button_up():
-#	item_type = "Weapons"
-#	if dict_char[char_name][item_type + "Equipped"] != null:
-#		name = dict_char[char_name][item_type + "Equipped"]
-#		_on_ItemDisplay_get_item_info(name)
-#	else:
-#		clear_item_detail()
-#		$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton.visible = true
-#	item_type = "Weapons"
-#	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/ItemType.set_text(item_type)
-#
-#func _on_ArmorButton_button_up():
-#
-#	item_type = "Armor"
-#	if dict_char[char_name][item_type + "Equipped"] != null:
-#		name = dict_char[char_name][item_type + "Equipped"]
-#		_on_ItemDisplay_get_item_info(name)
-#	else:
-#		clear_item_detail()
-#		$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton.visible = true
-#	item_type = "Armor"
-#	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/ItemType.set_text(item_type)
-#
-#
 func _on_button_down(slt_name, op_name):
 	options_name = op_name
 	item_type = slt_name
@@ -246,15 +211,6 @@ func _on_EquipMenu_focus_entered():
 		null:
 			pass
 
-#	match curr_item_type:
-#		"Weapons":
-#			_on_WeaponButton_button_up()
-#		"Armor":
-#			_on_ArmorButton_button_up()
-#		"Shoes":
-#			_on_ShoesButton_button_up()
-#		null:
-#			pass
 
 func set_equipped_data():
 

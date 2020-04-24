@@ -22,11 +22,13 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
-disabled = true
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 1 )
 texture_disabled = ExtResource( 1 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0

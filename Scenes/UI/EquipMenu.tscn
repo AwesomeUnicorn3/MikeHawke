@@ -129,8 +129,8 @@ rect_min_size = Vector2( 20, 0 )
 size_flags_vertical = 3
 
 [node name="CharacterPanel" type="VBoxContainer" parent="FullMenu/TabsContainer"]
-margin_left = 23.0
-margin_right = 223.0
+margin_left = 24.0
+margin_right = 224.0
 margin_bottom = 616.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 4
@@ -465,9 +465,8 @@ autowrap = true
 clip_text = true
 
 [node name="ItemName" type="Label" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container"]
-margin_top = -1.0
 margin_right = 446.0
-margin_bottom = 99.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 theme = ExtResource( 11 )
@@ -477,9 +476,9 @@ autowrap = true
 clip_text = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container"]
-margin_top = 103.0
+margin_top = 104.0
 margin_right = 446.0
-margin_bottom = 303.0
+margin_bottom = 304.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_vertical = 4
 scroll_horizontal_enabled = false

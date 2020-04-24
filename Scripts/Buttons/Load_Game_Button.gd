@@ -29,6 +29,7 @@ func _on_button_pressed():
 	ImportData.formation_data = Global.dict_formation_stats
 	ImportData.quest_stats = Global.dict_quest_stats
 	ImportData.options_stats = Global.dict_options_stats
+	ImportData.update_key_bindings()
 
 
 func _on_Delete_File_pressed():

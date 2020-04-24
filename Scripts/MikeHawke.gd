@@ -106,7 +106,7 @@ func _process(delta):
 
 # warning-ignore:unused_argument
 func _input(event):
-#______close program when 'esc' is pressed______
+#______close program when "ui_cancel" is pressed______
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
@@ -169,19 +169,10 @@ func equip_stats():
 	CurrentDefense = dict_char_stats[entity_name]["CurrentDefense"]
 	CurrentSpeed = dict_char_stats[entity_name]["CurrentSpeed"]
 	CurrentAttack = dict_char_stats[entity_name]["CurrentAttack"]
-	
-#	var shoes = null
+
 	var armor = dict_options[entity_name + " defense"]["equipped_item"]
 	weapon = dict_options[entity_name + " weapon"]["equipped_item"]
 	
-	
-#	if shoes != "Empty":
-#		var shoe_speed = dict_items[shoes]["Speed"]
-#		var shoe_attack = dict_items[shoes]["Attack"]
-#		var shoe_def = dict_items[shoes]["Defense"]
-#		CurrentSpeed += shoe_speed
-#		CurrentAttack += shoe_attack
-#		CurrentDefense += shoe_def
 	
 	if armor != "Empty":
 		var armor_speed = dict_items[armor]["Speed"]
@@ -213,8 +204,8 @@ func death_deferred():
 
 func move_state(): #Character movement and animation
 #_________Get input from player___________________________________________________________________
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
 #__________________________________________________________________________________________________
 
