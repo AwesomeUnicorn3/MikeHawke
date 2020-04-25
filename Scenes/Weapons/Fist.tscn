@@ -11,21 +11,21 @@
 [ext_resource path="res://Animations/Weapons/Melee/SwingUp.tres" type="Animation" id=9]
 [ext_resource path="res://Icons/Fist.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.0975, 39.0413 )
+[sub_resource type="CapsuleShape2D" id=1]
 
 [node name="Fist" type="Node2D"]
 visible = false
-position = Vector2( 9.67092, -14.2622 )
-rotation = 13.296
+position = Vector2( -11.6742, -13.7352 )
+rotation = 11.863
 scale = Vector2( 0.5, 0.5 )
 z_index = -1
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.397217, -28.9967 )
+position = Vector2( -1.32156, -3.65977 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+offset = Vector2( 3.43755, -50.6739 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
@@ -43,7 +43,7 @@ anims/SwingUpRight = ExtResource( 2 )
 wait_time = 0.4
 
 [node name="area" type="Area2D" parent="."]
-scale = Vector2( 1, 1.08 )
+scale = Vector2( 5.01136, 1.08 )
 collision_layer = 64
 collision_mask = 128
 

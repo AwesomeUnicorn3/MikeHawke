@@ -12,7 +12,7 @@ var dict_items = ImportData.item_data
 var dict_char = ImportData.character_stats
 
 var char_name
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	for n in range(dict_formation.size()):
 		char_name = dict_formation.keys()[n]
@@ -23,9 +23,6 @@ func _ready():
 			$DropPanelContainer/MainNodes/VBoxContainer.add_child(newscene)
 			newscene.get_node("Label").set_text(char_name)
 			newscene.connect("char_selected", self, "_on_char_selected")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_CloseButton_button_up():
@@ -34,6 +31,5 @@ func _on_CloseButton_button_up():
 
 
 func _on_char_selected(char_name1):
-
 	emit_signal("selected", char_name1)
 	_on_CloseButton_button_up()

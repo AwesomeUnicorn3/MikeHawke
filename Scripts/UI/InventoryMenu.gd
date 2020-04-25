@@ -7,7 +7,7 @@ onready var slot_select : PackedScene = load("res://Scenes/UI/SlotSelect.tscn")
 onready var item  : PackedScene = load("res://Scenes/UI/ItemDisplay.tscn")
 onready var itemdetail  : PackedScene = load("res://Scenes/UI/Stat_Detail.tscn")
 onready var dropconfirm : PackedScene = load("res://Scenes/UI/DropConfirm.tscn")
-onready var equipmenu : PackedScene = load("res://Scenes/UI/EquipMenu.tscn")
+#onready var equipmenu : PackedScene = load("res://Scenes/UI/EquipMenu.tscn")
 onready var menuroot = get_node(".")
 
 onready var currency = $FullMenu/TabsContainer/CategoryPanel/Currency/Currency/CurrencyDisplay
@@ -155,7 +155,7 @@ func _on_Crafting_button_up():
 	get_inventory_type()
 	clear_item_detail()
 
-func _on_ConsumableButton_button_up():
+func _on_Consumable_button_up():
 	close_all_tabs()
 	consumable.visible = true
 	consumable_button.disabled = true
@@ -219,7 +219,7 @@ func _on_drop_refresh():
 		"skill":
 			_on_Crafting_button_up()
 		"Consumable":
-			_on_ConsumableButton_button_up()
+			_on_Consumable_button_up()
 		"Quest_Items":
 			_on_Quest_Items_button_up()
 
@@ -252,7 +252,7 @@ func _on_char_selected(char_name):
 		selected_char = char_name
 	else:
 		
-		name = char_name + " " + equiptype
+		var name = char_name + " " + equiptype
 	#this is where you unequip item, add to inventory, equip item, remove from inventory
 		var curr_equipped_item = dict_options[name]["equipped_item"]
 		curr_equipped_item = itemdrop

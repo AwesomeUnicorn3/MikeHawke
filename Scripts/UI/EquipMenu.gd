@@ -2,7 +2,7 @@ extends Control
 signal menu_closed
 
 
-onready var item  : PackedScene = load("res://Scenes/UI/ItemDisplay.tscn")
+#onready var item  : PackedScene = load("res://Scenes/UI/ItemDisplay.tscn")
 onready var itemdetail  : PackedScene = load("res://Scenes/UI/Stat_Detail.tscn")
 onready var inventory : PackedScene = load("res://Scenes/UI/InventoryMenu.tscn")
 onready var quick_access : PackedScene = load("res://Scenes/UI/Equip_Detail.tscn")
@@ -66,26 +66,26 @@ func _ready():
 	_on_Char1_button_up()
 
 
-func get_inventory_type():
-	var dict = ImportData.inven_data
-	for i in range(0, dict.size()):
-		var item_name = dict.keys()[i]
-		var dict_item_values = ImportData.item_data
-		item_type = dict_item_values[item_name]["Type"]
-		var scene_instance = item.instance()
-		var icon = "res://Icons/" + str(item_name) + ".png"
-		var iconpressed = "res://Icons/" + str(item_name) + "Pressed" + ".png"
-		scene_instance.set_name(item_name)
-		container.add_child(scene_instance)
-		scene_instance.get_node("ItemName").set_text(item_name)
-		scene_instance.get_node("ItemBackground/ItemButton").set_normal_texture(load(icon))
-		scene_instance.get_node("ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
-
-		i += 1
+#func get_inventory_type():
+#	var dict = ImportData.inven_data
+#	for i in range(0, dict.size()):
+#		var item_name = dict.keys()[i]
+#		var dict_item_values = ImportData.item_data
+#
+#		var scene_instance = item.instance()
+#		var icon = "res://Icons/" + str(item_name) + ".png"
+#		var iconpressed = "res://Icons/" + str(item_name) + "Pressed" + ".png"
+#		scene_instance.set_name(item_name)
+#		container.add_child(scene_instance)
+#		scene_instance.get_node("ItemName").set_text(item_name)
+#		scene_instance.get_node("ItemBackground/ItemButton").set_normal_texture(load(icon))
+#		scene_instance.get_node("ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
+#
+#		i += 1
 
 func _on_ExitButton_button_up():
 	Global.equip_menu_type = "GUI"
-	Global.refresh_gui()
+#	Global.refresh_gui()
 	emit_signal("menu_closed")
 	queue_free()
 
@@ -114,8 +114,8 @@ func _on_ItemDisplay_get_item_info(name):
 					statname.set_text(stat_name)
 					statvalue.set_text(str(stat_value))
 			i -= 1
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton.visible = true
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton.visible = true
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton/swapButton.disabled = false
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton/unequpButton.disabled = false
 
 
 func clear_item_detail():
@@ -126,9 +126,10 @@ func clear_item_detail():
 	if parent != null:
 		for n in parent.get_children():
 			parent.remove_child(n)
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton.visible = false
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton.visible = false
-	item_type = ""
+			pass
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton/swapButton.disabled = true
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton/unequpButton.disabled = true
+#	item_type = ""
 
 func clear_slot_detail():
 	var parent = $FullMenu/TabsContainer/EquipSlots/LeftVBox
@@ -137,14 +138,17 @@ func clear_slot_detail():
 			if n == equip_detail:
 				pass
 			else:
-				parent.remove_child(n)
+#				print(n.get_path())
+				n.queue_free()
 	parent = $FullMenu/TabsContainer/EquipSlots/LeftVBox2
 	if parent != null:
 		for n in parent.get_children():
 			if n == equip_detail2:
 				pass
 			else:
-				parent.remove_child(n)
+#				print(n.get_path())
+				n.queue_free()
+
 
 
 func _on_swapButton_button_up():
@@ -168,7 +172,8 @@ func _on_swapButton_button_up():
 func _on_unequpButton_button_up():
 	var eq_item = dict_op[options_name]["equipped_item"]
 	if eq_item == null or eq_item == "Fist" or eq_item == "Empty":
-		print("success")
+		pass
+#		print("success")
 	else:
 		var dict_item_values = ImportData.item_data
 		eq_item = dict_op[options_name]["equipped_item"] 
@@ -179,8 +184,7 @@ func _on_unequpButton_button_up():
 
 		if item_type == "weapon":
 			dict_op[options_name]["equipped_item"] = "Fist"
-		clear_item_detail()
-		clear_slot_detail()
+	_on_EquipMenu_focus_entered()
 
 
 func _on_button_down(slt_name, op_name):
@@ -192,7 +196,7 @@ func _on_button_down(slt_name, op_name):
 	else:
 		clear_item_detail()
 #		clear_slot_detail()
-		$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton.visible = true
+		$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton/swapButton.disabled = false
 
 
 

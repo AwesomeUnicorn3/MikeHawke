@@ -45,7 +45,7 @@ func _ready():
 			icon.set_texture(load(icon_path))
 
 		"GUI":
-			slot_name = slot_name_label.get_text()
+			slot_name = $Key_Binding_VBox/slot_name.get_text()
 			options_name = lead_character + " " + slot_name
 			icon_name = dict_op[options_name]["equipped_item"]
 			icon_path = "res://Icons/" + icon_name + ".png"

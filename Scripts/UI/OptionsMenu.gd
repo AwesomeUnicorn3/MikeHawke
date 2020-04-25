@@ -59,7 +59,7 @@ func _control_display_action_list():
 					action_string = i
 					ui.get_node("Control/" + str(count)).action_string_button = action_string
 					ui.get_node("Control/" + str(count)).visible = true
-					count += 1
+#					count += 1
 
 
 

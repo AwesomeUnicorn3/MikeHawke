@@ -19,7 +19,7 @@ func _ready():
 	var parentAttack = get_parent().get("CurrentAttack")
 	DAMAGE = parentAttack
 	TYPE = get_parent().TYPE
-# warning-ignore:return_value_discarded
+	# warning-ignore:return_value_discarded
 	$anim.connect("animation_finished", self, "destroy")
 	$anim.play(str("Swing", get_parent().spritedir))
 	SoundEffects.play_sfx(SoundEffects.Punch, -15.0)

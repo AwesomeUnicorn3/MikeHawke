@@ -709,5 +709,5 @@ size_flags_vertical = 1
 [connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Armor/TextureButton" to="." method="_on_Armor_button_up"]
 [connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Shoes/TextureButton" to="." method="_on_Shoes_button_up"]
 [connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Crafting/TextureButton" to="." method="_on_Crafting_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Consumable/TextureButton" to="." method="_on_ConsumableButton_button_up"]
+[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Consumable/TextureButton" to="." method="_on_Consumable_button_up"]
 [connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Quest_Items/TextureButton" to="." method="_on_Quest_Items_button_up"]
