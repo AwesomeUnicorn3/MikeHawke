@@ -1,6 +1,6 @@
-extends "res://Scripts/engine/entity.gd"
-
-
+extends KinematicBody2D
+signal on_death
+signal Health_Change
 signal interact
 
 onready var close_menu = get_node("../../CanvasLayer/GUI/MainMenu/MenuOptions/VBoxOptions/CloseMenu")
@@ -13,7 +13,34 @@ var dialogue_next_input = "dialogue_next"
 onready var look = get_node("RayCast2D")
 var weaponamt = 0
 var wait = false
+var TYPE
+var entity_name
+var movedir
+var spritedir
+var state
+var id
+var knockback = 0
+var knockdir = Vector2(0,0)
+var invincible = false
 
+enum {
+	MOVE,
+	ATTACK,
+	DEFAULT
+	IDLE,
+}
+var array_state = [ DEFAULT, IDLE, ATTACK]
+# stat variables
+var MaxSpeed = 0
+var CurrentSpeed = 0
+var MaxHealth = 0
+var CurrentHealth = 0
+var MaxAttack = 0
+var CurrentAttack = 0
+var MaxDefense = 0
+var CurrentDefense = 0
+var ExpDrop = 0
+var Exp = 0
 #_____Variables for movement_____
 var speed = 75
 var velocity = Vector2.ZERO
@@ -24,10 +51,11 @@ var input_vector = Vector2.ZERO
 #onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+
 #________________________________________________________________________
 
 #_______Variables for weapon texture___________________________________
-var weapon = "Fist" 
+var weapon 
 onready var weapon_file_format = "res://assets/weapons/%s.png"
 onready var weapon_file = weapon_file_format % weapon
 #________________________________________________________________
@@ -86,7 +114,6 @@ func _process(delta):
 			Exp += Global.ExpDrop
 			Global.ExpDrop = 0
 			dict_char_stats[id]["Exp"] += Exp
-		raydir_loop()
 		Global.PlayerX = global_position.x
 		Global.PlayerY = global_position.y
 		
@@ -100,55 +127,66 @@ func _process(delta):
 			MOVE:
 				move_state()
 				Global.PlayerDir = spritedir
+				
 			ATTACK:
 				attack_state()
 		damage_loop()
+		player_spritedir_loop()
 
 # warning-ignore:unused_argument
 func _input(event):
 #______close program when "ui_cancel" is pressed______
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		Global.setScene("res://Scenes/TitleScreen.tscn")
 
 	if Input.is_action_just_pressed(dialogue_next_input):
 		MSG.next()
-#func controls_loop():
-	var UP = Input.is_action_pressed("move_up")
-	var DOWN = Input.is_action_pressed("move_down")
-	var LEFT = Input.is_action_pressed("move_left")
-	var RIGHT = Input.is_action_pressed("move_right")
-	movedir.x = -int(LEFT) + int(RIGHT)
-	movedir.y = -int(UP) + int(DOWN)
-	spritedir_loop()
 
-func raydir_loop():
-	match movedir:
+
+func player_spritedir_loop():
+	input_vector.x = round(input_vector.x)
+	input_vector.y = round(input_vector.y)
+	match input_vector:
 		dir.LEFT:
+			spritedir = "Left"
 			look.rotation_degrees = 90
 			look.cast_to.y = 25
+
 		dir.RIGHT:
+			spritedir = "Right"
 			look.rotation_degrees = -90
 			look.cast_to.y = 25
+
 		dir.UP:
+			spritedir = "Up"
 			look.rotation_degrees = 180
 			look.cast_to.y = 30
+
 		dir.DOWN:
+			spritedir = "Down"
+			look.rotation_degrees = 0
+			look.cast_to.y = 30
+	#Wheh diagonal sprites are added, be sure to change the directions to "Left_Up, Left_Down" 
+		dir.LEFT_UP:
+			spritedir = "Up"
+			look.rotation_degrees = 180
+			look.cast_to.y = 30
+
+		dir.RIGHT_UP:
+			spritedir = "Up"
+			look.rotation_degrees = 180
+			look.cast_to.y = 30
+
+		dir.LEFT_DOWN:
+			spritedir = "Down"
 			look.rotation_degrees = 0
 			look.cast_to.y = 30
 
-		#Diagonal Movement when you get diagonal sprite, change Degrees
-		dir.LEFT_UP:
-			look.rotation_degrees = 125
-			look.cast_to.y = 25
-		dir.RIGHT_UP:
-			look.rotation_degrees = -125
-			look.cast_to.y = 25
-		dir.LEFT_DOWN:
-			look.rotation_degrees = 45
-			look.cast_to.y = 25
 		dir.RIGHT_DOWN:
-			look.rotation_degrees = -45
-			look.cast_to.y = 25
+			spritedir = "Down"
+			look.rotation_degrees = 0
+			look.cast_to.y = 30
+	Global.PlayerDir = spritedir
 
 
 func _on_MikeHawke_interact():
@@ -207,6 +245,7 @@ func move_state(): #Character movement and animation
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
+
 #__________________________________________________________________________________________________
 
 	if input_vector != Vector2.ZERO: #if player is moving
@@ -236,7 +275,6 @@ func move_state(): #Character movement and animation
 	velocity = .move_and_slide(velocity) #starts player movement
 
 func attack_state():
-#	animationState.travel("Attack")
 	if wait == false:
 #______Initializes weapon_______________
 		weapon = ImportData.options_stats["Mike Hawke weapon"]["equipped_item"]
@@ -246,12 +284,13 @@ func attack_state():
 			wait = true
 			$AttackTimer.start()
 
-
-
-func attack_anim_finished():
-	state = MOVE
-#_______________________________________________________
-
+func use_item(item):
+	var newitem = item.instance()
+	newitem.add_to_group(str(newitem.get_name(), self))
+	if get_tree().get_nodes_in_group(str(newitem.get_name(), self)).size() > newitem.maxamount:
+		newitem.queue_free()
+	else:
+		add_child(newitem)
 
 func _on_KnockBackTimer_timeout():
 	Global.Can_walk()
@@ -260,19 +299,59 @@ func _on_KnockBackTimer_timeout():
 func _on_InvicibleTimer_timeout():
 	invincible = false
 
+func damage_loop():
+	if knockback > 0:
+		knockback -= 1
+	
+	for area in $hitbox.get_overlapping_areas():
+		var body = area.get_parent()
+		if knockback == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
+			on_entity_hit(body.get("DAMAGE"))
+			knockback = 10
+			knockdir = global_transform.get_origin() - body.global_transform.get_origin()
+#		print(body.name)
 
-func set_scene():
-	if Global.load_game == true:
-		Global.load_scene = get_node("../..").filename
-		set_global_position(Vector2(Global.PlayerX, Global.PlayerY))
-		animationTree.active = true
-		Global.load_game = false
+func on_entity_hit(DAMAGE):
+	var damage = 0
+	if invincible  == false:
+		invincible = true
+		player_blink()
+		var InvicibleTimer = Timer.new()
+		get_parent().add_child(InvicibleTimer)
+		InvicibleTimer.start(.5)
+		match TYPE:
+			"ENEMY":
+				var def = ImportData.enemy_stats[$".".id]["CurrentDefense"]
+				damage = (DAMAGE - def)
+				ImportData.enemy_stats[$".".id]["CurrentHealth"] -= damage
 
-	else:
-		Global.load_scene = get_node("../..").filename
-		set_global_position(Vector2(Global.PlayerXTransfer, Global.PlayerYTransfer))
-		animationTree.active = true
+			"PLAYER":
+				damage = DAMAGE - ImportData.character_stats[id]["CurrentDefense"]
+				ImportData.character_stats[id]["CurrentHealth"] -= damage
 
+		emit_signal("Health_Change")
+		yield(InvicibleTimer, "timeout")
+		invincible = false
+		InvicibleTimer.queue_free()
+		emit_signal("on_death")
+
+func player_blink():
+	var Player
+#	while invincible == true:
+#		var modwhite = Color(1,1,1)
+#		var modred = Color(255,0,0,255)
+#
+#		if get_node_or_null("Sprite/Body") == null:
+#			Player = $Sprite
+#		else:
+#			Player = $Sprite/Body
+#
+#		Player.set_self_modulate(modred)
+#		$ModulateTimer.start()
+#		yield($ModulateTimer, "timeout")
+#		Player.set_self_modulate(modwhite)
+#		$ModulateTimer.start()
+#		yield($ModulateTimer, "timeout")
 
 func _on_ModulateTimer_timeout():
 	pass
@@ -280,3 +359,13 @@ func _on_ModulateTimer_timeout():
 
 func _on_AttackTimer_timeout():
 	wait = false
+
+func attack_anim_finished():
+	state = MOVE
+
+func set_scene():
+	if Global.load_game == true:
+		set_global_position(Vector2(Global.PlayerX, Global.PlayerY))
+		Global.load_game = false
+	else:
+		set_global_position(Vector2(Global.PlayerXTransfer, Global.PlayerYTransfer))

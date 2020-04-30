@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mike- Head- LeftRight.png-f63c2b93f0b116fb93392de2fe1aef6b.stex"
+path="res://.import/Mike_Vector_Pieces.png-015a610cff9c5e2343896c58a53d7852.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Mike- Head- LeftRight.png"
-dest_files=[ "res://.import/Mike- Head- LeftRight.png-f63c2b93f0b116fb93392de2fe1aef6b.stex" ]
+source_file="res://Characters/Mike_Vector_Pieces.png"
+dest_files=[ "res://.import/Mike_Vector_Pieces.png-015a610cff9c5e2343896c58a53d7852.stex" ]
 
 [params]
 

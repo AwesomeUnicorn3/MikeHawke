@@ -27,6 +27,12 @@ func item_script():
 		sound_effect()
 		item_drops()
 		dict[id] = false
+	yield(MSG, "message_ended")
+	Global.CanInteract = true
+	Global.body = null
+	Global.CanTalk = true
+	self.talking = false
+
 
 
 
@@ -72,12 +78,8 @@ func talk():
 		Global.CanInteract = false
 		Global.PlayerCanMove = false
 		item_script()
-		yield(MSG, "message_ended")
-		Global.CanInteract = true
-		Global.body = null
-		Global.CanTalk = true
-		self.talking = false
-		on_interacted_item_load()
+
+
 
 # warning-ignore:unused_argument
 func _input(event):

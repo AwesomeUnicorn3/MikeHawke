@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mike- Arm- LeftRight.png-84b5177672f884f633c00e6646f5409f.stex"
+path="res://.import/front-walk-cycle.jpg-6abac93c4d2792ab9ba9b03168bc9cdf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Mike- Arm- LeftRight.png"
-dest_files=[ "res://.import/Mike- Arm- LeftRight.png-84b5177672f884f633c00e6646f5409f.stex" ]
+source_file="res://Animations/front-walk-cycle.jpg"
+dest_files=[ "res://.import/front-walk-cycle.jpg-6abac93c4d2792ab9ba9b03168bc9cdf.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/House-Mike.gd" type="Script" id=1]
 [ext_resource path="res://TilesSets/IndoorTiles.tres" type="TileSet" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://Audio/BGM/AWhiteElephants.ogg" type="AudioStream" id=18]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Items/Loot_Generator.tscn" type="PackedScene" id=20]
-[ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/Items/TreasureChest.tscn" type="PackedScene" id=22]
 
 [node name="House-Mike" type="Node2D" groups=[
@@ -90,8 +89,7 @@ position = Vector2( 194.032, -110.169 )
 position = Vector2( 257.06, -310.847 )
 
 [node name="Mike Hawke" parent="main" instance=ExtResource( 7 )]
-position = Vector2( -133, -253 )
-face = ExtResource( 21 )
+position = Vector2( -70.0065, -263.66 )
 color = Color( 0.964706, 0, 0, 1 )
 voice_pitch = 0.9
 

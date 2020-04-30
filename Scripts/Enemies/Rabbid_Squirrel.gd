@@ -13,7 +13,7 @@ var pos = Vector2()
 var selected = false
 var talking = false
 var interacting = false
-var me
+
 var DAMAGE = 0
 var hide_
 #var direction = dir.RIGHT
@@ -27,7 +27,6 @@ func _ready():
 	movedir = Vector2(0,0)
 	spritedir = "Down"
 	TYPE = "ENEMY"
-	me = self
 	entity_name = "Squirrel" #name that is on the enemy data table
 	startup()
 
@@ -49,6 +48,8 @@ func startup():
 	MaxDefense = dict[id]["MaxDefense"]
 	CurrentDefense = dict[id]["CurrentDefense"]
 	ExpDrop = dict[id]["ExpDrop"]
+	DAMAGE = CurrentAttack
+
 	if CurrentHealth <= 0:
 		var dict_2 = Global.Dict_objects_fruitville
 		pos = Vector2(int(dict_2[id + "_Drop" ]["positionx"]), int(dict_2[id + "_Drop" ]["positiony"]))
@@ -59,11 +60,11 @@ func startup():
 		
 # warning-ignore:unused_argument
 func _process(delta):
-		DAMAGE = CurrentAttack
+
 		state_machine()
 		damage_loop()
 		CurrentHealth = dict[id]["CurrentHealth"]
-#		var health = dict[id]["CurrentHealth"]
+
 
 
 

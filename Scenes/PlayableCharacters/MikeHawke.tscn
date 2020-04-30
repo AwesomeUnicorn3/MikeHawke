@@ -1,13 +1,12 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/MikeHawke.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/PlayableCharacters/SpriteSheetSelection.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/characters/MainCharactersprite.png" type="Texture" id=18]
-[ext_resource path="res://assets/weapons/Fist.png" type="Texture" id=19]
+[ext_resource path="res://Characters/MikeHawke_Skeleton_rig.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.21721
-height = 1.43472
+radius = 13.1871
+height = 4.2207
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -164,7 +163,7 @@ states/Run/node = SubResource( 30 )
 states/Run/position = Vector2( -105.768, 89 )
 transitions = [ "Idle", "Run", SubResource( 31 ), "Run", "Idle", SubResource( 32 ), "Idle", "Attack", SubResource( 33 ), "Attack", "Idle", SubResource( 34 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -525.221, 50.288 )
+graph_offset = Vector2( -627.221, 46.288 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
@@ -172,15 +171,16 @@ graph_offset = Vector2( -525.221, 50.288 )
 "player",
 ]]
 position = Vector2( -0.109064, -3.92631 )
+scale = Vector2( 1.5, 1.5 )
 collision_mask = 44
 script = ExtResource( 1 )
+face = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.729736, 2.21006 )
+position = Vector2( -0.669807, 1.97513 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-rotating = true
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
@@ -188,8 +188,8 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="hitbox" type="Area2D" parent="."]
-position = Vector2( -1.35191, 7.65545 )
-scale = Vector2( 0.879999, 0.319989 )
+position = Vector2( -0.95275, 12.4454 )
+scale = Vector2( 2.16, 0.55999 )
 collision_mask = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
@@ -197,8 +197,7 @@ position = Vector2( 0.407509, -18.2114 )
 shape = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 2.38419e-07, -9.32448 )
-rotation = -2.22305
+position = Vector2( 0.600626, -20.8998 )
 enabled = true
 cast_to = Vector2( 0, 25 )
 collision_mask = 300
@@ -217,37 +216,20 @@ wait_time = 0.1
 wait_time = 0.4
 one_shot = true
 
-[node name="Sprite2" type="Sprite" parent="."]
-visible = false
-position = Vector2( -88.1578, -16.4733 )
-texture = ExtResource( 18 )
-offset = Vector2( 88, 0 )
-vframes = 8
-hframes = 12
-frame = 13
-
-[node name="sprite" type="Sprite" parent="Sprite2"]
-visible = false
-position = Vector2( 68, 28 )
-rotation = 3.92699
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 19 )
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 35 )
-anim_player = NodePath("../Sprite/AnimationPlayer")
+anim_player = NodePath("../MikeHawke Skeleton/AnimationPlayer")
 process_mode = 0
 parameters/playback = SubResource( 36 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
-parameters/Idle/blend_position = Vector2( -0.504065, 0.50289 )
-parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 1, 1 )
+parameters/Run/blend_position = Vector2( 1, 1 )
 
-[node name="Sprite" parent="." instance=ExtResource( 2 )]
-position = Vector2( -0.386604, -15.878 )
+[node name="MikeHawke Skeleton" parent="." instance=ExtResource( 2 )]
 [connection signal="interact" from="." to="." method="_on_MikeHawke_interact"]
 [connection signal="timeout" from="InvicibleTimer" to="." method="_on_InvicibleTimer_timeout"]
 [connection signal="timeout" from="KnockBackTimer" to="." method="_on_KnockBackTimer_timeout"]
 [connection signal="timeout" from="ModulateTimer" to="." method="_on_ModulateTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 
-[editable path="Sprite"]
+[editable path="MikeHawke Skeleton"]

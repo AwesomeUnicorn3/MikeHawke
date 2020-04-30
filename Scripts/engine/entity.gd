@@ -68,27 +68,7 @@ func spritedir_loop():
 					spritedir = "Down"
 				dir.RIGHT_DOWN:
 					spritedir = "Down"
-		"PLAYER":
-			match movedir:
-				dir.LEFT:
-					spritedir = "Left"
-				dir.RIGHT:
-					spritedir = "Right"
-				dir.UP:
-					spritedir = "Up"
-				dir.DOWN:
-					spritedir = "Down"
-				#Wheh diagonal sprites are added, be sure to change the directions to "Left_Up, Left_Down" 
-				dir.LEFT_UP:
-					spritedir = "UpLeft"
-				dir.RIGHT_UP:
-					spritedir = "UpRight"
-				dir.LEFT_DOWN:
-					spritedir = "DownLeft"
-				dir.RIGHT_DOWN:
-					spritedir = "DownRight"
-				dir.CENTER:
-					spritedir = Global.PlayerDir
+
 
 func anim_switch(animation):
 	var newanim = str(animation, spritedir)
@@ -101,8 +81,7 @@ func state_machine():
 			anim_switch("Idle")
 			spritedir_loop()
 			movement_loop()
-#		NEW_DIRECTION:
-#			movement_loop()
+
 		DEFAULT:
 				anim_switch("Walk")
 				spritedir_loop()
@@ -121,13 +100,13 @@ func choose(array):
 
 
 
-func use_item(item):
-	var newitem = item.instance()
-	newitem.add_to_group(str(newitem.get_name(), self))
-	if get_tree().get_nodes_in_group(str(newitem.get_name(), self)).size() > newitem.maxamount:
-		newitem.queue_free()
-	else:
-		add_child(newitem)
+#func use_item(item):
+#	var newitem = item.instance()
+#	newitem.add_to_group(str(newitem.get_name(), self))
+#	if get_tree().get_nodes_in_group(str(newitem.get_name(), self)).size() > newitem.maxamount:
+#		newitem.queue_free()
+#	else:
+#		add_child(newitem)
 	
 
 func player_blink():
@@ -167,16 +146,12 @@ func on_entity_hit(DAMAGE):
 		player_blink()
 		var InvicibleTimer = Timer.new()
 		get_parent().add_child(InvicibleTimer)
-		InvicibleTimer.start(.5)
+		InvicibleTimer.start(.3)
 		match TYPE:
 			"ENEMY":
 				var def = ImportData.enemy_stats[$".".id]["CurrentDefense"]
 				damage = (DAMAGE - def)
 				ImportData.enemy_stats[$".".id]["CurrentHealth"] -= damage
-
-			"PLAYER":
-				damage = DAMAGE - ImportData.character_stats[id]["CurrentDefense"]
-				ImportData.character_stats[id]["CurrentHealth"] -= damage
 
 		emit_signal("Health_Change")
 		yield(InvicibleTimer, "timeout")

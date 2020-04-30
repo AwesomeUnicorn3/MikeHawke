@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mike- Leg- LeftRight.png-52aa344df5b264056b9e85545521e80f.stex"
+path="res://.import/MikeShadow.png-46b574b153a081ad813f407364baf3c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Mike- Leg- LeftRight.png"
-dest_files=[ "res://.import/Mike- Leg- LeftRight.png-52aa344df5b264056b9e85545521e80f.stex" ]
+source_file="res://Characters/MikeShadow.png"
+dest_files=[ "res://.import/MikeShadow.png-46b574b153a081ad813f407364baf3c1.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Fruitville.gd" type="Script" id=1]
 [ext_resource path="res://assets/Environment/TreeCluster.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Scenes/Items/Trash_Can.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Items/Frank_Sign.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/PlayableCharacters/MikeHawke.tscn" type="PackedScene" id=10]
-[ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/NPC/Hilda.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/NPC/Queef.tscn" type="PackedScene" id=13]
 [ext_resource path="res://TilesSets/MountainGrass.tres" type="TileSet" id=14]
@@ -32,7 +31,7 @@ __meta__ = {
 }
 
 [node name="GroundTilemap" type="TileMap" parent="."]
-z_index = -1
+z_index = -4
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 47, 47 )
 collision_layer = 2
@@ -62,8 +61,7 @@ tile_data = PoolIntArray( 983052, 0, 196610, 983053, 0, 1, 983054, 0, 1, 1376266
 position = Vector2( 5, -4 )
 
 [node name="Mike Hawke" parent="main" instance=ExtResource( 10 )]
-position = Vector2( 1652.61, 389.771 )
-face = ExtResource( 11 )
+position = Vector2( 1385.14, 892.308 )
 voice_pitch = 0.5
 
 [node name="Hilda" parent="main" instance=ExtResource( 12 )]

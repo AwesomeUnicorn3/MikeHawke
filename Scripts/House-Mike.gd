@@ -20,7 +20,7 @@ func _ready():
 		begin_sequence1()
 	else:
 		mike.set_scene()
-
+		Global.load_scene = self.filename
 	
 func begin_sequence1():
 	gui.hide_gui(true)

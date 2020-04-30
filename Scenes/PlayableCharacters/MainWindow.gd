@@ -10,7 +10,7 @@ export (Texture) var shirt_path
 func _ready():
 	$SpriteTest.visible = false
 	var Body = load(body_path.get_path())
-	var Shirt = load(shirt_path.get_path())
+#	var Shirt = load(shirt_path.get_path())
 	$Body.set_texture(Body)
-	$Shirt.set_texture(Shirt)
+#	$Shirt.set_texture(Shirt)
 

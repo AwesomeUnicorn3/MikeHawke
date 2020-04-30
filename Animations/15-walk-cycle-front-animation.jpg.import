@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MikeChangableSpriteBody.png-c76fb59a1fdfa29239ce2c619c478113.stex"
+path="res://.import/15-walk-cycle-front-animation.jpg-c5e07c008347de398a9c48d52538552f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/MikeChangableSpriteBody.png"
-dest_files=[ "res://.import/MikeChangableSpriteBody.png-c76fb59a1fdfa29239ce2c619c478113.stex" ]
+source_file="res://Animations/15-walk-cycle-front-animation.jpg"
+dest_files=[ "res://.import/15-walk-cycle-front-animation.jpg-c5e07c008347de398a9c48d52538552f.stex" ]
 
 [params]
 
