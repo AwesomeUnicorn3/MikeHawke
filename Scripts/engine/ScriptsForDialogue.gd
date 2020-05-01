@@ -24,7 +24,7 @@ func can_interact():
 	
 func can_walk():
 	Global.PlayerCanMove = true
-#	print("can_walk called")
+
 	
 func cant_walk():
 	Global.PlayerCanMove = false
@@ -79,10 +79,10 @@ func idleleft():
 	animationState.travel("Idle")
 
 func fridge():
-	if MSG.level_root().get_node("FridgeOpen").visible == true:
-		MSG.level_root().get_node("FridgeOpen").visible = false
+	if MSG.level_root().get_node("main/FridgeOpen").visible == true:
+		MSG.level_root().get_node("main/FridgeOpen").visible = false
 	else:
-		MSG.level_root().get_node("FridgeOpen").visible = true
+		MSG.level_root().get_node("main/FridgeOpen").visible = true
 
 func seq1():
 	walkright()

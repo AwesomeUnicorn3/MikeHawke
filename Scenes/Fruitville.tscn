@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Fruitville.gd" type="Script" id=1]
 [ext_resource path="res://assets/Environment/TreeCluster.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://Scenes/Enemies/Rabbid_Squirrel.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Environment/Tree1.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/Environment/PearHouse.tscn" type="PackedScene" id=20]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [node name="Fruitville" type="Control" groups=[
 "level_root",
@@ -63,6 +65,12 @@ position = Vector2( 5, -4 )
 [node name="Mike Hawke" parent="main" instance=ExtResource( 10 )]
 position = Vector2( 1385.14, 892.308 )
 voice_pitch = 0.5
+
+[node name="Camera2D" parent="main/Mike Hawke" index="1"]
+zoom = Vector2( 0.6, 0.6 )
+
+[node name="AnimationTree" parent="main/Mike Hawke" index="8"]
+parameters/playback = SubResource( 1 )
 
 [node name="Hilda" parent="main" instance=ExtResource( 12 )]
 position = Vector2( 1853.94, 1125.55 )
@@ -488,6 +496,7 @@ position = Vector2( 520.836, 261.256 )
 
 [node name="DoorWay" parent="main/Houses/PumpkinHouse/YSort" index="2"]
 position = Vector2( 1.08042, 104.042 )
+z_index = 2
 offset = Vector2( -0.537683, -16.2441 )
 
 [node name="PearHouse" parent="main/Houses" instance=ExtResource( 20 )]
@@ -497,19 +506,19 @@ position = Vector2( 98.1285, 1148.15 )
 Goto_scene = "res://Scenes/IndoorMaps/FranksSundries.tscn"
 set_player_position = Vector2( -25, -90 )
 
+[node name="CumNGoDoor_Outside" parent="main/Houses" instance=ExtResource( 15 )]
+position = Vector2( 474.507, 2183.7 )
+z_index = 0
+z_as_relative = false
+Goto_scene = "res://Scenes/IndoorMaps/CumNGo.tscn"
+set_player_position = Vector2( 72, -5 )
+
 [node name="Narrator" parent="main" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( -190.906, -130.517 )
 
 [node name="buttons" type="Node2D" parent="."]
 visible = false
-
-[node name="CumNGoDoor_Outside" parent="." instance=ExtResource( 15 )]
-position = Vector2( 479.507, 2179.7 )
-z_index = 0
-z_as_relative = false
-Goto_scene = "res://Scenes/IndoorMaps/CumNGo.tscn"
-set_player_position = Vector2( 72, -5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -521,6 +530,8 @@ autoplay = true
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 17 )]
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[editable path="main/Mike Hawke"]
 
 [editable path="main/Houses/PumpkinHouse"]
 

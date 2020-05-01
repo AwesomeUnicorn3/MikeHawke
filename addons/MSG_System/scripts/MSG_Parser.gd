@@ -64,6 +64,9 @@ func load_data(json_path):
 	json_data = parse_json(f.get_as_text())
 	f.close()
 
+func msg_ended():
+	emit_signal("message_ended")
+
 
 func get_node_by_name(node_name):
 	for node in json_data[0]["nodes"]:

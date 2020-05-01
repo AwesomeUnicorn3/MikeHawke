@@ -27,6 +27,7 @@ func item_script():
 		sound_effect()
 		item_drops()
 		dict[id] = false
+		on_interacted_item_load()
 	yield(MSG, "message_ended")
 	Global.CanInteract = true
 	Global.body = null

@@ -1,12 +1,13 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scripts/MikeHawke.gd" type="Script" id=1]
 [ext_resource path="res://Characters/MikeHawke_Skeleton_rig.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/MikeShadow.png" type="Texture" id=3]
 [ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 13.1871
-height = 4.2207
+radius = 11.6265
+height = 0.911901
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -177,19 +178,20 @@ script = ExtResource( 1 )
 face = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.669807, 1.97513 )
+position = Vector2( 2.34985, 4.99479 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -26.0644 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.75, 0.75 )
 smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="hitbox" type="Area2D" parent="."]
-position = Vector2( -0.95275, 12.4454 )
-scale = Vector2( 2.16, 0.55999 )
+position = Vector2( -0.0899876, 11.3669 )
+scale = Vector2( 1.89333, 0.55999 )
 collision_mask = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
@@ -197,7 +199,7 @@ position = Vector2( 0.407509, -18.2114 )
 shape = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 0.600626, -20.8998 )
+position = Vector2( 0.600626, -10.0697 )
 enabled = true
 cast_to = Vector2( 0, 25 )
 collision_mask = 300
@@ -221,15 +223,22 @@ tree_root = SubResource( 35 )
 anim_player = NodePath("../MikeHawke Skeleton/AnimationPlayer")
 process_mode = 0
 parameters/playback = SubResource( 36 )
-parameters/Attack/blend_position = Vector2( 0, 0 )
+parameters/Attack/blend_position = Vector2( 0.0380435, 0.364162 )
 parameters/Idle/blend_position = Vector2( 1, 1 )
 parameters/Run/blend_position = Vector2( 1, 1 )
 
 [node name="MikeHawke Skeleton" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.543009, 0 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -14.1353, -9.4125 )
+scale = Vector2( 0.1, 0.1 )
+z_index = -1
+texture = ExtResource( 3 )
+polygon = PoolVector2Array( 340.299, 9.3985, 10.4477, 3.42834, 16.4179, 298.951, 365.672, 301.936 )
+uv = PoolVector2Array( 340.299, 9.3985, 10.4477, 3.42834, 16.4179, 298.951, 365.672, 301.936 )
 [connection signal="interact" from="." to="." method="_on_MikeHawke_interact"]
 [connection signal="timeout" from="InvicibleTimer" to="." method="_on_InvicibleTimer_timeout"]
 [connection signal="timeout" from="KnockBackTimer" to="." method="_on_KnockBackTimer_timeout"]
 [connection signal="timeout" from="ModulateTimer" to="." method="_on_ModulateTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
-
-[editable path="MikeHawke Skeleton"]

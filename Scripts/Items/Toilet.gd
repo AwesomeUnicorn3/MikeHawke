@@ -58,9 +58,7 @@ func _ready():
 
 # warning-ignore:unused_argument
 func _process(delta):
-	if self.talking == true:
-		pass
-	elif self.selected == true:
+	if self.selected == true:
 		talk()
 
 

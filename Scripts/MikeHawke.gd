@@ -165,7 +165,7 @@ func player_spritedir_loop():
 		dir.DOWN:
 			spritedir = "Down"
 			look.rotation_degrees = 0
-			look.cast_to.y = 30
+			look.cast_to.y = 40
 	#Wheh diagonal sprites are added, be sure to change the directions to "Left_Up, Left_Down" 
 		dir.LEFT_UP:
 			spritedir = "Up"
@@ -180,12 +180,12 @@ func player_spritedir_loop():
 		dir.LEFT_DOWN:
 			spritedir = "Down"
 			look.rotation_degrees = 0
-			look.cast_to.y = 30
+			look.cast_to.y = 40
 
 		dir.RIGHT_DOWN:
 			spritedir = "Down"
 			look.rotation_degrees = 0
-			look.cast_to.y = 30
+			look.cast_to.y = 40
 	Global.PlayerDir = spritedir
 
 
@@ -197,6 +197,8 @@ func _on_MikeHawke_interact():
 				Global.body = collision
 				if Input.is_action_pressed("ui_select"):
 					state = IDLE
+					yield(MSG, "message_ended")
+					state = MOVE
 	else:
 		Global.body = null
 		if state == IDLE:
@@ -280,6 +282,7 @@ func attack_state():
 		weapon = ImportData.options_stats["Mike Hawke weapon"]["equipped_item"]
 		var weapon_scene = "res://Scenes/Weapons/" + weapon + ".tscn"
 		if weapon != null:
+			animationState.travel("Attack")
 			use_item(load(weapon_scene))
 			wait = true
 			$AttackTimer.start()
@@ -336,22 +339,16 @@ func on_entity_hit(DAMAGE):
 		emit_signal("on_death")
 
 func player_blink():
-	var Player
-#	while invincible == true:
-#		var modwhite = Color(1,1,1)
-#		var modred = Color(255,0,0,255)
-#
-#		if get_node_or_null("Sprite/Body") == null:
-#			Player = $Sprite
-#		else:
-#			Player = $Sprite/Body
-#
-#		Player.set_self_modulate(modred)
-#		$ModulateTimer.start()
-#		yield($ModulateTimer, "timeout")
-#		Player.set_self_modulate(modwhite)
-#		$ModulateTimer.start()
-#		yield($ModulateTimer, "timeout")
+	var Player = get_node("MikeHawke Skeleton")
+	while invincible == true:
+		var modwhite = Color(1,1,1)
+		var modred = Color(255,0,0,255)
+		Player.set_modulate(modred)
+		$ModulateTimer.start()
+		yield($ModulateTimer, "timeout")
+		Player.set_modulate(modwhite)
+		$ModulateTimer.start()
+		yield($ModulateTimer, "timeout")
 
 func _on_ModulateTimer_timeout():
 	pass

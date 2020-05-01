@@ -2,8 +2,6 @@
 
 [ext_resource path="res://addons/MSG_System/scripts/MSG_Parser.gd" type="Script" id=1]
 
-
-
 [node name="MSG_Parser" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )

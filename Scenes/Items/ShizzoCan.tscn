@@ -9,18 +9,19 @@ extents = Vector2( 24.0037, 22.1704 )
 [node name="Shizzo" type="StaticBody2D" groups=[
 "Shizzo",
 ]]
-position = Vector2( 0.307255, -0.922073 )
-z_index = -3
+position = Vector2( -0.27739, -20.5268 )
+z_index = -4
 collision_layer = 32
 collision_mask = 5
 script = ExtResource( 1 )
 interaction_script = "res://dialogues/ShizzoCan.json"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 27.8091 )
+position = Vector2( 0, 20.8042 )
 shape = SubResource( 1 )
 
 [node name="ShizzoCan" type="Sprite" parent="."]
-position = Vector2( 0.397217, 29.3996 )
+position = Vector2( 0.0139084, 22.4475 )
 z_index = 3
 texture = ExtResource( 2 )
+offset = Vector2( 0.954052, -1.43851 )
