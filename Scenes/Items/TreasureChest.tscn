@@ -11,7 +11,7 @@ extents = Vector2( 21.5216, 19.3614 )
 [node name="TreasureChest" type="StaticBody2D"]
 position = Vector2( 0.307255, -0.922073 )
 collision_layer = 32
-collision_mask = 5
+collision_mask = 32
 script = ExtResource( 1 )
 item3 = "Crappy Sword"
 
@@ -24,6 +24,7 @@ shape = SubResource( 1 )
 z_index = 3
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.07546, 1.07546 )

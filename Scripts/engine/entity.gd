@@ -147,6 +147,8 @@ func on_entity_hit(DAMAGE):
 		var InvicibleTimer = Timer.new()
 		get_parent().add_child(InvicibleTimer)
 		InvicibleTimer.start(.3)
+		SoundEffects.play_sfx(SoundEffects.Punch, -15.0)
+		$Particles2D.emitting = true
 		match TYPE:
 			"ENEMY":
 				var def = ImportData.enemy_stats[$".".id]["CurrentDefense"]

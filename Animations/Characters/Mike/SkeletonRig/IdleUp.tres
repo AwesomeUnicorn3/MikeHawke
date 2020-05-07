@@ -606,7 +606,7 @@ tracks/49/keys = {
 "values": [ 0 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Polygons2/HeadDown/EyeBrow_Left:z_index")
+tracks/50/path = NodePath("Polygons2/HeadDown/Facial_Features/EyeBrow_Scared_Left:z_index")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/imported = false
@@ -930,7 +930,7 @@ tracks/76/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/77/type = "value"
-tracks/77/path = NodePath("Polygons2/EyeClosedRight:visible")
+tracks/77/path = NodePath("Polygons2/HeadDown/Facial_Features/EyeClosedRight:visible")
 tracks/77/interp = 1
 tracks/77/loop_wrap = true
 tracks/77/imported = false
@@ -942,7 +942,7 @@ tracks/77/keys = {
 "values": [ false ]
 }
 tracks/78/type = "value"
-tracks/78/path = NodePath("Polygons2/EyeClosedLeft:visible")
+tracks/78/path = NodePath("Polygons2/HeadDown/Facial_Features/EyeClosedLeft:visible")
 tracks/78/interp = 1
 tracks/78/loop_wrap = true
 tracks/78/imported = false
@@ -954,7 +954,7 @@ tracks/78/keys = {
 "values": [ false ]
 }
 tracks/79/type = "value"
-tracks/79/path = NodePath("Polygons2/MouthDynamic:visible")
+tracks/79/path = NodePath("Polygons2/HeadDown/Facial_Features/MouthOpen:visible")
 tracks/79/interp = 1
 tracks/79/loop_wrap = true
 tracks/79/imported = false
@@ -964,4 +964,112 @@ tracks/79/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/80/type = "value"
+tracks/80/path = NodePath("Shadow:position")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 149.35, -148.91 ) ]
+}
+tracks/81/type = "value"
+tracks/81/path = NodePath("Shadow:rotation_degrees")
+tracks/81/interp = 1
+tracks/81/loop_wrap = true
+tracks/81/imported = false
+tracks/81/enabled = true
+tracks/81/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.05111 ]
+}
+tracks/82/type = "value"
+tracks/82/path = NodePath("Shadow:polygon")
+tracks/82/interp = 1
+tracks/82/loop_wrap = true
+tracks/82/imported = false
+tracks/82/enabled = true
+tracks/82/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 30.5797, 34.153, -2.0378, 332.955, 2.91059, 479.373, 225.38, 476.218, 322.726, 325.735, 261.8, 187.423, 279.026, 39.1671, 208.025, -6.58905 ) ]
+}
+tracks/83/type = "value"
+tracks/83/path = NodePath("Shadow:uv")
+tracks/83/interp = 1
+tracks/83/loop_wrap = true
+tracks/83/imported = false
+tracks/83/enabled = true
+tracks/83/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( -70, -21.1111, 2.46915, 504.938, 319.753, 506.173, 413.333, -28.8889 ) ]
+}
+tracks/84/type = "value"
+tracks/84/path = NodePath("Shadow:vertex_colors")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolColorArray(  ) ]
+}
+tracks/85/type = "value"
+tracks/85/path = NodePath("Shadow:polygons")
+tracks/85/interp = 1
+tracks/85/loop_wrap = true
+tracks/85/imported = false
+tracks/85/enabled = true
+tracks/85/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ [  ] ]
+}
+tracks/86/type = "value"
+tracks/86/path = NodePath("Shadow:internal_vertex_count")
+tracks/86/interp = 1
+tracks/86/loop_wrap = true
+tracks/86/imported = false
+tracks/86/enabled = true
+tracks/86/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/87/type = "value"
+tracks/87/path = NodePath("Shadow:scale")
+tracks/87/interp = 1
+tracks/87/loop_wrap = true
+tracks/87/imported = false
+tracks/87/enabled = true
+tracks/87/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.624959, 0.556329 ) ]
+}
+tracks/88/type = "value"
+tracks/88/path = NodePath("Shadow:z_index")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -2 ]
 }

@@ -58,10 +58,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -50.4542, 52.9995 ]
+"values": [ -50.4542 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("area:position")

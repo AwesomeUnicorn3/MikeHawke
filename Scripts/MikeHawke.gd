@@ -2,6 +2,7 @@ extends KinematicBody2D
 signal on_death
 signal Health_Change
 signal interact
+signal animation_complete
 
 onready var close_menu = get_node("../../CanvasLayer/GUI/MainMenu/MenuOptions/VBoxOptions/CloseMenu")
 #Dialogue Variables
@@ -74,7 +75,7 @@ func _ready():
 	
 		#______Initializes animation__________
 	animationState.start("Idle")
-	animationTree.active = true
+#	animationTree.active = true
 	
 #	$AnimationPlayer.play(Global.PlayerAnim)
 	close_menu.connect("menu_closed", self, "equip_stats")
@@ -106,6 +107,8 @@ func startup():
 # warning-ignore:unused_argument
 func _process(delta):
 	if Global.PlayerCanMove == false:
+		Global.PlayerX = global_position.x
+		Global.PlayerY = global_position.y
 		pass
 	else:
 		emit_signal("interact")
@@ -366,3 +369,7 @@ func set_scene():
 		Global.load_game = false
 	else:
 		set_global_position(Vector2(Global.PlayerXTransfer, Global.PlayerYTransfer))
+
+
+func anim_complete():
+	emit_signal("animation_complete")

@@ -63,13 +63,14 @@ tile_data = PoolIntArray( 983052, 0, 196610, 983053, 0, 1, 983054, 0, 1, 1376266
 position = Vector2( 5, -4 )
 
 [node name="Mike Hawke" parent="main" instance=ExtResource( 10 )]
-position = Vector2( 1385.14, 892.308 )
+position = Vector2( 276.935, 563.321 )
 voice_pitch = 0.5
 
 [node name="Camera2D" parent="main/Mike Hawke" index="1"]
 zoom = Vector2( 0.6, 0.6 )
 
 [node name="AnimationTree" parent="main/Mike Hawke" index="8"]
+active = true
 parameters/playback = SubResource( 1 )
 
 [node name="Hilda" parent="main" instance=ExtResource( 12 )]
@@ -375,6 +376,7 @@ position = Vector2( 13.3983, -86.551 )
 position = Vector2( -161.908, -251.86 )
 
 [node name="InteractableObjects" type="YSort" parent="main"]
+position = Vector2( -0.950012, 19.0001 )
 
 [node name="FruitShizzoCan" parent="main/InteractableObjects" instance=ExtResource( 7 )]
 position = Vector2( 148.118, 193.777 )
@@ -446,7 +448,7 @@ position = Vector2( 327.499, 483.098 )
 position = Vector2( 382.134, 433.04 )
 
 [node name="FruitTrash_Can" parent="main/InteractableObjects" instance=ExtResource( 8 )]
-position = Vector2( 375.397, 393.494 )
+position = Vector2( 352.597, 364.994 )
 
 [node name="FruitTrash_Can2" parent="main/InteractableObjects" instance=ExtResource( 8 )]
 position = Vector2( 4.23578, 1239.2 )
@@ -473,9 +475,11 @@ position = Vector2( 85.7125, 72.0764 )
 
 [node name="Squirrel" parent="main/Enemies" instance=ExtResource( 18 )]
 position = Vector2( 580.452, 884.966 )
+z_index = 1
 
 [node name="Squirrel2" parent="main/Enemies" instance=ExtResource( 18 )]
 position = Vector2( 637.87, 692.815 )
+z_index = 1
 
 [node name="Squirrel3" parent="main/Enemies" instance=ExtResource( 18 )]
 position = Vector2( 297.914, 783.695 )
@@ -498,6 +502,7 @@ position = Vector2( 520.836, 261.256 )
 position = Vector2( 1.08042, 104.042 )
 z_index = 2
 offset = Vector2( -0.537683, -16.2441 )
+set_player_position = Vector2( -50, 75 )
 
 [node name="PearHouse" parent="main/Houses" instance=ExtResource( 20 )]
 position = Vector2( 98.1285, 1148.15 )

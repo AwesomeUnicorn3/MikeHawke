@@ -46,8 +46,8 @@ func on_not_interacted_item_load(): #on load if item has *NOT* been interacted w
 
 func on_interacted_item_load(): #on load if item has been interacted with by player
 	self.interaction_script = "res://dialogues/TrashEmpty.json"
-	$Sprite.set_frame(0)
-	
+	$Empty.visible = true
+	$Full.visible = false
 
 #END FUNCTIONS TO CHANGE FOR EACH ITEM TYPE
 

@@ -22,7 +22,7 @@ func _ready():
 	# warning-ignore:return_value_discarded
 	$anim.connect("animation_finished", self, "destroy")
 	$anim.play(str("Swing", get_parent().spritedir))
-	SoundEffects.play_sfx(SoundEffects.Punch, -15.0)
+	SoundEffects.play_sfx(SoundEffects.Slash, -15.0)
 
 
 

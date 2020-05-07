@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Rabbid_Squirrel.gd" type="Script" id=1]
 [ext_resource path="res://Characters/squirell.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Animations/Characters/BrownSquirrel/WalkLeft.tres" type="Animation" id=8]
 [ext_resource path="res://Animations/Characters/BrownSquirrel/WalkRight.tres" type="Animation" id=9]
 [ext_resource path="res://Animations/Characters/BrownSquirrel/WalkUp.tres" type="Animation" id=10]
+[ext_resource path="res://ObjectSprites/HitSprite.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.43476
@@ -18,6 +19,20 @@ height = 3.097
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 5.36042
 height = 8.5317
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 4.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.2
+scale_random = 0.1
+color = Color( 1, 0.494118, 0, 1 )
+hue_variation = -0.12
+hue_variation_random = 0.41
 
 [node name="Squirrel" type="KinematicBody2D"]
 position = Vector2( 0.475647, -7.61039 )
@@ -44,11 +59,21 @@ shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3.38089, 4.50877 )
-z_index = 4
+z_index = -1
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 12
 frame = 38
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0.59956, 5.39604 )
+emitting = false
+amount = 2
+lifetime = 0.5
+one_shot = true
+speed_scale = 3.0
+process_material = SubResource( 3 )
+texture = ExtResource( 11 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25

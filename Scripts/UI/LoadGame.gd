@@ -34,7 +34,7 @@ func _ready():
 			var minute = "%02d" % Global.Dict_static_time["minute"]
 			var time = String(hour) + ":" + String(minute) 
 			var filename = "Load file " + String(Global.save_id)
-			print(Global.load_scene)
+
 			var location ="Player Location: " +  String(Global.Dict_locations[Global.load_scene])
 			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer2/LoadGame/Label").set_text(filename)
 			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer/Date").set_text(String(date))

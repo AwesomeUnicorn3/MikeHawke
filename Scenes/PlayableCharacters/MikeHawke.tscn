@@ -1,8 +1,7 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/MikeHawke.gd" type="Script" id=1]
 [ext_resource path="res://Characters/MikeHawke_Skeleton_rig.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Characters/MikeShadow.png" type="Texture" id=3]
 [ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -164,7 +163,7 @@ states/Run/node = SubResource( 30 )
 states/Run/position = Vector2( -105.768, 89 )
 transitions = [ "Idle", "Run", SubResource( 31 ), "Run", "Idle", SubResource( 32 ), "Idle", "Attack", SubResource( 33 ), "Attack", "Idle", SubResource( 34 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -627.221, 46.288 )
+graph_offset = Vector2( -648.221, 52.288 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
@@ -221,24 +220,16 @@ one_shot = true
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 35 )
 anim_player = NodePath("../MikeHawke Skeleton/AnimationPlayer")
-process_mode = 0
 parameters/playback = SubResource( 36 )
-parameters/Attack/blend_position = Vector2( 0.0380435, 0.364162 )
-parameters/Idle/blend_position = Vector2( 1, 1 )
-parameters/Run/blend_position = Vector2( 1, 1 )
+parameters/Attack/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="MikeHawke Skeleton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0.543009, 0 )
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( -14.1353, -9.4125 )
-scale = Vector2( 0.1, 0.1 )
-z_index = -1
-texture = ExtResource( 3 )
-polygon = PoolVector2Array( 340.299, 9.3985, 10.4477, 3.42834, 16.4179, 298.951, 365.672, 301.936 )
-uv = PoolVector2Array( 340.299, 9.3985, 10.4477, 3.42834, 16.4179, 298.951, 365.672, 301.936 )
 [connection signal="interact" from="." to="." method="_on_MikeHawke_interact"]
 [connection signal="timeout" from="InvicibleTimer" to="." method="_on_InvicibleTimer_timeout"]
 [connection signal="timeout" from="KnockBackTimer" to="." method="_on_KnockBackTimer_timeout"]
 [connection signal="timeout" from="ModulateTimer" to="." method="_on_ModulateTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
+[editable path="MikeHawke Skeleton"]

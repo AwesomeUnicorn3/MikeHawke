@@ -23,12 +23,14 @@ func _ready():
 		Global.load_scene = self.filename
 	
 func begin_sequence1():
+	MSG.level_root().get_node("main/InteractableObjects/SideTable/Wallet").visible = true
+	mike.get_node("AnimationTree").active = false
 	gui.hide_gui(true)
-	mike.get_node("Camera2D").set_zoom(Vector2(.5, .5))
+	mike.get_node("Camera2D").set_zoom(Vector2(.35, .35))
 #	$MikeSleeping.visible = true
 	Global.CanInteract = false
 #	mike.visible = false
-	mike.set_global_position(Vector2(-178,-248))
+	mike.set_global_position(Vector2(-191,-260))
 
 	Global.PlayerCanMove = false
 
@@ -36,6 +38,7 @@ func begin_sequence1():
 	
 	
 func sequence1Aa():
+	
 	mike.get_node("MikeHawke Skeleton/AnimationPlayer").play("Wake Up")
 	
 	var t = Timer.new()
@@ -47,52 +50,5 @@ func sequence1Aa():
 	t.queue_free()
 	MSG.start_dialogue(interaction_script, self)
 	yield(MSG, "message_ended")
-
-#	t.set_wait_time(1)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = false
-#
-#	t.set_wait_time(1)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = true
-#
-#	t.set_wait_time(1)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = false
-#
-#	t.set_wait_time(1)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = true
-#
-#	t.set_wait_time(0.5)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = false
-#
-#	t.set_wait_time(0.5)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = true
-#
-#	t.set_wait_time(0.5)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = false
-#
-#	t.set_wait_time(0.5)
-#	t.start()
-#	yield(t, "timeout")
-#	$MikeEyesOpen.visible = true
-#
-
-#	$MikeEyesOpen.visible = false
-#	$MikeSleeping.visible = false
-#	mike.visible = true
-	
-#	gui.hide_gui(true)
-
+	Dialogue.seq1()
 
