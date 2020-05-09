@@ -82,7 +82,7 @@ margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme = ExtResource( 5 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="ExitButton" type="TextureButton" parent="FullMenu/Header/Exit"]
 anchor_right = 1.0
@@ -144,7 +144,7 @@ margin_right = 192.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Weapons"]
 anchor_right = 1.0
@@ -177,7 +177,7 @@ margin_right = 192.0
 margin_bottom = 200.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Armor"]
 anchor_right = 1.0
@@ -244,7 +244,7 @@ margin_right = 192.0
 margin_bottom = 302.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Crafting"]
 anchor_right = 1.0
@@ -277,7 +277,7 @@ margin_right = 192.0
 margin_bottom = 404.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Consumable"]
 anchor_right = 1.0
@@ -310,7 +310,7 @@ margin_right = 192.0
 margin_bottom = 506.0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Quest_Items"]
 anchor_right = 1.0
@@ -344,7 +344,7 @@ margin_bottom = 610.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0.545098 )
 
 [node name="Currency" type="HBoxContainer" parent="FullMenu/TabsContainer/CategoryPanel/Currency"]
 anchor_right = 1.0

@@ -37,5 +37,12 @@ func set_paused(value: bool) -> void:
 
 func _on_TextureButton_button_up():
 	paused = true
+	var modwhite = Color(1,1,1,1)
+	set_modulate(modwhite)
 	SoundEffects.play_sfx(SoundEffects.Select , 1)
 	set_paused(paused)
+
+
+func _on_TextureButton_button_down():
+	var modred = Color(0,0,0,0.25)
+	set_modulate(modred)

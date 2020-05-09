@@ -1,7 +1,7 @@
 extends Node
 #onready var root: Viewport = get_node("..")
 
-onready var inventory_menu: PackedScene = load("res://Scenes/UI/Inventory.tscn")
+
 onready var sub_menu: PackedScene = load("res://Scenes/UI/SubMenu1.tscn")
 onready var shop_menu: PackedScene = load("res://Scenes/UI/ShopProcessing.tscn")
 

@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Environment/TallGrass.tscn" type="PackedScene" id=1]
+
+[node name="TallGrassPatch" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="TallGrass10" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -13.5255, -61.2395 )
+
+[node name="TallGrass19" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -71.5169, -67.5302 )
+
+[node name="TallGrass20" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -68.2738, -15.6412 )
+
+[node name="TallGrass23" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -50.2054, -9.15511 )
+
+[node name="TallGrass25" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -25.7017, -10.3092 )
+
+[node name="TallGrass26" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 36.3798, -4.74964 )
+
+[node name="TallGrass27" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 79.0029, -20.5016 )
+
+[node name="TallGrass28" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 48.4254, -85.3628 )
+
+[node name="TallGrass29" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 8.50405, -102.505 )
+
+[node name="TallGrass30" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -25.7017, -102.505 )
+
+[node name="TallGrass31" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -79.3969, -102.505 )
+
+[node name="TallGrass32" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -100.245, -64.6158 )
+
+[node name="TallGrass34" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -100.245, 0.0331116 )
+
+[node name="TallGrass36" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -47.8929, 0.959702 )
+
+[node name="TallGrass37" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 5.84929, 9.299 )
+
+[node name="TallGrass38" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 67.0041, 6.51923 )
+
+[node name="TallGrass39" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 111.017, 4.66607 )
+
+[node name="TallGrass40" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 120.746, -33.3241 )
+
+[node name="TallGrass41" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 90.63, -40.1995 )
+
+[node name="TallGrass42" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 130.473, -61.511 )
+
+[node name="TallGrass43" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 100.357, -85.3628 )
+
+[node name="TallGrass44" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 83.6787, -85.3628 )
+
+[node name="TallGrass45" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 83.6787, -85.3628 )

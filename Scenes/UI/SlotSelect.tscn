@@ -99,7 +99,7 @@ margin_right = 441.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 
 [node name="CloseButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/Close"]
 anchor_right = 1.0

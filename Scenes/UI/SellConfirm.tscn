@@ -8,8 +8,6 @@
 [ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
 [ext_resource path="res://Icons/Chode.png" type="Texture" id=7]
 
-
-
 [node name="SellPanel" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -199,7 +197,7 @@ margin_right = 256.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="DropAllButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/DropAll"]
 anchor_right = 1.0
@@ -231,7 +229,7 @@ margin_right = 516.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="DropCustomButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/DropCustom"]
 anchor_right = 1.0
@@ -266,7 +264,7 @@ margin_right = 777.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="CloseButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/Close"]
 anchor_right = 1.0

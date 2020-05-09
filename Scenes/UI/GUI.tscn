@@ -60,15 +60,17 @@ margin_left = 685.0
 margin_top = 16.0
 margin_right = 1280.0
 margin_bottom = 57.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="HBoxContainer" parent="TopRightGui"]
-margin_right = 595.0
+margin_right = 596.0
 margin_bottom = 41.0
 alignment = 1
 
 [node name="Label" type="Label" parent="TopRightGui/VBoxContainer"]
-margin_left = 28.0
-margin_right = 107.0
+margin_right = 79.0
 margin_bottom = 41.0
 size_flags_vertical = 1
 theme = ExtResource( 3 )
@@ -78,25 +80,26 @@ valign = 1
 
 [node name="HealthBar" type="TextureProgress" parent="TopRightGui/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0.694118 )
-margin_left = 111.0
-margin_right = 567.0
-margin_bottom = 33.0
-size_flags_vertical = 2
+margin_left = 83.0
+margin_right = 596.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 value = 75.0
 rounded = true
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
 
 [node name="TopLeftGui" type="HBoxContainer" parent="."]
-margin_right = 194.0
-margin_bottom = 93.0
+margin_right = 198.0
+margin_bottom = 152.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PauseButton" parent="TopLeftGui" instance=ExtResource( 6 )]
-margin_right = 194.0
-margin_bottom = 93.0
+margin_right = 198.0
+margin_bottom = 152.0
 
 [node name="MainMenu" parent="." instance=ExtResource( 8 )]
 visible = false

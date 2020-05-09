@@ -58,17 +58,17 @@ __meta__ = {
 
 [node name="InventoryButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 2 )]
 margin_right = 203.0
-margin_bottom = 58.0
+margin_bottom = 66.0
 
 [node name="EquipButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 1 )]
-margin_top = 62.0
+margin_top = 70.0
 margin_right = 203.0
-margin_bottom = 120.0
+margin_bottom = 136.0
 
 [node name="StatusButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 7 )]
-margin_top = 124.0
+margin_top = 140.0
 margin_right = 203.0
-margin_bottom = 182.0
+margin_bottom = 206.0
 
 [node name="SkillButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 13 )]
 visible = false
@@ -77,32 +77,33 @@ margin_right = 203.0
 margin_bottom = 220.0
 
 [node name="FormationButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 6 )]
+visible = false
 margin_top = 186.0
 margin_right = 203.0
 margin_bottom = 244.0
 
 [node name="QuestButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 12 )]
-margin_top = 248.0
+margin_top = 210.0
 margin_right = 203.0
-margin_bottom = 306.0
+margin_bottom = 276.0
 
 [node name="SaveButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 4 )]
-margin_top = 310.0
+margin_top = 280.0
 margin_right = 203.0
-margin_bottom = 368.0
+margin_bottom = 346.0
 
 [node name="OptionsButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 3 )]
-margin_top = 372.0
+margin_top = 350.0
 margin_right = 203.0
-margin_bottom = 430.0
+margin_bottom = 416.0
 
 [node name="QuitButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 5 )]
-margin_top = 434.0
+margin_top = 420.0
 margin_right = 203.0
-margin_bottom = 492.0
+margin_bottom = 486.0
 
 [node name="CloseMenu" parent="MenuOptions/VBoxOptions" instance=ExtResource( 9 )]
-margin_top = 496.0
+margin_top = 490.0
 margin_right = 203.0
 margin_bottom = 561.0
 

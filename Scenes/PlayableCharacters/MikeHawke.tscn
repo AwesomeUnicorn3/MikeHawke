@@ -9,6 +9,8 @@ radius = 11.6265
 height = 0.911901
 
 [sub_resource type="CapsuleShape2D" id=2]
+radius = 6.14239
+height = 30.2275
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "AttackDown"
@@ -194,7 +196,7 @@ scale = Vector2( 1.89333, 0.55999 )
 collision_mask = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2( 0.407509, -18.2114 )
+position = Vector2( 0.742478, -14.5307 )
 shape = SubResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

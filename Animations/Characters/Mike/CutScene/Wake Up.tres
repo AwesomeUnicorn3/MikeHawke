@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "RunDown"
-length = 7.0
+length = 8.0
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2DLR:visible")
@@ -11,10 +11,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, true ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Polygons:visible")
@@ -23,10 +23,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, true ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Skeleton2DUD:visible")
@@ -35,10 +35,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Polygons2:visible")
@@ -47,10 +47,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Polygons2/TorsoDown:visible")
@@ -587,10 +587,10 @@ tracks/48/loop_wrap = true
 tracks/48/imported = false
 tracks/48/enabled = true
 tracks/48/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 7.9, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.1, 0.1 ) ]
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( -0.1, 0.1 ) ]
 }
 tracks/49/type = "value"
 tracks/49/path = NodePath("Polygons2/HeadDown/Hair:z_index")
@@ -767,10 +767,10 @@ tracks/63/loop_wrap = true
 tracks/63/imported = false
 tracks/63/enabled = true
 tracks/63/keys = {
-"times": PoolRealArray( 0, 1.5, 2, 2.5, 3.65, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 2, 2.5, 3.65, 5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, true, false, true, false ]
+"values": [ true, false, true, false, true, false, false ]
 }
 tracks/64/type = "value"
 tracks/64/path = NodePath("Polygons2/HeadDown/Facial_Features/EyeClosedLeft:visible")
@@ -779,10 +779,10 @@ tracks/64/loop_wrap = true
 tracks/64/imported = false
 tracks/64/enabled = true
 tracks/64/keys = {
-"times": PoolRealArray( 0, 1.5, 2, 2.5, 3.65, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 2, 2.5, 3.65, 5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, true, false, true, false ]
+"values": [ true, false, true, false, true, false, false ]
 }
 tracks/65/type = "value"
 tracks/65/path = NodePath("Polygons2/HeadDown/Facial_Features/MouthOpen:visible")
@@ -791,10 +791,10 @@ tracks/65/loop_wrap = true
 tracks/65/imported = false
 tracks/65/enabled = true
 tracks/65/keys = {
-"times": PoolRealArray( 0, 6.95 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 6.95, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, false, false ]
 }
 tracks/66/type = "value"
 tracks/66/path = NodePath("Shadow:position")
@@ -914,7 +914,7 @@ tracks/75/keys = {
 "times": PoolRealArray( 0, 7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true ]
 }
 tracks/76/type = "value"
 tracks/76/path = NodePath("Polygons2/HeadDown/Eye_Left:visible")
@@ -947,10 +947,10 @@ tracks/78/loop_wrap = true
 tracks/78/imported = false
 tracks/78/enabled = true
 tracks/78/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 tracks/79/type = "value"
 tracks/79/path = NodePath("Polygons2/HeadDown/Facial_Features/EyeBrow_Scared_Right:visible")
@@ -965,7 +965,7 @@ tracks/79/keys = {
 "values": [ true, false ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("Polygons2/HeadDown/Eye_Left/EyeBrow_Left:visible")
+tracks/80/path = NodePath("Polygons2/HeadDown/Facial_Features/EyeBrow_Left:visible")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
@@ -977,7 +977,7 @@ tracks/80/keys = {
 "values": [ false, true ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("Polygons2/HeadDown/Eye_Right/EyeBrow_Right:visible")
+tracks/81/path = NodePath("Polygons2/HeadDown/Facial_Features/EyeBrow_Right:visible")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -987,4 +987,64 @@ tracks/81/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/82/type = "value"
+tracks/82/path = NodePath("Polygons2/HeadDown/Mouth:visible")
+tracks/82/interp = 1
+tracks/82/loop_wrap = true
+tracks/82/imported = false
+tracks/82/enabled = true
+tracks/82/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/83/type = "value"
+tracks/83/path = NodePath("Polygons2/HeadDown/Facial_Features/Mouth_Neutral:visible")
+tracks/83/interp = 1
+tracks/83/loop_wrap = true
+tracks/83/imported = false
+tracks/83/enabled = true
+tracks/83/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/84/type = "value"
+tracks/84/path = NodePath("Polygons/Head/Mouth_Left/Mouth_Smile:visible")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/85/type = "value"
+tracks/85/path = NodePath("Polygons/Head/Mouth_Left/Mouth_Frown:position")
+tracks/85/interp = 1
+tracks/85/loop_wrap = true
+tracks/85/imported = false
+tracks/85/enabled = true
+tracks/85/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 443.612, 307.531 ) ]
+}
+tracks/86/type = "value"
+tracks/86/path = NodePath("Polygons/Head/Mouth_Left/Mouth_Frown:visible")
+tracks/86/interp = 1
+tracks/86/loop_wrap = true
+tracks/86/imported = false
+tracks/86/enabled = true
+tracks/86/keys = {
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }

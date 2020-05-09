@@ -70,7 +70,7 @@ margin_right = 232.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 theme = ExtResource( 3 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,7 +106,7 @@ margin_right = 336.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 theme = ExtResource( 3 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,7 +142,7 @@ margin_right = 440.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 theme = ExtResource( 3 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

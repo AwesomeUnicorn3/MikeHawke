@@ -105,22 +105,34 @@ zoom = Vector2( 0.5, 0.5 )
 active = true
 parameters/playback = SubResource( 5 )
 
+[node name="MikeHawke Skeleton" parent="main/Mike Hawke" index="9"]
+scale = Vector2( 0.1, 0.1 )
+
 [node name="Shadow" parent="main/Mike Hawke/MikeHawke Skeleton" index="0"]
 position = Vector2( 147.043, -128.795 )
 rotation = 0.0183453
 scale = Vector2( -0.624959, 0.556329 )
 
+[node name="Skeleton2DLR" parent="main/Mike Hawke/MikeHawke Skeleton" index="2"]
+visible = false
+
+[node name="Polygons" parent="main/Mike Hawke/MikeHawke Skeleton" index="3"]
+visible = false
+
+[node name="Mouth_Frown" parent="main/Mike Hawke/MikeHawke Skeleton/Polygons/Head/Mouth_Left" index="0"]
+visible = false
+
+[node name="Mouth_Smile" parent="main/Mike Hawke/MikeHawke Skeleton/Polygons/Head/Mouth_Left" index="1"]
+visible = true
+
+[node name="Skeleton2DUD" parent="main/Mike Hawke/MikeHawke Skeleton" index="4"]
+visible = true
+
 [node name="Chest" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip" index="0"]
-position = Vector2( -1.65524, -57.2902 )
+position = Vector2( -1.65524, -59.3916 )
 
-[node name="EyeClosedLeft" parent="main/Mike Hawke/MikeHawke Skeleton/Polygons2/HeadDown/Facial_Features" index="0"]
-visible = false
-
-[node name="EyeClosedRight" parent="main/Mike Hawke/MikeHawke Skeleton/Polygons2/HeadDown/Facial_Features" index="1"]
-visible = false
-
-[node name="MouthOpen" parent="main/Mike Hawke/MikeHawke Skeleton/Polygons2/HeadDown/Facial_Features" index="4"]
-visible = false
+[node name="Polygons2" parent="main/Mike Hawke/MikeHawke Skeleton" index="5"]
+visible = true
 
 [node name="Foot_Right" parent="main/Mike Hawke/MikeHawke Skeleton/Polygons2/Leg_RightDown" index="0"]
 z_index = -1

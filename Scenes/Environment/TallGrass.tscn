@@ -1,0 +1,213 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ObjectSprites/TallGrass.png" type="Texture" id=1]
+[ext_resource path="res://ObjectSprites/TallGrassShadow.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Environment/Grass_Flat_Right.tres" type="Animation" id=3]
+[ext_resource path="res://Scripts/Items/TallGrass.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Environment/Grass_Up_Left.tres" type="Animation" id=5]
+[ext_resource path="res://Scenes/Environment/Grass_Up_Right.tres" type="Animation" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.5998, 15.9894 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Grass_Flat_Left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D/Bone2D/Bone2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3.35567, -25.4986 ), Vector2( -3.35567, -25.4986 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton2D/Bone2D/Bone2D2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -20.5487, -42.8726 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton2D/Bone2D/Bone2D2/Bone2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.44876, -27.4503 ), Vector2( 3.44876, -27.4503 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton2D/Bone2D/Bone2D2/Bone2D3:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -69.8188, -97.3243 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Skeleton2D/Bone2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.500694, 31.7939 ), Vector2( 0.500694, 31.7939 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Skeleton2D/Bone2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 22.7663, -49.8358 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("GrassShadow:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("GrassShadow:offset")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -68, 5 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.11335
+height = 1.30515
+
+[node name="TallGrass" type="StaticBody2D"]
+position = Vector2( 1.17879, -32.9189 )
+scale = Vector2( 0.75, 0.75 )
+collision_layer = 256
+collision_mask = 0
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.95381, 12.9274 )
+z_index = -1
+shape = SubResource( 1 )
+
+[node name="GrassShadow" type="Polygon2D" parent="."]
+position = Vector2( -19.3668, 3.29937 )
+rotation = 0.00178458
+scale = Vector2( 0.5, 0.5 )
+z_index = -1
+texture = ExtResource( 2 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( -0.313481, 49.5298, 31.0345, 31.0345, 54.232, -0.626959, 145.141, 0.31348, 144.828, 19.7492, 123.197, 48.9028 )
+uv = PoolVector2Array( -0.313481, 49.5298, 31.0345, 31.0345, 54.232, -0.626959, 145.141, 0.31348, 144.828, 19.7492, 123.197, 48.9028 )
+polygons = [ PoolIntArray( 2, 4, 3 ), PoolIntArray( 1, 2, 4 ), PoolIntArray( 1, 5, 4 ), PoolIntArray( 0, 1, 5 ) ]
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0.5, 0, 0, 0.5, 0 ), NodePath("Bone2D/Bone2D2"), PoolRealArray( 0, 0.75, 0.25, 0.25, 0.5, 0 ), NodePath("Bone2D/Bone2D2/Bone2D3"), PoolRealArray( 0, 0.25, 0.5, 0.5, 0.25, 0 ) ]
+
+[node name="Grass" type="Polygon2D" parent="."]
+position = Vector2( -25.9682, -44.682 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -1
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( -2.32558, 146.899, 87.2093, 148.45, 100.775, 65.1163, 102.713, -1.16279, 35.6589, -0.387596, 28.8401, 64.8903, 16.6144, 97.8056, 95.2978, 101.254, 23.1975, 80.5643, 97.8056, 82.7586, 30.721, 47.0219, 33.2288, 23.8244, 101.881, 22.884, 101.881, 47.6489, 7.21003, 121.317, 90.9091, 126.332, 88.7147, 138.558, 0.313477, 138.244, 11.5987, 108.464, 93.4169, 112.853, 31.6614, 34.7962, 101.881, 35.1097, 35.1097, 11.2853, 102.194, 10.6583, 29.7806, 54.232, 101.254, 55.7994, 26.0188, 72.7273, 99.373, 72.7273, 20.3762, 88.0878, 96.5517, 91.536 )
+uv = PoolVector2Array( -2.32558, 146.899, 87.2093, 148.45, 100.775, 65.1163, 102.713, -1.16279, 35.6589, -0.387596, 28.8401, 64.8903, 16.6144, 97.8056, 95.2978, 101.254, 23.1975, 80.5643, 97.8056, 82.7586, 30.721, 47.0219, 33.2288, 23.8244, 101.881, 22.884, 101.881, 47.6489, 7.21003, 121.317, 90.9091, 126.332, 88.7147, 138.558, 0.313477, 138.244, 11.5987, 108.464, 93.4169, 112.853, 31.6614, 34.7962, 101.881, 35.1097, 35.1097, 11.2853, 102.194, 10.6583, 29.7806, 54.232, 101.254, 55.7994, 26.0188, 72.7273, 99.373, 72.7273, 20.3762, 88.0878, 96.5517, 91.536 )
+polygons = [ PoolIntArray( 0, 16, 17 ), PoolIntArray( 0, 1, 16 ), PoolIntArray( 17, 14, 16 ), PoolIntArray( 14, 18, 16 ), PoolIntArray( 18, 15, 16 ), PoolIntArray( 18, 6, 19 ), PoolIntArray( 15, 19, 18 ), PoolIntArray( 6, 28, 7 ), PoolIntArray( 6, 19, 7 ), PoolIntArray( 28, 8, 7 ), PoolIntArray( 8, 29, 7 ), PoolIntArray( 8, 26, 29 ), PoolIntArray( 26, 9, 29 ), PoolIntArray( 26, 5, 9 ), PoolIntArray( 5, 27, 9 ), PoolIntArray( 5, 24, 27 ), PoolIntArray( 24, 2, 27 ), PoolIntArray( 24, 10, 2 ), PoolIntArray( 10, 25, 2 ), PoolIntArray( 10, 20, 25 ), PoolIntArray( 20, 13, 25 ), PoolIntArray( 20, 21, 13 ), PoolIntArray( 20, 11, 12 ), PoolIntArray( 20, 21, 12 ), PoolIntArray( 11, 22, 23 ), PoolIntArray( 11, 12, 23 ), PoolIntArray( 22, 4, 3 ), PoolIntArray( 22, 23, 3 ) ]
+bones = [ NodePath("Bone2D"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0.87, 0.87, 0.41, 0.41, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0.37, 0, 0.74, 0.74 ), NodePath("Bone2D/Bone2D2"), PoolRealArray( 0, 0, 1, 0, 0, 1, 0.44, 0.44, 0.43, 0.44, 0.42, 0, 0, 0.42, 0, 0, 0, 0, 0, 0, 0.28, 0.28, 0, 0, 0.42, 0.42, 1, 1, 0.44, 0.3 ), NodePath("Bone2D/Bone2D2/Bone2D3"), PoolRealArray( 0, 0, 0.54, 0.42, 0.42, 0.25, 0, 0, 0, 0, 1, 1, 0.54, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0.54, 0.54, 0.54, 0.54, 0.25, 0.54, 0, 0 ) ]
+internal_vertex_count = 24
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2( -3.94279, -4.73082 )
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+position = Vector2( 0.500694, 31.7939 )
+rotation = 0.397347
+scale = Vector2( 1, 1 )
+rest = Transform2D( 0.922091, 0.386974, -0.386974, 0.922091, 0.500694, 31.7939 )
+
+[node name="Bone2D2" type="Bone2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( -3.35567, -25.4986 )
+rotation = -0.358642
+scale = Vector2( 0.999999, 0.999999 )
+rest = Transform2D( 0.936374, -0.351004, 0.351004, 0.936374, -3.35567, -25.4986 )
+
+[node name="Bone2D3" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D2"]
+position = Vector2( 3.44876, -27.4503 )
+rotation = -1.21857
+scale = Vector2( 1, 1 )
+rest = Transform2D( 0.344991, -0.938606, 0.938606, 0.344991, 3.44876, -27.4503 )
+default_length = 19.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Grass_Flat_Left = SubResource( 3 )
+anims/Grass_Flat_Right = ExtResource( 3 )
+anims/Grass_Up_Left = ExtResource( 5 )
+anims/Grass_Up_Right = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 17.1181, 21.0449 )
+scale = Vector2( 5.11429, 1.75676 )
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.471228, 1.37185 )
+shape = SubResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( -44.3368, 24.9611 )
+scale = Vector2( 5.11429, 1.75676 )
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 5.41912, -1.02888 )
+shape = SubResource( 2 )
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
+[connection signal="area_exited" from="Area2D2" to="." method="_on_Area2D2_area_exited"]
