@@ -8,4 +8,5 @@ z_index = 2
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 face = ExtResource( 1 )
+color = Color( 1, 1, 1, 1 )
 voice_pitch = 1.5

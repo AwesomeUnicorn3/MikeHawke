@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="The Rise of Mike Hawke"
 run/main_scene="res://Scenes/TitleScreen.tscn"
-boot_splash/image="res://Background_Images/MadeWithMv.png"
+boot_splash/image="res://Background_Images/AwesomeUnicorn.png"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 0 )
 
 [autoload]
 

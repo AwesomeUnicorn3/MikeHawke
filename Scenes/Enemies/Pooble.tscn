@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/NPC/DungBeetle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ObjectSprites/HitSprite.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Enemies/DungBeetle.gd" type="Script" id=11]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.84154
+height = 4.81934
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.36042
+height = 8.5317
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 4.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.2
+scale_random = 0.1
+color = Color( 1, 0.494118, 0, 1 )
+hue_variation = -0.12
+hue_variation_random = 0.41
+
+[node name="Pooble" type="KinematicBody2D"]
+position = Vector2( 0.475647, -7.61039 )
+collision_layer = 128
+collision_mask = 234
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 18.2168, 14.5777 )
+scale = Vector2( 0.957731, 1 )
+shape = SubResource( 1 )
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2( 18.225, 13.5891 )
+rotation = 1.5708
+scale = Vector2( 2.2166, 1.325 )
+collision_layer = 128
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 0.0826116, 0.320645 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="ModulateTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="InvicibleTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Pooble" parent="." instance=ExtResource( 4 )]
+position = Vector2( -14.3579, -13.9483 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 18.2554, 13.8287 )
+emitting = false
+amount = 2
+lifetime = 0.5
+one_shot = true
+speed_scale = 3.0
+process_material = SubResource( 3 )
+texture = ExtResource( 7 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

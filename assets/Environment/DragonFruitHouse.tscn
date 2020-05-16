@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ObjectSprites/DragonFruit_House_Shadow.png" type="Texture" id=2]
+[ext_resource path="res://ObjectSprites/DragonFruit_House.png" type="Texture" id=3]
+
+[node name="DragonFruitHouse" type="StaticBody2D"]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 229
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -2.11981, 220.587 )
+scale = Vector2( 1, 1.19149 )
+build_mode = 1
+polygon = PoolVector2Array( -356.527, -207.828, 348.733, -203.411, 308.383, -66.4753, 245.225, 63.098, 59.2609, 120.523, 62.7697, -3.16106, -63.5456, 1.2562, -68.8087, 119.05, -251.264, 64.5704, -346.001, -78.2547 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 164.773, 115.229 )
+scale = Vector2( 1.05901, 1.11492 )
+texture = ExtResource( 2 )
+offset = Vector2( 232.637, 6.87588 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.86597, -131.279 )
+texture = ExtResource( 3 )
+offset = Vector2( -10.1365, -48.956 )
+
+[node name="DoorWay" parent="." instance=ExtResource( 1 )]
+position = Vector2( -11.754, 294.722 )
+scale = Vector2( 3.31401, 3.58981 )
+Goto_scene = ""
+set_player_position = Vector2( 0, 75 )

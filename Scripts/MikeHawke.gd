@@ -277,7 +277,7 @@ func move_state(): #Character movement and animation
 		velocity = knockdir.normalized() * 225
 		state = MOVE
 		
-	velocity = .move_and_slide(velocity) #starts player movement
+	velocity = move_and_slide(velocity) #starts player movement
 
 func attack_state():
 	if wait == false:

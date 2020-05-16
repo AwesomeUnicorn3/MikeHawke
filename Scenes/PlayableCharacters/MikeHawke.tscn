@@ -177,6 +177,7 @@ scale = Vector2( 1.5, 1.5 )
 collision_mask = 44
 script = ExtResource( 1 )
 face = ExtResource( 4 )
+color = Color( 1, 1, 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2.34985, 4.99479 )
@@ -228,6 +229,53 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="MikeHawke Skeleton" parent="." instance=ExtResource( 2 )]
+
+[node name="Head" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Chest/Neck" index="0"]
+position = Vector2( -1.63375, 1.71521 )
+rotation = 1.96834
+
+[node name="Arm_Left" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Chest" index="1"]
+rotation = 1.49297
+
+[node name="Elbow_Left" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Chest/Arm_Left" index="0"]
+rotation = 0.249338
+
+[node name="Arm_Right" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Chest" index="2"]
+rotation = -3.65776
+
+[node name="Elbow_Right" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Chest/Arm_Right" index="0"]
+rotation = -0.985436
+
+[node name="Leg_Left" parent="MikeHawke Skeleton/Skeleton2DUD/Hip" index="1"]
+position = Vector2( 8.23536, 4.96209 )
+rotation = -1.02824
+
+[node name="Knee_Left" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Leg_Left" index="0"]
+position = Vector2( -26.8208, 73.2262 )
+rotation = 2.77311
+
+[node name="Foot_Left" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Leg_Left/Knee_Left" index="0"]
+position = Vector2( 65.3046, 3.07217 )
+rotation = -1.55336
+
+[node name="Foot_Left2" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Leg_Left/Knee_Left/Foot_Left" index="0"]
+position = Vector2( 9.85066, 19.9755 )
+rotation = 0.0377738
+
+[node name="Leg_Right" parent="MikeHawke Skeleton/Skeleton2DUD/Hip" index="2"]
+position = Vector2( -23.2517, 2.86935 )
+rotation = 0.365916
+
+[node name="Knee_Right" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Leg_Right" index="0"]
+position = Vector2( -2.9632, 71.2966 )
+rotation = 1.94294
+
+[node name="Foot_Right" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Leg_Right/Knee_Right" index="0"]
+rotation = 0.199974
+
+[node name="Foot_Right2" parent="MikeHawke Skeleton/Skeleton2DUD/Hip/Leg_Right/Knee_Right/Foot_Right" index="0"]
+position = Vector2( 11.3597, 0.316537 )
+rotation = 0.0019667
 [connection signal="interact" from="." to="." method="_on_MikeHawke_interact"]
 [connection signal="timeout" from="InvicibleTimer" to="." method="_on_InvicibleTimer_timeout"]
 [connection signal="timeout" from="KnockBackTimer" to="." method="_on_KnockBackTimer_timeout"]

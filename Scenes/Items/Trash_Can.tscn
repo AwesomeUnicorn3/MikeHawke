@@ -8,7 +8,7 @@
 extents = Vector2( 34.3958, 33.1911 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 41.6241, 73.6659 )
+extents = Vector2( 41.6241, 47.2278 )
 
 [node name="Trash_Can" type="StaticBody2D" groups=[
 "Shizzo",

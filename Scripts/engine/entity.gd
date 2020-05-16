@@ -5,9 +5,11 @@ signal Health_Change
 var TYPE = "ENEMY"
 var id
 var state = DEFAULT
-var array_direction = [dir.RIGHT, dir.LEFT, dir.UP, dir.DOWN, dir.LEFT_UP, dir.LEFT_DOWN, dir.RIGHT_UP, dir.RIGHT_DOWN]
+var array_direction = [dir.RIGHT, dir.LEFT, dir.UP, dir.DOWN]
 var array_nd_state = [DEFAULT, IDLE]
 var array_state = [ DEFAULT, IDLE, ATTACK]
+onready var character = get_node("Pooble")
+onready var anim = get_node("Pooble" + "/AnimationPlayer")
 # stat variables
 var MaxSpeed = 0
 var CurrentSpeed = 0
@@ -39,11 +41,14 @@ enum {
 func movement_loop():
 	var motion
 	if knockback == 0:
-		motion = movedir.normalized() * CurrentSpeed
+		if state != IDLE:
+			motion = movedir.normalized() * CurrentSpeed
+		else:
+			motion = Vector2(0,0)
 	else:
 		motion = knockdir.normalized() * 225
 	
-# warning-ignore:return_value_discarded
+
 # warning-ignore:return_value_discarded
 	move_and_slide(motion, Vector2(0,0))
 
@@ -72,8 +77,8 @@ func spritedir_loop():
 
 func anim_switch(animation):
 	var newanim = str(animation, spritedir)
-	if $anim.current_animation != newanim:
-		$anim.play(newanim)
+	if anim.current_animation != newanim:
+		anim.play(newanim)
 
 func state_machine():
 	match state:
@@ -116,7 +121,7 @@ func player_blink():
 		var modred = Color(255,0,0,255)
 
 		if get_node_or_null("Sprite/Body") == null:
-			Player = $Sprite
+			Player = character
 		else:
 			Player = $Sprite/Body
 			

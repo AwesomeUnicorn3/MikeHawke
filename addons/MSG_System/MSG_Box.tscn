@@ -69,9 +69,9 @@ script = ExtResource( 2 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 70.0
+margin_left = 71.2924
 margin_top = -270.0
-margin_right = -64.0
+margin_right = -62.7076
 margin_bottom = -10.0
 mouse_filter = 2
 __meta__ = {
@@ -85,7 +85,6 @@ margin_left = 46.0
 margin_top = 40.0
 margin_right = -38.0
 margin_bottom = 230.0
-texture = ExtResource( 8 )
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
@@ -95,12 +94,11 @@ __meta__ = {
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="main"]
-modulate = Color( 0.25098, 0.27451, 0.384314, 1 )
 anchor_right = 1.0
-margin_left = 40.0
-margin_top = 34.0
-margin_right = -44.0
-margin_bottom = 224.0
+margin_left = 47.0
+margin_top = -23.0
+margin_right = -43.0
+margin_bottom = 223.0
 texture = ExtResource( 8 )
 patch_margin_left = 16
 patch_margin_top = 16
@@ -108,24 +106,21 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="main"]
-modulate = Color( 0.25098, 0.27451, 0.384314, 1 )
-margin_left = 42.2535
-margin_top = -7.0
-margin_right = 260.254
-margin_bottom = 49.0
-texture = ExtResource( 8 )
-region_rect = Rect2( 4.16803, 152.037, 44.8923, 6.80186 )
+margin_left = 68.2159
+margin_top = -27.7407
+margin_right = 277.216
+margin_bottom = 39.2593
+region_rect = Rect2( 4.16803, 158.839, 379.207, 13.6847 )
 patch_margin_left = 16
-patch_margin_top = 16
 patch_margin_right = 16
-patch_margin_bottom = 16
+patch_margin_bottom = 67
 
 [node name="label" type="RichTextLabel" parent="main"]
 anchor_right = 1.0
-margin_left = 230.0
-margin_top = 47.4133
+margin_left = 71.0
+margin_top = 24.0
 margin_right = -64.0
-margin_bottom = 192.413
+margin_bottom = 180.0
 custom_fonts/mono_font = ExtResource( 1 )
 custom_fonts/bold_italics_font = ExtResource( 7 )
 custom_fonts/italics_font = ExtResource( 4 )
@@ -139,10 +134,11 @@ __meta__ = {
 }
 
 [node name="name" type="Label" parent="main"]
-modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
-margin_left = 43.6253
-margin_right = 258.625
-margin_bottom = 45.0
+modulate = Color( 1, 0.992157, 0.992157, 1 )
+margin_left = 84.0951
+margin_top = -20.4165
+margin_right = 299.095
+margin_bottom = 17.5835
 custom_fonts/font = ExtResource( 4 )
 text = "Mark"
 align = 1
@@ -151,6 +147,7 @@ __meta__ = {
 }
 
 [node name="face" type="TextureRect" parent="main"]
+visible = false
 margin_left = 58.0
 margin_top = 47.0
 margin_right = 205.0
