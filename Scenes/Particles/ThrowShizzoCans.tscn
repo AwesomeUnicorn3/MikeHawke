@@ -5,4 +5,5 @@
 [node name="ThrowShizzoCans" type="Node2D"]
 position = Vector2( 511.378, 308.19 )
 scale = Vector2( 0.2, 0.2 )
+z_index = -2
 script = ExtResource( 2 )

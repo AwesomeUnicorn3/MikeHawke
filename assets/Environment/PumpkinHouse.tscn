@@ -27,7 +27,12 @@ texture = ExtResource( 1 )
 offset = Vector2( -10.1365, -48.956 )
 
 [node name="DoorWay" parent="." instance=ExtResource( 3 )]
-position = Vector2( -15.5275, 376.68 )
-scale = Vector2( 2.67401, 3.10981 )
+position = Vector2( -7.487, 358.173 )
+scale = Vector2( 3.60345, 4.30981 )
 Goto_scene = "res://Scenes/IndoorMaps/House-Mike.tscn"
 set_player_position = Vector2( 0, 75 )
+
+[node name="Area2D" parent="DoorWay" index="0"]
+position = Vector2( 0, 1.09007 )
+
+[editable path="DoorWay"]

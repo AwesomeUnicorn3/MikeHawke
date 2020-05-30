@@ -2,131 +2,157 @@
   "1": {
     "Exp": 0,
     "AttackMod": 0,
-    "DefenseMod": 0
+    "DefenseMod": 0,
+    "HealthMod": 0
   },
   "2": {
     "Exp": 100,
     "AttackMod": 5,
-    "DefenseMod": 2
+    "DefenseMod": 2,
+    "HealthMod": 5
   },
   "3": {
     "Exp": 200,
     "AttackMod": 6,
-    "DefenseMod": 3
+    "DefenseMod": 3,
+    "HealthMod": 10
   },
   "4": {
     "Exp": 350,
     "AttackMod": 8,
-    "DefenseMod": 5
+    "DefenseMod": 5,
+    "HealthMod": 15
   },
   "5": {
     "Exp": 575,
     "AttackMod": 10,
-    "DefenseMod": 7
+    "DefenseMod": 7,
+    "HealthMod": 20
   },
   "6": {
     "Exp": 913,
     "AttackMod": 13,
-    "DefenseMod": 9
+    "DefenseMod": 9,
+    "HealthMod": 25
   },
   "7": {
     "Exp": 1420,
     "AttackMod": 16,
-    "DefenseMod": 12
+    "DefenseMod": 12,
+    "HealthMod": 30
   },
   "8": {
     "Exp": 2180,
     "AttackMod": 20,
-    "DefenseMod": 15
+    "DefenseMod": 15,
+    "HealthMod": 35
   },
   "9": {
     "Exp": 3320,
     "AttackMod": 25,
-    "DefenseMod": 19
+    "DefenseMod": 19,
+    "HealthMod": 40
   },
   "10": {
     "Exp": 5030,
     "AttackMod": 31,
-    "DefenseMod": 24
+    "DefenseMod": 24,
+    "HealthMod": 45
   },
   "11": {
     "Exp": 7595,
     "AttackMod": 39,
-    "DefenseMod": 30
+    "DefenseMod": 30,
+    "HealthMod": 50
   },
   "12": {
     "Exp": 11443,
     "AttackMod": 49,
-    "DefenseMod": 37
+    "DefenseMod": 37,
+    "HealthMod": 55
   },
   "13": {
     "Exp": 17215,
     "AttackMod": 61,
-    "DefenseMod": 45
+    "DefenseMod": 45,
+    "HealthMod": 60
   },
   "14": {
     "Exp": 25873,
     "AttackMod": 76,
-    "DefenseMod": 55
+    "DefenseMod": 55,
+    "HealthMod": 65
   },
   "15": {
     "Exp": 38860,
     "AttackMod": 95,
-    "DefenseMod": 67
+    "DefenseMod": 67,
+    "HealthMod": 70
   },
   "16": {
     "Exp": 58340,
     "AttackMod": 119,
-    "DefenseMod": 81
+    "DefenseMod": 81,
+    "HealthMod": 75
   },
   "17": {
     "Exp": 87560,
     "AttackMod": 149,
-    "DefenseMod": 98
+    "DefenseMod": 98,
+    "HealthMod": 80
   },
   "18": {
     "Exp": 131390,
     "AttackMod": 186,
-    "DefenseMod": 119
+    "DefenseMod": 119,
+    "HealthMod": 85
   },
   "19": {
     "Exp": 197135,
     "AttackMod": 233,
-    "DefenseMod": 144
+    "DefenseMod": 144,
+    "HealthMod": 90
   },
   "20": {
     "Exp": 295753,
     "AttackMod": 291,
-    "DefenseMod": 174
+    "DefenseMod": 174,
+    "HealthMod": 95
   },
   "21": {
     "Exp": 443680,
     "AttackMod": 364,
-    "DefenseMod": 210
+    "DefenseMod": 210,
+    "HealthMod": 100
   },
   "22": {
     "Exp": 665570,
     "AttackMod": 455,
-    "DefenseMod": 253
+    "DefenseMod": 253,
+    "HealthMod": 105
   },
   "23": {
     "Exp": 998405,
     "AttackMod": 569,
-    "DefenseMod": 305
+    "DefenseMod": 305,
+    "HealthMod": 110
   },
   "24": {
     "Exp": 1497658,
     "AttackMod": 711,
-    "DefenseMod": 367
+    "DefenseMod": 367,
+    "HealthMod": 115
   },
   "25": {
     "Exp": 2246537,
     "AttackMod": 889,
-    "DefenseMod": 441
+    "DefenseMod": 441,
+    "HealthMod": 120
   },
   "26": {
     "Exp": 3369856,
     "AttackMod": 1111,
-    "DefenseMod": 530
+    "DefenseMod": 530,
+    "HealthMod": 125
   }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Characters/DungBeetle/DungBeetle_Front.png" type="Texture" id=1]
 [ext_resource path="res://Characters/DungBeetle/DungBeetle_Eye.png" type="Texture" id=2]
@@ -13,11 +13,15 @@
 [ext_resource path="res://Animations/Characters/Nuggie/IdleLeft.tres" type="Animation" id=11]
 [ext_resource path="res://Animations/Characters/Nuggie/IdleUp.tres" type="Animation" id=12]
 [ext_resource path="res://Animations/Characters/Nuggie/IdleRight.tres" type="Animation" id=13]
+[ext_resource path="res://Animations/Characters/Nuggie/Dead.tres" type="Animation" id=14]
+[ext_resource path="res://Characters/DungBeetle/DungBeetle_Mouth_Dead.png" type="Texture" id=15]
+[ext_resource path="res://Characters/DungBeetle/DungBeetle_Eye_Closed.png" type="Texture" id=16]
 
 [node name="DungBeetle" type="Node2D"]
 scale = Vector2( 0.05, 0.05 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dead = ExtResource( 14 )
 anims/IdleDown = ExtResource( 4 )
 anims/IdleLeft = ExtResource( 11 )
 anims/IdleRight = ExtResource( 13 )
@@ -29,7 +33,7 @@ anims/WalkUp = ExtResource( 10 )
 
 [node name="Shadow" type="Polygon2D" parent="."]
 position = Vector2( 148.072, -47.1677 )
-rotation = 0.204228
+rotation = 0.0973888
 scale = Vector2( 0.851548, 0.95342 )
 texture = ExtResource( 5 )
 skeleton = NodePath("../Skeleton2D")
@@ -39,19 +43,19 @@ polygons = [ PoolIntArray( 17, 19, 18 ), PoolIntArray( 17, 20, 19 ), PoolIntArra
 bones = [ NodePath("Bone2D"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2"), PoolRealArray( 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Bone2D/Bone2D2/Bone2D3"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-position = Vector2( 28.4003, 25.2446 )
+position = Vector2( 9.28473, -201.411 )
 
 [node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
 position = Vector2( 299.454, 479.656 )
 rest = Transform2D( 1, 0, 0, 1, 299.454, 479.656 )
 
 [node name="Bone2D2" type="Bone2D" parent="Skeleton2D/Bone2D"]
-position = Vector2( 1.16162, -79.8269 )
+position = Vector2( 1.16168, -121.393 )
 rotation = -1.54238
 rest = Transform2D( -0.0103175, -0.999947, 0.999947, -0.0103175, 1.16168, -121.393 )
 
 [node name="Bone2D3" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D2"]
-position = Vector2( 73.5668, -2.45386 )
+position = Vector2( 144.776, -2.38345 )
 rotation = 0.117826
 rest = Transform2D( 1, 0, 0, 1, 144.776, -2.38345 )
 default_length = 137.0
@@ -62,7 +66,6 @@ position = Vector2( 28.4003, 25.2446 )
 [node name="Back" type="Polygon2D" parent="Body_Front"]
 visible = false
 position = Vector2( -0.263961, -3.12984 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 107.407, 480.08, 56.7901, 475.142, 25.9259, 457.858, 5.52396, 427.952, -7.40741, 385.018, -2.46915, 334.401, 24.6914, 301.068, 43.2099, 281.315, 41.9753, 255.389, 55.5555, 231.932, 62.9629, 212.179, 66.2818, 194.304, 77.7778, 138.105, 104.938, 88.7222, 137.037, 50.4506, 225.926, -7.57408, 232.099, 25.7592, 258.025, 67.7346, 312.346, 72.6728, 339.506, 75.142, 393.827, 87.4877, 427.161, 104.772, 456.79, 157.858, 460.494, 192.426, 455.556, 220.821, 474.12, 232.325, 495.062, 268.969, 524.691, 289.957, 540.741, 313.414, 545.679, 346.747, 544.444, 386.253, 535.707, 413.52, 522.256, 445.171, 498.367, 468.464, 465.247, 476.105, 408.642, 482.549, 345.679, 482.549, 290.124, 482.549, 239.506, 482.549, 153.086, 483.784 )
@@ -94,9 +97,36 @@ polygon = PoolVector2Array( 38.4615, 30.6893, -3.55029, 94.003, 6.50888, 156.133
 uv = PoolVector2Array( 38.4615, 30.6893, -3.55029, 94.003, 6.50888, 156.133, 79.2899, 185.127, 144.379, 168.559, 176.923, 101.104, 133.136, 40.7485, 134.32, -0.0798831, 33.7278, 2.8787 )
 bones = [ NodePath("Bone2D"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2/Bone2D3"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
+[node name="Eye_Left2" type="Polygon2D" parent="Body_Front"]
+visible = false
+position = Vector2( 130.915, 246.188 )
+texture = ExtResource( 16 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 128.167, 144.387, 176, 82, 141, 10, 61.8329, -4.10082, -0.257072, 40.2667, -6.73974, 104.38, 35.2375, 144.635, 32.9042, 187.913, 131.649, 183.95 )
+uv = PoolVector2Array( 128.167, 144.387, 176, 82, 141, 10, 61.8329, -4.10082, -0.257072, 40.2667, -6.73974, 104.38, 35.2375, 144.635, 32.9042, 187.913, 131.649, 183.95 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2/Bone2D3"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Eye_Right2" type="Polygon2D" parent="Body_Front"]
+visible = false
+position = Vector2( 301.295, 242.85 )
+texture = ExtResource( 16 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 127.671, 152.25, 170.826, 89.7095, 161.896, 27.4071, 89.6538, -2.9038, 24.2746, 12.4795, -9.48897, 79.3324, 33.1948, 140.473, 31.2696, 181.273, 131.899, 180.142 )
+uv = PoolVector2Array( 127.671, 152.25, 170.826, 89.7095, 161.896, 27.4071, 89.6538, -2.9038, 24.2746, 12.4795, -9.48897, 79.3324, 33.1948, 140.473, 31.2696, 181.273, 131.899, 180.142 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2/Bone2D3"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
 [node name="Mouth" type="Polygon2D" parent="Body_Front"]
 position = Vector2( 157.204, 363.753 )
 texture = ExtResource( 3 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 279.29, 1.69527, 9.46745, 2.28699, -4.73373, 24.1805, 8.87574, 40.1568, 122.485, 80.9852, 144.97, 96.9615, 162.13, 82.7604, 284.024, 43.7071, 294.083, 24.1805 )
+uv = PoolVector2Array( 279.29, 1.69527, 9.46745, 2.28699, -4.73373, 24.1805, 8.87574, 40.1568, 122.485, 80.9852, 144.97, 96.9615, 162.13, 82.7604, 284.024, 43.7071, 294.083, 24.1805 )
+bones = [ NodePath("Bone2D"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("Bone2D/Bone2D2/Bone2D3"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Mouth2" type="Polygon2D" parent="Body_Front"]
+visible = false
+position = Vector2( 157.204, 363.753 )
+texture = ExtResource( 15 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 279.29, 1.69527, 9.46745, 2.28699, -4.73373, 24.1805, 8.87574, 40.1568, 122.485, 80.9852, 144.97, 96.9615, 162.13, 82.7604, 284.024, 43.7071, 294.083, 24.1805 )
 uv = PoolVector2Array( 279.29, 1.69527, 9.46745, 2.28699, -4.73373, 24.1805, 8.87574, 40.1568, 122.485, 80.9852, 144.97, 96.9615, 162.13, 82.7604, 284.024, 43.7071, 294.083, 24.1805 )

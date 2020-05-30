@@ -8,6 +8,7 @@ export var set_player_position = Vector2()
 
 # warning-ignore:unused_argument
 func _on_Area2D_body_entered(body):
+	#figure out a better way to transfer scenes (use a node to set mike position)
 	Global.setScene(Goto_scene)
 	Global.PlayerXTransfer = set_player_position.x
 	Global.PlayerYTransfer = set_player_position.y

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Items/Book.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36.4669, 5.30081 )
+
+[node name="Book_Stack" type="StaticBody2D" groups=[
+"Shizzo",
+]]
+position = Vector2( 0.307255, -0.922073 )
+
+[node name="Book_AllColors" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0.0610733, -26.5993 )
+
+[node name="Book_AllColors2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1.38972, -38.5573 )
+
+[node name="Book_AllColors3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2.71839, -51.844 )
+
+[node name="Book_AllColors4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3.38273, -63.802 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.418121, 10.0349 )
+shape = SubResource( 1 )
+
+[editable path="Book_AllColors2"]
+
+[editable path="Book_AllColors3"]
+
+[editable path="Book_AllColors4"]

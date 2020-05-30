@@ -66,5 +66,22 @@
     "c": false,
     "d": false,
     "Dead": false
+  },
+  "Pooble": {
+    "MaxHealth": 50,
+    "MaxDefense": 5,
+    "MaxAttack": 15,
+    "MaxSpeed": 60,
+    "CurrentHealth": 50,
+    "CurrentDefense": 5,
+    "CurrentAttack": 15,
+    "CurrentSpeed": 75,
+    "ExpDrop": 10,
+    "Interacted": false,
+    "a": false,
+    "b": false,
+    "c": false,
+    "d": false,
+    "Dead": false
   }
 }

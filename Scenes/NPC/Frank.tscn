@@ -48,7 +48,6 @@ autostart = true
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/Idle = ExtResource( 4 )
-
 [connection signal="body_entered" from="hitbox" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

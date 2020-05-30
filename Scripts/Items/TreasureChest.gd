@@ -111,15 +111,15 @@ func _ready():
 
 
 
-# warning-ignore:unused_argument
-func _process(delta):
-	if self.talking == true:
-		pass
-	elif self.selected == true:
-		talk()
+## warning-ignore:unused_argument
+#func _process(delta):
+#	if self.talking == true:
+#		pass
+#	elif self.selected == true:
+#		talk()
 
 
-func talk():
+func interact():
 	if Global.CanInteract == false:
 		pass
 	else:
@@ -138,6 +138,7 @@ func talk():
 		Global.CanTalk = true
 		self.talking = false
 		Global.Can_walk()
+		MSG.msg_ended()
 
 
 

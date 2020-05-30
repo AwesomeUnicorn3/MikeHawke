@@ -29,7 +29,7 @@ var body
 var shop_name
 var buysell = ""
 var equip_menu_type = "GUI"
-
+var carry = false
 #Options
 var dict_options_stats = {}
 
@@ -43,7 +43,7 @@ var dict_enemy_stats = {}
 var dict_character_stats = {}
 var dict_formation_stats = {}
 var dict_quest_stats = {}
-
+var dict_location = {}
 #arrays
 var array_save_id = [0]
 var array_load_files = []
@@ -51,13 +51,7 @@ var array_misc_items = []
 
 
 
-#Dictionaries
-var Dict_locations = {
-"res://Scenes/IndoorMaps/House-Mike.tscn" : "Mike's House",
-"res://Scenes/Fruitville.tscn" : "Fruitville",
-"res://Scenes/IndoorMaps/CumNGo.tscn" : "CumNGo",
-"res://Scenes/IndoorMaps/FranksSundries.tscn": "Frank's Sundries"
-}
+#Dyamic Dictionaries
 var Dict_objects_fruitville = {}
 var Dict_shizzo_cans = {}
 var Dict_trash_cans = {}
@@ -92,6 +86,7 @@ func save_game():
 	
 	save_dict = {
 	PlayerAnim = PlayerAnim,
+	dict_location = ImportData.location_data,
 	dict_options_stats = ImportData.options_stats,
 	dict_quest_stats = ImportData.quest_stats,
 	dict_formation_stats = ImportData.formation_stats,
@@ -115,8 +110,7 @@ func save_game():
 	Dict_trash_cans = Dict_trash_cans,
 	Dict_shizzo_cans = Dict_shizzo_cans,
 	Dict_toilet = Dict_toilet,
-	Dict_loot = Dict_loot,
-	Dict_locations = Dict_locations
+	Dict_loot = Dict_loot
 	}
 	return save_dict
 	

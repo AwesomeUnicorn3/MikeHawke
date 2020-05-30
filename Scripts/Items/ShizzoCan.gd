@@ -65,14 +65,14 @@ func _ready():
 		on_interacted_item_load()
 
 # warning-ignore:unused_argument
-func _process(delta):
-	if self.talking == true:
-		pass
-	elif self.selected == true:
-		talk()
+#func _process(delta):
+#	if self.talking == true:
+#		pass
+#	elif self.selected == true:
+#		interact()
 
 
-func talk():
+func interact():
 	if Global.CanInteract == false:
 		pass
 	else:

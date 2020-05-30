@@ -8,8 +8,8 @@ var state = DEFAULT
 var array_direction = [dir.RIGHT, dir.LEFT, dir.UP, dir.DOWN]
 var array_nd_state = [DEFAULT, IDLE]
 var array_state = [ DEFAULT, IDLE, ATTACK]
-onready var character = get_node("Pooble")
-onready var anim = get_node("Pooble" + "/AnimationPlayer")
+var character 
+var anim 
 # stat variables
 var MaxSpeed = 0
 var CurrentSpeed = 0
@@ -37,6 +37,9 @@ enum {
 	DEFAULT
 	IDLE,
 }
+
+
+
 
 func movement_loop():
 	var motion

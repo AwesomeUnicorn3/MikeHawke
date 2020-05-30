@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ObjectSprites/Shoe_Red.png" type="Texture" id=1]
+
+[node name="Shoe_Red" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.488026, -52.893 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )

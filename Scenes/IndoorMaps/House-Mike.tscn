@@ -93,7 +93,7 @@ texture = ExtResource( 3 )
 [node name="main" type="YSort" parent="."]
 
 [node name="Mike Hawke" parent="main" instance=ExtResource( 7 )]
-position = Vector2( -125.853, -347.628 )
+position = Vector2( -84, -90 )
 voice_pitch = 0.9
 
 [node name="Camera2D" parent="main/Mike Hawke" index="1"]
@@ -103,18 +103,12 @@ zoom = Vector2( 0.5, 0.5 )
 active = true
 parameters/playback = SubResource( 5 )
 
-[node name="MikeHawke Skeleton" parent="main/Mike Hawke" index="9"]
-position = Vector2( 0, 0 )
-
 [node name="Shadow" parent="main/Mike Hawke/MikeHawke Skeleton" index="0"]
 position = Vector2( 147.043, -128.795 )
-polygon = PoolVector2Array( 30.5797, 34.153, -2.0378, 332.955, 2.91059, 479.373, 225.38, 476.218, 322.726, 325.735, 261.8, 187.423, 279.026, 39.1671, 208.025, -6.58905 )
-
-[node name="Mike_Left_Right" parent="main/Mike Hawke/MikeHawke Skeleton" index="3"]
-visible = false
+rotation = 0.0183453
 
 [node name="Chest" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip" index="0"]
-position = Vector2( -1.65524, -55.8665 )
+position = Vector2( -1.65524, -57.9057 )
 
 [node name="Head" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip/Chest/Neck" index="0"]
 position = Vector2( -5.7598, 12.9867 )
@@ -163,31 +157,19 @@ rotation = 0.17262
 position = Vector2( 41.771, -0.212527 )
 rotation = -0.00711775
 
-[node name="Mike_Up_Down" parent="main/Mike Hawke/MikeHawke Skeleton" index="5"]
-visible = true
-
 [node name="TorsoDown" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index 0" index="3"]
 visible = false
+
+[node name="Foot_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index 0" index="5"]
+visible = true
 
 [node name="Z_Index-1" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down" index="1"]
 visible = true
 
-[node name="TorsoUp2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="0"]
+[node name="Arm_Left2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="3"]
 visible = false
 
-[node name="TorsoDown2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="1"]
-visible = true
-
-[node name="Arm_Right2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="2"]
-visible = false
-
-[node name="Leg_LeftUp2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="5"]
-visible = false
-
-[node name="HeadDown2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="10"]
-visible = true
-
-[node name="HeadUp2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="11"]
+[node name="Foot_Left2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="9"]
 visible = false
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="main/Mike Hawke"]
@@ -312,7 +294,7 @@ rotation = 3.14159
 scale = Vector2( 2.12, 2.28 )
 z_index = -3
 Goto_scene = "res://Scenes/Fruitville.tscn"
-set_player_position = Vector2( 525, 450 )
+set_player_position = Vector2( 550, 450 )
 
 [node name="ColorRect" parent="DoorWay" index="1"]
 visible = false

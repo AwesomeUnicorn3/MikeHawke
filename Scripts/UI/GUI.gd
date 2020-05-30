@@ -29,6 +29,7 @@ func hide_gui(value: bool) -> void:
 
 
 func _on_health_change():
+	$TopRightGui/VBoxContainer/HealthBar.set_max(ImportData.character_stats[Global.PlayerName]["MaxHealth"])
 	$TopRightGui/VBoxContainer/HealthBar.set_value(ImportData.character_stats[Global.PlayerName]["CurrentHealth"])
 
 

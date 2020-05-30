@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Icons/StarParticle_White.png" type="Texture" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 56.41
+flag_disable_z = true
+direction = Vector3( 1, 1, 0 )
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 1000.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+orbit_velocity_random = 1.0
+linear_accel = 85.47
+linear_accel_random = 1.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+scale = 0.05
+scale_random = 1.0
+
+[node name="Particles2D" type="Particles2D"]
+position = Vector2( -0.285799, 1.83311 )
+amount = 40
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )

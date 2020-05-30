@@ -11,7 +11,8 @@ var character_data = {} #Static Character stats
 var level_data = {}    #Static Level data (how much exp to next level and Atk, Def Modifiers for each level)
 var quest_data = {}    #Static Quest data
 var options_data = {}	#Static Options data
-var dialogue_data = {}  #Static Options data
+var dialogue_data = {}  #Static dialogue data
+var location_data = {}  #Static Location data
 #Dynamic Dictionaries 
 var formation_stats = {} #Same as Global.dict_formation_stats
 var enemy_stats = {}   #Same as Global.dict_enemy_stats 
@@ -33,7 +34,11 @@ func _ready():
 	itemdata_file.close()
 	item_data = itemdata_json.result
 
-
+	var locationdata_file = File.new()
+	locationdata_file.open("res://Data/LocationData - Sheet1.json", File.READ)
+	var locationdata_json = JSON.parse(locationdata_file.get_as_text())
+	locationdata_file.close()
+	location_data = locationdata_json.result
 
 	var dialoguedata_file = File.new()
 	dialoguedata_file.open("res://Data/DialogueTable - Sheet1.json", File.READ)

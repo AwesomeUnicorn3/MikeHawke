@@ -4,7 +4,7 @@ export (Texture) var face
 export (Color) var color # COLOR OF THE TEXT
 export (float, 0.1, 1.9) var voice_pitch # HOW HIGH / LOW THE VOICE IS
 export (String, FILE) var interaction_script # A JSON DIALOGUE FILE
-onready var hide_scene = preload("res://Scenes/Items/squirrel_pelt.tscn")
+onready var hide_scene = preload("res://Scenes/Items/Pooble_Pickup.tscn")
 
 
 var dict = ImportData.enemy_stats as Dictionary
@@ -27,10 +27,12 @@ func _ready():
 	movedir = Vector2(0,0)
 	spritedir = "Down"
 	TYPE = "ENEMY"
-	entity_name = "Squirrel" #name that is on the enemy data table
+	entity_name = "Pooble" #name that is on the enemy data table
 	startup()
 
 func startup():
+	character = get_node(entity_name)
+	anim = get_node(entity_name + "/AnimationPlayer")
 	id = get_name()
 	if dict.has(id) == false:
 		var enemydata_file = File.new()
@@ -49,18 +51,13 @@ func startup():
 	CurrentDefense = dict[id]["CurrentDefense"]
 	ExpDrop = dict[id]["ExpDrop"]
 	DAMAGE = CurrentAttack
-
 	if CurrentHealth <= 0:
-		var dict_2 = Global.Dict_objects_fruitville
-		pos = Vector2(int(dict_2[id + "_Drop" ]["positionx"]), int(dict_2[id + "_Drop" ]["positiony"]))
-		self.global_position = pos
-		spawn_drop()
 		call_deferred("death_deferred")
-		
+		spawn_drop()
 		
 # warning-ignore:unused_argument
 func _process(delta):
-
+		pos = self.global_position
 		state_machine()
 		damage_loop()
 		CurrentHealth = dict[id]["CurrentHealth"]

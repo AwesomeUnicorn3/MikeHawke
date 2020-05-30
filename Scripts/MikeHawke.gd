@@ -1,7 +1,7 @@
 extends KinematicBody2D
 signal on_death
 signal Health_Change
-signal interact
+#signal interact
 signal animation_complete
 
 onready var close_menu = get_node("../../CanvasLayer/GUI/MainMenu/MenuOptions/VBoxOptions/CloseMenu")
@@ -23,7 +23,9 @@ var id
 var knockback = 0
 var knockdir = Vector2(0,0)
 var invincible = false
-
+var drop_pos
+var Delta
+var acceleration = 1500
 enum {
 	MOVE,
 	ATTACK,
@@ -41,9 +43,10 @@ var CurrentAttack = 0
 var MaxDefense = 0
 var CurrentDefense = 0
 var ExpDrop = 0
+var CurrExp = 0
 var Exp = 0
+var level = 0
 #_____Variables for movement_____
-var speed = 75
 var velocity = Vector2.ZERO
 var input_vector = Vector2.ZERO
 #________________________________
@@ -65,7 +68,7 @@ onready var weapon_file = weapon_file_format % weapon
 var dict_char_stats = ImportData.character_stats
 var dict_initial = ImportData.character_data
 var dict_items = ImportData.item_data
-
+var dict_level = ImportData.level_data
 func _ready():
 	TYPE = "PLAYER"
 	entity_name = "Mike Hawke"
@@ -90,7 +93,7 @@ func startup():
 		dict_char_stats[id] = dict_initial[entity_name]
 	CurrentSpeed = dict_char_stats[id]["CurrentSpeed"]
 	MaxSpeed = dict_char_stats[id]["MaxSpeed"]
-	speed = CurrentSpeed
+
 	
 	MaxHealth = dict_char_stats[id]["MaxHealth"]
 	CurrentHealth = dict_char_stats[id]["CurrentHealth"]
@@ -101,22 +104,31 @@ func startup():
 	CurrentAttack = dict_char_stats[id]["CurrentAttack"]
 	MaxAttack = dict_char_stats[id]["MaxAttack"]
 
-	Exp = dict_char_stats[id]["Exp"]
+	CurrExp = dict_char_stats[id]["Exp"]
+	
+	level = dict_char_stats[id]["Level"]
 	equip_stats()
 
 # warning-ignore:unused_argument
 func _process(delta):
+	Delta = delta
 	if Global.PlayerCanMove == false:
 		Global.PlayerX = global_position.x
 		Global.PlayerY = global_position.y
-		pass
 	else:
-		emit_signal("interact")
+#		emit_signal("interact")
+
 		if Global.ExpDrop > 0:
 			Exp = 0
 			Exp += Global.ExpDrop
 			Global.ExpDrop = 0
 			dict_char_stats[id]["Exp"] += Exp
+			CurrExp = dict_char_stats[id]["Exp"]
+			var next_level = int(level) + 1
+			var next_level_exp = dict_level[str(next_level)]["Exp"]
+			level = int(level)
+			if next_level_exp <= CurrExp:
+				level_up()
 		Global.PlayerX = global_position.x
 		Global.PlayerY = global_position.y
 		
@@ -145,6 +157,8 @@ func _input(event):
 	if Input.is_action_just_pressed(dialogue_next_input):
 		MSG.next()
 
+	if Input.is_action_pressed("ui_select"):
+		_on_MikeHawke_interact()
 
 func player_spritedir_loop():
 	input_vector.x = round(input_vector.x)
@@ -152,56 +166,59 @@ func player_spritedir_loop():
 	match input_vector:
 		dir.LEFT:
 			spritedir = "Left"
-			look.rotation_degrees = 90
+			look.rotation_degrees = 45
 			look.cast_to.y = 25
-
+			drop_pos = Vector2(-45, 0)
 		dir.RIGHT:
 			spritedir = "Right"
-			look.rotation_degrees = -90
+			look.rotation_degrees = -45
 			look.cast_to.y = 25
-
+			drop_pos = Vector2(25, 0)
 		dir.UP:
 			spritedir = "Up"
 			look.rotation_degrees = 180
 			look.cast_to.y = 30
-
+			drop_pos = Vector2(-10, -40)
 		dir.DOWN:
 			spritedir = "Down"
 			look.rotation_degrees = 0
 			look.cast_to.y = 40
+			drop_pos = Vector2(-10, 25)
 	#Wheh diagonal sprites are added, be sure to change the directions to "Left_Up, Left_Down" 
 		dir.LEFT_UP:
 			spritedir = "Up"
 			look.rotation_degrees = 180
 			look.cast_to.y = 30
-
+			drop_pos = Vector2(-10, -40)
 		dir.RIGHT_UP:
 			spritedir = "Up"
 			look.rotation_degrees = 180
 			look.cast_to.y = 30
-
+			drop_pos = Vector2(-10, -40)
 		dir.LEFT_DOWN:
 			spritedir = "Down"
 			look.rotation_degrees = 0
 			look.cast_to.y = 40
-
+			drop_pos = Vector2(-10, 25)
 		dir.RIGHT_DOWN:
 			spritedir = "Down"
 			look.rotation_degrees = 0
 			look.cast_to.y = 40
+			drop_pos = Vector2(-10, 25)
 	Global.PlayerDir = spritedir
 
 
 func _on_MikeHawke_interact():
-	if look.is_colliding() == true:
+	if look.is_colliding() == true and Global.carry == false:
 		var collision = look.get_collider()
-		if collision != null:
-			if collision.get("me"):
-				Global.body = collision
-				if Input.is_action_pressed("ui_select"):
-					state = IDLE
-					yield(MSG, "message_ended")
-					state = MOVE
+		if collision.get("me"):
+			Global.body = collision
+			state = IDLE
+			animationState.travel("Idle")
+			velocity = Vector2.ZERO 
+			collision.interact()
+			yield(MSG, "message_ended")
+			state = MOVE
 	else:
 		Global.body = null
 		if state == IDLE:
@@ -249,7 +266,7 @@ func move_state(): #Character movement and animation
 #_________Get input from player___________________________________________________________________
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	input_vector = input_vector.normalized()
+
 
 #__________________________________________________________________________________________________
 
@@ -259,14 +276,13 @@ func move_state(): #Character movement and animation
 		animationTree.set("parameters/Run/blend_position", input_vector)
 		animationTree.set("parameters/Attack/blend_position", input_vector)
 	#________________________________________________________________________
-		
 		animationState.travel("Run")
-		velocity = input_vector * speed #move
+		velocity = input_vector * CurrentSpeed 
+		if velocity.length() > CurrentSpeed:
+			velocity = velocity.normalized() * CurrentSpeed #move
 	else: #if player is standing still
-		animationState.travel("Idle")
-		velocity = Vector2.ZERO #stopr
+		apply_friction(acceleration * Delta)
 
-	
 #___________________ATTACK!!! ('A' key)_______________________
 	if Input.is_action_just_pressed("ui_use_slot_weapon"):
 		state = ATTACK
@@ -278,6 +294,13 @@ func move_state(): #Character movement and animation
 		state = MOVE
 		
 	velocity = move_and_slide(velocity) #starts player movement
+
+func apply_friction(amount):
+	if velocity.length() > amount:
+		velocity -= velocity.normalized() * amount
+	else:
+		animationState.travel("Idle")
+		velocity = Vector2.ZERO #stopr
 
 func attack_state():
 	if wait == false:
@@ -333,6 +356,8 @@ func on_entity_hit(DAMAGE):
 
 			"PLAYER":
 				damage = DAMAGE - ImportData.character_stats[id]["CurrentDefense"]
+				if damage <= 0:
+					damage = 5
 				ImportData.character_stats[id]["CurrentHealth"] -= damage
 
 		emit_signal("Health_Change")
@@ -363,9 +388,10 @@ func _on_AttackTimer_timeout():
 func attack_anim_finished():
 	state = MOVE
 
-func set_scene():
+func set_scene(CamZoom):
 	if Global.load_game == true:
 		set_global_position(Vector2(Global.PlayerX, Global.PlayerY))
+		$Camera2D.set_zoom(CamZoom)
 		Global.load_game = false
 	else:
 		set_global_position(Vector2(Global.PlayerXTransfer, Global.PlayerYTransfer))
@@ -373,3 +399,26 @@ func set_scene():
 
 func anim_complete():
 	emit_signal("animation_complete")
+
+func level_up():
+	var next_level = int(level) + 1
+	var next_level_exp = dict_level[str(next_level)]["Exp"]
+	var r = false
+	while r == false:
+		next_level = int(level) + 1
+		next_level_exp = dict_level[str(next_level)]["Exp"]
+		if next_level_exp <= CurrExp:
+			dict_char_stats[name]["Level"] += 1
+			level = dict_char_stats[name]["Level"]
+			
+			dict_char_stats[name]["CurrentAttack"] += int(dict_level[str(level)]["AttackMod"])
+			dict_char_stats[name]["MaxAttack"] += int(dict_level[str(level)]["AttackMod"])
+			dict_char_stats[name]["CurrentDefense"] += int(dict_level[str(level)]["DefenseMod"])
+			dict_char_stats[name]["MaxDefense"] += int(dict_level[str(level)]["DefenseMod"])
+			dict_char_stats[name]["CurrentHealth"] += int(dict_level[str(level)]["HealthMod"])
+			dict_char_stats[name]["MaxHealth"] += int(dict_level[str(level)]["HealthMod"])
+			emit_signal("Health_Change")
+		else:
+			r = true
+
+

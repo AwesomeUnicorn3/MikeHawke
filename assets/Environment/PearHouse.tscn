@@ -10,10 +10,10 @@ collision_layer = 2
 collision_mask = 229
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( -26.0333, 255.925 )
+position = Vector2( -28.9737, 254.455 )
 scale = Vector2( 1, 1.19149 )
 build_mode = 1
-polygon = PoolVector2Array( -333.076, -194.785, 347.121, -197.975, 362.321, -30.5379, 252.121, 111.385, 60.2221, 157.629, 62.1222, 53.9777, -40.4775, 53.9777, -38.5775, 160.818, -238.076, 105.006, -342.576, -49.6736 )
+polygon = PoolVector2Array( -333.076, -194.785, 347.121, -197.975, 362.321, -30.5379, 252.121, 111.385, 66.8273, 160.188, 68.5108, 91.2429, -52.0835, 91.2429, -54.1171, 157.173, -238.076, 105.006, -342.576, -49.6736 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 33.5242, -42.5415 )
@@ -27,7 +27,12 @@ texture = ExtResource( 1 )
 offset = Vector2( -10.1365, -48.956 )
 
 [node name="DoorWay" parent="." instance=ExtResource( 2 )]
-position = Vector2( -17.5045, 379.103 )
-scale = Vector2( 2.67401, 3.10981 )
-Goto_scene = "res://Scenes/IndoorMaps/FranksSundries.tscn"
-set_player_position = Vector2( -20, -126 )
+position = Vector2( -24.307, 357.868 )
+scale = Vector2( 3.07401, 4.06981 )
+Goto_scene = "res://Scenes/IndoorMaps/Pear_House.tscn"
+set_player_position = Vector2( 275, 100 )
+
+[node name="Area2D" parent="DoorWay" index="0"]
+position = Vector2( 0.859066, 4.39104 )
+
+[editable path="DoorWay"]

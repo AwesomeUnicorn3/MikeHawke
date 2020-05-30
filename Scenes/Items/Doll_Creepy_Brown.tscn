@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ObjectSprites/Doll_Creepy_Brown.png" type="Texture" id=1]
+[ext_resource path="res://ObjectSprites/Doll_Creepy_Shadow.png" type="Texture" id=2]
+
+[node name="Doll_Creepy_Brown" type="Node2D"]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 11.4868, -14.8573 )
+rotation = 0.021461
+scale = Vector2( 0.5, 0.220922 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.488026, -46.5904 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )

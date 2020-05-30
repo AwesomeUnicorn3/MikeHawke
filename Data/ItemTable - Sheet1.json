@@ -1,6 +1,6 @@
 {
   "T-Shirt": {
-    "Type": "defense",
+    "Type": "Armor",
     "Attack": 0,
     "Defense": 10,
     "Speed": 0,
@@ -13,7 +13,7 @@
     "CanSell": "Yes"
   },
   "Wool Sweater": {
-    "Type": "defense",
+    "Type": "Armor",
     "Attack": 0,
     "Defense": 15,
     "Speed": 0,
@@ -38,30 +38,17 @@
     "Description": "An empty can of Shizzo.  You can sell this at most shops",
     "CanSell": "Yes"
   },
-  "Moonshine": {
-    "Type": "Consumable",
-    "Attack": 0,
-    "Defense": 0,
-    "Speed": -15,
-    "Health Recovery": 0,
-    "Durability": 0,
-    "Sell Value": 15,
-    "Cost": 30,
-    "CanUse": "Yes",
-    "Description": "Why would anyone drink this?",
-    "CanSell": "Yes"
-  },
-  "Moonbeam Brownie": {
+  "Frank's Special Sauce": {
     "Type": "Consumable",
     "Attack": 0,
     "Defense": 0,
     "Speed": 0,
-    "Health Recovery": 200,
+    "Health Recovery": 50,
     "Durability": 0,
-    "Sell Value": 25,
-    "Cost": 50,
+    "Sell Value": 3,
+    "Cost": 15,
     "CanUse": "Yes",
-    "Description": "Recovers your health but don't ask how",
+    "Description": "Smells kind of funky but will recover 50 HP if you drink it.",
     "CanSell": "Yes"
   },
   "Chode": {
@@ -77,20 +64,7 @@
     "Description": "\"\"",
     "CanSell": "No"
   },
-  "Fugly Windchime": {
-    "Type": "Quest Items",
-    "Attack": 0,
-    "Defense": 0,
-    "Speed": 0,
-    "Health Recovery": 0,
-    "Durability": 0,
-    "Sell Value": 0,
-    "Cost": 150,
-    "CanUse": "No",
-    "Description": "Its just really ugly. Why did you spend 150 on this?  ",
-    "CanSell": "No"
-  },
-  "Rabbid Squirrel": {
+  "Gumball": {
     "Type": "Quest Items",
     "Attack": 0,
     "Defense": 0,
@@ -100,7 +74,7 @@
     "Sell Value": 0,
     "Cost": 0,
     "CanUse": "No",
-    "Description": "This Squirrel seems...off.  I'll bet Marty at Animal Controll could figure out the problem",
+    "Description": "Free gift from Frank.  Better hang on to it, you never know...",
     "CanSell": "No"
   },
   "Queef": {
@@ -114,19 +88,6 @@
     "Cost": 0,
     "CanUse": "No",
     "Description": "This cat smells horrible.  Return him to Hilda ASAP",
-    "CanSell": "No"
-  },
-  "Cat Carrier": {
-    "Type": "Quest Items",
-    "Attack": 0,
-    "Defense": 0,
-    "Speed": 0,
-    "Health Recovery": 0,
-    "Durability": 0,
-    "Sell Value": 0,
-    "Cost": 0,
-    "CanUse": "No",
-    "Description": "Queef's favorite spot to sleep",
     "CanSell": "No"
   },
   "Sandals": {
@@ -143,7 +104,7 @@
     "CanSell": "Yes"
   },
   "Crappy Sword": {
-    "Type": "weapon",
+    "Type": "Weapons",
     "Attack": 10,
     "Defense": 0,
     "Speed": 0,
@@ -156,7 +117,7 @@
     "CanSell": "Yes"
   },
   "Potato Sword": {
-    "Type": "weapon",
+    "Type": "Weapons",
     "Attack": 15,
     "Defense": 0,
     "Speed": 0,
@@ -169,7 +130,7 @@
     "CanSell": "Yes"
   },
   "Fist": {
-    "Type": "weapon",
+    "Type": "Weapons",
     "Attack": 5,
     "Defense": 2,
     "Speed": 0,
@@ -180,31 +141,5 @@
     "CanUse": "No",
     "Description": "It is your fist.  A modified version of your hand.",
     "CanSell": "No"
-  },
-  "Squirrel Pelt": {
-    "Type": "Consumable",
-    "Attack": 0,
-    "Defense": 0,
-    "Speed": 0,
-    "Health Recovery": 0,
-    "Durability": 0,
-    "Sell Value": 2,
-    "Cost": 4,
-    "CanUse": "No",
-    "Description": "Remains of a dead squirrel. Can be used to craft basic armor.",
-    "CanSell": "Yes"
-  },
-  "Hockey Drop": {
-    "Type": "skill",
-    "Attack": 0,
-    "Defense": 0,
-    "Speed": 0,
-    "Health Recovery": 0,
-    "Durability": 0,
-    "Sell Value": 2,
-    "Cost": 4,
-    "CanUse": "No",
-    "Description": "Test Skill Inventory Item",
-    "CanSell": "Yes"
   }
 }

@@ -12,14 +12,14 @@ onready var mike = get_node("main/Mike Hawke")
 onready var gui: Control = get_node("CanvasLayer/GUI")
 export var Mikex = 0
 export var Mikey = -62
-
+export var CamZoom = Vector2(0.4,0.4)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	if Global.new_game == true:
 		begin_sequence1()
 	else:
-		mike.set_scene()
+		mike.set_scene(CamZoom)
 		Global.load_scene = self.filename
 	
 func begin_sequence1():

@@ -109,10 +109,3 @@ func _input(event):
 	if Input.is_action_just_released("ui_select"):
 		self.selected = false
 
-
-
-
-
-# warning-ignore:unused_argument
-func _on_Area2D_body_exited(body):
-	Global.body = null

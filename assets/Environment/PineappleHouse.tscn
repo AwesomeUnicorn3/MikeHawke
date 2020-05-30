@@ -29,5 +29,13 @@ offset = Vector2( -10.1365, -48.956 )
 [node name="DoorWay" parent="." instance=ExtResource( 1 )]
 position = Vector2( -2.2309, 103.864 )
 scale = Vector2( 3.31401, 3.58981 )
-Goto_scene = ""
-set_player_position = Vector2( 0, 75 )
+Goto_scene = "res://Scenes/IndoorMaps/Pineapple_House.tscn"
+set_player_position = Vector2( -40, 55 )
+
+[node name="Area2D" parent="DoorWay" index="0"]
+position = Vector2( 0, 6.70177 )
+
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2( 0, 210.912 )
+
+[editable path="DoorWay"]

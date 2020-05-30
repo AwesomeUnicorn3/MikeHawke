@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Particles/Rose_Particle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ObjectSprites/Rose_Purple.png" type="Texture" id=2]
+
+[node name="Rose_Purple" type="StaticBody2D"]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Particles2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9.61731, -67.2465 )

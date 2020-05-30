@@ -61,10 +61,10 @@ func _process(delta):
 	if self.talking == true:
 		pass
 	elif self.selected == true:
-		talk()
+		interact()
 
 
-func talk():
+func interact():
 	if Global.CanInteract == false:
 		pass
 	else:

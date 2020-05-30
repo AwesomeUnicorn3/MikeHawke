@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Items/Pooble_Item.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/NPC/DungBeetle.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.7938
+height = 7.05891
+
+[node name="Pooble_Pickup" type="StaticBody2D"]
+collision_layer = 256
+collision_mask = 166
+script = ExtResource( 1 )
+interaction_script = "res://dialogues/ShizzoCan.json"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 15.096, 14.1845 )
+rotation = 1.57791
+shape = SubResource( 1 )
+
+[node name="DungBeetle" parent="." instance=ExtResource( 2 )]
+
+[node name="Eye_Left" parent="DungBeetle/Body_Front" index="2"]
+visible = false
+
+[node name="Eye_Right" parent="DungBeetle/Body_Front" index="3"]
+visible = false
+
+[node name="Eye_Left2" parent="DungBeetle/Body_Front" index="4"]
+visible = true
+
+[node name="Eye_Right2" parent="DungBeetle/Body_Front" index="5"]
+visible = true
+
+[node name="Mouth" parent="DungBeetle/Body_Front" index="6"]
+visible = false
+
+[node name="Mouth2" parent="DungBeetle/Body_Front" index="7"]
+visible = true
+
+[editable path="DungBeetle"]

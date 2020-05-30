@@ -96,6 +96,7 @@ func seq3():
 	var pos = Vector2(Global.PlayerX, Global.PlayerY)
 	scene.set_global_position(pos)
 	MSG.level_root().add_child(scene)
+
 	yield(scene, "complete")
 	seq4()
 func seq4():

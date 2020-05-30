@@ -1,0 +1,496 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://EnvTilesetPNG/Dragonfruit_House_Map_1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt2.tres" type="Animation" id=3]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt1.tres" type="Animation" id=4]
+[ext_resource path="res://Audio/BGM/AWhiteElephants.ogg" type="AudioStream" id=5]
+[ext_resource path="res://EnvTilesetPNG/Dragonfruit_House_Map_2.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Narrator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt6.tres" type="Animation" id=8]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt3.tres" type="Animation" id=9]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt5.tres" type="Animation" id=10]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt7.tres" type="Animation" id=12]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt4.tres" type="Animation" id=13]
+[ext_resource path="res://Scripts/House-Mike.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/PlayableCharacters/MikeHawke.tscn" type="PackedScene" id=15]
+[ext_resource path="res://EnvTilesetPNG/Dragonfruit_House_Map_3.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Items/SideTable_Purple.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Items/Bed_Purple.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Items/Vase_Red.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Items/Rose_Purple.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Items/Toilet_Purple.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Items/Sink_Purple.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Items/Tub_Purple.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Items/Fridge_Purple.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Items/Couch_Purple.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Items/Trash_Can_Purple.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Items/Book.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Items/Book_Stack.tscn" type="PackedScene" id=28]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 844.074, 94.6868 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 99.3796, 453.12 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 353.059, 61.0575 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 436.83, 81.7665 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+
+[node name="Dragonfruit_House" type="Node2D" groups=[
+"level_root",
+]]
+script = ExtResource( 14 )
+voice_pitch = 0.537
+interaction_script = "res://dialogues/Sequence1.json"
+Mikex = -162
+Mikey = -290
+
+[node name="Map_3" type="Sprite" parent="."]
+position = Vector2( 57.2946, -188.206 )
+scale = Vector2( 1, 1.02721 )
+texture = ExtResource( 16 )
+
+[node name="Map_1" type="Sprite" parent="."]
+position = Vector2( 51.9055, -266.044 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1"]
+position = Vector2( 27.1318, 4.52197 )
+collision_layer = 2
+collision_mask = 161
+
+[node name="TopWallCollision" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( -120.813, -301.982 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="RightWallCollision" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( 458.807, 27.3619 )
+z_index = 1
+shape = SubResource( 2 )
+
+[node name="LeftWallCollision" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( -667.367, 33.8388 )
+z_index = 1
+shape = SubResource( 2 )
+
+[node name="BottomWallCollision1" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( -547.238, 359.854 )
+z_index = 1
+shape = SubResource( 3 )
+
+[node name="BottomWallCollision2" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( 534.56, 412.568 )
+z_index = 1
+shape = SubResource( 4 )
+
+[node name="Map_2" type="Sprite" parent="."]
+position = Vector2( 50.7509, -218.934 )
+z_index = 1
+texture = ExtResource( 6 )
+
+[node name="Bed_Purple" parent="." instance=ExtResource( 18 )]
+position = Vector2( 406.438, -399.837 )
+
+[node name="main" type="YSort" parent="."]
+
+[node name="Mike Hawke" parent="main" instance=ExtResource( 15 )]
+position = Vector2( -125.853, -347.628 )
+voice_pitch = 0.9
+
+[node name="Camera2D" parent="main/Mike Hawke" index="1"]
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="AnimationTree" parent="main/Mike Hawke" index="8"]
+active = true
+parameters/playback = SubResource( 5 )
+
+[node name="Shadow" parent="main/Mike Hawke/MikeHawke Skeleton" index="0"]
+position = Vector2( 147.043, -128.795 )
+rotation = 0.0183453
+
+[node name="Chest" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip" index="0"]
+position = Vector2( -1.65524, -58.392 )
+
+[node name="Arm_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip/Chest" index="1"]
+rotation = 1.18452
+
+[node name="Elbow_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip/Chest/Arm_Left" index="0"]
+position = Vector2( 81.7877, -34.1319 )
+rotation = 0.0625032
+
+[node name="TorsoDown" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index 0" index="3"]
+visible = false
+
+[node name="Foot_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index 0" index="5"]
+visible = true
+
+[node name="Z_Index-1" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down" index="1"]
+visible = true
+
+[node name="Arm_Left2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="3"]
+visible = false
+
+[node name="Foot_Left2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="9"]
+visible = false
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="main/Mike Hawke"]
+anims/Seq1Pt1 = ExtResource( 4 )
+anims/Seq1Pt2 = ExtResource( 3 )
+anims/Seq1Pt3 = ExtResource( 9 )
+anims/Seq1Pt4 = ExtResource( 13 )
+anims/Seq1Pt5 = ExtResource( 10 )
+anims/Seq1Pt6 = ExtResource( 8 )
+anims/Seq1Pt7 = ExtResource( 12 )
+
+[node name="Narrator" parent="main" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( -353.374, -149.437 )
+
+[node name="InteractableObjects" type="YSort" parent="main"]
+
+[node name="SideTable_Purple" parent="main/InteractableObjects" instance=ExtResource( 17 )]
+position = Vector2( -401.684, -460.263 )
+
+[node name="Vase" parent="main/InteractableObjects" instance=ExtResource( 19 )]
+position = Vector2( -401.531, -454.033 )
+
+[node name="Rose_Purple" parent="main/InteractableObjects" instance=ExtResource( 20 )]
+position = Vector2( -403.174, -517.804 )
+
+[node name="Toilet_Purple" parent="main/InteractableObjects" instance=ExtResource( 21 )]
+position = Vector2( -340.952, -470.275 )
+
+[node name="Sink_Purple" parent="main/InteractableObjects" instance=ExtResource( 22 )]
+position = Vector2( -28.783, -476.199 )
+
+[node name="Tub_Purple" parent="main/InteractableObjects" instance=ExtResource( 23 )]
+position = Vector2( -218.246, -410.881 )
+
+[node name="Fridge_Purple" parent="main/InteractableObjects" instance=ExtResource( 24 )]
+position = Vector2( 83.7069, -461.584 )
+
+[node name="Couch_Purple" parent="main/InteractableObjects" instance=ExtResource( 25 )]
+position = Vector2( 237.452, -301.918 )
+rotation = 0.00153911
+
+[node name="Trash_Can_Purple" parent="main/InteractableObjects" instance=ExtResource( 26 )]
+position = Vector2( 181.56, -42.7744 )
+
+[node name="Trash_Can_Purple2" parent="main/InteractableObjects" instance=ExtResource( 26 )]
+position = Vector2( 193.641, -463.279 )
+
+[node name="Book_AllColors" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -426.638, -353.006 )
+
+[node name="Book_AllColors2" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -275.369, -197.402 )
+
+[node name="Pink" parent="main/InteractableObjects/Book_AllColors2" index="1"]
+visible = false
+
+[node name="Book_AllColors5" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( 239.744, -380.241 )
+
+[node name="Book_AllColors6" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( 94.372, -545.241 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 1
+
+[node name="Book_AllColors4" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( 79.8199, -127.257 )
+
+[node name="Pink" parent="main/InteractableObjects/Book_AllColors4" index="1"]
+visible = false
+
+[node name="LightBlue" parent="main/InteractableObjects/Book_AllColors4" index="4"]
+position = Vector2( -1705.75, -1528.63 )
+
+[node name="Book_AllColors3" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -362.689, -267.097 )
+
+[node name="Book_AllColors7" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -365.689, -388.096 )
+
+[node name="Book_AllColors8" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -433.688, -404.096 )
+
+[node name="Book_AllColors9" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -151.129, -480.078 )
+
+[node name="Book_AllColors10" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -21.499, -321.809 )
+
+[node name="Book_AllColors11" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -128.519, -247.95 )
+
+[node name="Book_AllColors12" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -231.017, -327.838 )
+
+[node name="Book_AllColors13" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -359.139, -434.858 )
+
+[node name="Book_AllColors14" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -366.676, -347.433 )
+
+[node name="Book_AllColors15" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -288.655, -298.564 )
+
+[node name="Book_AllColors16" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -448.071, -457.468 )
+
+[node name="Book_AllColors17" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( -4.91858, -157.511 )
+
+[node name="Book_Stack" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -180.972, -189.394 )
+
+[node name="Book_Stack3" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 119.612, -545.447 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack53" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 244.801, -264.85 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack54" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 240.484, -323.128 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack55" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 244.801, -459.11 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack56" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 238.326, -439.684 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack57" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 271.155, -446.853 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack35" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -3.2943, -508.436 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack36" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -50.0823, -508.436 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack37" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -341.285, -510.531 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="Book_Stack2" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 123.25, -122.943 )
+
+[node name="Book_Stack7" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -27.7494, -192.321 )
+
+[node name="Book_Stack4" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 66.32, 21.9495 )
+
+[node name="Book_Stack5" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 194.888, 39.4815 )
+
+[node name="Book_Stack6" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 274.418, -185.223 )
+
+[node name="Book_Stack8" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 67.6434, -160.736 )
+
+[node name="Book_Stack9" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 24.1119, -183.862 )
+
+[node name="Book_Stack10" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -136.41, -160.736 )
+
+[node name="Book_Stack11" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -178.581, -133.529 )
+
+[node name="Book_Stack12" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -170.419, -87.2769 )
+
+[node name="Book_Stack13" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -212.59, -70.9527 )
+
+[node name="Book_Stack14" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -179.942, -50.5473 )
+
+[node name="Book_Stack15" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -174.312, -16.9693 )
+
+[node name="Book_Stack16" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -216.671, -28.7816 )
+
+[node name="Book_Stack17" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -246.491, -297.736 )
+
+[node name="Book_Stack18" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -158.221, -290.817 )
+
+[node name="Book_Stack19" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 319.147, 21.3356 )
+
+[node name="Book_Stack58" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 319.147, 21.3356 )
+
+[node name="Book_Stack20" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 213.202, -393.357 )
+
+[node name="Book_Stack21" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 218.643, -197.466 )
+
+[node name="Book_Stack22" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 166.868, -103.937 )
+
+[node name="Book_Stack23" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 118.433, -92.2457 )
+
+[node name="Book_Stack24" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 165.198, -78.8844 )
+
+[node name="Book_Stack25" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 88.3706, -75.5441 )
+
+[node name="Book_Stack26" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 133.465, -55.5022 )
+
+[node name="Book_Stack27" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 90.0408, -48.8215 )
+
+[node name="Book_Stack28" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 39.9359, -32.1199 )
+
+[node name="Book_Stack29" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 116.763, -22.0989 )
+
+[node name="Book_Stack30" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 71.669, 1.28337 )
+
+[node name="Book_Stack31" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 133.465, 29.6761 )
+
+[node name="Book_Stack32" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 133.465, 29.6761 )
+
+[node name="Book_Stack33" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -90.3367, -179.094 )
+
+[node name="Book_Stack34" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -15.764, -329.826 )
+
+[node name="Book_Stack38" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -339.53, -113.982 )
+
+[node name="Book_Stack39" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -248.876, -129.091 )
+
+[node name="Book_Stack40" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -326.58, -49.2286 )
+
+[node name="Book_Stack41" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -450.559, -76.6944 )
+
+[node name="Book_Stack42" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -313.042, -156.354 )
+
+[node name="Book_Stack43" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -445.294, -301.766 )
+
+[node name="Book_Stack44" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -447.453, -245.647 )
+
+[node name="Book_Stack45" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -449.611, -196.003 )
+
+[node name="Book_Stack46" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -461.614, -138.612 )
+
+[node name="Book_Stack47" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 42.5139, -303.925 )
+
+[node name="Book_Stack48" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 105.109, -288.816 )
+
+[node name="Book_Stack49" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -84.8342, -422.639 )
+
+[node name="Book_Stack50" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 295.052, -154.992 )
+
+[node name="Book_Stack51" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -140.954, -390.263 )
+
+[node name="Book_Stack52" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -99.9433, -308.242 )
+
+[node name="Book_Stack59" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 437.509, -66.4962 )
+
+[node name="Book_Stack60" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 377.073, -75.13 )
+
+[node name="Book_Stack61" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 219.506, -77.2884 )
+
+[node name="Book_Stack62" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 405.132, -189.527 )
+
+[node name="Book_Stack63" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -324.115, -275.816 )
+
+[node name="Book_Stack64" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( -388.114, -279.816 )
+
+[node name="DoorWay" parent="." instance=ExtResource( 2 )]
+position = Vector2( -30.1544, 103.384 )
+rotation = 3.14159
+scale = Vector2( 3, 2.28 )
+z_index = 1
+Goto_scene = "res://Scenes/Fruitville.tscn"
+set_player_position = Vector2( 2175, 2175 )
+
+[node name="ColorRect" parent="DoorWay" index="1"]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[editable path="main/Mike Hawke"]
+
+[editable path="main/Mike Hawke/MikeHawke Skeleton"]
+
+[editable path="main/InteractableObjects/Book_AllColors2"]
+
+[editable path="main/InteractableObjects/Book_AllColors5"]
+
+[editable path="main/InteractableObjects/Book_AllColors6"]
+
+[editable path="main/InteractableObjects/Book_AllColors4"]
+
+[editable path="DoorWay"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ObjectSprites/Sign_Brown_Generic.png" type="Texture" id=1]
+
+[node name="Sign_Brown_Generic" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 6.21186, -23.3002 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
