@@ -72,7 +72,7 @@
     "Health Recovery": 0,
     "Durability": 0,
     "Sell Value": 0,
-    "Cost": 0,
+    "Cost": 1,
     "CanUse": "No",
     "Description": "Free gift from Frank.  Better hang on to it, you never know...",
     "CanSell": "No"

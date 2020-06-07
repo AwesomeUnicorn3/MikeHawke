@@ -335,6 +335,34 @@
     "Key1Scancode": 78,
     "Key2Scancode": null
   },
+  "ui_focus_next": {
+    "Category": "Controls",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\"",
+    "Input_action": "Next",
+    "equipped_item": "Empty",
+    "Key1": "Tab",
+    "Key2": "\"\"",
+    "Key1Scancode": 16777218,
+    "Key2Scancode": null
+  },
+  "ui_focus_prev": {
+    "Category": "Controls",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\"",
+    "Input_action": "Previous",
+    "equipped_item": "Empty",
+    "Key1": "Backspace",
+    "Key2": "\"\"",
+    "Key1Scancode": 16777220,
+    "Key2Scancode": null
+  },
   "pause": {
     "Category": "Controls",
     "Boolean": false,

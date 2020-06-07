@@ -4,7 +4,7 @@ signal Health_Change
 #signal interact
 signal animation_complete
 
-onready var close_menu = get_node("../../CanvasLayer/GUI/MainMenu/MenuOptions/VBoxOptions/CloseMenu")
+onready var close_menu = get_node("../../CanvasLayer/GUI/MainMenu/MenuOptions/VBoxOptions/Close Menu")
 #Dialogue Variables
 export (Texture) var face
 export (Color) var color # COLOR OF THE TEXT

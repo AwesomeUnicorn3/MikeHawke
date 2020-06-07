@@ -58,7 +58,7 @@ func _process(delta):
 	if self.talking == true:
 		pass
 	elif self.selected == true:
-		talk()
+		interact()
 	else:
 		if canmove == true:
 			pass
@@ -66,7 +66,7 @@ func _process(delta):
 
 
 
-func talk():
+func interact():
 	if Global.CanInteract == false:
 		self.talking = false
 		self.interacting = false

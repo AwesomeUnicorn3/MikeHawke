@@ -1,18 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/NPC/Queef.gd" type="Script" id=1]
-[ext_resource path="res://Characters/DTN NPC.png" type="Texture" id=2]
-[ext_resource path="res://Animations/Characters/Hilda/WalkDown.tres" type="Animation" id=3]
+[ext_resource path="res://Characters/DungBeetle/DungBeetle_PinkBow.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/NPC/DungBeetle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Icons/HildaFaceNeutral.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.9038, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 13.0624, 11.5847 )
+[sub_resource type="CapsuleShape2D" id=1]
+height = 8.91031
 
 [node name="NPCQueef" type="KinematicBody2D"]
-z_index = -4
 collision_layer = 4
 collision_mask = 107
 script = ExtResource( 1 )
@@ -20,37 +16,19 @@ face = ExtResource( 4 )
 voice_pitch = 1.0
 interaction_script = "res://dialogues/Queef.json"
 
-[node name="TestNPC" type="Sprite" parent="."]
-position = Vector2( 0, -0.263519 )
-z_index = 4
-texture = ExtResource( 2 )
-vframes = 8
-hframes = 12
-frame = 1
-
-[node name="hitbox" type="Area2D" parent="."]
-position = Vector2( 1.30861, -8.69863 )
-scale = Vector2( 1, 1.8 )
-collision_layer = 4
-collision_mask = 64
-
-[node name="HitboxShape" type="CollisionShape2D" parent="hitbox"]
-position = Vector2( -1.33098, 7.41112 )
-shape = SubResource( 1 )
-
-[node name="NPC_Collision" type="CollisionShape2D" parent="."]
-position = Vector2( -0.180679, 17.0528 )
-z_index = 4
-shape = SubResource( 2 )
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
 
-[node name="anim" type="AnimationPlayer" parent="."]
-anims/Idle = ExtResource( 3 )
-anims/IdleDown = ExtResource( 3 )
-anims/WalkDown = ExtResource( 3 )
-[connection signal="body_entered" from="hitbox" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_Area2D_body_exited"]
+[node name="DungBeetle" parent="." instance=ExtResource( 3 )]
+position = Vector2( -13.3183, -16.1722 )
+
+[node name="Sprite" type="Sprite" parent="DungBeetle"]
+position = Vector2( 309.695, 124.951 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.18913, -1.42696 )
+shape = SubResource( 1 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

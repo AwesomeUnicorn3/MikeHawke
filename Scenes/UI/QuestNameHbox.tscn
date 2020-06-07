@@ -2,46 +2,76 @@
 
 [ext_resource path="res://Icons/QuestNotComplete.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/UI/QuestNameHbox.gd" type="Script" id=2]
-[ext_resource path="res://Icons/ItemIconBackground.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Buttons/QuestNameHbox_Animation.tres" type="Animation" id=3]
 
-[node name="QuestNameHbox" type="HBoxContainer"]
+[node name="Container" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -1065.0
-margin_bottom = -617.0
+rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="TextureRect" parent="."]
-margin_top = 6.0
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+color = Color( 0, 0, 0, 0.180392 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestNameHbox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="TextureRect" parent="QuestNameHbox"]
+margin_top = 315.0
 margin_right = 90.0
-margin_bottom = 96.0
+margin_bottom = 405.0
 size_flags_vertical = 4
 texture = ExtResource( 1 )
 stretch_mode = 1
 
-[node name="QuestName2" type="TextureButton" parent="."]
+[node name="QuestName2" type="TextureButton" parent="QuestNameHbox"]
 margin_left = 94.0
-margin_right = 215.0
-margin_bottom = 103.0
+margin_right = 1280.0
+margin_bottom = 720.0
 size_flags_horizontal = 3
-texture_pressed = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuestName" type="Label" parent="QuestName2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Selected = ExtResource( 3 )
+
+[node name="QuestName" type="Label" parent="."]
+anchor_left = 0.078
+anchor_top = 0.003
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.67745
+margin_top = -0.16
+margin_right = 2.51746
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Quest Name"
+align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="button_up" from="QuestName2" to="." method="_on_QuestName2_button_up"]
+[connection signal="button_up" from="QuestNameHbox/QuestName2" to="." method="_on_QuestName2_button_up"]
+[connection signal="focus_entered" from="QuestNameHbox/QuestName2" to="." method="_on_QuestName2_focus_entered"]
+[connection signal="focus_exited" from="QuestNameHbox/QuestName2" to="." method="_on_QuestName2_focus_exited"]
+[connection signal="mouse_entered" from="QuestNameHbox/QuestName2" to="." method="_on_QuestName2_mouse_entered"]
+[connection signal="mouse_exited" from="QuestNameHbox/QuestName2" to="." method="_on_QuestName2_mouse_exited"]

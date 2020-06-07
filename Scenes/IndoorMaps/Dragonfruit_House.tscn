@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://EnvTilesetPNG/Dragonfruit_House_Map_1.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Scenes/Items/Trash_Can_Purple.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/Items/Book.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/Items/Book_Stack.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/NPC/Queef.tscn" type="PackedScene" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 844.074, 94.6868 )
@@ -39,7 +40,7 @@ extents = Vector2( 99.3796, 453.12 )
 extents = Vector2( 353.059, 61.0575 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 436.83, 81.7665 )
+extents = Vector2( 316.288, 81.7665 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
@@ -82,12 +83,12 @@ z_index = 1
 shape = SubResource( 2 )
 
 [node name="BottomWallCollision1" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
-position = Vector2( -547.238, 359.854 )
+position = Vector2( -537.498, 394.918 )
 z_index = 1
 shape = SubResource( 3 )
 
 [node name="BottomWallCollision2" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
-position = Vector2( 534.56, 412.568 )
+position = Vector2( 264.79, 420.868 )
 z_index = 1
 shape = SubResource( 4 )
 
@@ -117,7 +118,7 @@ position = Vector2( 147.043, -128.795 )
 rotation = 0.0183453
 
 [node name="Chest" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip" index="0"]
-position = Vector2( -1.65524, -58.392 )
+position = Vector2( -1.65524, -54.9301 )
 
 [node name="Arm_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip/Chest" index="1"]
 rotation = 1.18452
@@ -458,6 +459,9 @@ position = Vector2( -324.115, -275.816 )
 
 [node name="Book_Stack64" parent="main/InteractableObjects" instance=ExtResource( 28 )]
 position = Vector2( -388.114, -279.816 )
+
+[node name="NPCQueef" parent="main" instance=ExtResource( 29 )]
+position = Vector2( 404.393, -406.177 )
 
 [node name="DoorWay" parent="." instance=ExtResource( 2 )]
 position = Vector2( -30.1544, 103.384 )

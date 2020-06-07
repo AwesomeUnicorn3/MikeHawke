@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Buttons/Load_Game_Button.gd" type="Script" id=1]
 [ext_resource path="res://ObjectSprites/MikeFace.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=4]
 [ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=5]
 [ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=7]
 
 [node name="LoadGame" type="MarginContainer"]
 anchor_right = 1.0
@@ -46,30 +47,6 @@ margin_right = 544.0
 margin_bottom = 148.0
 size_flags_horizontal = 3
 
-[node name="LoadGame" type="TextureButton" parent="MarginContainer2/HBoxContainer/VBoxContainer2"]
-margin_right = 530.0
-margin_bottom = 148.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 4 )
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer2/LoadGame"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Filename" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer2"]
 visible = false
 margin_top = 162.0
@@ -84,6 +61,10 @@ margin_bottom = 148.0
 rect_min_size = Vector2( 0, 14 )
 size_flags_horizontal = 9
 size_flags_vertical = 9
+
+[node name="File" parent="MarginContainer2/HBoxContainer/VBoxContainer2" instance=ExtResource( 7 )]
+margin_right = 530.0
+margin_bottom = 148.0
 
 [node name="Face1" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
 margin_left = 548.0
@@ -186,15 +167,22 @@ margin_bottom = 98.0
 
 [node name="Other" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
 margin_left = 1146.0
-margin_top = 74.0
+margin_top = 49.0
 margin_right = 1280.0
-margin_bottom = 74.0
+margin_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.25
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer2/HBoxContainer/Other"]
+[node name="Delete" parent="MarginContainer2/HBoxContainer/Other" instance=ExtResource( 7 )]
 margin_right = 134.0
+margin_bottom = 50.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2/HBoxContainer/Other"]
+visible = false
+margin_top = 4.0
+margin_right = 134.0
+margin_bottom = 4.0
 color = Color( 0.721569, 0.0470588, 0.0470588, 1 )
 
 [node name="Delete_File" type="TextureButton" parent="MarginContainer2/HBoxContainer/Other/ColorRect"]
@@ -224,5 +212,4 @@ text = "Delete File"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="MarginContainer2/HBoxContainer/VBoxContainer2/LoadGame" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/Other/ColorRect/Delete_File" to="." method="_on_Delete_File_pressed"]

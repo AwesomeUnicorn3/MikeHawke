@@ -12,25 +12,22 @@ onready var menuroot = get_node(".")
 
 onready var currency = $FullMenu/TabsContainer/CategoryPanel/Currency/Currency/CurrencyDisplay
 onready var weapons = $FullMenu/TabsContainer/Weapons
-onready var shoes = $FullMenu/TabsContainer/Shoes
 onready var armor = $FullMenu/TabsContainer/Armor
-onready var crafting = $FullMenu/TabsContainer/Crafting
+onready var skill = $FullMenu/TabsContainer/Skills
 onready var consumable = $FullMenu/TabsContainer/Consumable
-onready var quest_items = $FullMenu/TabsContainer/Quest_Items
+onready var quest_items = get_node("FullMenu/TabsContainer/Quest Items")
 
-onready var weapons_button = $FullMenu/TabsContainer/CategoryPanel/Weapons/TextureButton
-onready var armor_button = $FullMenu/TabsContainer/CategoryPanel/Armor/TextureButton
-onready var shoes_button = $FullMenu/TabsContainer/CategoryPanel/Shoes/TextureButton
-onready var crafting_button = $FullMenu/TabsContainer/CategoryPanel/Crafting/TextureButton
-onready var consumable_button = $FullMenu/TabsContainer/CategoryPanel/Consumable/TextureButton
-onready var quest_items_button = $FullMenu/TabsContainer/CategoryPanel/Quest_Items/TextureButton
+onready var weapons_button = $FullMenu/TabsContainer/CategoryPanel/Weapons/Button
+onready var armor_button = $FullMenu/TabsContainer/CategoryPanel/Armor/Button
+onready var skill_button = $FullMenu/TabsContainer/CategoryPanel/Skills/Button
+onready var consumable_button = $FullMenu/TabsContainer/CategoryPanel/Consumable/Button
+onready var quest_items_button = get_node("FullMenu/TabsContainer/CategoryPanel/Quest Items/Button")
 
 onready var  weapons_container = $FullMenu/TabsContainer/Weapons/VBoxContainer
 onready var  armor_container = $FullMenu/TabsContainer/Armor/VBoxContainer
-onready var  shoes_container = $FullMenu/TabsContainer/Shoes/VBoxContainer
-onready var  crafting_container = $FullMenu/TabsContainer/Crafting/VBoxContainer
+onready var  skill_container = $FullMenu/TabsContainer/Skills/VBoxContainer
 onready var  consumable_container = $FullMenu/TabsContainer/Consumable/VBoxContainer
-onready var  quest_items_container = $FullMenu/TabsContainer/Quest_Items/VBoxContainer
+onready var  quest_items_container = get_node("FullMenu/TabsContainer/Quest Items/VBoxContainer")
 
 onready var item_inspector_container = $FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container
 onready var item_detail_container = $FullMenu/TabsContainer/ItemInspector/Item_Inspector_Container/ItemStats/StatsContainer/Stats
@@ -56,11 +53,11 @@ func _ready():
 		currency.set_text(String(ImportData.inven_data[Global.currency][1]))
 	else:
 		currency.set_text(String(0))
-
+	get_node("FullMenu/TabsContainer/CategoryPanel/Weapons/Button").grab_focus()
 
 
 func close_all_tabs():
-	var array = [weapons_container, armor_container, shoes_container, crafting_container, consumable_container, quest_items_container]
+	var array = [weapons_container, armor_container, skill_container, consumable_container, quest_items_container]
 	for i in range(0, array.size()):
 		var parent = array[i]
 		for n in parent.get_children():
@@ -70,15 +67,13 @@ func close_all_tabs():
 	
 	weapons.visible = false
 	armor.visible = false
-	shoes.visible = false
-	crafting.visible = false
+	skill.visible = false
 	consumable.visible = false
 	quest_items.visible = false
 	
 	weapons_button.disabled = false
 	armor_button.disabled = false
-	shoes_button.disabled = false
-	crafting_button.disabled = false
+	skill_button.disabled = false
 	consumable_button.disabled = false
 	quest_items_button.disabled = false
 
@@ -121,7 +116,7 @@ func _on_Weapons_button_up():
 	close_all_tabs()
 	weapons.visible = true
 	weapons_button.disabled = true
-	get_item_type = "weapon"
+	get_item_type = "Weapons"
 	container = weapons_container
 	get_inventory_type()
 	clear_item_detail()
@@ -130,28 +125,28 @@ func _on_Armor_button_up():
 	close_all_tabs()
 	armor.visible = true
 	armor_button.disabled = true
-	get_item_type = "defense"
+	get_item_type = "Armor"
 	container = armor_container
 	get_inventory_type()
 	clear_item_detail()
 
 
-func _on_Shoes_button_up():
-	close_all_tabs()
-	shoes.visible = true
-	shoes_button.disabled = true
-	get_item_type = "Shoes"
-	container = shoes_container
-	get_inventory_type()
-	clear_item_detail()
+#func _on_Shoes_button_up():
+#	close_all_tabs()
+#	shoes.visible = true
+#	shoes_button.disabled = true
+#	get_item_type = "Shoes"
+#	container = shoes_container
+#	get_inventory_type()
+#	clear_item_detail()
 
 
-func _on_Crafting_button_up():
+func _on_Skills_button_up():
 	close_all_tabs()
-	crafting.visible = true
-	crafting_button.disabled = true
-	get_item_type = "skill"
-	container = crafting_container
+	skill.visible = true
+	skill_button.disabled = true
+	get_item_type = "Skills"
+	container = skill_container
 	get_inventory_type()
 	clear_item_detail()
 
@@ -214,10 +209,10 @@ func _on_drop_refresh():
 			_on_Weapons_button_up()
 		"defense":
 			_on_Armor_button_up()
-		"Shoes":
-			_on_Shoes_button_up()
-		"skill":
-			_on_Crafting_button_up()
+#		"Shoes":
+#			_on_Shoes_button_up()
+		"Skills":
+			_on_Skills_button_up()
 		"Consumable":
 			_on_Consumable_button_up()
 		"Quest_Items":

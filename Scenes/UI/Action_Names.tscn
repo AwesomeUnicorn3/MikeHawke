@@ -64,6 +64,7 @@ rect_min_size = Vector2( 75, 50 )
 [node name="1" parent="Control" instance=ExtResource( 1 )]
 margin_top = 0.0
 margin_bottom = 50.0
+focus_mode = 0
 
 [node name="2" parent="Control" instance=ExtResource( 1 )]
 visible = false
@@ -71,3 +72,4 @@ margin_left = 587.0
 margin_top = 0.0
 margin_right = 837.0
 margin_bottom = 50.0
+focus_mode = 0

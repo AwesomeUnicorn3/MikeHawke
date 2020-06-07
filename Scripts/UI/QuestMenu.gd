@@ -1,13 +1,14 @@
 extends Control
 signal menu_closed
 onready var QuestItem : PackedScene = load("res://Scenes/UI/QuestNameHbox.tscn")
+onready var QuestItem_Objective : PackedScene = load("res://Scenes/UI/QuestNameHbox_Objectives.tscn")
 onready var quest_name = $FullMenu/TabsContainer/QuestDetailsBkg/QuestDetails/QuestName
 onready var quest_list_container = $FullMenu/TabsContainer/QuestSelectionBkg/QuestSelection/QuestListScroll/VBoxContainer
 onready var quest_description = $FullMenu/TabsContainer/QuestDetailsBkg/QuestDetails/DetailsScrollCont/Quest_Detail_Cont
-onready var main_quest_button = $FullMenu/TabsContainer/OptionsPanel/MainQuests/MainQuestsButton
-onready var side_quest_button = $FullMenu/TabsContainer/OptionsPanel/SideQuests/SideQuestsButton
-onready var active_button = $FullMenu/TabsContainer/QuestSelectionBkg/QuestSelection/ActiveCompleteHbox/Active/ActiveButton
-onready var completed_button = $FullMenu/TabsContainer/QuestSelectionBkg/QuestSelection/ActiveCompleteHbox/Completed/CompletedButton
+onready var main_quest_button = get_node("FullMenu/TabsContainer/OptionsPanel/Main Quests/Button")
+onready var side_quest_button = get_node("FullMenu/TabsContainer/OptionsPanel/Side Quests/Button")
+onready var active_button = $FullMenu/TabsContainer/QuestSelectionBkg/QuestSelection/ActiveCompleteHbox/Active/Button
+onready var completed_button = $FullMenu/TabsContainer/QuestSelectionBkg/QuestSelection/ActiveCompleteHbox/Complete/Button
 onready var quest_objective_container = $FullMenu/TabsContainer/QuestDetailsBkg/QuestDetails/ObjectivesScrollCont/VBoxContainer
 var dict_char_stats = ImportData.character_stats
 var dict_quest_stats = ImportData.quest_stats
@@ -41,7 +42,7 @@ var quest_type
 func _ready():
 	Quest.update_quest_0()
 	_on_MainQuests_button_up()
-
+	get_node("FullMenu/TabsContainer/OptionsPanel/Main Quests/Button").grab_focus()
 func clear_data():
 	var parent = quest_list_container
 	var parent2 = quest_objective_container
@@ -93,7 +94,7 @@ func _on_Active_button_up():
 	populate_quest_list()
 	
 	
-func _on_Completed_button_up():
+func _on_Complete_button_up():
 	clear_data()
 	active_button.disabled = false
 	completed_button.disabled = true
@@ -123,15 +124,15 @@ func populate_quest_list():
 			questname = dict_quest_stats[str(i)]["QuestName"]
 			newscene.set_name(str(i))
 			newscene.connect("detail", self, "_on_quest_selected")
-			newscene.get_node("QuestName2/QuestName").set_text(questname)
+			newscene.get_node("QuestName").set_text(questname)
 			if quest_complete == true:
-				newscene.get_node("CheckBox").set_texture(quest_complete_icon)
+				newscene.get_node("QuestNameHbox/CheckBox").set_texture(quest_complete_icon)
 			quest_list_container.add_child(newscene)
 
 
 func populate_objective_list():
 	for i in range(1, 4):
-			var newscene = QuestItem.instance()
+			var newscene = QuestItem_Objective.instance()
 			var objectivename = "Objective" + str(i)
 			var objectivecomplete = objectivename + "Complete"
 			var objective = dict_quest_stats[str(qid)][objectivename]

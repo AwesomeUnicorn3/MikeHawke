@@ -49,26 +49,27 @@ func _ready():
 		match char_form_num:
 			1:
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char1/Char1Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char1/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char1/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char1.visible = true
 			2:
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char2/Char2Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char2/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char2/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char2.visible = true
 			3:	
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char3/Char3Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char3/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char3/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char3.visible = true
 			4:
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char4/Char4Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char4/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char4/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char4.visible = true
 	_on_Char1_button_up()
-
+	get_node("FullMenu/TabsContainer/CharacterPanel/Char1/Button").grab_focus()
+	
 func _on_ExitButton_button_up():
 	emit_signal("menu_closed")
 	queue_free()

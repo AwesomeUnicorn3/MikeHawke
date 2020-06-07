@@ -22,6 +22,10 @@ func _unhandled_key_input(event):
 		paused = true
 		scene_tree.set_input_as_handled()
 		set_paused(paused)
+		get_node("../../MainMenu/MenuOptions/VBoxOptions/Inventory/Button").grab_focus()
+	if event.is_action_pressed("ui_focus_next"):
+		$TextureButton.grab_focus()
+
 
 func set_paused(value: bool) -> void:
 	paused = value
@@ -41,8 +45,11 @@ func _on_TextureButton_button_up():
 	set_modulate(modwhite)
 	SoundEffects.play_sfx(SoundEffects.Select , 1)
 	set_paused(paused)
+	main_menu.get_node("MenuOptions/VBoxOptions/Inventory/Button").grab_focus()
 
 
 func _on_TextureButton_button_down():
 	var modred = Color(0,0,0,0.25)
 	set_modulate(modred)
+
+

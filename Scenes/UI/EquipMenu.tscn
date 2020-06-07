@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Themes/20Theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scripts/UI/EquipMenu.gd" type="Script" id=4]
-[ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=5]
-[ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=6]
 [ext_resource path="res://Themes/50Theme.tres" type="Theme" id=7]
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=8]
 [ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=9]
@@ -54,7 +53,7 @@ size_flags_vertical = 3
 
 [node name="MenuName" type="Label" parent="FullMenu/Header"]
 margin_left = 24.0
-margin_right = 513.0
+margin_right = 431.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -65,55 +64,26 @@ valign = 1
 uppercase = true
 
 [node name="CharName" type="Label" parent="FullMenu/Header"]
-margin_left = 517.0
-margin_right = 1006.0
+margin_left = 435.0
+margin_right = 845.0
 margin_bottom = 82.0
+rect_min_size = Vector2( 410, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 11 )
+align = 1
 valign = 1
 uppercase = true
 
-[node name="Exit" type="ColorRect" parent="FullMenu/Header"]
-margin_left = 1010.0
-margin_right = 1254.0
+[node name="Exit" parent="FullMenu/Header" instance=ExtResource( 1 )]
+margin_left = 849.0
+margin_right = 1256.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
-theme = ExtResource( 8 )
-color = Color( 1, 1, 1, 0 )
-
-[node name="ExitButton" type="TextureButton" parent="FullMenu/Header/Exit"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 7.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExitLabel" type="Label" parent="FullMenu/Header/Exit"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -3.4248
-margin_right = -3.4248
-text = "Exit"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="RightMargin2" type="Label" parent="FullMenu/Header"]
-margin_left = 1258.0
-margin_right = 1278.0
+margin_left = 1260.0
+margin_right = 1280.0
 margin_bottom = 82.0
 rect_min_size = Vector2( 20, 0 )
 size_flags_vertical = 3
@@ -137,148 +107,41 @@ margin_bottom = 617.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 4
 
-[node name="Char1" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel"]
 margin_right = 200.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_vertical = 4
-theme = ExtResource( 8 )
-color = Color( 1, 1, 1, 0 )
+rect_min_size = Vector2( 100, 100 )
 
-[node name="Char1Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Char1" parent="FullMenu/TabsContainer/CharacterPanel" instance=ExtResource( 1 )]
+margin_top = 104.0
+margin_right = 200.0
+margin_bottom = 179.0
+rect_min_size = Vector2( 200, 75 )
+size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 6.67834
-margin_right = 6.67834
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Char2" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+[node name="Char2" parent="FullMenu/TabsContainer/CharacterPanel" instance=ExtResource( 1 )]
 visible = false
-margin_top = 103.0
-margin_right = 285.0
-margin_bottom = 203.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_vertical = 4
-theme = ExtResource( 8 )
-color = Color( 1, 1, 1, 0 )
+margin_top = 183.0
+margin_right = 200.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 200, 75 )
+size_flags_vertical = 1
 
-[node name="Char2Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-disabled = true
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 3.42474
-margin_top = 3.7948
-margin_right = 3.42474
-margin_bottom = 3.7948
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Char3" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+[node name="Char3" parent="FullMenu/TabsContainer/CharacterPanel" instance=ExtResource( 1 )]
 visible = false
-margin_top = 207.0
-margin_right = 285.0
-margin_bottom = 307.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_vertical = 4
-theme = ExtResource( 8 )
-color = Color( 1, 1, 1, 0 )
+margin_top = 183.0
+margin_right = 200.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 200, 75 )
+size_flags_vertical = 1
 
-[node name="Char3Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-disabled = true
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Char4" type="ColorRect" parent="FullMenu/TabsContainer/CharacterPanel"]
+[node name="Char4" parent="FullMenu/TabsContainer/CharacterPanel" instance=ExtResource( 1 )]
 visible = false
-margin_top = 311.0
-margin_right = 285.0
-margin_bottom = 411.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_vertical = 4
-theme = ExtResource( 8 )
-color = Color( 1, 1, 1, 0 )
-
-[node name="Char4Button" type="TextureButton" parent="FullMenu/TabsContainer/CharacterPanel/Char4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-disabled = true
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CharacterPanel/Char4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_top = 183.0
+margin_right = 200.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 200, 75 )
+size_flags_vertical = 1
 
 [node name="EquipSlots" type="HBoxContainer" parent="FullMenu/TabsContainer"]
 margin_left = 228.0
@@ -537,74 +400,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SwapButton" type="ColorRect" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer"]
+[node name="Swap" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer" instance=ExtResource( 1 )]
 margin_right = 446.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-size_flags_vertical = 4
-theme = ExtResource( 8 )
-color = Color( 1, 1, 1, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="swapButton" type="TextureButton" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 0, 50 )
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Swap"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="UnequipButton" type="ColorRect" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer"]
+[node name="Unequip" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer" instance=ExtResource( 1 )]
 margin_top = 54.0
 margin_right = 446.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 0, 50 )
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme = ExtResource( 8 )
-color = Color( 1, 1, 1, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="unequpButton" type="TextureButton" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 0, 50 )
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Unequip"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 105.0
 
 [node name="LabelBuffer" type="Label" parent="FullMenu/TabsContainer/EquipDetail"]
 visible = false
@@ -634,10 +437,3 @@ rect_min_size = Vector2( 0, 5 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 [connection signal="focus_entered" from="." to="." method="_on_EquipMenu_focus_entered"]
-[connection signal="button_up" from="FullMenu/Header/Exit/ExitButton" to="." method="_on_ExitButton_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char1/Char1Button" to="." method="_on_Char1_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char2/Char2Button" to="." method="_on_Char2_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char3/Char3Button" to="." method="_on_Char3_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CharacterPanel/Char4/Char4Button" to="." method="_on_Char4_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton/swapButton" to="." method="_on_swapButton_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton/unequpButton" to="." method="_on_unequpButton_button_up"]

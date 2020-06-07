@@ -13,14 +13,14 @@ var Punch
 var Slash
 
 func _ready():
-		CanRattle = load("res://Audio/SoundEffects/tm2_can000.wav")
-		Select = load("res://Audio/SoundEffects/SFX_select1.wav")
-		Cancel = load("res://Audio/SoundEffects/SFX_cancel2.wav")
-		Flush = load("res://Audio/SoundEffects/DhoodToiletFlush.wav")
-		ExplosiveFart = load("res://Audio/SoundEffects/SFX_fart2.wav")
-		Squish = load("res://Audio/SoundEffects/SFX_squish1.wav")
-		Punch = load("res://Audio/SoundEffects/SFX_punch1.wav")
-		Slash = load("res://Audio/SoundEffects/SFX_swordslash1.wav")
+	CanRattle = load("res://Audio/SoundEffects/tm2_can000.wav")
+	Select = load("res://Audio/SoundEffects/SFX_select1.wav")
+	Cancel = load("res://Audio/SoundEffects/SFX_cancel2.wav")
+	Flush = load("res://Audio/SoundEffects/DhoodToiletFlush.wav")
+	ExplosiveFart = load("res://Audio/SoundEffects/SFX_fart2.wav")
+	Squish = load("res://Audio/SoundEffects/SFX_squish1.wav")
+	Punch = load("res://Audio/SoundEffects/SFX_punch1.wav")
+	Slash = load("res://Audio/SoundEffects/SFX_swordslash1.wav")
 
 
 func play_sfx(sfx, volume):

@@ -17,7 +17,7 @@ var lead_char_letter
 var action_string
 
 func _ready():
-	pass
+	get_node("FullMenu/TabsContainer/CategoryPanel/Controls/Button").grab_focus()
 
 
 
@@ -59,19 +59,10 @@ func _control_display_action_list():
 					action_string = i
 					ui.get_node("Control/" + str(count)).action_string_button = action_string
 					ui.get_node("Control/" + str(count)).visible = true
-#					count += 1
 
 
 
 
-
-#func clear_item_detail():
-#	item_name_container.set_text("")
-#	item_Description_container.set_text("")
-#	var parent = item_detail_container
-#	if parent != null:
-#		for n in parent.get_children():
-#			parent.remove_child(n)
 
 func _on_Controls_button_up():
 	_control_display_action_list()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/UI/OptionsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=5]
 [ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
 [ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Themes/35Theme.tres" type="Theme" id=9]
 [ext_resource path="res://Themes/20Theme.tres" type="Theme" id=10]
 
@@ -57,7 +58,7 @@ size_flags_vertical = 3
 
 [node name="MenuName" type="Label" parent="FullMenu/Header"]
 margin_left = 24.0
-margin_right = 513.0
+margin_right = 536.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -68,54 +69,22 @@ valign = 1
 uppercase = true
 
 [node name="Lead_Char" type="Label" parent="FullMenu/Header"]
-margin_left = 517.0
-margin_right = 1006.0
+margin_left = 540.0
+margin_right = 1052.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 1 )
 
-[node name="Exit" type="ColorRect" parent="FullMenu/Header"]
-margin_left = 1010.0
-margin_right = 1254.0
+[node name="Exit" parent="FullMenu/Header" instance=ExtResource( 8 )]
+margin_left = 1056.0
+margin_right = 1256.0
 margin_bottom = 82.0
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
-theme = ExtResource( 5 )
-color = Color( 1, 1, 1, 0 )
-
-[node name="ExitButton" type="TextureButton" parent="FullMenu/Header/Exit"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 7.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_disabled = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExitLabel" type="Label" parent="FullMenu/Header/Exit"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.51758
-margin_right = 2.51758
-text = "Exit"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+rect_min_size = Vector2( 200, 75 )
 
 [node name="RightMargin2" type="Label" parent="FullMenu/Header"]
-margin_left = 1258.0
-margin_right = 1278.0
+margin_left = 1260.0
+margin_right = 1280.0
 margin_bottom = 82.0
 rect_min_size = Vector2( 20, 0 )
 size_flags_vertical = 3
@@ -141,148 +110,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="Audio" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
+[node name="Controls" parent="FullMenu/TabsContainer/CategoryPanel" instance=ExtResource( 8 )]
 margin_right = 200.0
 margin_bottom = 75.0
-rect_min_size = Vector2( 0, 75 )
-size_flags_vertical = 4
-theme = ExtResource( 5 )
-color = Color( 1, 1, 1, 0 )
-
-[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Audio"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-disabled = true
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_disabled = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Audio"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Audio"
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Video" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 79.0
-margin_right = 200.0
-margin_bottom = 154.0
-rect_min_size = Vector2( 0, 75 )
-size_flags_vertical = 4
-theme = ExtResource( 5 )
-color = Color( 1, 1, 1, 0 )
-
-[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Video"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-disabled = true
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_disabled = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Video"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Video"
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Controls" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 158.0
-margin_right = 200.0
-margin_bottom = 233.0
-rect_min_size = Vector2( 0, 75 )
-size_flags_vertical = 4
-theme = ExtResource( 5 )
-color = Color( 1, 1, 1, 0 )
-
-[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Controls"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_disabled = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Controls"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Controls"
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Misc" type="ColorRect" parent="FullMenu/TabsContainer/CategoryPanel"]
-margin_top = 237.0
-margin_right = 200.0
-margin_bottom = 312.0
-rect_min_size = Vector2( 0, 75 )
-size_flags_vertical = 4
-theme = ExtResource( 5 )
-color = Color( 1, 1, 1, 0 )
-
-[node name="TextureButton" type="TextureButton" parent="FullMenu/TabsContainer/CategoryPanel/Misc"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-disabled = true
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_disabled = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="FullMenu/TabsContainer/CategoryPanel/Misc"]
-anchor_top = -0.0234412
-anchor_right = 1.0
-anchor_bottom = 0.976559
-text = "Misc"
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+rect_min_size = Vector2( 200, 75 )
+size_flags_vertical = 1
 
 [node name="Controls" type="ScrollContainer" parent="FullMenu/TabsContainer"]
 margin_left = 228.0
@@ -536,8 +368,3 @@ margin_right = 1280.0
 margin_bottom = 720.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_vertical = 1
-[connection signal="button_up" from="FullMenu/Header/Exit/ExitButton" to="." method="_on_ExitButton_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Audio/TextureButton" to="." method="_on_Weapons_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Video/TextureButton" to="." method="_on_Weapons_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Controls/TextureButton" to="." method="_on_Controls_button_up"]
-[connection signal="button_up" from="FullMenu/TabsContainer/CategoryPanel/Misc/TextureButton" to="." method="_on_Weapons_button_up"]

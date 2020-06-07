@@ -33,10 +33,10 @@ func _ready():
 			var hour ="Time Saved: " +  "%02d" % Global.Dict_static_time["hour"]
 			var minute = "%02d" % Global.Dict_static_time["minute"]
 			var time = String(hour) + ":" + String(minute) 
-			var filename = "Load file " + String(Global.save_id)
+			var filename = "File " + String(Global.save_id)
 
 			var location ="Player Location: " +  String(Global.dict_location[Global.load_scene]["Name"])
-			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer2/LoadGame/Label").set_text(filename)
+			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer2/File/Label").set_text(filename)
 			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer/Date").set_text(String(date))
 			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer/Time").set_text(String(time))
 			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer2/Filename").set_text(file)
@@ -44,12 +44,5 @@ func _ready():
 			scene_instance.get_node("MarginContainer2/HBoxContainer/VBoxContainer/Location").set_text(location)
 			Global.save_id = file
 			i += 1
-
-
-
-func _on_Button_pressed():
-	Global.setScene("res://Scenes/TitleScreen.tscn")
-	
-
 
 

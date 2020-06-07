@@ -1,20 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Buttons/EquipButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Buttons/InventoryButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Buttons/SaveButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Buttons/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Buttons/FormationButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Buttons/StatusButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Buttons/CloseMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UI/SubMenu1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=11]
-[ext_resource path="res://Scenes/Buttons/QuestButton.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Buttons/SkillButton.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=14]
 
 [node name="MainMenu" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
@@ -25,10 +19,6 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.10803
-margin_top = 1.29236
-margin_right = 1.10803
-margin_bottom = 1.29236
 color = Color( 1, 0.352941, 0, 0.47451 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -56,19 +46,52 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InventoryButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 2 )]
+[node name="Inventory" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
 margin_right = 203.0
 margin_bottom = 66.0
+scene = "res://Scenes/UI/InventoryMenu.tscn"
 
-[node name="EquipButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 1 )]
+[node name="Equip" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
 margin_top = 70.0
 margin_right = 203.0
 margin_bottom = 136.0
+scene = "res://Scenes/UI/EquipMenu.tscn"
 
-[node name="StatusButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 7 )]
+[node name="Status" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
 margin_top = 140.0
 margin_right = 203.0
 margin_bottom = 206.0
+scene = "res://Scenes/UI/StatsMenu.tscn"
+
+[node name="Quests" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
+margin_top = 210.0
+margin_right = 203.0
+margin_bottom = 276.0
+scene = "res://Scenes/UI/QuestMenu.tscn"
+
+[node name="Save" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
+margin_top = 280.0
+margin_right = 203.0
+margin_bottom = 346.0
+scene = "res://Scenes/UI/QuestMenu.tscn"
+
+[node name="Options" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
+margin_top = 350.0
+margin_right = 203.0
+margin_bottom = 416.0
+scene = "res://Scenes/UI/OptionsMenu.tscn"
+
+[node name="Quit" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
+margin_top = 420.0
+margin_right = 203.0
+margin_bottom = 486.0
+scene = "res://Scenes/UI/OptionsMenu.tscn"
+
+[node name="Close Menu" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
+margin_top = 490.0
+margin_right = 203.0
+margin_bottom = 561.0
+scene = "res://Scenes/UI/OptionsMenu.tscn"
 
 [node name="SkillButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 13 )]
 visible = false
@@ -82,34 +105,7 @@ margin_top = 186.0
 margin_right = 203.0
 margin_bottom = 244.0
 
-[node name="QuestButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 12 )]
-margin_top = 210.0
-margin_right = 203.0
-margin_bottom = 276.0
-
-[node name="SaveButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 4 )]
-margin_top = 280.0
-margin_right = 203.0
-margin_bottom = 346.0
-
-[node name="OptionsButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 3 )]
-margin_top = 350.0
-margin_right = 203.0
-margin_bottom = 416.0
-
-[node name="QuitButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 5 )]
-margin_top = 420.0
-margin_right = 203.0
-margin_bottom = 486.0
-
-[node name="CloseMenu" parent="MenuOptions/VBoxOptions" instance=ExtResource( 9 )]
-margin_top = 490.0
-margin_right = 203.0
-margin_bottom = 561.0
-
 [node name="SubMenu1" parent="." instance=ExtResource( 10 )]
 visible = false
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1277.0
-margin_bottom = -6.0
+margin_bottom = 6.10352e-05
+rect_min_size = Vector2( 1280, 720 )

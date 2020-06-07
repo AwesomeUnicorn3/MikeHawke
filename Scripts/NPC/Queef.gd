@@ -158,4 +158,4 @@ func set_var_from_dialogue():
 		dict_inventory["Cat Carrier"][1] = 1
 	if dict_quest[MSG.var("quest1_name")]["Objective1Complete"] == true:
 		dict_npc_stats[id]["Dead"] = true
-	print(dict_npc_stats[id]["Dead"])
+

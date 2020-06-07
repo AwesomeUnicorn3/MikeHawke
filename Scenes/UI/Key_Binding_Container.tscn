@@ -26,6 +26,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 90.0
 margin_bottom = 720.0
+focus_mode = 1
 size_flags_horizontal = 4
 
 [node name="Key" parent="HBoxContainer/Key_Binding_slot_template/Key_Binding_VBox" index="0"]

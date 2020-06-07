@@ -46,7 +46,7 @@ func _ready():
 		match char_letter:
 			1:
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char1/Char1Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char1/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char1/Label.set_text(char_name)
 			2:
 				if char_in_party == "Yes":
@@ -64,24 +64,7 @@ func _ready():
 					$FullMenu/TabsContainer/CharacterPanel/Char4/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char4.visible = true
 	_on_Char1_button_up()
-
-
-#func get_inventory_type():
-#	var dict = ImportData.inven_data
-#	for i in range(0, dict.size()):
-#		var item_name = dict.keys()[i]
-#		var dict_item_values = ImportData.item_data
-#
-#		var scene_instance = item.instance()
-#		var icon = "res://Icons/" + str(item_name) + ".png"
-#		var iconpressed = "res://Icons/" + str(item_name) + "Pressed" + ".png"
-#		scene_instance.set_name(item_name)
-#		container.add_child(scene_instance)
-#		scene_instance.get_node("ItemName").set_text(item_name)
-#		scene_instance.get_node("ItemBackground/ItemButton").set_normal_texture(load(icon))
-#		scene_instance.get_node("ItemBackground/ItemButton").set_pressed_texture(load(iconpressed))
-#
-#		i += 1
+	$FullMenu/TabsContainer/CharacterPanel/Char1/Button.grab_focus()
 
 func _on_ExitButton_button_up():
 	Global.equip_menu_type = "GUI"
@@ -114,8 +97,8 @@ func _on_ItemDisplay_get_item_info(name):
 					statname.set_text(stat_name)
 					statvalue.set_text(str(stat_value))
 			i -= 1
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton/swapButton.disabled = false
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton/unequpButton.disabled = false
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/Swap/Button.disabled = false
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/Unequip/Button.disabled = false
 
 
 func clear_item_detail():
@@ -127,8 +110,8 @@ func clear_item_detail():
 		for n in parent.get_children():
 			parent.remove_child(n)
 			pass
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton/swapButton.disabled = true
-	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/UnequipButton/unequpButton.disabled = true
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/Swap/Button.disabled = true
+	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/Unequip/Button.disabled = true
 #	item_type = ""
 
 func clear_slot_detail():
@@ -196,7 +179,7 @@ func _on_button_down(slt_name, op_name):
 	else:
 		clear_item_detail()
 #		clear_slot_detail()
-		$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/SwapButton/swapButton.disabled = false
+		$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/Swap/Button.disabled = false
 
 
 

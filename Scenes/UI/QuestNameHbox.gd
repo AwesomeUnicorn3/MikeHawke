@@ -1,4 +1,4 @@
-extends Control
+extends Container
 
 
 # Declare member variables here. Examples:
@@ -14,8 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-
-#func _on_MainMenu_focus_entered():
-#	get_node("MenuOptions/VBoxOptions/Inventory/Button").grab_focus()

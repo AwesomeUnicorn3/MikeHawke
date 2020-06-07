@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scenes/DoorWay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Animations/Cut Scenes/Seq1Pt2.tres" type="Animation" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Scenes/Items/ShizzoCan.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scenes/Items/Gumball_Orange.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/Items/Frank's Special Sauce_Pink.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/NPC/Frank.tscn" type="PackedScene" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 542.66, 72.5019 )
@@ -118,7 +119,7 @@ position = Vector2( 147.043, -128.795 )
 rotation = 0.0183453
 
 [node name="Chest" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip" index="0"]
-position = Vector2( -1.65524, -59.8896 )
+position = Vector2( -1.65524, -60.2836 )
 
 [node name="Arm_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip/Chest" index="1"]
 rotation = 1.18452
@@ -150,6 +151,9 @@ anims/Seq1Pt4 = ExtResource( 13 )
 anims/Seq1Pt5 = ExtResource( 9 )
 anims/Seq1Pt6 = ExtResource( 6 )
 anims/Seq1Pt7 = ExtResource( 12 )
+
+[node name="Frank" parent="main" instance=ExtResource( 34 )]
+position = Vector2( 244.278, -203.565 )
 
 [node name="Narrator" parent="main" instance=ExtResource( 5 )]
 visible = false
