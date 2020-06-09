@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Houses/Fruitville/FruitvilleObjectsAtlas.png" type="Texture" id=1]
+
+
+
+[node name="ShizzoCan" type="Polygon2D"]
+position = Vector2( 43.3359, -200.143 )
+rotation = 0.43166
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 137.143, 1011.43, 140.909, 1121.21, 303.03, 1118.18, 294.286, 994.286 )
+uv = PoolVector2Array( 137.143, 1011.43, 140.909, 1121.21, 303.03, 1118.18, 294.286, 994.286 )
+
+[node name="Shadow" type="Polygon2D" parent="."]
+position = Vector2( 13.527, 1.0224 )
+scale = Vector2( 1, 1 )
+z_index = -1
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 137.143, 1011.43, 140.909, 1121.21, 303.03, 1118.18, 294.286, 994.286 )
+uv = PoolVector2Array( 137.143, 1132.43, 140.909, 1242.21, 303.03, 1239.18, 294.286, 1115.29 )

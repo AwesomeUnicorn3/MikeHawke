@@ -55,7 +55,7 @@
     "Key1Scancode": "\"\"",
     "Key2Scancode": null
   },
-  "Mike Hawke weapon": {
+  "Mike Hawke Weapons": {
     "Category": "Var Controls",
     "Boolean": false,
     "IntegerValue": 0,
@@ -69,7 +69,7 @@
     "Key1Scancode": 86,
     "Key2Scancode": null
   },
-  "Mike Hawke defense": {
+  "Mike Hawke Armor": {
     "Category": "Var Controls",
     "Boolean": false,
     "IntegerValue": 0,
@@ -139,7 +139,7 @@
     "Key1Scancode": 52,
     "Key2Scancode": null
   },
-  "Anna Lee weapon": {
+  "Anna Lee Weapons": {
     "Category": "Var Controls",
     "Boolean": false,
     "IntegerValue": 0,
@@ -153,7 +153,7 @@
     "Key1Scancode": 86,
     "Key2Scancode": null
   },
-  "Anna Lee defense": {
+  "Anna Lee Armor": {
     "Category": "Var Controls",
     "Boolean": false,
     "IntegerValue": 0,
@@ -384,7 +384,7 @@
     "IntegerMax": 0,
     "IntegerMin": 0,
     "Text": "\"\"",
-    "Input_action": "weapon",
+    "Input_action": "Weapons",
     "equipped_item": "Empty",
     "Key1": "\"\"",
     "Key2": "\"\"",
@@ -398,7 +398,7 @@
     "IntegerMax": 0,
     "IntegerMin": 0,
     "Text": "\"\"",
-    "Input_action": "defense",
+    "Input_action": "Armor",
     "equipped_item": "Empty",
     "Key1": "\"\"",
     "Key2": "\"\"",
@@ -473,6 +473,62 @@
     "Key1": "\"\"",
     "Key2": "\"\"",
     "Key1Scancode": "\"\"",
+    "Key2Scancode": null
+  },
+  "ui_up": {
+    "Category": "Controls",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\"",
+    "Input_action": "UI Up",
+    "equipped_item": "Empty",
+    "Key1": "Up",
+    "Key2": "\"\"",
+    "Key1Scancode": 16777232,
+    "Key2Scancode": null
+  },
+  "ui_down": {
+    "Category": "Controls",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\"",
+    "Input_action": "UI Down",
+    "equipped_item": "Empty",
+    "Key1": "Down",
+    "Key2": "\"\"",
+    "Key1Scancode": 16777234,
+    "Key2Scancode": null
+  },
+  "ui_left": {
+    "Category": "Controls",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\"",
+    "Input_action": "UI Left",
+    "equipped_item": "Empty",
+    "Key1": "Left",
+    "Key2": "\"\"",
+    "Key1Scancode": 16777231,
+    "Key2Scancode": null
+  },
+  "ui_right": {
+    "Category": "Controls",
+    "Boolean": false,
+    "IntegerValue": 0,
+    "IntegerMax": 0,
+    "IntegerMin": 0,
+    "Text": "\"\"",
+    "Input_action": "UI Right",
+    "equipped_item": "Empty",
+    "Key1": "Right",
+    "Key2": "\"\"",
+    "Key1Scancode": 16777233,
     "Key2Scancode": null
   }
 }

@@ -18,7 +18,7 @@ onready var charname = $FullMenu/Header/CharName
 var get_item_type 
 var container
 var stats
-var button_list = ["weapon", "defense", "slot 1", "slot 2", "slot 3", "slot 4"]
+var button_list = ["Weapons", "Armor", "slot 1", "slot 2", "slot 3", "slot 4"]
 var statarray = ["Attack", "Defense","Speed", "Sell Value"] #stats to display (assuming the stat is not 0)
 var drop_item_name
 var dict_formation = ImportData.formation_stats
@@ -35,7 +35,7 @@ var char_selected
 var char_name
 var slot_name
 var options_name
-
+var parent = "EquipMenu"
 
 func _ready():
 	Global.equip_menu_type = "EquipMenu"
@@ -50,17 +50,17 @@ func _ready():
 					$FullMenu/TabsContainer/CharacterPanel/Char1/Label.set_text(char_name)
 			2:
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char2/Char2Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char2/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char2/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char2.visible = true
 			3:
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char3/Char3Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char3/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char3/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char3.visible = true
 			4:
 				if char_in_party == "Yes":
-					$FullMenu/TabsContainer/CharacterPanel/Char4/Char4Button.disabled = false
+					$FullMenu/TabsContainer/CharacterPanel/Char4/Button.disabled = false
 					$FullMenu/TabsContainer/CharacterPanel/Char4/Label.set_text(char_name)
 					$FullMenu/TabsContainer/CharacterPanel/Char4.visible = true
 	_on_Char1_button_up()
@@ -105,27 +105,27 @@ func clear_item_detail():
 	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/ItemType.set_text("")
 	equipped_item_name.set_text("")
 	equipped_item_description.set_text("")
-	var parent = equipped_item_stats
-	if parent != null:
-		for n in parent.get_children():
-			parent.remove_child(n)
+	var parent2 = equipped_item_stats
+	if parent2 != null:
+		for n in parent2.get_children():
+			parent2.remove_child(n)
 			pass
 	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/Swap/Button.disabled = true
 	$FullMenu/TabsContainer/EquipDetail/Item_Inspector_Container/HBoxContainer/Unequip/Button.disabled = true
 #	item_type = ""
 
 func clear_slot_detail():
-	var parent = $FullMenu/TabsContainer/EquipSlots/LeftVBox
-	if parent != null:
-		for n in parent.get_children():
+	var parent2 = $FullMenu/TabsContainer/EquipSlots/LeftVBox
+	if parent2 != null:
+		for n in parent2.get_children():
 			if n == equip_detail:
 				pass
 			else:
 #				print(n.get_path())
 				n.queue_free()
-	parent = $FullMenu/TabsContainer/EquipSlots/LeftVBox2
-	if parent != null:
-		for n in parent.get_children():
+	parent2 = $FullMenu/TabsContainer/EquipSlots/LeftVBox2
+	if parent2 != null:
+		for n in parent2.get_children():
 			if n == equip_detail2:
 				pass
 			else:
@@ -139,9 +139,9 @@ func _on_swapButton_button_up():
 	get_parent().add_child(invscene)
 	invscene.connect("nav_to_equip", self, "_on_EquipMenu_focus_entered")
 	match item_type:
-		"weapon":
+		"Weapons":
 			invscene._on_Weapons_button_up()
-		"defense":
+		"Armor":
 			invscene._on_Armor_button_up()
 		"slot 1":
 			invscene._on_Consumable_button_up()
@@ -165,7 +165,7 @@ func _on_unequpButton_button_up():
 		dict_op[options_name]["equipped_item"]  = "Empty"
 
 
-		if item_type == "weapon":
+		if item_type == "Weapons":
 			dict_op[options_name]["equipped_item"] = "Fist"
 	_on_EquipMenu_focus_entered()
 
@@ -208,7 +208,7 @@ func set_equipped_data():
 		slot_name = i
 		var scene_instance = quick_access.instance()
 		scene_instance.get_node("Panel/Key_Binding_slot_template/Key_Binding_VBox/slot_name").set_text(i)
-		if i == "weapon" or i == "defense":
+		if i == "Weapons" or i == "Armor":
 			$FullMenu/TabsContainer/EquipSlots/LeftVBox.add_child(scene_instance)
 		else:
 			$FullMenu/TabsContainer/EquipSlots/LeftVBox2.add_child(scene_instance)

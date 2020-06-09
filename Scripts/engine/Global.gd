@@ -8,14 +8,14 @@ var new_game = true
 var load_game = false
 var game_loaded = false
 var current_scene = null
-var load_scene = "res://Scenes/IndoorMaps/House-Mike.tscn"
+var load_scene = "res://Scenes/IndoorMaps/Fruitville_Indoor/House-Mike.tscn"
 var ExpDrop = 0
 var text = ""
 #Player Position/Location
 var PlayerName = "Mike Hawke"
 var PlayerX = 0
 var PlayerY = 0
-var PlayerMap = "res://Scenes/IndoorMaps/House-Mike.tscn"
+var PlayerMap = "res://Scenes/IndoorMaps/Fruitville_Indoor/House-Mike.tscn"
 var PlayerXTransfer = 0
 var PlayerYTransfer = 0
 var PlayerAnim = "IdleDown"

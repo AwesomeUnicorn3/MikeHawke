@@ -230,8 +230,8 @@ func equip_stats():
 	CurrentSpeed = dict_char_stats[entity_name]["CurrentSpeed"]
 	CurrentAttack = dict_char_stats[entity_name]["CurrentAttack"]
 
-	var armor = dict_options[entity_name + " defense"]["equipped_item"]
-	weapon = dict_options[entity_name + " weapon"]["equipped_item"]
+	var armor = dict_options[entity_name + " Armor"]["equipped_item"]
+	weapon = dict_options[entity_name + " Weapons"]["equipped_item"]
 	
 	
 	if armor != "Empty":
@@ -305,7 +305,7 @@ func apply_friction(amount):
 func attack_state():
 	if wait == false:
 #______Initializes weapon_______________
-		weapon = ImportData.options_stats["Mike Hawke weapon"]["equipped_item"]
+		weapon = ImportData.options_stats["Mike Hawke Weapons"]["equipped_item"]
 		var weapon_scene = "res://Scenes/Weapons/" + weapon + ".tscn"
 		if weapon != null:
 			animationState.travel("Attack")

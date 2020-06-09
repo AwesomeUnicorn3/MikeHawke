@@ -79,7 +79,6 @@ uppercase = true
 margin_left = 849.0
 margin_right = 1256.0
 margin_bottom = 82.0
-size_flags_horizontal = 3
 
 [node name="RightMargin2" type="Label" parent="FullMenu/Header"]
 margin_left = 1260.0

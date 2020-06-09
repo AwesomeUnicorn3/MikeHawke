@@ -15,6 +15,8 @@ var dict_options = ImportData.options_stats
 var lead_char_name
 var lead_char_letter
 var action_string
+var parent = "Options"
+
 
 func _ready():
 	get_node("FullMenu/TabsContainer/CategoryPanel/Controls/Button").grab_focus()

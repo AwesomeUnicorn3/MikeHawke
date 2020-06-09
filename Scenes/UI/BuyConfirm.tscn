@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Themes/35Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scripts/UI/BuyConfirm.gd" type="Script" id=3]
-[ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=4]
 [ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=5]
-[ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
 [ext_resource path="res://Icons/Chode.png" type="Texture" id=7]
 [ext_resource path="res://Themes/20Theme.tres" type="Theme" id=8]
+[ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=9]
 
 [node name="BuyPanel" type="Control"]
 anchor_left = 0.5
@@ -15,9 +14,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -424.0
-margin_top = -125.5
+margin_top = -125.0
 margin_right = 424.0
-margin_bottom = 125.5
+margin_bottom = 159.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -98,14 +97,14 @@ __meta__ = {
 
 [node name="LeftMargin" type="Label" parent="DropPanelContainer"]
 margin_right = 10.0
-margin_bottom = 251.0
+margin_bottom = 284.0
 rect_min_size = Vector2( 10, 0 )
 size_flags_vertical = 3
 
 [node name="MainNodes" type="VBoxContainer" parent="DropPanelContainer"]
 margin_left = 14.0
 margin_right = 834.0
-margin_bottom = 251.0
+margin_bottom = 284.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -129,13 +128,13 @@ autowrap = true
 [node name="SellAmount_Cont" type="HBoxContainer" parent="DropPanelContainer/MainNodes"]
 margin_top = 61.0
 margin_right = 820.0
-margin_bottom = 145.0
+margin_bottom = 161.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 
 [node name="SpinBox" type="SpinBox" parent="DropPanelContainer/MainNodes/SellAmount_Cont"]
 margin_right = 302.0
-margin_bottom = 84.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
@@ -145,7 +144,7 @@ align = 1
 [node name="multiplied" type="Label" parent="DropPanelContainer/MainNodes/SellAmount_Cont"]
 margin_left = 306.0
 margin_right = 359.0
-margin_bottom = 84.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
@@ -156,7 +155,7 @@ valign = 1
 [node name="item_price_cont" type="ColorRect" parent="DropPanelContainer/MainNodes/SellAmount_Cont"]
 margin_left = 363.0
 margin_right = 578.0
-margin_bottom = 84.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
@@ -179,7 +178,7 @@ __meta__ = {
 [node name="equals" type="Label" parent="DropPanelContainer/MainNodes/SellAmount_Cont"]
 margin_left = 582.0
 margin_right = 600.0
-margin_bottom = 84.0
+margin_bottom = 100.0
 size_flags_vertical = 3
 text = "="
 align = 1
@@ -188,7 +187,7 @@ valign = 1
 [node name="Total_price_container" type="ColorRect" parent="DropPanelContainer/MainNodes/SellAmount_Cont"]
 margin_left = 604.0
 margin_right = 820.0
-margin_bottom = 84.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0, 0, 0, 1 )
@@ -208,7 +207,7 @@ __meta__ = {
 
 [node name="Total_Price_Display" type="Label" parent="DropPanelContainer/MainNodes/SellAmount_Cont/Total_price_container/Total_Price"]
 margin_right = 125.0
-margin_bottom = 84.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 125, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -220,7 +219,7 @@ valign = 1
 [node name="CurrencyIcon" type="TextureRect" parent="DropPanelContainer/MainNodes/SellAmount_Cont/Total_price_container/Total_Price"]
 margin_left = 129.0
 margin_right = 216.0
-margin_bottom = 84.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 7 )
@@ -231,127 +230,39 @@ __meta__ = {
 }
 
 [node name="Buttons" type="HBoxContainer" parent="DropPanelContainer/MainNodes"]
-margin_top = 149.0
+margin_top = 165.0
 margin_right = 820.0
-margin_bottom = 233.0
+margin_bottom = 265.0
 rect_min_size = Vector2( 0, 75 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
 
-[node name="DropAll" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+[node name="Set Max" parent="DropPanelContainer/MainNodes/Buttons" instance=ExtResource( 9 )]
 margin_right = 270.0
-margin_bottom = 84.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 1, 1, 1, 0 )
+margin_bottom = 100.0
 
-[node name="DropAllButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/DropAll"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DropAllLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/DropAll"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.85062
-margin_right = 1.85062
-text = "Set Max"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DropCustom" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+[node name="Buy Selected" parent="DropPanelContainer/MainNodes/Buttons" instance=ExtResource( 9 )]
 margin_left = 274.0
 margin_right = 544.0
-margin_bottom = 84.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 1, 1, 1, 0 )
+margin_bottom = 100.0
 
-[node name="DropCustomButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/DropCustom"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DropCustomLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/DropCustom"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -1.0
-margin_right = -9.0
-text = "Buy Selected"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Close" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+[node name="Close" parent="DropPanelContainer/MainNodes/Buttons" instance=ExtResource( 9 )]
 margin_left = 548.0
 margin_right = 820.0
-margin_bottom = 84.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 1, 1, 1, 0 )
-
-[node name="CloseButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/Close"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CloseLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/Close"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.7207
-margin_right = 2.7207
-text = "Close"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 100.0
 
 [node name="BottomMargin" type="Label" parent="DropPanelContainer/MainNodes"]
-margin_top = 237.0
+margin_top = 269.0
 margin_right = 820.0
-margin_bottom = 251.0
+margin_bottom = 283.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_vertical = 1
 
 [node name="RightMargin" type="Label" parent="DropPanelContainer"]
 margin_left = 838.0
 margin_right = 848.0
-margin_bottom = 251.0
+margin_bottom = 284.0
 rect_min_size = Vector2( 10, 0 )
 size_flags_vertical = 3
 
@@ -376,6 +287,3 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="value_changed" from="DropPanelContainer/MainNodes/SellAmount_Cont/SpinBox" to="." method="_on_SpinBox_value_changed"]
-[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/DropAll/DropAllButton" to="." method="_on_DropAllButton_button_up"]
-[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/DropCustom/DropCustomButton" to="." method="_on_DropCustomButton_button_up"]
-[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/Close/CloseButton" to="." method="_on_Close_button_up"]

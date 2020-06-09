@@ -58,7 +58,7 @@ uppercase = true
 
 [node name="MenuName" type="Label" parent="FullMenu/Header"]
 margin_left = 369.0
-margin_right = 1052.0
+margin_right = 903.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -68,7 +68,7 @@ align = 1
 valign = 1
 
 [node name="Exit" parent="FullMenu/Header" instance=ExtResource( 3 )]
-margin_left = 1056.0
+margin_left = 907.0
 margin_right = 1256.0
 margin_bottom = 82.0
 rect_min_size = Vector2( 200, 50 )

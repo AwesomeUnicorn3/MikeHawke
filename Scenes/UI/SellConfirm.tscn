@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Themes/35Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scripts/UI/SellConfirm.gd" type="Script" id=3]
-[ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=5]
-[ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
 [ext_resource path="res://Icons/Chode.png" type="Texture" id=7]
 
 [node name="SellPanel" type="Control"]
@@ -192,105 +191,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
 
-[node name="DropAll" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+[node name="Sell All" parent="DropPanelContainer/MainNodes/Buttons" instance=ExtResource( 4 )]
 margin_right = 256.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 1, 1, 1, 0 )
 
-[node name="DropAllButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/DropAll"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DropAllLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/DropAll"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Sell All"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DropCustom" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+[node name="Sell Selected" parent="DropPanelContainer/MainNodes/Buttons" instance=ExtResource( 4 )]
 margin_left = 260.0
 margin_right = 516.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 1, 1, 1, 0 )
 
-[node name="DropCustomButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/DropCustom"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DropCustomLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/DropCustom"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -1.0
-margin_right = -9.0
-text = "Sell Selected"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Close" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+[node name="Close" parent="DropPanelContainer/MainNodes/Buttons" instance=ExtResource( 4 )]
 margin_left = 520.0
 margin_right = 777.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 1, 1, 1, 0 )
-
-[node name="CloseButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/Close"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CloseLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/Close"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.7207
-margin_right = 2.7207
-text = "Close"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BottomMargin" type="Label" parent="DropPanelContainer/MainNodes"]
 margin_top = 214.0
@@ -306,6 +222,3 @@ margin_bottom = 228.0
 rect_min_size = Vector2( 10, 0 )
 size_flags_vertical = 3
 [connection signal="value_changed" from="DropPanelContainer/MainNodes/SellAmount_Cont/SpinBox" to="." method="_on_SpinBox_value_changed"]
-[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/DropAll/DropAllButton" to="." method="_on_DropAllButton_button_up"]
-[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/DropCustom/DropCustomButton" to="." method="_on_DropCustomButton_button_up"]
-[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/Close/CloseButton" to="." method="_on_Close_button_up"]

@@ -13,7 +13,8 @@ var total_cost = 0
 var itemdrop
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	get_node("DropPanelContainer/MainNodes/Buttons/Sell All/Button").grab_focus()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +23,8 @@ func _ready():
 
 
 func _on_Close_button_up():
+	get_node("../FullMenu").visible = true
+	get_node("../FullMenu/TabsContainer/CategoryPanel/Weapons/Button").grab_focus()
 	self.queue_free()
 
 

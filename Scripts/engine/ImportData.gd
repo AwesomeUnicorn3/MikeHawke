@@ -16,7 +16,7 @@ var location_data = {}  #Static Location data
 #Dynamic Dictionaries 
 var formation_stats = {} #Same as Global.dict_formation_stats
 var enemy_stats = {}   #Same as Global.dict_enemy_stats 
-var inven_data = {}  #Same as Global.dict_player_inventory - Should be empty when starting a new game - has no direct import file
+var inven_data = {}  #Same as Global.dict_player_inventory - Should only have chode when starting a new game - has no direct import file
 var shop_inven = {} #Same as Global.dict_shop_inventory (keeps track of the count of any items that are limited in the shops)
 var character_stats = {} #Same as Global.dict_character_stats
 var quest_stats = {}  #Same as Global.dict_quest_stats
@@ -25,8 +25,8 @@ var options_stats = {} #Same as Global.dct_options_stats
 func _ready():
 	inven_data.clear()
 	Global.dict_player_inventory.clear()
+	inven_data = {"Chode":["Chode",0]}
 	Global.dict_player_inventory = inven_data
-	
 	
 	var itemdata_file = File.new()
 	itemdata_file.open("res://Data/ItemTable - Sheet1.json", File.READ)

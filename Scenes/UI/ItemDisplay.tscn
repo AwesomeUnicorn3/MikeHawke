@@ -1,27 +1,51 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/UI/ItemDisplay.gd" type="Script" id=1]
 [ext_resource path="res://Icons/ItemIconBackground.png" type="Texture" id=2]
 [ext_resource path="res://Themes/20Theme.tres" type="Theme" id=3]
 [ext_resource path="res://Themes/35Theme.tres" type="Theme" id=4]
+[ext_resource path="res://Animations/UI/Item_Focus.tres" type="Animation" id=5]
 [ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=7]
 
-[node name="ItemDisplay" type="HBoxContainer"]
-margin_right = 440.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 70 )
+[node name="Item_Display" type="Control"]
+anchor_right = 0.342
+anchor_bottom = 0.139
+margin_right = -237.76
+margin_bottom = -0.0800095
+rect_min_size = Vector2( 200, 100 )
 size_flags_horizontal = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ItemBackground" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 200, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemDisplay" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 70 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemBackground" type="TextureRect" parent="ItemDisplay"]
 margin_right = 100.0
 margin_bottom = 100.0
+size_flags_vertical = 4
 texture = ExtResource( 2 )
 
-[node name="ItemButton" type="TextureButton" parent="ItemBackground"]
+[node name="ItemButton" type="TextureButton" parent="ItemDisplay/ItemBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
@@ -30,7 +54,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ItemBackground/ItemButton"]
+[node name="Label" type="Label" parent="ItemDisplay/ItemBackground/ItemButton"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -45,7 +69,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ItemNumber" type="Label" parent="."]
+[node name="ItemNumber" type="Label" parent="ItemDisplay"]
 visible = false
 margin_left = 104.0
 margin_right = 104.0
@@ -54,31 +78,58 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
 
-[node name="ItemName" type="Label" parent="."]
+[node name="ItemName" type="Label" parent="ItemDisplay"]
 margin_left = 104.0
-margin_right = 128.0
+margin_right = 354.0
 margin_bottom = 100.0
+rect_min_size = Vector2( 250, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 4 )
+text = "Item Name"
 valign = 1
+autowrap = true
 
-[node name="Drop" parent="." instance=ExtResource( 7 )]
-margin_left = 132.0
-margin_right = 232.0
+[node name="Drop" parent="ItemDisplay" instance=ExtResource( 7 )]
+visible = false
+margin_left = 213.0
+margin_right = 313.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 50 )
 
-[node name="Equip" parent="." instance=ExtResource( 7 )]
-margin_left = 236.0
-margin_right = 336.0
+[node name="Equip" parent="ItemDisplay" instance=ExtResource( 7 )]
+visible = false
+margin_left = 213.0
+margin_right = 313.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 50 )
 
-[node name="Use Item" parent="." instance=ExtResource( 7 )]
-margin_left = 340.0
-margin_right = 440.0
-margin_bottom = 100.0
+[node name="Buy" parent="ItemDisplay" instance=ExtResource( 7 )]
+visible = false
+margin_left = 972.0
+margin_right = 1072.0
+margin_bottom = 720.0
 rect_min_size = Vector2( 100, 50 )
-[connection signal="button_down" from="ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down"]
-[connection signal="button_up" from="ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up"]
+
+[node name="Sell" parent="ItemDisplay" instance=ExtResource( 7 )]
+visible = false
+margin_left = 1076.0
+margin_right = 1176.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="Use Item" parent="ItemDisplay" instance=ExtResource( 7 )]
+visible = false
+margin_left = 1180.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Item_Focus = ExtResource( 5 )
+[connection signal="button_down" from="ItemDisplay/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_down"]
+[connection signal="button_up" from="ItemDisplay/ItemBackground/ItemButton" to="." method="_on_ItemButton_button_up"]
+[connection signal="focus_entered" from="ItemDisplay/ItemBackground/ItemButton" to="." method="_on_ItemButton_focus_entered"]
+[connection signal="focus_exited" from="ItemDisplay/ItemBackground/ItemButton" to="." method="_on_ItemButton_focus_exited"]
+[connection signal="mouse_entered" from="ItemDisplay/ItemBackground/ItemButton" to="." method="_on_ItemButton_mouse_entered"]
+[connection signal="mouse_exited" from="ItemDisplay/ItemBackground/ItemButton" to="." method="_on_ItemButton_mouse_exited"]

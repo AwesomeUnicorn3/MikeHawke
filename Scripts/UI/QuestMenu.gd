@@ -38,17 +38,17 @@ var qid
 var quest_active
 var quest_complete
 var quest_type
-
+var parent = "Quest Items"
 func _ready():
 	Quest.update_quest_0()
 	_on_MainQuests_button_up()
 	get_node("FullMenu/TabsContainer/OptionsPanel/Main Quests/Button").grab_focus()
 func clear_data():
-	var parent = quest_list_container
+	var parent1 = quest_list_container
 	var parent2 = quest_objective_container
 	
-	for n in parent.get_children():
-		parent.remove_child(n)
+	for n in parent1.get_children():
+		parent1.remove_child(n)
 		n.queue_free()
 		
 	for n in parent2.get_children():

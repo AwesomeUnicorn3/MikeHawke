@@ -46,7 +46,8 @@ var dict_inven = ImportData.inven_data
 var dict_item = ImportData.item_data
 var dict_options = ImportData.options_stats
 var selected_char
-
+var char_selected = false
+var parent = "Inventory"
 func _ready():
 	
 	if ImportData.inven_data.has(Global.currency):
@@ -98,9 +99,10 @@ func get_inventory_type():
 				scene_instance.connect("get_item_info", self, "_on_ItemDisplay_get_item_info")
 				scene_instance.connect("drop_selected", self, "_on_DropButton_button_up")
 				scene_instance.connect("equip_item", self, "equip_selected_item")
-				scene_instance.get_node("ItemName").set_text(item_name)
-				scene_instance.get_node("ItemBackground/ItemButton/Label").set_text(String(item_count))
-				scene_instance.get_node("ItemBackground/ItemButton").set_normal_texture(load(icon))
+				scene_instance.get_node("ItemDisplay/ItemName").set_text(item_name)
+				scene_instance.parent = get_name()
+				scene_instance.get_node("ItemDisplay/ItemBackground/ItemButton/Label").set_text(String(item_count))
+				scene_instance.get_node("ItemDisplay/ItemBackground/ItemButton").set_normal_texture(load(icon))
 				container.add_child(scene_instance)
 		i += 1
 
@@ -196,6 +198,7 @@ func _on_ItemDisplay_get_item_info(name):
 
 
 func _on_DropButton_button_up(count, itemdrops, _item_price, _cost, _shopcount):
+	$FullMenu.visible = false
 	var maxdrop = int(count)
 	var scene_instance = dropconfirm.instance()
 	menuroot.add_child(scene_instance)
@@ -205,9 +208,9 @@ func _on_DropButton_button_up(count, itemdrops, _item_price, _cost, _shopcount):
 
 func _on_drop_refresh():
 	match get_item_type:
-		"weapon":
+		"Weapons":
 			_on_Weapons_button_up()
-		"defense":
+		"Armor":
 			_on_Armor_button_up()
 #		"Shoes":
 #			_on_Shoes_button_up()
@@ -221,29 +224,35 @@ func _on_drop_refresh():
 func clear_item_detail():
 	item_name_container.set_text("")
 	item_Description_container.set_text("")
-	var parent = item_detail_container
-	if parent != null:
-		for n in parent.get_children():
-			parent.remove_child(n)
+	var parent2 = item_detail_container
+	if parent2 != null:
+		for n in parent2.get_children():
+			parent2.remove_child(n)
 
 func equip_selected_item(itemdrops):
+	$FullMenu.visible = false
 	itemdrop = itemdrops
 	equiptype = dict_item[itemdrop]["Type"]
-	$FullMenu/Header/Exit/ExitButton.disabled = true
 	var t = char_select.instance()
 	#add popup to signal player to select which character to equip item to
 	menuroot.add_child(t)
 	t.connect("selected", self, "_on_char_selected")
 	yield(t,"exit")
-	if equiptype != "weapon" and equiptype != "defense":
+	if equiptype != "Weapons" and equiptype != "Armor" and char_selected != false:
+#	and char_name != null:
 		var y = slot_select.instance()
 		menuroot.add_child(y)
+		$FullMenu.visible = false
 		y.connect("selected", self, "_on_slot_selected")
 		yield(y,"exit")
-	$FullMenu/Header/Exit/ExitButton.disabled = false
+	$FullMenu.visible = true
+	char_selected = false
+#	$FullMenu/Header/Exit/ExitButton.disabled = false
 
 func _on_char_selected(char_name):
-	if equiptype != "weapon" and equiptype != "defense":
+	char_selected = true
+	$FullMenu.visible = false
+	if equiptype != "Weapons" and equiptype != "Armor":
 		selected_char = char_name
 	else:
 		
@@ -258,8 +267,8 @@ func _on_char_selected(char_name):
 
 
 func _on_slot_selected(slot_name):
+	char_selected = true
 	var selected = selected_char + " " + slot_name
-	print(selected)
 	dict_inven[itemdrop][1] -= 1
 	dict_options[selected]["equipped_item"] = itemdrop
 	#equip item to selected slot for selected character

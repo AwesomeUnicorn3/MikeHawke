@@ -1,0 +1,311 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Scenes/Misc/DoorWay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt2.tres" type="Animation" id=2]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt1.tres" type="Animation" id=3]
+[ext_resource path="res://Audio/BGM/1-03 Buy! Buy! Buy!.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/NPC/Narrator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt6.tres" type="Animation" id=6]
+[ext_resource path="res://EnvTilesetPNG/Pear_House_Map_1.png" type="Texture" id=7]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt3.tres" type="Animation" id=8]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt5.tres" type="Animation" id=9]
+[ext_resource path="res://EnvTilesetPNG/Pear_House_Map_2.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt7.tres" type="Animation" id=12]
+[ext_resource path="res://Animations/Cut Scenes/Seq1Pt4.tres" type="Animation" id=13]
+[ext_resource path="res://Scripts/Indoor_Scenes/Pear_House.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/PlayableCharacters/MikeHawke.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Items/Fridge_Grey.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Items/Trash_Can_Blue.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Items/Toilet.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Items/Stove_Grey.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Items/Sink_White.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Items/Bed_Blue.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Items/Table_Wood.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Items/Table_Rectangle_SilverMetal.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Items/PickleJar.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Items/Doll_Creepy_Brown.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Items/GumballMachine.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Items/Shoe_Red.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Items/StreetSign_Slow.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Items/Sock_White.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Items/Tire_Car_Black.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Items/ShizzoCan.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Items/Gumball_Orange.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Items/Frank's Special Sauce_Pink.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/NPC/Frank.tscn" type="PackedScene" id=34]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 542.66, 72.5019 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50.4223, 320.183 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 381.484, 47.8643 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 92.1912, 26.8681 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+
+[node name="Pear_House" type="Node2D" groups=[
+"level_root",
+]]
+script = ExtResource( 14 )
+
+[node name="Map_1" type="Sprite" parent="."]
+position = Vector2( 74.154, -222.722 )
+scale = Vector2( 0.8, 1 )
+z_index = -3
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map_1"]
+position = Vector2( 27.1318, 4.52197 )
+z_index = 3
+collision_layer = 2
+collision_mask = 161
+
+[node name="TopWallCollision" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( -23.0684, -216.985 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="RightWallCollision" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( 415.08, 40.7229 )
+z_index = 1
+shape = SubResource( 2 )
+
+[node name="LeftWallCollision" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( -504.624, 56.8515 )
+z_index = 1
+shape = SubResource( 2 )
+
+[node name="MiddleWallCollision" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( -16.6348, -122.836 )
+z_index = 1
+shape = SubResource( 2 )
+
+[node name="BottomWallCollision1" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( -262.788, 336.611 )
+z_index = 1
+shape = SubResource( 3 )
+
+[node name="BottomWallCollision2" type="CollisionShape2D" parent="Map_1/StaticBody2D"]
+position = Vector2( 310.139, 314.721 )
+z_index = 1
+shape = SubResource( 4 )
+
+[node name="Map_2" type="Sprite" parent="."]
+position = Vector2( 60.518, -183.762 )
+scale = Vector2( 0.679999, 0.8 )
+texture = ExtResource( 10 )
+
+[node name="main" type="YSort" parent="."]
+
+[node name="Mike Hawke" parent="main" instance=ExtResource( 15 )]
+position = Vector2( -125.853, -347.628 )
+voice_pitch = 0.9
+
+[node name="Camera2D" parent="main/Mike Hawke" index="1"]
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="AnimationTree" parent="main/Mike Hawke" index="8"]
+active = true
+parameters/playback = SubResource( 5 )
+
+[node name="Shadow" parent="main/Mike Hawke/MikeHawke Skeleton" index="0"]
+position = Vector2( 147.043, -128.795 )
+rotation = 0.0183453
+
+[node name="Chest" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip" index="0"]
+position = Vector2( -1.65524, -58.1288 )
+
+[node name="Arm_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip/Chest" index="1"]
+rotation = 1.18452
+
+[node name="Elbow_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Skeleton2DUD/Hip/Chest/Arm_Left" index="0"]
+position = Vector2( 81.7877, -34.1319 )
+rotation = 0.0625032
+
+[node name="TorsoDown" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index 0" index="3"]
+visible = false
+
+[node name="Foot_Left" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index 0" index="5"]
+visible = true
+
+[node name="Z_Index-1" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down" index="1"]
+visible = true
+
+[node name="Arm_Left2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="3"]
+visible = false
+
+[node name="Foot_Left2" parent="main/Mike Hawke/MikeHawke Skeleton/Mike_Up_Down/Z_Index-1" index="9"]
+visible = false
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="main/Mike Hawke"]
+anims/Seq1Pt1 = ExtResource( 3 )
+anims/Seq1Pt2 = ExtResource( 2 )
+anims/Seq1Pt3 = ExtResource( 8 )
+anims/Seq1Pt4 = ExtResource( 13 )
+anims/Seq1Pt5 = ExtResource( 9 )
+anims/Seq1Pt6 = ExtResource( 6 )
+anims/Seq1Pt7 = ExtResource( 12 )
+
+[node name="Frank" parent="main" instance=ExtResource( 34 )]
+position = Vector2( 244.278, -203.565 )
+
+[node name="Narrator" parent="main" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -353.374, -149.437 )
+
+[node name="InteractableObjects" type="YSort" parent="main"]
+
+[node name="Fridge" parent="main/InteractableObjects" instance=ExtResource( 16 )]
+position = Vector2( -251.109, -372.436 )
+z_index = 0
+
+[node name="Trash_Can_Blue" parent="main/InteractableObjects" instance=ExtResource( 17 )]
+position = Vector2( -37.2889, -371.404 )
+
+[node name="Toilet" parent="main/InteractableObjects" instance=ExtResource( 18 )]
+position = Vector2( 10.2794, -366.569 )
+z_index = 0
+
+[node name="Stove_Grey" parent="main/InteractableObjects" instance=ExtResource( 19 )]
+position = Vector2( -183.75, -353.943 )
+z_index = 0
+
+[node name="Sink" parent="main/InteractableObjects" instance=ExtResource( 20 )]
+position = Vector2( -90.9902, -384.082 )
+z_index = 0
+
+[node name="Bed_Blue" parent="main/InteractableObjects" instance=ExtResource( 21 )]
+position = Vector2( -210.999, -154.216 )
+
+[node name="Table_Wood" parent="main/InteractableObjects" instance=ExtResource( 22 )]
+position = Vector2( -21.396, -157.44 )
+
+[node name="Table_Rectangle_SilverMetal" parent="main/InteractableObjects" instance=ExtResource( 23 )]
+position = Vector2( 309.209, -115.008 )
+
+[node name="Table_Rectangle_SilverMetal2" parent="main/InteractableObjects" instance=ExtResource( 23 )]
+position = Vector2( 249.762, -277.843 )
+scale = Vector2( 0.320001, 0.2 )
+
+[node name="PickleJar" parent="main/InteractableObjects" instance=ExtResource( 24 )]
+position = Vector2( 335.682, -270.498 )
+
+[node name="Doll_Creepy_Brown" parent="main/InteractableObjects" instance=ExtResource( 25 )]
+position = Vector2( 169.076, -288.521 )
+
+[node name="GumballMachine" parent="main/InteractableObjects" instance=ExtResource( 26 )]
+position = Vector2( 228.145, -261.741 )
+
+[node name="Shoe_Red" parent="main/InteractableObjects" instance=ExtResource( 27 )]
+position = Vector2( 176.847, -258.468 )
+
+[node name="Shoe_Red2" parent="main/InteractableObjects" instance=ExtResource( 28 )]
+position = Vector2( 290.608, -350.734 )
+
+[node name="Sock_White" parent="main/InteractableObjects" instance=ExtResource( 29 )]
+position = Vector2( 358.431, -257.135 )
+rotation = -0.932213
+
+[node name="Tire_Car_Black" parent="main/InteractableObjects" instance=ExtResource( 30 )]
+position = Vector2( 356.411, -343.121 )
+
+[node name="Shizzo" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 308.387, -336.58 )
+z_index = 0
+
+[node name="Shizzo2" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 282.728, -337.747 )
+z_index = 0
+
+[node name="Shizzo3" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 297.89, -319.085 )
+z_index = 0
+
+[node name="Shizzo4" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 255.902, -337.747 )
+z_index = 0
+
+[node name="Shizzo5" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 267.565, -312.087 )
+z_index = 0
+
+[node name="Shizzo6" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 125.272, -335.414 )
+z_index = 0
+
+[node name="Shizzo7" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 124.106, -302.757 )
+z_index = 0
+
+[node name="Shizzo8" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 188.254, -343.578 )
+z_index = 0
+
+[node name="Shizzo9" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 152.098, -337.747 )
+z_index = 0
+
+[node name="Shizzo10" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 328.215, -327.25 )
+z_index = 0
+
+[node name="Shizzo11" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 365.538, -326.083 )
+z_index = 0
+
+[node name="Shizzo12" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 351.542, -306.256 )
+z_index = 0
+
+[node name="Shizzo13" parent="main/InteractableObjects" instance=ExtResource( 31 )]
+position = Vector2( 367.87, -302.757 )
+z_index = 0
+
+[node name="Gumball_Orange" parent="main/InteractableObjects" instance=ExtResource( 32 )]
+position = Vector2( 347.746, -109.371 )
+
+[node name="Frank\'s Special Sauce_Pink" parent="main/InteractableObjects" instance=ExtResource( 33 )]
+position = Vector2( 261.83, -111.839 )
+
+[node name="Frank\'s Special Sauce_Pink2" parent="main/InteractableObjects" instance=ExtResource( 33 )]
+position = Vector2( 276.33, -98.6811 )
+
+[node name="Frank\'s Special Sauce_Pink3" parent="main/InteractableObjects" instance=ExtResource( 33 )]
+position = Vector2( 289.117, -110.866 )
+
+[node name="Frank\'s Special Sauce_Pink4" parent="main/InteractableObjects" instance=ExtResource( 33 )]
+position = Vector2( 306.166, -100.882 )
+
+[node name="DoorWay" parent="." instance=ExtResource( 1 )]
+position = Vector2( 266.956, 130.541 )
+rotation = 3.14159
+scale = Vector2( 3.84, 2.28 )
+z_index = -3
+Goto_scene = "res://Scenes/OutdoorMaps/Fruitville.tscn"
+set_player_position = Vector2( 235, 1375 )
+
+[node name="ColorRect" parent="DoorWay" index="1"]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[editable path="main/Mike Hawke"]
+
+[editable path="main/Mike Hawke/MikeHawke Skeleton"]
+
+[editable path="DoorWay"]

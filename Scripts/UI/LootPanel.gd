@@ -8,7 +8,7 @@ var loot_dict = {}
 
 func _ready():
 #	Global.load_scene = "res://Scenes/Fruitville.tscn" #Delete after testing
-	map_name = String(Global.Dict_locations[Global.load_scene])
+	map_name = String(Global.dict_location[Global.load_scene])
 #	Loot_Generate()
 
 func Loot_Generate():

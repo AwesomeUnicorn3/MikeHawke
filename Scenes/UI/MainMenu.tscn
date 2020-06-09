@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Buttons/FormationButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/UI/SubMenu1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=11]
-[ext_resource path="res://Scenes/Buttons/SkillButton.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=14]
 
 [node name="MainMenu" type="Control"]
@@ -51,7 +49,7 @@ margin_right = 203.0
 margin_bottom = 66.0
 scene = "res://Scenes/UI/InventoryMenu.tscn"
 
-[node name="Equip" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
+[node name="Equipment" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
 margin_top = 70.0
 margin_right = 203.0
 margin_bottom = 136.0
@@ -73,7 +71,6 @@ scene = "res://Scenes/UI/QuestMenu.tscn"
 margin_top = 280.0
 margin_right = 203.0
 margin_bottom = 346.0
-scene = "res://Scenes/UI/QuestMenu.tscn"
 
 [node name="Options" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
 margin_top = 350.0
@@ -85,25 +82,12 @@ scene = "res://Scenes/UI/OptionsMenu.tscn"
 margin_top = 420.0
 margin_right = 203.0
 margin_bottom = 486.0
-scene = "res://Scenes/UI/OptionsMenu.tscn"
+scene = "res://Scenes/UI/TitleScreen.tscn"
 
 [node name="Close Menu" parent="MenuOptions/VBoxOptions" instance=ExtResource( 14 )]
 margin_top = 490.0
 margin_right = 203.0
 margin_bottom = 561.0
-scene = "res://Scenes/UI/OptionsMenu.tscn"
-
-[node name="SkillButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 13 )]
-visible = false
-margin_top = 168.0
-margin_right = 203.0
-margin_bottom = 220.0
-
-[node name="FormationButton" parent="MenuOptions/VBoxOptions" instance=ExtResource( 6 )]
-visible = false
-margin_top = 186.0
-margin_right = 203.0
-margin_bottom = 244.0
 
 [node name="SubMenu1" parent="." instance=ExtResource( 10 )]
 visible = false

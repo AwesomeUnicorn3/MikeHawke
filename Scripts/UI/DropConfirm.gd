@@ -9,7 +9,7 @@ var dict_inv = ImportData.inven_data
 var itemdrop
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	get_node("DropPanelContainer/MainNodes/Buttons/Drop All/Button").grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +18,8 @@ func _ready():
 
 
 func _on_Close_button_up():
+	get_node("../FullMenu").visible = true
+	get_node("../FullMenu/TabsContainer/CategoryPanel/Weapons/Button").grab_focus()
 	self.queue_free()
 
 
@@ -35,4 +37,4 @@ func _on_DropAll_button_up():
 #	print(dict_inv[itemdrop][1])
 	$DropPanelContainer/MainNodes/SpinBox.set_max(dict_inv[itemdrop][1])
 	emit_signal("refresh_inventory")
-	self.queue_free()
+	_on_Close_button_up()

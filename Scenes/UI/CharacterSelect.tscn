@@ -1,13 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Themes/35Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Themes/30Theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scripts/UI/CharacterSelect.gd" type="Script" id=3]
-[ext_resource path="res://Icons/Button_Pressed_Texture.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Buttons/Menu_Button_Tempate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Icons/MenuBackground.png" type="Texture" id=5]
-[ext_resource path="res://Icons/Button_Up_Texture.png" type="Texture" id=6]
 
-[node name="DropPanel" type="Control"]
+[node name="CharPanel" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -94,39 +93,9 @@ rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 
-[node name="Close" type="ColorRect" parent="DropPanelContainer/MainNodes/Buttons"]
+[node name="Close" parent="DropPanelContainer/MainNodes/Buttons" instance=ExtResource( 4 )]
 margin_right = 441.0
 margin_bottom = 100.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 1, 1, 1, 0 )
-
-[node name="CloseButton" type="TextureButton" parent="DropPanelContainer/MainNodes/Buttons/Close"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CloseLabel" type="Label" parent="DropPanelContainer/MainNodes/Buttons/Close"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.7207
-margin_right = 2.7207
-size_flags_vertical = 1
-text = "Close"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BottomMargin" type="Label" parent="DropPanelContainer/MainNodes"]
 margin_top = 426.0
@@ -141,4 +110,3 @@ margin_right = 469.0
 margin_bottom = 440.0
 rect_min_size = Vector2( 10, 0 )
 size_flags_vertical = 3
-[connection signal="button_up" from="DropPanelContainer/MainNodes/Buttons/Close/CloseButton" to="." method="_on_CloseButton_button_up"]

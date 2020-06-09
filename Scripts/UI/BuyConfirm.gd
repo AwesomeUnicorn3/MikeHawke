@@ -14,6 +14,7 @@ var total_cost = 0
 var itemdrop
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("DropPanelContainer/MainNodes/Buttons/Set Max/Button").grab_focus()
 	pass
 
 
@@ -23,6 +24,8 @@ func _ready():
 
 
 func _on_Close_button_up():
+	get_node("../FullMenu").visible = true
+	get_node("../FullMenu/TabsContainer/CategoryPanel/Weapons/Button").grab_focus()
 	self.queue_free()
 
 

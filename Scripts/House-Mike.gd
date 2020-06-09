@@ -20,7 +20,7 @@ func _ready():
 		begin_sequence1()
 	else:
 		mike.set_scene(CamZoom)
-		Global.load_scene = self.filename
+		Global.load_scene = filename
 	
 func begin_sequence1():
 	MSG.level_root().get_node("main/InteractableObjects/SideTable/Wallet").visible = true

@@ -39,7 +39,7 @@ var CurrentSpeed
 
 var char_name
 var char_selected
-
+var parent = "Stats"
 func _ready():
 
 	for n in range(dict_formation.size()):

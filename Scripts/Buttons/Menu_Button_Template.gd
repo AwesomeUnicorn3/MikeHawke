@@ -32,6 +32,9 @@ func _ready():
 
 
 func _on_TextureRect_button_up():
+	btn_name = str($".".get_name())
+	if btn_name.left(4) == "File":
+		btn_name = "Load"
 	var sound = SoundEffects.get(Sfx)
 
 	SoundEffects.play_sfx(sound, sfx_volume)
@@ -40,7 +43,7 @@ func _on_TextureRect_button_up():
 		"New Game":
 			Save_Game.new_game()
 			Save_Game.save_game()
-			get_node("/root/Global").setScene(scene)
+			Global.setScene(scene)
 
 		"Load Game":
 			Save_Game.load_game()
@@ -74,13 +77,13 @@ func _on_TextureRect_button_up():
 			Global.load_path = String("res://Save/" + id)
 			var dir = Directory.new()
 			dir.remove(Global.load_path)
-			Global.setScene("res://Scenes/LoadGame.tscn")
+			Global.setScene("res://Scenes/UI/LoadGame.tscn")
 
 		"Inventory":
 			var t = get_node("..")
 			t.visible = false
 			load_menu()
-		"Equip":
+		"Equipment":
 			var t = get_node("..")
 			t.visible = false
 			load_menu()
@@ -120,7 +123,7 @@ func _on_TextureRect_button_up():
 			load_menu()
 		"Quit":
 			get_tree().paused = false
-			get_node("/root/Global").setScene("res://Scenes/TitleScreen.tscn")
+			Global.setScene(scene)
 
 		"Close Menu":
 			var pause_button = get_node("../../../../TopLeftGui/PauseButton")
@@ -131,42 +134,104 @@ func _on_TextureRect_button_up():
 	
 		"Weapons":
 			var p = get_node("../../../..")
+			if p.name == "FullMenu":
+				p = get_node("../../../../..")
 			p._on_Weapons_button_up()
 		"Armor":
 			var p = get_node("../../../..")
+			if p.name == "FullMenu":
+				p = get_node("../../../../..")
 			p._on_Armor_button_up()
 		"Skills":
 			var p = get_node("../../../..")
 			p._on_Skills_button_up()
 		"Consumable":
 			var p = get_node("../../../..")
+			if p.name == "FullMenu":
+				p = get_node("../../../../..")
 			p._on_Consumable_button_up()
 		"Quest Items":
 			var p = get_node("../../../..")
+			if p.name == "FullMenu":
+				p = get_node("../../../../..")
 			p._on_Quest_Items_button_up()
 
 		"Exit":
-			var t = get_node("../../../../../MenuOptions/VBoxOptions")
-			var u = get_node("../../../../../MenuOptions/VBoxOptions/Inventory/Button")
-			t.visible = true
 			var p = get_node("../../..")
-			p._on_ExitButton_button_up()
-			u.grab_focus()
-
-
+			match p.parent:
+				"Shop":
+					p._on_ExitButton_button_up()
+				
+				"Inventory":
+					var t = get_node("../../../../../MenuOptions/VBoxOptions")
+					var u = get_node("../../../../../MenuOptions/VBoxOptions/Inventory/Button")
+					t.visible = true
+					p._on_ExitButton_button_up()
+					u.grab_focus()
+				"EquipMenu":
+					var t = get_node("../../../../../MenuOptions/VBoxOptions")
+					var u = get_node("../../../../../MenuOptions/VBoxOptions/Inventory/Button")
+					t.visible = true
+					p._on_ExitButton_button_up()
+					u.grab_focus()
+				"Stats":
+					var t = get_node("../../../../../MenuOptions/VBoxOptions")
+					var u = get_node("../../../../../MenuOptions/VBoxOptions/Inventory/Button")
+					t.visible = true
+					p._on_ExitButton_button_up()
+					u.grab_focus()
+				"Quest Items":
+					var t = get_node("../../../../../MenuOptions/VBoxOptions")
+					var u = get_node("../../../../../MenuOptions/VBoxOptions/Inventory/Button")
+					t.visible = true
+					p._on_ExitButton_button_up()
+					u.grab_focus()
+				"Options":
+					var t = get_node("../../../../../MenuOptions/VBoxOptions")
+					var u = get_node("../../../../../MenuOptions/VBoxOptions/Inventory/Button")
+					t.visible = true
+					p._on_ExitButton_button_up()
+					u.grab_focus()
 		"Char1":
+			
 			var p = get_node("../../../..")
-			p._on_Char1_button_up()
-			set_focus()
+			if p.parent == "CharPanel":
+				var t = $Label.get_text()
+				p._on_char_selected(t)
+			else:
+				p._on_Char1_button_up()
+#			set_focus()
 		"Char2":
 			var p = get_node("../../../..")
-			p._on_Char1_button_up()
+			if p.name == "CharPanel":
+				p._on_char_selected($Label.get_text())
+			else:
+				p._on_Char2_button_up()
 		"Char3":
 			var p = get_node("../../../..")
-			p._on_Char1_button_up()
+			if p.name == "CharPanel":
+				p._on_char_selected($Label.get_text())
+			else:
+				p._on_Char3_button_up()
 		"Char4":
 			var p = get_node("../../../..")
-			p._on_Char1_button_up()
+			if p.name == "CharPanel":
+				p._on_char_selected($Label.get_text())
+			else:
+				p._on_Char2_button_up()
+		"Slot1":
+			var p = get_node("../../../..")
+			p._on_char_selected($Label.get_text())
+		"Slot2":
+			var p = get_node("../../../..")
+			p._on_char_selected($Label.get_text())
+		"Slot3":
+			var p = get_node("../../../..")
+			p._on_char_selected($Label.get_text())
+		"Slot4":
+			var p = get_node("../../../..")
+			p._on_char_selected($Label.get_text())
+
 		"Swap":
 			var p = get_node("../../../../../..")
 			p._on_swapButton_button_up()
@@ -193,15 +258,58 @@ func _on_TextureRect_button_up():
 			set_focus()
 
 		"Drop":
-			var p = get_node("..")
+			var p = get_node("../..")
 			p._on_DropButton_button_up()
 		"Equip":
-			var p = get_node("..")
+			var p = get_node("../..")
 			p._on_EquipButton_button_up()
 		"Use Item":
-			var p = get_node("..")
-			p._on_ItemButton_button_up()
+			var p = get_node("../..")
+			p._on_Use_ItemButton_button_up()
+
+		"Close":
+			var p = get_node("../../../..")
+			p._on_Close_button_up()
+
+		"Buy":
+			var p = get_node("../..")
+			var n = p.get_name()
+			if n == "FullMenu":
+				p = get_node("../../..")
+				p._on_Buy_button_up()
+			else:
+				p._on_DropButton_button_up()
+
+		"Sell":
+			var p = get_node("../..")
+			var n = p.get_name()
+			if n == "FullMenu":
+				p = get_node("../../..")
+				p._on_Sell_button_up()
+			else:
+				p._on_DropButton_button_up()
 			
+		"Buy Selected":
+			var p = get_node("../../../..")
+			p._on_DropCustomButton_button_up()
+		"Set Max":
+			var p = get_node("../../../..")
+			p._on_DropAllButton_button_up()
+
+		"Sell All":
+			var p = get_node("../../../..")
+			p._on_DropAllButton_button_up()
+		"Sell Selected":
+			var p = get_node("../../../..")
+			p._on_DropCustomButton_button_up()
+			
+		"Drop All":
+			var p = get_node("../../../..")
+			p._on_DropAll_button_up()
+		"Drop Selected":
+			var p = get_node("../../../..")
+			p._on_DropCustomButton_button_up()
+
 func set_show_menu(value: bool) -> void:
 	show = value
 	if value == true:

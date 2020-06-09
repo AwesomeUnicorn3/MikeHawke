@@ -37,7 +37,7 @@ func _ready():
 	match parent_name:
 		"EquipMenu":
 			slot_name = parent.slot_name
-			options_name = lead_character + " " + slot_name
+			options_name = parent.char_name + " " + slot_name
 			slot_key = String(dict_op[options_name]["Key1"]) 
 			slot_key_label.set_text(slot_key)
 			icon_name = dict_op[options_name]["equipped_item"]

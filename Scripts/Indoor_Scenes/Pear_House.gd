@@ -16,5 +16,5 @@ export var CamZoom = Vector2(.4,.4)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mike.set_scene(CamZoom)
-	Global.load_scene = self.filename
+	Global.load_scene = filename
 

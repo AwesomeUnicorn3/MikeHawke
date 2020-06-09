@@ -9,6 +9,7 @@
     "Sell Value": 1,
     "Cost": 50,
     "CanUse": "No",
+    "CanEquip": "Yes",
     "Description": "What is that smell? It won't give you much protections but maybe the smell will keep away aggressive lifeforms",
     "CanSell": "Yes"
   },
@@ -22,6 +23,7 @@
     "Sell Value": 5,
     "Cost": 175,
     "CanUse": "No",
+    "CanEquip": "Yes",
     "Description": "How did you find a potato THAT big?",
     "CanSell": "Yes"
   },
@@ -35,6 +37,7 @@
     "Sell Value": 2,
     "Cost": 0,
     "CanUse": "No",
+    "CanEquip": "No",
     "Description": "An empty can of Shizzo.  You can sell this at most shops",
     "CanSell": "Yes"
   },
@@ -48,6 +51,7 @@
     "Sell Value": 3,
     "Cost": 15,
     "CanUse": "Yes",
+    "CanEquip": "Yes",
     "Description": "Smells kind of funky but will recover 50 HP if you drink it.",
     "CanSell": "Yes"
   },
@@ -61,6 +65,7 @@
     "Sell Value": 1,
     "Cost": 1,
     "CanUse": "Yes",
+    "CanEquip": "No",
     "Description": "\"\"",
     "CanSell": "No"
   },
@@ -74,11 +79,12 @@
     "Sell Value": 0,
     "Cost": 1,
     "CanUse": "No",
+    "CanEquip": "No",
     "Description": "Free gift from Frank.  Better hang on to it, you never know...",
     "CanSell": "No"
   },
-  "Queef": {
-    "Type": "Quest Items",
+  "Hockey Drop": {
+    "Type": "Skill",
     "Attack": 0,
     "Defense": 0,
     "Speed": 0,
@@ -87,6 +93,7 @@
     "Sell Value": 0,
     "Cost": 0,
     "CanUse": "No",
+    "CanEquip": "No",
     "Description": "This cat smells horrible.  Return him to Hilda ASAP",
     "CanSell": "No"
   },
@@ -100,6 +107,7 @@
     "Sell Value": 1,
     "Cost": 50,
     "CanUse": "No",
+    "CanEquip": "Yes",
     "Description": "Foot covering. Better than nothing, but not by much.",
     "CanSell": "Yes"
   },
@@ -113,6 +121,7 @@
     "Sell Value": 1,
     "Cost": 50,
     "CanUse": "No",
+    "CanEquip": "Yes",
     "Description": "Thats crappy as in \"Not very usefull\" not \"Covered in\" or \"Made of\"",
     "CanSell": "Yes"
   },
@@ -126,6 +135,7 @@
     "Sell Value": 5,
     "Cost": 175,
     "CanUse": "No",
+    "CanEquip": "Yes",
     "Description": "Somehow its better then a sword that isnt edible",
     "CanSell": "Yes"
   },
@@ -139,6 +149,7 @@
     "Sell Value": 0,
     "Cost": 0,
     "CanUse": "No",
+    "CanEquip": "Yes",
     "Description": "It is your fist.  A modified version of your hand.",
     "CanSell": "No"
   }

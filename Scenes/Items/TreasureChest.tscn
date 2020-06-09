@@ -13,7 +13,9 @@ position = Vector2( 0.307255, -0.922073 )
 collision_layer = 32
 collision_mask = 32
 script = ExtResource( 1 )
-item3 = "Crappy Sword"
+item3 = "Frank's Special Sauce"
+item4 = "Chode"
+item4count = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false

@@ -1,20 +1,20 @@
 {
-  "res://Scenes/IndoorMaps/House-Mike.tscn": {
+  "res://Scenes/IndoorMaps/Fruitville_Indoor/House-Mike.tscn": {
     "Name": "Mike's House"
   },
-  "res://Scenes/Fruitville.tscn": {
+  "res://Scenes/OutdoorMaps/Fruitville.tscn": {
     "Name": "Fruitville"
   },
-  "res://Scenes/IndoorMaps/Banana_House.tscn": {
+  "res://Scenes/IndoorMaps/Fruitville_Indoor/Banana_House.tscn": {
     "Name": "Cum 'N Go"
   },
-  "res://Scenes/IndoorMaps/Pear_House.tscn": {
+  "res://Scenes/IndoorMaps/Fruitville_Indoor/Pear_House.tscn": {
     "Name": "Frank's Sundries"
   },
-  "res://Scenes/IndoorMaps/Dragonfruit_House.tscn": {
+  "res://Scenes/IndoorMaps/Fruitville_Indoor/Dragonfruit_House.tscn": {
     "Name": "Hilda's House"
   },
-  "res://Scenes/IndoorMaps/Pineapple_House.tscn": {
+  "res://Scenes/IndoorMaps/Fruitville_Indoor/Pineapple_House.tscn": {
     "Name": "Mayor's House"
   }
 }
